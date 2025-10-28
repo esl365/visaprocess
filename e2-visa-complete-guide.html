@@ -843,6 +843,61 @@
             animation: highlightFade 2s ease-out;
         }
 
+        /* ========================================
+           FEEDBACK CONTACT BANNER
+           ======================================== */
+
+        .feedback-banner {
+            background: linear-gradient(135deg, #10b981, #059669);
+            color: white;
+            padding: 20px 30px;
+            margin: 30px auto;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(16, 185, 129, 0.2);
+            text-align: center;
+            max-width: 900px;
+            border: 2px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .feedback-banner h3 {
+            margin: 0 0 10px 0;
+            font-size: 1.5rem;
+            font-weight: 700;
+        }
+
+        .feedback-banner p {
+            margin: 10px 0;
+            font-size: 1rem;
+            line-height: 1.6;
+        }
+
+        .feedback-banner a {
+            color: white;
+            font-weight: 700;
+            text-decoration: underline;
+            font-size: 1.1rem;
+        }
+
+        .feedback-banner a:hover {
+            color: #fef3c7;
+            text-decoration: none;
+        }
+
+        @media (max-width: 768px) {
+            .feedback-banner {
+                padding: 15px 20px;
+                margin: 20px 15px;
+            }
+
+            .feedback-banner h3 {
+                font-size: 1.2rem;
+            }
+
+            .feedback-banner p {
+                font-size: 0.9rem;
+            }
+        }
+
         /* Table */
         table {
             width: 100%;
@@ -2080,6 +2135,13 @@
         <h1>E-2 Visa Complete Guide</h1>
         <p>Comprehensive Guide: US → Korea E-2 Visa Process</p>
         <p style="font-size: var(--font-size-sm); margin-top: 10px;">Fast-Track 2-3 Week Document Preparation + Complete Process Guide</p>
+    </div>
+
+    <!-- Feedback Contact Banner -->
+    <div class="feedback-banner">
+        <h3>📧 가이드 개선에 도움을 주세요!</h3>
+        <p>이 가이드의 내용이 실제와 다르거나, 추가/개선이 필요한 부분이 있다면</p>
+        <p><a href="mailto:jobs@esl365.com?subject=E-2 Visa Guide Feedback">jobs@esl365.com</a>으로 알려주세요</p>
     </div>
 
     <div class="container" id="main-content" role="main">

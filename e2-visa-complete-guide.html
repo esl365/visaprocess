@@ -683,7 +683,7 @@
             color: white;
             padding: 8px 16px;
             border-radius: 6px;
-            display: flex;
+            display: inline-flex;
             align-items: center;
             gap: 8px;
             box-shadow: 0 2px 10px rgba(0,0,0,0.15);
@@ -691,6 +691,16 @@
             z-index: 10000;
             font-size: 0.875rem;
             max-width: 320px;
+            max-height: 48px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .toast span:last-child {
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
         }
 
         .toast.show {
@@ -4941,15 +4951,20 @@ degree.
 
             const icon = type === 'success' ? '✓' : type === 'error' ? '✗' : 'ℹ';
             toast.innerHTML = `
-                <span style="font-size: var(--font-size-lg); font-weight: var(--font-weight-bold);">${icon}</span>
+                <span style="font-size: 1rem; font-weight: var(--font-weight-bold);">${icon}</span>
                 <span>${message}</span>
             `;
 
             document.body.appendChild(toast);
 
+            // 애니메이션을 위해 약간의 지연 후 show 클래스 추가
+            setTimeout(() => {
+                toast.classList.add('show');
+            }, 10);
+
             // 3초 후 자동 제거
             setTimeout(() => {
-                toast.classList.add('hiding');
+                toast.classList.remove('show');
                 setTimeout(() => toast.remove(), 300);
             }, 3000);
         }
@@ -4989,9 +5004,9 @@ degree.
 
             // Toast 알림 표시
             if (checklistItems[id]) {
-                showToast('✅ Task completed! Next step loaded.', 'success');
+                showToast('Task completed', 'success');
             } else {
-                showToast('↶ Task marked as incomplete', 'info');
+                showToast('Task unchecked', 'info');
             }
 
             saveProgress();

@@ -1,0 +1,1576 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-2 Visa Complete Guide - Kang & Kriel Recruitment</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --brand-primary: #ae6031;
+            --brand-dark: #8a4a25;
+            --brand-light: #d4936f;
+            --brand-bg: #faf8f6;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #f9fafb;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Header */
+        .header {
+            background: linear-gradient(135deg, var(--brand-primary), var(--brand-dark));
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            font-weight: 800;
+        }
+
+        .header p {
+            font-size: 1.2em;
+            opacity: 0.95;
+        }
+
+        .brand-title {
+            font-size: 1.5em;
+            font-weight: 900;
+            margin-bottom: 20px;
+        }
+
+        /* Navigation */
+        .nav-bar {
+            background: white;
+            padding: 15px;
+            margin-bottom: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav-buttons {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .btn {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+
+        .btn-primary {
+            background: var(--brand-primary);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: var(--brand-dark);
+            transform: translateY(-2px);
+        }
+
+        .btn-secondary {
+            background: #e5e7eb;
+            color: #374151;
+        }
+
+        .btn-secondary:hover {
+            background: #d1d5db;
+        }
+
+        /* Progress Bar */
+        .progress-section {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .progress-bar-container {
+            width: 100%;
+            height: 30px;
+            background: #e5e7eb;
+            border-radius: 15px;
+            overflow: hidden;
+            margin-top: 10px;
+        }
+
+        .progress-bar-fill {
+            height: 100%;
+            background: linear-gradient(90deg, var(--brand-primary), var(--brand-dark));
+            transition: width 0.5s;
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            padding-right: 15px;
+            color: white;
+            font-weight: bold;
+        }
+
+        /* Alert Box */
+        .alert {
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            border-left: 5px solid;
+        }
+
+        .alert-danger {
+            background: #fef2f2;
+            border-color: #dc2626;
+            color: #991b1b;
+        }
+
+        .alert-warning {
+            background: #fffbeb;
+            border-color: #f59e0b;
+            color: #92400e;
+        }
+
+        .alert-info {
+            background: #eff6ff;
+            border-color: #3b82f6;
+            color: #1e40af;
+        }
+
+        .alert-success {
+            background: #f0fdf4;
+            border-color: #22c55e;
+            color: #166534;
+        }
+
+        .alert h3 {
+            font-size: 1.3em;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+
+        .alert ul {
+            margin-left: 20px;
+            margin-top: 10px;
+        }
+
+        .alert li {
+            margin-bottom: 8px;
+        }
+
+        /* Section */
+        .section {
+            background: white;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+
+        .section-header {
+            background: var(--brand-primary);
+            color: white;
+            padding: 20px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: background 0.3s;
+        }
+
+        .section-header:hover {
+            background: var(--brand-dark);
+        }
+
+        .section-header h2 {
+            font-size: 1.5em;
+            font-weight: 700;
+        }
+
+        .section-header .toggle-icon {
+            font-size: 1.5em;
+            transition: transform 0.3s;
+        }
+
+        .section-header.expanded .toggle-icon {
+            transform: rotate(180deg);
+        }
+
+        .section-content {
+            padding: 0;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease-out, padding 0.3s;
+        }
+
+        .section-content.expanded {
+            padding: 20px;
+            max-height: 10000px;
+        }
+
+        .section-content h3 {
+            color: var(--brand-dark);
+            font-size: 1.3em;
+            margin-top: 20px;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+
+        .section-content h4 {
+            color: var(--brand-primary);
+            font-size: 1.1em;
+            margin-top: 15px;
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+
+        /* Checklist */
+        .checklist {
+            list-style: none;
+            margin: 15px 0;
+        }
+
+        .checklist-item {
+            display: flex;
+            align-items: flex-start;
+            padding: 10px;
+            margin-bottom: 8px;
+            background: #f9fafb;
+            border-radius: 6px;
+            transition: background 0.3s;
+        }
+
+        .checklist-item:hover {
+            background: #f3f4f6;
+        }
+
+        .checklist-item input[type="checkbox"] {
+            width: 20px;
+            height: 20px;
+            margin-right: 12px;
+            margin-top: 3px;
+            cursor: pointer;
+            accent-color: var(--brand-primary);
+        }
+
+        .checklist-item label {
+            flex: 1;
+            cursor: pointer;
+        }
+
+        .checklist-item.completed label {
+            text-decoration: line-through;
+            color: #6b7280;
+        }
+
+        /* Table */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            background: white;
+        }
+
+        th, td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #e5e7eb;
+        }
+
+        th {
+            background: var(--brand-bg);
+            color: var(--brand-dark);
+            font-weight: 700;
+        }
+
+        tr:hover {
+            background: #f9fafb;
+        }
+
+        /* Timeline */
+        .timeline-item {
+            position: relative;
+            padding-left: 40px;
+            margin-bottom: 30px;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: 10px;
+            top: 0;
+            bottom: -30px;
+            width: 2px;
+            background: var(--brand-light);
+        }
+
+        .timeline-item:last-child::before {
+            display: none;
+        }
+
+        .timeline-dot {
+            position: absolute;
+            left: 0;
+            top: 5px;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: var(--brand-primary);
+            border: 3px solid white;
+            box-shadow: 0 0 0 2px var(--brand-primary);
+        }
+
+        .timeline-content {
+            background: white;
+            padding: 15px;
+            border-radius: 8px;
+            border-left: 3px solid var(--brand-primary);
+        }
+
+        .timeline-content h4 {
+            color: var(--brand-dark);
+            margin-bottom: 8px;
+        }
+
+        /* Card Grid */
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin: 20px 0;
+        }
+
+        .card {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            border: 2px solid #e5e7eb;
+            transition: all 0.3s;
+        }
+
+        .card:hover {
+            border-color: var(--brand-primary);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(174, 96, 49, 0.1);
+        }
+
+        .card h3 {
+            color: var(--brand-dark);
+            margin-bottom: 10px;
+        }
+
+        .card-highlight {
+            background: linear-gradient(135deg, #fef3c7, #fde68a);
+            border-color: #f59e0b;
+        }
+
+        /* Code/Pre blocks */
+        pre {
+            background: #1f2937;
+            color: #f9fafb;
+            padding: 20px;
+            border-radius: 8px;
+            overflow-x: auto;
+            margin: 15px 0;
+        }
+
+        code {
+            background: #f3f4f6;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9em;
+        }
+
+        pre code {
+            background: none;
+            padding: 0;
+        }
+
+        /* Badge */
+        .badge {
+            display: inline-block;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.85em;
+            font-weight: 600;
+            margin-right: 8px;
+            margin-bottom: 8px;
+        }
+
+        .badge-urgent {
+            background: #dc2626;
+            color: white;
+        }
+
+        .badge-critical {
+            background: #f59e0b;
+            color: white;
+        }
+
+        .badge-info {
+            background: #3b82f6;
+            color: white;
+        }
+
+        .badge-success {
+            background: #22c55e;
+            color: white;
+        }
+
+        /* Footer */
+        .footer {
+            background: #1f2937;
+            color: white;
+            text-align: center;
+            padding: 40px 20px;
+            margin-top: 40px;
+        }
+
+        .footer p {
+            margin: 10px 0;
+            opacity: 0.8;
+        }
+
+        /* Print Styles */
+        @media print {
+            .nav-bar, .btn, .footer {
+                display: none;
+            }
+            .section-content {
+                max-height: none !important;
+                padding: 20px !important;
+            }
+            body {
+                background: white;
+            }
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 1.8em;
+            }
+            .nav-buttons {
+                flex-direction: column;
+            }
+            .btn {
+                width: 100%;
+            }
+            .card-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Link Styles */
+        a {
+            color: var(--brand-primary);
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        a:hover {
+            text-decoration: underline;
+            color: var(--brand-dark);
+        }
+
+        /* Strong emphasis */
+        strong {
+            color: var(--brand-dark);
+            font-weight: 700;
+        }
+
+        /* Separator */
+        hr {
+            border: none;
+            border-top: 2px solid #e5e7eb;
+            margin: 30px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="brand-title">Kang & Kriel Recruitment</div>
+        <h1>E-2 Visa Complete Guide</h1>
+        <p>Comprehensive Guide: US → Korea E-2 Visa Process</p>
+        <p style="font-size: 0.9em; margin-top: 10px;">Fast-Track 2-3 Week Document Preparation + Complete Process Guide</p>
+    </div>
+
+    <div class="container">
+        <!-- Navigation -->
+        <div class="nav-bar">
+            <div class="nav-buttons">
+                <button class="btn btn-primary" onclick="expandAll()">Expand All Sections</button>
+                <button class="btn btn-primary" onclick="collapseAll()">Collapse All Sections</button>
+                <button class="btn btn-secondary" onclick="resetProgress()">Reset Progress</button>
+                <button class="btn btn-secondary" onclick="exportProgress()">Export Progress</button>
+                <button class="btn btn-secondary" onclick="window.print()">Print Guide</button>
+            </div>
+        </div>
+
+        <!-- Progress Tracker -->
+        <div class="progress-section">
+            <h3>Overall Progress</h3>
+            <div class="progress-bar-container">
+                <div class="progress-bar-fill" id="progressBar" style="width: 0%;">0%</div>
+            </div>
+            <p style="margin-top: 10px; font-size: 0.9em; color: #6b7280;">
+                <span id="progressText">0 of 0 tasks completed</span>
+            </p>
+        </div>
+
+        <!-- Critical Warning -->
+        <div class="alert alert-danger">
+            <h3>⚠️ CRITICAL WARNING - Read This First!</h3>
+            <ul>
+                <li><strong>FBI Check</strong> must get <strong>FEDERAL</strong> apostille from U.S. Department of State</li>
+                <li><strong>Degree</strong> must get <strong>STATE</strong> apostille from Secretary of State (state where degree issued)</li>
+                <li><strong>Names must match EXACTLY</strong> across all documents (passport, FBI, degree) including middle names</li>
+                <li><strong>DIY FBI processing takes 14-16 weeks</strong>. Use a channeler (3-5 days) to avoid delays</li>
+                <li><strong>Total Investment: $320-525</strong> for 2-3 week document preparation</li>
+                <li><strong>Total Timeline: 5-7 weeks</strong> from start to visa in passport</li>
+            </ul>
+        </div>
+
+        <!-- Timeline Overview -->
+        <div class="alert alert-info">
+            <h3>📅 Complete Timeline: 5-7 Weeks</h3>
+            <ul>
+                <li><strong>Week 1-3:</strong> Document preparation (FBI + degree + apostilles) = 2-3 weeks</li>
+                <li><strong>Week 4-5:</strong> Korea shipping + VIN processing = 2-3 weeks</li>
+                <li><strong>Week 6-7:</strong> Consulate visa application = 3-5 days</li>
+                <li><strong>After Arrival:</strong> Medical check + ARC within 90 days</li>
+            </ul>
+        </div>
+
+        <div id="mainContent">
+            <!-- Content sections will be dynamically managed here -->
+        </div>
+
+    </div>
+
+    <div class="footer">
+        <div class="brand-title">Kang & Kriel Recruitment</div>
+        <p>⚠️ Disclaimer: Information current as of October 2025. Visa requirements may change.</p>
+        <p>Always verify with Korea Immigration Service (immigration.go.kr) • Call 1345 (from Korea) or +82-2-1345 (international)</p>
+        <p style="margin-top: 20px; font-size: 0.9em;">Document Version: Complete Guide v4.0</p>
+        <p>© 2025 Kang & Kriel Recruitment. All rights reserved.</p>
+    </div>
+
+    <script>
+        // Store all sections data
+        const sectionsData = [
+            {
+                id: 'quick-overview',
+                title: '0) Quick Win Overview – 2-3 Week Document Prep',
+                content: `
+                    <h3>Total Timeline: 5-7 Weeks Start to Visa</h3>
+
+                    <div class="alert alert-success">
+                        <h4>Phase Breakdown:</h4>
+                        <ol>
+                            <li><strong>Week 1-3: Document preparation</strong> (FBI + degree + apostilles) = 2-3 weeks</li>
+                            <li><strong>Week 4-5: Korea shipping + VIN processing</strong> = 2-3 weeks</li>
+                            <li><strong>Week 6-7: Consulate visa application</strong> = 3-5 days</li>
+                            <li><strong>Arrival: Medical check + ARC</strong> within 90 days</li>
+                        </ol>
+                    </div>
+
+                    <h3>The Only Viable Process</h3>
+
+                    <div class="card-grid">
+                        <div class="card">
+                            <h4>🔍 FBI Background Check:</h4>
+                            <ul>
+                                <li>FBI-approved channeler (Accurate Biometrics, Fieldprint): <strong>24-72 hours</strong></li>
+                                <li>Monument Visa Federal apostille (rush): <strong>3-5 days</strong></li>
+                                <li>✅ Total: <strong>1 week</strong></li>
+                            </ul>
+                        </div>
+
+                        <div class="card">
+                            <h4>🎓 Degree Authentication:</h4>
+                            <ul>
+                                <li>Local notary: <strong>Same day</strong> ($10-30)</li>
+                                <li>Monument Visa State apostille (rush): <strong>3-5 days</strong></li>
+                                <li>✅ Total: <strong>1 week</strong></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <p><strong>All documents ready to ship: 2-3 weeks maximum</strong></p>
+
+                    <h3>Two Must-Not-Fail Rules</h3>
+
+                    <div class="alert alert-danger">
+                        <h4>🔴 CRITICAL:</h4>
+                        <ul>
+                            <li><strong>FBI check ⇒ U.S. Department of State (Federal) apostille</strong></li>
+                            <li><strong>Degree copy ⇒ Secretary of State of issuing state (State) apostille</strong></li>
+                        </ul>
+                        <p><strong>Mixing these up = automatic rejection.</strong> Monument Visa handles both correctly.</p>
+                    </div>
+
+                    <h3>Investment Required</h3>
+
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Item</th>
+                                <th>Cost</th>
+                                <th>Why Essential</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>FBI channeler</td>
+                                <td>$40-100</td>
+                                <td>24-72hr results vs. 14 weeks</td>
+                            </tr>
+                            <tr>
+                                <td>Monument Visa FBI apostille</td>
+                                <td>$55-75</td>
+                                <td>Rush Federal apostille (10 days)</td>
+                            </tr>
+                            <tr>
+                                <td>Monument Visa degree apostille</td>
+                                <td>$100-125</td>
+                                <td>Rush State apostille (2-3 days)</td>
+                            </tr>
+                            <tr>
+                                <td>Notary (degree)</td>
+                                <td>$10-30</td>
+                                <td>Required before apostille</td>
+                            </tr>
+                            <tr>
+                                <td>Photos, transcripts</td>
+                                <td>$30-70</td>
+                                <td>Standard requirements</td>
+                            </tr>
+                            <tr>
+                                <td>Shipping to Korea</td>
+                                <td>$40-80</td>
+                                <td>Tracking essential</td>
+                            </tr>
+                            <tr>
+                                <td>Consulate visa fee</td>
+                                <td>~$45</td>
+                                <td>Government fee</td>
+                            </tr>
+                            <tr style="background: #fef3c7; font-weight: bold;">
+                                <td>TOTAL</td>
+                                <td>$320-525</td>
+                                <td>Protects $24K+ annual job</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <div class="alert alert-warning">
+                        <h4>Bottom Line</h4>
+                        <p>Monument Visa + FBI channeler is not a "premium upgrade" or "optional fast-track."</p>
+                        <p><strong>It's the only method that works for real-world hiring timelines.</strong></p>
+                        <p>Budget for this from Day 1. Consider it mandatory job offer insurance.</p>
+                    </div>
+                `
+            },
+            {
+                id: 'master-checklist',
+                title: '1) Master Checklist',
+                content: `
+                    <h3>Documents You'll Ship to Korea (for CCVI)</h3>
+
+                    <ul class="checklist">
+                        <li class="checklist-item">
+                            <input type="checkbox" id="doc-fbi" onchange="toggleCheckbox('doc-fbi')">
+                            <label for="doc-fbi"><strong>FBI Identity History Summary</strong> (issued ≤ 6 months; Federal apostille attached)</label>
+                        </li>
+                        <li class="checklist-item">
+                            <input type="checkbox" id="doc-degree" onchange="toggleCheckbox('doc-degree')">
+                            <label for="doc-degree"><strong>Bachelor's degree copy</strong> (notarized true copy) with State apostille attached</label>
+                        </li>
+                        <li class="checklist-item">
+                            <input type="checkbox" id="doc-health" onchange="toggleCheckbox('doc-health')">
+                            <label for="doc-health"><strong>Self-Health Statement</strong> (E-2 health questionnaire; signed)</label>
+                        </li>
+                        <li class="checklist-item">
+                            <input type="checkbox" id="doc-passport-copy" onchange="toggleCheckbox('doc-passport-copy')">
+                            <label for="doc-passport-copy"><strong>Passport bio page copy</strong> (color, high-res)</label>
+                        </li>
+                        <li class="checklist-item">
+                            <input type="checkbox" id="doc-contract" onchange="toggleCheckbox('doc-contract')">
+                            <label for="doc-contract"><strong>Signed employment contract</strong> (original, fully executed)</label>
+                        </li>
+                        <li class="checklist-item">
+                            <input type="checkbox" id="doc-resume" onchange="toggleCheckbox('doc-resume')">
+                            <label for="doc-resume"><strong>Resume/CV</strong> (signed and dated)</label>
+                        </li>
+                        <li class="checklist-item">
+                            <input type="checkbox" id="doc-photos" onchange="toggleCheckbox('doc-photos')">
+                            <label for="doc-photos"><strong>Passport photos</strong> (2-4 spares, 3.5×4.5cm)</label>
+                        </li>
+                    </ul>
+
+                    <h3>Documents for Consulate (after receiving VIN)</h3>
+
+                    <ul class="checklist">
+                        <li class="checklist-item">
+                            <input type="checkbox" id="consul-vin" onchange="toggleCheckbox('consul-vin')">
+                            <label for="consul-vin"><strong>VIN</strong> (Visa Issuance Number) from employer</label>
+                        </li>
+                        <li class="checklist-item">
+                            <input type="checkbox" id="consul-app" onchange="toggleCheckbox('consul-app')">
+                            <label for="consul-app"><strong>Visa Application Form</strong> (complete, signed)</label>
+                        </li>
+                        <li class="checklist-item">
+                            <input type="checkbox" id="consul-photo" onchange="toggleCheckbox('consul-photo')">
+                            <label for="consul-photo"><strong>1 passport photo</strong> (attached to application)</label>
+                        </li>
+                        <li class="checklist-item">
+                            <input type="checkbox" id="consul-passport" onchange="toggleCheckbox('consul-passport')">
+                            <label for="consul-passport"><strong>Original passport</strong> (≥ 6 months validity, 1+ blank page)</label>
+                        </li>
+                        <li class="checklist-item">
+                            <input type="checkbox" id="consul-fee" onchange="toggleCheckbox('consul-fee')">
+                            <label for="consul-fee"><strong>Visa fee</strong> (~$45 cash/money order)</label>
+                        </li>
+                        <li class="checklist-item">
+                            <input type="checkbox" id="consul-dl" onchange="toggleCheckbox('consul-dl')">
+                            <label for="consul-dl"><strong>Driver's license</strong> (proof of residency)</label>
+                        </li>
+                        <li class="checklist-item">
+                            <input type="checkbox" id="consul-envelope" onchange="toggleCheckbox('consul-envelope')">
+                            <label for="consul-envelope"><strong>Prepaid return envelope</strong> (if mailing)</label>
+                        </li>
+                    </ul>
+
+                    <h3>After Arrival in Korea</h3>
+
+                    <ul class="checklist">
+                        <li class="checklist-item">
+                            <input type="checkbox" id="arrival-health" onchange="toggleCheckbox('arrival-health')">
+                            <label for="arrival-health"><strong>Health screening</strong> at designated hospital (within 2 weeks recommended)</label>
+                        </li>
+                        <li class="checklist-item">
+                            <input type="checkbox" id="arrival-address" onchange="toggleCheckbox('arrival-address')">
+                            <label for="arrival-address"><strong>Address registration</strong> (within 14 days, mandatory)</label>
+                        </li>
+                        <li class="checklist-item">
+                            <input type="checkbox" id="arrival-arc" onchange="toggleCheckbox('arrival-arc')">
+                            <label for="arrival-arc"><strong>ARC application</strong> (within 90 days of entry)</label>
+                        </li>
+                    </ul>
+                `
+            },
+            {
+                id: 'document-prep',
+                title: '2) Document Preparation – Professional Service Method',
+                content: `
+                    <h3>2.1 FBI Identity History Summary – Channeler Method ONLY</h3>
+
+                    <div class="alert alert-danger">
+                        <h4>⏰ TIME-CRITICAL: Start this on Day 1 of your visa process</h4>
+                    </div>
+
+                    <p><strong>Goal:</strong> FBI background check in 24-72 hours</p>
+
+                    <h4>The Only Viable Method: FBI-Approved Channeler</h4>
+
+                    <p>FBI-approved channelers provide digital fingerprinting (Live Scan) and submit electronically to FBI. Results delivered in 24-72 hours.</p>
+
+                    <div class="card-grid">
+                        <div class="card card-highlight">
+                            <h4>Accurate Biometrics (MOST RECOMMENDED)</h4>
+                            <ul>
+                                <li>825+ locations nationwide (often inside/near UPS stores)</li>
+                                <li>Website: <a href="https://accuratebiometrics.com" target="_blank">accuratebiometrics.com</a></li>
+                                <li>Online appointment booking</li>
+                                <li>Cost: $40-100 (includes FBI $18 fee)</li>
+                                <li>PDF results emailed in 24-72 hours</li>
+                                <li>Monument Visa accepts their PDFs</li>
+                            </ul>
+                        </div>
+
+                        <div class="card">
+                            <h4>Fieldprint</h4>
+                            <ul>
+                                <li>National coverage</li>
+                                <li>Website: <a href="https://fieldprintusa.com" target="_blank">fieldprintusa.com</a></li>
+                                <li>Similar pricing and timeline</li>
+                            </ul>
+                        </div>
+
+                        <div class="card">
+                            <h4>Idemia</h4>
+                            <ul>
+                                <li>Many locations</li>
+                                <li>Website: <a href="https://idemia.com" target="_blank">idemia.com</a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <h4>Process:</h4>
+                    <ol>
+                        <li>Visit channeler website and find nearest location</li>
+                        <li>Book appointment online</li>
+                        <li>Arrive with photo ID (driver's license or passport)</li>
+                        <li>Get fingerprints taken (Live Scan, 5 minutes)</li>
+                        <li>Pay $40-100</li>
+                        <li>Tell them: "For international employment in Korea, E-2 visa"</li>
+                        <li>Receive PDF by email in 24-72 hours</li>
+                    </ol>
+
+                    <div class="alert alert-danger">
+                        <h4>❌ NEVER:</h4>
+                        <ul>
+                            <li>DO NOT apply directly to FBI (14-16 weeks, impractical)</li>
+                            <li>DO NOT use state/local police checks (not accepted for E-2)</li>
+                            <li>DO NOT try to rush FBI direct process (impossible)</li>
+                        </ul>
+                    </div>
+
+                    <h3>2.2 Bachelor's Degree – Notarization for State Apostille</h3>
+
+                    <div class="alert alert-warning">
+                        <p><strong>✅ MUST DO:</strong> Name on degree must match passport exactly (including middle names)</p>
+                    </div>
+
+                    <h4>Process:</h4>
+
+                    <p><strong>Step 1: Prepare Your Degree</strong></p>
+                    <ul>
+                        <li>Locate your Bachelor's degree diploma (4-year degree required)</li>
+                        <li>Make a high-quality photocopy</li>
+                        <li>If degree is in Latin: Get English version from university first</li>
+                    </ul>
+
+                    <p><strong>Step 2: Get Notarized</strong></p>
+                    <ul>
+                        <li>Find a notary public:
+                            <ul>
+                                <li>Your bank (often free for customers)</li>
+                                <li>UPS Store</li>
+                                <li>Shipping stores (FedEx Office, etc.)</li>
+                                <li>Mobile notaries (search "notary near me")</li>
+                            </ul>
+                        </li>
+                        <li>Bring: Original diploma + photocopy + photo ID</li>
+                        <li>Request: "Notarized true copy" certification</li>
+                        <li>Cost: $10-30</li>
+                        <li>Time: 10 minutes</li>
+                    </ul>
+
+                    <div class="alert alert-danger">
+                        <h4>Common Issues to Avoid:</h4>
+                        <ul>
+                            <li>❌ Middle name missing from degree but on passport → Contact university for corrected diploma</li>
+                            <li>❌ Name changed after marriage → Use maiden name degree + marriage certificate (apostilled)</li>
+                            <li>❌ Degree in Latin → Get English version or official translation first</li>
+                            <li>❌ Associate's degree (2-year) → Not acceptable; must be Bachelor's (4-year)</li>
+                        </ul>
+                    </div>
+
+                    <h3>2.3 Self-Health Statement</h3>
+
+                    <p><strong>What It Is:</strong> Pre-arrival health questionnaire about communicable diseases, mental health, drug use.</p>
+
+                    <p><strong>Where to Get:</strong></p>
+                    <ul>
+                        <li>Download from Korean consulate website, or</li>
+                        <li>Your employer will provide, or</li>
+                        <li>Korea Visa Portal (visa.go.kr)</li>
+                    </ul>
+
+                    <div class="alert alert-warning">
+                        <p><strong>✅ IMPORTANT:</strong> Be truthful. False statements = deportation if discovered.</p>
+                        <p><strong>❌ WARNING:</strong> This is NOT your final health check. You'll do a full medical screening in Korea within 90 days.</p>
+                    </div>
+
+                    <p><strong>No Notarization or Apostille Required</strong></p>
+
+                    <h3>2.4 Passport Photos</h3>
+
+                    <p><strong>Specifications:</strong></p>
+                    <ul>
+                        <li>Size: <strong>2×2 inches</strong> (U.S. standard) or <strong>3.5×4.5cm</strong> (Korea standard)</li>
+                        <li>Background: White</li>
+                        <li>Recent: Taken within 6 months</li>
+                        <li>Requirements: No glasses, no hat, facing forward</li>
+                        <li>Color photos</li>
+                    </ul>
+
+                    <p><strong>Where to Get:</strong> CVS Pharmacy, Walgreens, UPS Store, Costco, Passport photo booths</p>
+
+                    <p><strong>How Many:</strong> Get 6-8 total copies</p>
+
+                    <p><strong>Cost:</strong> $10-20 for 6-8 photos</p>
+                `
+            },
+            {
+                id: 'action-plan',
+                title: '3) 2-3 Week Action Plan',
+                content: `
+                    <h3>WEEK 1: FBI Channeler + Document Collection</h3>
+
+                    <h4>Day 1-2: FBI Channeler Appointment</h4>
+                    <ul class="checklist">
+                        <li class="checklist-item">
+                            <input type="checkbox" id="w1-channeler" onchange="toggleCheckbox('w1-channeler')">
+                            <label for="w1-channeler">Select channeler: Visit accuratebiometrics.com</label>
+                        </li>
+                        <li class="checklist-item">
+                            <input type="checkbox" id="w1-location" onchange="toggleCheckbox('w1-location')">
+                            <label for="w1-location">Find location: 825+ locations nationwide</label>
+                        </li>
+                        <li class="checklist-item">
+                            <input type="checkbox" id="w1-book" onchange="toggleCheckbox('w1-book')">
+                            <label for="w1-book">Book appointment: Online scheduling available</label>
+                        </li>
+                        <li class="checklist-item">
+                            <input type="checkbox" id="w1-attend" onchange="toggleCheckbox('w1-attend')">
+                            <label for="w1-attend">Attend appointment: Digital fingerprints (5 min), Pay $40-100</label>
+                        </li>
+                    </ul>
+
+                    <h4>Day 2-4: Receive FBI Results</h4>
+                    <ul class="checklist">
+                        <li class="checklist-item">
+                            <input type="checkbox" id="w1-email" onchange="toggleCheckbox('w1-email')">
+                            <label for="w1-email">Check email: PDF typically arrives in 24-72 hours</label>
+                        </li>
+                        <li class="checklist-item">
+                            <input type="checkbox" id="w1-verify" onchange="toggleCheckbox('w1-verify')">
+                            <label for="w1-verify">Verify: FBI CJIS seal visible, name matches passport</label>
+                        </li>
+                        <li class="checklist-item">
+                            <input type="checkbox" id="w1-forward" onchange="toggleCheckbox('w1-forward')">
+                            <label for="w1-forward">Forward: Immediately send PDF to Monument Visa</label>
+                        </li>
+                    </ul>
+
+                    <h4>Day 1: Degree Notarization</h4>
+                    <ul class="checklist">
+                        <li class="checklist-item">
+                            <input type="checkbox" id="w1-degree" onchange="toggleCheckbox('w1-degree')">
+                            <label for="w1-degree">Locate degree: Find your Bachelor's diploma</label>
+                        </li>
+                        <li class="checklist-item">
+                            <input type="checkbox" id="w1-notary" onchange="toggleCheckbox('w1-notary')">
+                            <label for="w1-notary">Get notarized: Request "notarized true copy"</label>
+                        </li>
+                    </ul>
+
+                    <h4>Day 1: Passport Photos</h4>
+                    <ul class="checklist">
+                        <li class="checklist-item">
+                            <input type="checkbox" id="w1-photos" onchange="toggleCheckbox('w1-photos')">
+                            <label for="w1-photos">Get photos: Visit CVS, Walgreens, or UPS Store (6-8 copies)</label>
+                        </li>
+                    </ul>
+
+                    <h3>WEEK 2-3: Monument Visa Professional Apostille Service</h3>
+
+                    <h4>Day 7-8: Contact Monument Visa</h4>
+                    <ul class="checklist">
+                        <li class="checklist-item">
+                            <input type="checkbox" id="w2-contact" onchange="toggleCheckbox('w2-contact')">
+                            <label for="w2-contact">Visit monumentvisa.com and contact for services</label>
+                        </li>
+                        <li class="checklist-item">
+                            <input type="checkbox" id="w2-quote" onchange="toggleCheckbox('w2-quote')">
+                            <label for="w2-quote">Get quote: Federal apostille for FBI + State apostille for degree</label>
+                        </li>
+                    </ul>
+
+                    <h4>Day 8: Submit Documents to Monument Visa</h4>
+                    <ul class="checklist">
+                        <li class="checklist-item">
+                            <input type="checkbox" id="w2-email-fbi" onchange="toggleCheckbox('w2-email-fbi')">
+                            <label for="w2-email-fbi">Email FBI PDF to Monument Visa</label>
+                        </li>
+                        <li class="checklist-item">
+                            <input type="checkbox" id="w2-ship-degree" onchange="toggleCheckbox('w2-ship-degree')">
+                            <label for="w2-ship-degree">FedEx overnight notarized degree to Monument Visa</label>
+                        </li>
+                        <li class="checklist-item">
+                            <input type="checkbox" id="w2-pay" onchange="toggleCheckbox('w2-pay')">
+                            <label for="w2-pay">Pay: $300-400 by credit card</label>
+                        </li>
+                    </ul>
+
+                    <h4>Day 13-15: Receive Apostilled Documents</h4>
+                    <ul class="checklist">
+                        <li class="checklist-item">
+                            <input type="checkbox" id="w2-receive" onchange="toggleCheckbox('w2-receive')">
+                            <label for="w2-receive">Receive package: FBI with Federal apostille + Degree with State apostille</label>
+                        </li>
+                        <li class="checklist-item">
+                            <input type="checkbox" id="w2-verify-apostille" onchange="toggleCheckbox('w2-verify-apostille')">
+                            <label for="w2-verify-apostille">Verify: Apostilles stapled securely (DO NOT REMOVE staples)</label>
+                        </li>
+                        <li class="checklist-item">
+                            <input type="checkbox" id="w2-scan" onchange="toggleCheckbox('w2-scan')">
+                            <label for="w2-scan">Scan both apostilled documents (front and back)</label>
+                        </li>
+                    </ul>
+
+                    <h3>WEEK 3: Pack & Ship to Korea</h3>
+
+                    <h4>Day 15-16: Final Document Assembly</h4>
+                    <ul class="checklist">
+                        <li class="checklist-item">
+                            <input type="checkbox" id="w3-assemble" onchange="toggleCheckbox('w3-assemble')">
+                            <label for="w3-assemble">Organize documents in correct order</label>
+                        </li>
+                        <li class="checklist-item">
+                            <input type="checkbox" id="w3-pack" onchange="toggleCheckbox('w3-pack')">
+                            <label for="w3-pack">Pack carefully in rigid mailer (do NOT fold documents)</label>
+                        </li>
+                    </ul>
+
+                    <h4>Day 16-17: Ship to Korea</h4>
+                    <ul class="checklist">
+                        <li class="checklist-item">
+                            <input type="checkbox" id="w3-ship" onchange="toggleCheckbox('w3-ship')">
+                            <label for="w3-ship">Ship via FedEx/DHL/UPS (NOT USPS) with tracking</label>
+                        </li>
+                        <li class="checklist-item">
+                            <input type="checkbox" id="w3-notify" onchange="toggleCheckbox('w3-notify')">
+                            <label for="w3-notify">Email tracking number to employer and Kang & Kriel</label>
+                        </li>
+                    </ul>
+                `
+            },
+            {
+                id: 'after-arrival',
+                title: '7) After You Arrive in Korea – First 90 Days',
+                content: `
+                    <div class="alert alert-danger">
+                        <h3>🔴 CRITICAL: Drug Screening Warning</h3>
+                        <p><strong>⚠️ MANDATORY HEALTH SCREENING INCLUDES DRUG TEST</strong></p>
+                        <p>All E-2 visa holders must complete health screening within 90 days of arrival.</p>
+
+                        <h4>Tests Performed:</h4>
+                        <ul>
+                            <li>Blood test (HIV, syphilis, general health)</li>
+                            <li><strong>Urine test (drug screening: marijuana/THC, methamphetamine, cocaine, opiates)</strong></li>
+                            <li>Chest X-ray (tuberculosis)</li>
+                            <li>Physical exam (blood pressure, vision)</li>
+                        </ul>
+
+                        <h4>MARIJUANA WARNING:</h4>
+                        <ul>
+                            <li>Marijuana is <strong>STRICTLY ILLEGAL</strong> in Korea</li>
+                            <li>Even if legal in your U.S. state</li>
+                            <li>THC remains in system <strong>2 weeks to 3 months</strong></li>
+                            <li><strong>Positive test = immediate consequences:</strong>
+                                <ul>
+                                    <li>✖ Visa cancellation</li>
+                                    <li>✖ Job termination</li>
+                                    <li>✖ Health insurance loss</li>
+                                    <li>✖ Deportation</li>
+                                    <li>✖ Ban from future entry to Korea</li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                        <p><strong>Action Required:</strong></p>
+                        <ul>
+                            <li>Stop all marijuana/THC products at least 3 months before departure</li>
+                            <li>No exceptions for medical marijuana</li>
+                            <li>No appeals for positive results</li>
+                        </ul>
+                    </div>
+
+                    <h3>Week 1-2: Health Screening (HIGHEST PRIORITY)</h3>
+
+                    <ul class="checklist">
+                        <li class="checklist-item">
+                            <input type="checkbox" id="korea-health" onchange="toggleCheckbox('korea-health')">
+                            <label for="korea-health">Complete health screening at designated hospital</label>
+                        </li>
+                    </ul>
+
+                    <p><strong>Where:</strong> Designated hospitals only (employer provides list)</p>
+                    <ul>
+                        <li>Seoul: Severance Hospital, Samsung Medical Center, Asan Medical Center</li>
+                        <li>Other cities: International clinics approved by immigration</li>
+                    </ul>
+
+                    <p><strong>What to Bring:</strong></p>
+                    <ul>
+                        <li>Passport with E-2 visa</li>
+                        <li>2 passport photos</li>
+                        <li>Payment (~₩80,000-150,000 / $60-115) – often employer pays</li>
+                    </ul>
+
+                    <h3>Within 14 Days: Address Registration (MANDATORY)</h3>
+
+                    <div class="alert alert-danger">
+                        <p><strong>✅ LEGAL REQUIREMENT:</strong> ₩100,000-1,000,000 fine if missed</p>
+                    </div>
+
+                    <ul class="checklist">
+                        <li class="checklist-item">
+                            <input type="checkbox" id="korea-address" onchange="toggleCheckbox('korea-address')">
+                            <label for="korea-address">Register address at local district office</label>
+                        </li>
+                    </ul>
+
+                    <p><strong>Where:</strong> Local district office (구청), Neighborhood center (읍/면/동 사무소), or Immigration office</p>
+
+                    <p><strong>What to Bring:</strong></p>
+                    <ul>
+                        <li>Passport with E-2 visa</li>
+                        <li>Rental contract or housing letter from employer</li>
+                        <li>Registration form (provided at office)</li>
+                    </ul>
+
+                    <h3>Within 90 Days: ARC Application (Alien Registration Card)</h3>
+
+                    <ul class="checklist">
+                        <li class="checklist-item">
+                            <input type="checkbox" id="korea-arc" onchange="toggleCheckbox('korea-arc')">
+                            <label for="korea-arc">Apply for ARC at Immigration Office</label>
+                        </li>
+                        <li class="checklist-item">
+                            <input type="checkbox" id="korea-arc-receive" onchange="toggleCheckbox('korea-arc-receive')">
+                            <label for="korea-arc-receive">Return to collect ARC (2-3 weeks later)</label>
+                        </li>
+                    </ul>
+
+                    <p><strong>Why Essential:</strong></p>
+                    <ul>
+                        <li>Bank account (can't open without ARC)</li>
+                        <li>Phone contract</li>
+                        <li>Online purchases requiring Korean ID</li>
+                        <li>Gym memberships</li>
+                        <li>Domestic travel bookings</li>
+                    </ul>
+
+                    <p><strong>Required Documents:</strong></p>
+                    <ol>
+                        <li>Passport with E-2 visa</li>
+                        <li>Health check results (passed)</li>
+                        <li>ARC application form</li>
+                        <li>1 passport photo (3.5×4.5cm)</li>
+                        <li>Employer's business registration certificate</li>
+                        <li>Employment contract</li>
+                        <li>Fee: ₩30,000 (~$23)</li>
+                    </ol>
+
+                    <h3>Employment & Legal Restrictions</h3>
+
+                    <div class="alert alert-warning">
+                        <h4>Your E-2 Visa Means:</h4>
+                        <ul>
+                            <li>✅ You can work for your sponsored employer</li>
+                            <li>✅ You can travel in/out of Korea (multiple entry)</li>
+                            <li>❌ You CANNOT do private tutoring (엄격히 불법)</li>
+                            <li>❌ You CANNOT work for other employers without approval</li>
+                            <li>❌ You CANNOT change jobs without immigration permission</li>
+                        </ul>
+
+                        <p><strong>Private Tutoring is ILLEGAL for E-2 Holders:</strong></p>
+                        <ul>
+                            <li>Penalties: Up to ₩30,000,000 fine (~$23,000)</li>
+                            <li>Deportation</li>
+                            <li>1-10 year entry ban to Korea</li>
+                        </ul>
+                    </div>
+                `
+            },
+            {
+                id: 'faq',
+                title: '10) FAQ & Common Scenarios',
+                content: `
+                    <h3>Q. I have a DUI/misdemeanor. Can I get an E-2 visa?</h3>
+                    <p><strong>A.</strong> It depends on severity and type.</p>
+
+                    <p><strong>Generally acceptable:</strong></p>
+                    <ul>
+                        <li>Minor traffic violations (speeding tickets, parking)</li>
+                        <li>Very old non-violent misdemeanors (10+ years ago)</li>
+                    </ul>
+
+                    <p><strong>Usually rejected:</strong></p>
+                    <ul>
+                        <li>DUI/DWI (especially recent)</li>
+                        <li>Drug offenses (any type, any time)</li>
+                        <li>Violent crimes</li>
+                        <li>Crimes involving moral turpitude</li>
+                        <li>Sex offenses</li>
+                    </ul>
+
+                    <hr>
+
+                    <h3>Q. Can I reuse an FBI check I got 8 months ago?</h3>
+                    <p><strong>A.</strong> No. FBI check must be issued within <strong>6 months</strong> of when employer applies for CCVI.</p>
+                    <p>You need a new one. Good news: FBI channeler + Monument Visa = new apostilled FBI check in 1 week.</p>
+
+                    <hr>
+
+                    <h3>Q. What if I'm currently outside the U.S.?</h3>
+                    <p><strong>A.</strong> You need a U.S. address for FBI check delivery. Options:</p>
+                    <ol>
+                        <li>Use channeler + U.S. friend/family address</li>
+                        <li>Friend/family mails FBI result to Monument Visa</li>
+                        <li>Monument Visa ships apostilled docs internationally</li>
+                        <li>OR: Fly to U.S. for 2-3 weeks to complete process in person</li>
+                    </ol>
+
+                    <hr>
+
+                    <h3>Q. Can my spouse/kids come with me?</h3>
+                    <p><strong>A.</strong> Yes, on F-3 dependent visas. But:</p>
+                    <ul>
+                        <li>They need separate visa applications</li>
+                        <li>Additional documents required (marriage certificate, birth certificates – all apostilled)</li>
+                        <li>They cannot work in Korea</li>
+                        <li>Consider if single income is sufficient</li>
+                    </ul>
+
+                    <hr>
+
+                    <h3>Q. I have tattoos. Will this affect my visa?</h3>
+                    <p><strong>A.</strong> Visa: No impact on approval</p>
+                    <p>Employment: Depends on employer</p>
+                    <ul>
+                        <li>Public schools (EPIK): Generally okay if coverable</li>
+                        <li>Private academies: Varies by location</li>
+                        <li>Kindergartens: May have restrictions</li>
+                    </ul>
+
+                    <hr>
+
+                    <h3>Q. Can I work while waiting for ARC?</h3>
+                    <p><strong>A.</strong> Technically yes if you entered on E-2 visa – BUT you must pass health check first.</p>
+
+                    <hr>
+
+                    <h3>Q. Can I extend my E-2 visa without leaving Korea?</h3>
+                    <p><strong>A.</strong> Yes, if renewing with same employer:</p>
+                    <ul>
+                        <li>Submit extension 30-60 days before expiration</li>
+                        <li>Need: new contract, health insurance proof, clean tax records</li>
+                        <li>Processing: ~2 weeks</li>
+                        <li>No need to return to U.S.</li>
+                    </ul>
+
+                    <hr>
+
+                    <h3>Q. My degree is from a foreign university, not U.S. Can I apply?</h3>
+                    <p><strong>A.</strong> Yes, but requires extra steps:</p>
+                    <ol>
+                        <li>Get credential evaluation from NACES member (WES, ECE)</li>
+                        <li>Evaluation must show equivalency to U.S. Bachelor's</li>
+                        <li>Evaluation report needs notarization + State apostille</li>
+                        <li>Adds ~$200-300 cost and 2-4 weeks</li>
+                        <li>Some Korean employers may not accept – verify first</li>
+                    </ol>
+                `
+            },
+            {
+                id: 'resources',
+                title: '13) Korean Consulate Directory & Resources',
+                content: `
+                    <h3>Korean Consulates in the United States</h3>
+                    <p><strong>Select consulate based on your state of residence:</strong></p>
+
+                    <div class="card-grid">
+                        <div class="card">
+                            <h4>Korean Embassy - Washington, DC</h4>
+                            <p><strong>Phone:</strong> <a href="tel:202-939-5600">202-939-5600</a></p>
+                            <p><strong>Jurisdiction:</strong> DC, Maryland, Virginia, West Virginia</p>
+                            <p><strong>Address:</strong> 2450 Massachusetts Ave NW, Washington, DC 20008</p>
+                        </div>
+
+                        <div class="card">
+                            <h4>Consulate General - New York</h4>
+                            <p><strong>Phone:</strong> <a href="tel:646-674-6000">646-674-6000</a></p>
+                            <p><strong>Jurisdiction:</strong> NY, NJ, PA, DE, CT</p>
+                            <p><strong>Address:</strong> 460 Park Ave, 5th Floor, New York, NY 10022</p>
+                        </div>
+
+                        <div class="card">
+                            <h4>Consulate General - Los Angeles</h4>
+                            <p><strong>Phone:</strong> <a href="tel:213-385-9300">213-385-9300</a></p>
+                            <p><strong>Jurisdiction:</strong> Southern CA, AZ, NV, NM</p>
+                            <p><strong>Address:</strong> 3243 Wilshire Blvd, Los Angeles, CA 90010</p>
+                        </div>
+
+                        <div class="card">
+                            <h4>Consulate General - San Francisco</h4>
+                            <p><strong>Phone:</strong> <a href="tel:415-921-2251">415-921-2251</a></p>
+                            <p><strong>Jurisdiction:</strong> Northern CA, UT, CO</p>
+                            <p><strong>Address:</strong> 3500 Clay St, San Francisco, CA 94118</p>
+                        </div>
+
+                        <div class="card">
+                            <h4>Consulate General - Chicago</h4>
+                            <p><strong>Phone:</strong> <a href="tel:312-822-9485">312-822-9485</a></p>
+                            <p><strong>Jurisdiction:</strong> IL, IN, IA, KS, MI, MN, MO, NE, ND, OH, SD, WI, KY</p>
+                            <p><strong>Address:</strong> NBC Tower Suite 2700, Chicago, IL 60611</p>
+                        </div>
+
+                        <div class="card">
+                            <h4>Consulate General - Seattle</h4>
+                            <p><strong>Phone:</strong> <a href="tel:206-441-1011">206-441-1011</a></p>
+                            <p><strong>Jurisdiction:</strong> WA, OR, MT, ID, AK</p>
+                            <p><strong>Address:</strong> 2033 6th Ave, Seattle, WA 98121</p>
+                        </div>
+
+                        <div class="card">
+                            <h4>Consulate General - Atlanta</h4>
+                            <p><strong>Phone:</strong> <a href="tel:404-522-1611">404-522-1611</a></p>
+                            <p><strong>Jurisdiction:</strong> GA, AL, FL, NC, SC, TN</p>
+                            <p><strong>Address:</strong> 229 Peachtree St NE, Suite 500, Atlanta, GA 30303</p>
+                        </div>
+
+                        <div class="card">
+                            <h4>Consulate General - Boston</h4>
+                            <p><strong>Phone:</strong> <a href="tel:617-348-3660">617-348-3660</a></p>
+                            <p><strong>Jurisdiction:</strong> MA, ME, NH, RI, VT</p>
+                            <p><strong>Address:</strong> One Gateway Center, Suite 2600, Newton, MA 02458</p>
+                        </div>
+
+                        <div class="card">
+                            <h4>Consulate General - Houston</h4>
+                            <p><strong>Phone:</strong> <a href="tel:713-961-0186">713-961-0186</a></p>
+                            <p><strong>Jurisdiction:</strong> TX, AR, LA, MS, OK</p>
+                            <p><strong>Address:</strong> 1990 Post Oak Blvd, Suite 1250, Houston, TX 77056</p>
+                        </div>
+
+                        <div class="card">
+                            <h4>Consulate General - Honolulu</h4>
+                            <p><strong>Phone:</strong> <a href="tel:808-595-6109">808-595-6109</a></p>
+                            <p><strong>Jurisdiction:</strong> Hawaii, Guam, American Samoa</p>
+                            <p><strong>Address:</strong> 2756 Pali Hwy, Honolulu, HI 96817</p>
+                        </div>
+                    </div>
+
+                    <h3>Korean Government Resources</h3>
+
+                    <div class="card-grid">
+                        <div class="card">
+                            <h4>Korea Immigration Service</h4>
+                            <p><strong>Website:</strong> <a href="https://immigration.go.kr/immigration_eng/index.do" target="_blank">immigration.go.kr/immigration_eng</a></p>
+                            <p><strong>Phone from Korea:</strong> 1345</p>
+                            <p><strong>Phone from abroad:</strong> +82-2-1345</p>
+                            <p><strong>Hours:</strong> Mon-Fri 9 AM - 6 PM (Korea time)</p>
+                            <p><strong>Languages:</strong> 20 languages available</p>
+                        </div>
+
+                        <div class="card">
+                            <h4>Hi Korea Portal</h4>
+                            <p><strong>Website:</strong> <a href="https://hikorea.go.kr" target="_blank">hikorea.go.kr</a></p>
+                            <p><strong>Services:</strong> Online applications, visa status checks, ARC applications, appointments</p>
+                        </div>
+
+                        <div class="card">
+                            <h4>Korea Visa Portal</h4>
+                            <p><strong>Website:</strong> <a href="https://visa.go.kr" target="_blank">visa.go.kr</a></p>
+                            <p><strong>Use for:</strong> Visa application forms, status tracking, VIN verification</p>
+                        </div>
+                    </div>
+
+                    <h3>Essential Service Providers</h3>
+
+                    <div class="card-grid">
+                        <div class="card card-highlight">
+                            <h4>Monument Visa Service (REQUIRED)</h4>
+                            <p><strong>Website:</strong> <a href="https://monumentvisa.com" target="_blank">monumentvisa.com</a></p>
+                            <p><strong>Phone:</strong> <a href="tel:1-800-995-6924">1-800-995-6924</a></p>
+                            <p><strong>Location:</strong> Fairfax, VA (next to U.S. Dept of State offices)</p>
+                            <p><strong>Services:</strong></p>
+                            <ul>
+                                <li>FBI Federal apostille: $75</li>
+                                <li>Degree State apostille: $125</li>
+                                <li>Rush processing: 3-5 business days</li>
+                            </ul>
+                        </div>
+
+                        <div class="card">
+                            <h4>Accurate Biometrics</h4>
+                            <p><strong>Website:</strong> <a href="https://accuratebiometrics.com" target="_blank">accuratebiometrics.com</a></p>
+                            <p><strong>Locations:</strong> 825+ nationwide</p>
+                            <p><strong>Cost:</strong> $40-100</p>
+                            <p><strong>Timeline:</strong> 24-72 hours</p>
+                        </div>
+                    </div>
+                `
+            }
+        ];
+        let checklistItems = {};
+
+        // Load saved progress from localStorage
+        function loadProgress() {
+            const saved = localStorage.getItem('e2-visa-checklist');
+            if (saved) {
+                try {
+                    checklistItems = JSON.parse(saved);
+                } catch (e) {
+                    console.error('Failed to load progress');
+                }
+            }
+            updateProgress();
+        }
+
+        // Save progress to localStorage
+        function saveProgress() {
+            localStorage.setItem('e2-visa-checklist', JSON.stringify(checklistItems));
+            updateProgress();
+        }
+
+        // Toggle checkbox
+        function toggleCheckbox(id) {
+            checklistItems[id] = !checklistItems[id];
+            saveProgress();
+        }
+
+        // Update progress bar
+        function updateProgress() {
+            const checkboxes = document.querySelectorAll('.checklist-item input[type="checkbox"]');
+            const total = checkboxes.length;
+            let completed = 0;
+
+            checkboxes.forEach(cb => {
+                const id = cb.id;
+                if (checklistItems[id]) {
+                    cb.checked = true;
+                    cb.parentElement.classList.add('completed');
+                    completed++;
+                } else {
+                    cb.checked = false;
+                    cb.parentElement.classList.remove('completed');
+                }
+            });
+
+            const percentage = total > 0 ? Math.round((completed / total) * 100) : 0;
+            const progressBar = document.getElementById('progressBar');
+            const progressText = document.getElementById('progressText');
+
+            if (progressBar && progressText) {
+                progressBar.style.width = percentage + '%';
+                progressBar.textContent = percentage + '%';
+                progressText.textContent = `${completed} of ${total} tasks completed`;
+            }
+        }
+
+        // Toggle section
+        function toggleSection(sectionId) {
+            const header = document.getElementById(sectionId + '-header');
+            const content = document.getElementById(sectionId + '-content');
+
+            if (header && content) {
+                header.classList.toggle('expanded');
+                content.classList.toggle('expanded');
+            }
+        }
+
+        // Expand all sections
+        function expandAll() {
+            document.querySelectorAll('.section-header').forEach(header => {
+                header.classList.add('expanded');
+            });
+            document.querySelectorAll('.section-content').forEach(content => {
+                content.classList.add('expanded');
+            });
+        }
+
+        // Collapse all sections
+        function collapseAll() {
+            document.querySelectorAll('.section-header').forEach(header => {
+                header.classList.remove('expanded');
+            });
+            document.querySelectorAll('.section-content').forEach(content => {
+                content.classList.remove('expanded');
+            });
+        }
+
+        // Reset progress
+        function resetProgress() {
+            if (confirm('Are you sure you want to reset all progress? This cannot be undone.')) {
+                checklistItems = {};
+                localStorage.removeItem('e2-visa-checklist');
+                updateProgress();
+            }
+        }
+
+        // Export progress
+        function exportProgress() {
+            const data = {
+                exportDate: new Date().toISOString(),
+                checkedItems: checklistItems,
+                totalItems: document.querySelectorAll('.checklist-item input[type="checkbox"]').length,
+                completedItems: Object.values(checklistItems).filter(v => v).length
+            };
+
+            const blob = new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = `e2-visa-progress-${new Date().toISOString().split('T')[0]}.json`;
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            URL.revokeObjectURL(url);
+        }
+
+        // Render all sections
+        function renderAllSections() {
+            const mainContent = document.getElementById('mainContent');
+            if (!mainContent) return;
+
+            sectionsData.forEach(section => {
+                const sectionDiv = document.createElement('div');
+                sectionDiv.className = 'section';
+                sectionDiv.innerHTML = `
+                    <div class="section-header" id="${section.id}-header" onclick="toggleSection('${section.id}')">
+                        <h2>${section.title}</h2>
+                        <span class="toggle-icon">▼</span>
+                    </div>
+                    <div class="section-content" id="${section.id}-content">
+                        ${section.content}
+                    </div>
+                `;
+                mainContent.appendChild(sectionDiv);
+            });
+
+            // Update progress after rendering
+            setTimeout(() => {
+                updateProgress();
+            }, 100);
+        }
+
+        // Initialize on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            loadProgress();
+            renderAllSections();
+        });
+    </script>
+</body>
+</html>

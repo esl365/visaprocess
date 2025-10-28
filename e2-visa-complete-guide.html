@@ -4014,7 +4014,9 @@ degree.
 
             // Toast 알림 표시
             if (checklistItems[id]) {
-                showToast('Task completed! Great progress! 🎉', 'success');
+                showToast('✅ Task completed! Next step loaded.', 'success');
+            } else {
+                showToast('↶ Task marked as incomplete', 'info');
             }
 
             saveProgress();
@@ -4205,6 +4207,20 @@ degree.
 
             const nextTask = getNextTask();
 
+            // Find the last completed task (for undo functionality)
+            let lastCompletedTask = null;
+            for (let i = timelineData.length - 1; i >= 0; i--) {
+                const week = timelineData[i];
+                for (let j = week.tasks.length - 1; j >= 0; j--) {
+                    const task = week.tasks[j];
+                    if (checklistItems[task.id]) {
+                        lastCompletedTask = task;
+                        break;
+                    }
+                }
+                if (lastCompletedTask) break;
+            }
+
             if (!nextTask) {
                 container.innerHTML = `
                     <div class="smart-guide-widget">
@@ -4238,6 +4254,13 @@ degree.
                 ? "This is a critical task - complete it as soon as possible!"
                 : "Take your time and follow the instructions carefully.";
 
+            // Generate undo button HTML if there's a last completed task
+            const undoButtonHtml = lastCompletedTask ? `
+                <button class="btn btn-outline" onclick="toggleCheckbox('${lastCompletedTask.id}'); renderSmartGuide(); renderProgressInsights();" style="border: 1px solid var(--color-border); background: transparent;">
+                    ↶ Undo Last Step
+                </button>
+            ` : '';
+
             container.innerHTML = `
                 <div class="smart-guide-widget">
                     <div class="widget-header">
@@ -4257,11 +4280,12 @@ degree.
                             <p style="font-size: var(--font-size-sm); color: #9ca3af;"><strong>${nextTask.week}:</strong> ${nextTask.weekTitle}</p>
                             <div class="quick-actions">
                                 <button class="btn btn-primary" onclick="toggleCheckbox('${nextTask.id}'); renderSmartGuide(); renderProgressInsights();">
-                                    ✓ Mark as Done
+                                    ✓ Complete & Next Step
                                 </button>
                                 <button class="btn btn-secondary" onclick="toggleSection('interactive-timeline')">
                                     View Full Timeline
                                 </button>
+                                ${undoButtonHtml}
                             </div>
                         </div>
                     </div>

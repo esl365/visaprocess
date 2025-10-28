@@ -2519,13 +2519,13 @@
                             <tr>
                                 <td>Health screening</td>
                                 <td>$60-115</td>
-                                <td>Usually employer</td>
+                                <td>본인 부담 (체류 비용)</td>
                                 <td>Week 1-2 in Korea</td>
                             </tr>
                             <tr>
                                 <td>ARC application</td>
-                                <td>~$23</td>
-                                <td>Applicant</td>
+                                <td>~$30</td>
+                                <td>본인 부담 (₩39,000: 발급 ₩35,000 + 우편 ₩4,000)</td>
                                 <td>Within 90 days</td>
                             </tr>
                         </tbody>
@@ -3673,7 +3673,7 @@
                         <li>2 passport photos (3.5×4.5cm, white background)</li>
                         <li>Housing contract OR employer confirmation letter</li>
                         <li>Employment contract (optional but helpful)</li>
-                        <li>Fee: ₩30,000 (~$23) - cash or card</li>
+                        <li>Fee: ₩39,000 (~$30) - ₩35,000 발급 + ₩4,000 우편 배송 - cash or card</li>
                     </ol>
 
                     <div class="alert alert-success" style="margin-top: 15px;">
@@ -4784,7 +4784,7 @@ degree.
                         id: 'arrival-arc-application',
                         day: '3-5',
                         title: '📝 Apply for Alien Registration Card (ARC)',
-                        description: 'Visit local immigration office IMMEDIATELY (do not wait 90 days!). Bring health check results, passport, photos, apartment contract. Application takes 30-45 minutes. You will receive a receipt - this receipt is needed for education office registration.',
+                        description: 'Visit local immigration office IMMEDIATELY (do not wait 90 days!). Bring health check results, passport, photos, apartment contract. Fee: ₩39,000 (₩35,000 발급 + ₩4,000 우편). You will receive a receipt - this receipt is needed for education office registration.',
                         urgent: true,
                         critical: true,
                         cost: { min: 30, max: 30 }
@@ -5593,12 +5593,17 @@ degree.
             }
         }
 
-        // PHASE 1.2: Calculate remaining cost
+        // PHASE 1.2: Calculate remaining cost (미국에서의 비자 준비 비용만)
         function calculateRemainingCost() {
             let min = 0, max = 0;
+
+            // 한국 도착 후 비용 제외 (건강검진, ARC 등)
+            const excludeIds = ['arrival-health-check', 'arrival-arc-application'];
+
             timelineData.forEach(week => {
                 week.tasks.forEach(task => {
-                    if (!checklistItems[task.id] && task.cost) {
+                    // 체크되지 않았고, 비용이 있으며, 제외 목록에 없는 경우만 합산
+                    if (!checklistItems[task.id] && task.cost && !excludeIds.includes(task.id)) {
                         min += task.cost.min || 0;
                         max += task.cost.max || 0;
                     }

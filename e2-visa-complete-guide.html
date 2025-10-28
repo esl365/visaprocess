@@ -3971,6 +3971,31 @@ degree.
             updateProgress();
         }
 
+        // Reset progress function
+        function resetProgress() {
+            if (confirm('Are you sure you want to reset all progress? This will uncheck all completed tasks.')) {
+                localStorage.removeItem('e2-visa-checklist');
+
+                // Reset all checkboxes
+                Object.keys(checklistItems).forEach(key => {
+                    checklistItems[key] = false;
+                });
+
+                // Re-render everything
+                const timelineContainer = document.getElementById('timeline-container');
+                if (timelineContainer) {
+                    timelineContainer.innerHTML = '';
+                    renderTimeline();
+                }
+
+                renderSmartGuide();
+                renderProgressInsights();
+                updateProgress();
+
+                showToast('Progress reset successfully! Starting fresh.', 'info');
+            }
+        }
+
         // Toast 알림 표시 함수
         function showToast(message, type = 'success') {
             // 기존 toast 제거
@@ -4237,6 +4262,9 @@ degree.
                                     </button>
                                     <button class="btn btn-secondary" onclick="exportProgress()">
                                         Export Progress
+                                    </button>
+                                    <button class="btn btn-outline" onclick="resetProgress()" style="border: 1px solid var(--color-border); background: transparent; color: var(--color-text-secondary);">
+                                        ↶ Reset All Progress
                                     </button>
                                 </div>
                             </div>

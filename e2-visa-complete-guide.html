@@ -4422,15 +4422,6 @@ degree.
             });
         }
 
-        // Reset progress
-        function resetProgress() {
-            if (confirm('Are you sure you want to reset all progress? This cannot be undone.')) {
-                checklistItems = {};
-                localStorage.removeItem('e2-visa-checklist');
-                updateProgress();
-            }
-        }
-
         // Export progress
         function exportProgress() {
             const data = {

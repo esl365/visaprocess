@@ -501,17 +501,245 @@
             opacity: 0.8;
         }
 
-        /* Print Styles */
+        /* ========================================
+           PHASE 2.9: Enhanced Print Optimization
+           ======================================== */
+
         @media print {
-            .nav-bar, .btn, .footer {
-                display: none;
+            /* Hide interactive elements */
+            .nav-bar,
+            .btn,
+            .footer,
+            .skip-to-content,
+            .toast,
+            .smart-guide-widget,
+            .progress-insights,
+            .quick-actions,
+            .toggle-icon {
+                display: none !important;
             }
-            .section-content {
-                max-height: none !important;
-                padding: 20px !important;
+
+            /* Page setup */
+            @page {
+                margin: 2cm 1.5cm;
+                size: A4;
             }
+
             body {
                 background: white;
+                color: black;
+                font-size: 11pt;
+                line-height: 1.4;
+            }
+
+            /* Header styling for print */
+            .header {
+                background: white;
+                color: black;
+                border-bottom: 3px solid black;
+                padding: 15px 0;
+                margin-bottom: 20px;
+            }
+
+            .brand-title {
+                color: black;
+                font-size: 1.2em;
+            }
+
+            .header h1 {
+                font-size: 1.8em;
+                color: black;
+            }
+
+            /* Sections always expanded */
+            .section {
+                page-break-inside: avoid;
+                margin-bottom: 15px;
+            }
+
+            .section-header {
+                background: #f0f0f0 !important;
+                color: black !important;
+                padding: 10px !important;
+                border: 2px solid #333;
+                page-break-after: avoid;
+            }
+
+            .section-header h2 {
+                font-size: 1.2em;
+            }
+
+            .section-content {
+                max-height: none !important;
+                padding: 15px !important;
+                opacity: 1 !important;
+                display: block !important;
+                border: 1px solid #ddd;
+                border-top: none;
+            }
+
+            /* Progress section for print */
+            .progress-section {
+                background: white;
+                border: 2px solid #333;
+                padding: 10px;
+                margin-bottom: 15px;
+            }
+
+            .progress-bar-container {
+                border: 1px solid #333;
+            }
+
+            .progress-bar-fill {
+                background: #333 !important;
+            }
+
+            /* Checklists */
+            .checklist-item {
+                page-break-inside: avoid;
+                margin-bottom: 5px;
+                background: white;
+            }
+
+            /* Checkboxes become check marks */
+            .checklist-item input[type="checkbox"] {
+                -webkit-appearance: none;
+                appearance: none;
+                width: 15px;
+                height: 15px;
+                border: 2px solid #333;
+                position: relative;
+                print-color-adjust: exact;
+                -webkit-print-color-adjust: exact;
+            }
+
+            .checklist-item input[type="checkbox"]:checked::after {
+                content: "✓";
+                position: absolute;
+                top: -2px;
+                left: 1px;
+                font-size: 12pt;
+                font-weight: bold;
+                color: black;
+            }
+
+            /* Alerts */
+            .alert {
+                border: 2px solid black;
+                background: white;
+                page-break-inside: avoid;
+                margin-bottom: 10px;
+                padding: 10px;
+            }
+
+            .alert-danger {
+                border-left: 5px solid black;
+                background: #f5f5f5;
+            }
+
+            .alert h3::before {
+                content: "► ";
+                font-weight: bold;
+            }
+
+            /* Tables */
+            table {
+                page-break-inside: avoid;
+                border: 1px solid #333;
+            }
+
+            th {
+                background: #e0e0e0 !important;
+                color: black !important;
+                border: 1px solid #333;
+                print-color-adjust: exact;
+                -webkit-print-color-adjust: exact;
+            }
+
+            td {
+                border: 1px solid #333;
+            }
+
+            /* Badges - convert to text */
+            .badge {
+                border: 1px solid black;
+                padding: 2px 6px;
+                background: white;
+                color: black;
+            }
+
+            .badge-urgent::before {
+                content: "[URGENT] ";
+            }
+
+            .badge-critical::before {
+                content: "[CRITICAL] ";
+            }
+
+            /* Cards */
+            .card {
+                border: 1px solid #333;
+                page-break-inside: avoid;
+                background: white;
+                box-shadow: none;
+            }
+
+            /* Links - show URLs */
+            a[href^="http"]::after {
+                content: " (" attr(href) ")";
+                font-size: 9pt;
+                color: #666;
+                word-wrap: break-word;
+            }
+
+            /* Timeline */
+            .timeline-item {
+                page-break-inside: avoid;
+                border-left: 3px solid #333;
+                padding-left: 15px;
+                margin-bottom: 10px;
+            }
+
+            .timeline-dot {
+                background: black;
+                print-color-adjust: exact;
+                -webkit-print-color-adjust: exact;
+            }
+
+            /* Footer for each page */
+            @page {
+                @bottom-right {
+                    content: "Page " counter(page) " of " counter(pages);
+                }
+                @bottom-left {
+                    content: "E-2 Visa Complete Guide";
+                }
+            }
+
+            /* Add print timestamp */
+            .progress-section::after {
+                content: "Printed: " attr(data-print-date);
+                display: block;
+                margin-top: 10px;
+                font-size: 9pt;
+                color: #666;
+            }
+
+            /* Prevent widows and orphans */
+            h1, h2, h3, h4, h5, h6 {
+                page-break-after: avoid;
+                page-break-inside: avoid;
+            }
+
+            p {
+                orphans: 3;
+                widows: 3;
+            }
+
+            /* Make sure colors print correctly */
+            * {
+                print-color-adjust: exact;
+                -webkit-print-color-adjust: exact;
             }
         }
 
@@ -1004,6 +1232,216 @@
             background-color: rgba(174, 96, 49, 0.1);
             outline: 2px solid var(--brand-primary);
         }
+
+        /* ========================================
+           PHASE 2: Enhanced Features
+           ======================================== */
+
+        /* 2.4 Smart Next Step Widget */
+        .smart-guide-widget {
+            background: linear-gradient(135deg, #ffffff, #fef3c7);
+            border: 3px solid var(--brand-primary);
+            border-radius: 12px;
+            padding: 0;
+            margin-bottom: 25px;
+            box-shadow: 0 8px 25px rgba(174, 96, 49, 0.2);
+            overflow: hidden;
+            animation: fadeIn 0.5s ease-out;
+        }
+
+        .widget-header {
+            background: linear-gradient(135deg, var(--brand-primary), var(--brand-dark));
+            color: white;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .widget-header h3 {
+            margin: 0;
+            font-size: 1.4em;
+            font-weight: 800;
+        }
+
+        .estimated-time {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 0.9em;
+            font-weight: 600;
+        }
+
+        .widget-content {
+            padding: 25px;
+        }
+
+        .current-step {
+            margin-bottom: 20px;
+        }
+
+        .current-step h4 {
+            color: var(--brand-dark);
+            font-size: 1.3em;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+
+        .current-step p {
+            color: #6b7280;
+            margin-bottom: 15px;
+            font-size: 1em;
+        }
+
+        .quick-actions {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+            margin-top: 15px;
+        }
+
+        .quick-actions .btn {
+            flex: 1;
+            min-width: 150px;
+        }
+
+        .widget-footer {
+            background: #fef3c7;
+            padding: 15px 25px;
+            border-top: 2px solid #fde68a;
+        }
+
+        .widget-footer p {
+            margin: 0;
+            color: #92400e;
+            font-size: 0.95em;
+            font-weight: 500;
+        }
+
+        /* Progress Insights */
+        .progress-insights {
+            background: white;
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .insight-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 15px;
+        }
+
+        .insight-icon {
+            font-size: 2.5em;
+        }
+
+        .insight-text h3 {
+            margin: 0 0 5px 0;
+            color: var(--brand-dark);
+            font-size: 1.3em;
+        }
+
+        .insight-text p {
+            margin: 0;
+            color: #6b7280;
+            font-size: 0.95em;
+        }
+
+        .milestone-tracker {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .milestone {
+            background: #f9fafb;
+            padding: 15px;
+            border-radius: 8px;
+            border-left: 4px solid #e5e7eb;
+            transition: all 0.3s;
+        }
+
+        .milestone.completed {
+            background: #f0fdf4;
+            border-left-color: #22c55e;
+        }
+
+        .milestone.in-progress {
+            background: #fffbeb;
+            border-left-color: #f59e0b;
+        }
+
+        .milestone h4 {
+            margin: 0 0 8px 0;
+            font-size: 0.95em;
+            color: #374151;
+        }
+
+        .milestone-status {
+            font-size: 0.85em;
+            color: #6b7280;
+        }
+
+        .milestone.completed .milestone-status {
+            color: #22c55e;
+            font-weight: 600;
+        }
+
+        .milestone.in-progress .milestone-status {
+            color: #f59e0b;
+            font-weight: 600;
+        }
+
+        /* Quick Tips Section */
+        .quick-tips {
+            background: linear-gradient(135deg, #eff6ff, #dbeafe);
+            border-left: 4px solid #3b82f6;
+            border-radius: 8px;
+            padding: 15px 20px;
+            margin: 15px 0;
+        }
+
+        .quick-tips h4 {
+            color: #1e40af;
+            margin: 0 0 10px 0;
+            font-size: 1.1em;
+        }
+
+        .quick-tips ul {
+            margin: 0;
+            padding-left: 20px;
+        }
+
+        .quick-tips li {
+            color: #1e40af;
+            margin-bottom: 5px;
+        }
+
+        /* Mobile optimization for widgets */
+        @media (max-width: 768px) {
+            .quick-actions {
+                flex-direction: column;
+            }
+
+            .quick-actions .btn {
+                width: 100%;
+                min-width: auto;
+            }
+
+            .widget-header {
+                flex-direction: column;
+                gap: 10px;
+                align-items: flex-start;
+            }
+
+            .milestone-tracker {
+                grid-template-columns: 1fr;
+            }
+        }
     </style>
 </head>
 <body>
@@ -1065,6 +1503,12 @@
                 <span id="progressText" aria-live="polite" aria-atomic="true">0 of 0 tasks completed</span>
             </p>
         </section>
+
+        <!-- Smart Guide Widget (rendered dynamically) -->
+        <div id="smart-guide-container"></div>
+
+        <!-- Progress Insights (rendered dynamically) -->
+        <div id="progress-insights-container"></div>
 
         <!-- Critical Warning -->
         <div class="alert alert-danger">
@@ -2269,6 +2713,246 @@
             }, 1000);
         }
 
+        // Get next incomplete task
+        function getNextTask() {
+            // Collect all tasks from timeline data
+            const allTasks = timelineData.flatMap(week =>
+                week.tasks.map(task => ({
+                    ...task,
+                    week: week.week,
+                    weekTitle: week.title
+                }))
+            );
+
+            // Find first uncompleted task
+            const nextTask = allTasks.find(task => !checklistItems[task.id]);
+
+            return nextTask;
+        }
+
+        // Generate progress insights
+        function generateInsights() {
+            const allTasks = timelineData.flatMap(week => week.tasks);
+            const totalTasks = allTasks.length;
+            const completedTasks = allTasks.filter(t => checklistItems[t.id]).length;
+            const completionRate = totalTasks > 0 ? Math.round((completedTasks / totalTasks) * 100) : 0;
+
+            let insight = "";
+            let encouragement = "";
+            let icon = "";
+            let tips = [];
+
+            if (completionRate === 0) {
+                icon = "🚀";
+                insight = "Ready to Start Your Visa Journey?";
+                encouragement = "Let's get started! Begin with booking your FBI channeler appointment - it's the most time-sensitive task.";
+                tips = [
+                    "FBI channeler booking should be your first priority",
+                    "The entire process takes 5-7 weeks on average",
+                    "Budget $320-525 for document preparation"
+                ];
+            } else if (completionRate < 25) {
+                icon = "💪";
+                insight = "You're Just Getting Started!";
+                encouragement = "Great progress! Focus on completing Week 1 tasks to stay on schedule.";
+                tips = [
+                    "Keep momentum - complete FBI fingerprinting ASAP",
+                    "Start degree notarization in parallel",
+                    "Track all expenses for budgeting"
+                ];
+            } else if (completionRate < 50) {
+                icon = "🎯";
+                insight = "You're Making Solid Progress!";
+                encouragement = "You're on track! Keep going with document submissions.";
+                tips = [
+                    "Monument Visa should have your documents soon",
+                    "Start gathering passport photos",
+                    "Review your employment contract carefully"
+                ];
+            } else if (completionRate < 75) {
+                icon = "🎉";
+                insight = "More Than Halfway There!";
+                encouragement = "Excellent work! The finish line is in sight.";
+                tips = [
+                    "Prepare for consulate appointment",
+                    "Double-check all document names match your passport",
+                    "Start planning your move to Korea"
+                ];
+            } else if (completionRate < 100) {
+                icon = "🏁";
+                insight = "Almost Done!";
+                encouragement = "Final push! Just a few more tasks to complete.";
+                tips = [
+                    "Review all documents one last time",
+                    "Confirm consulate appointment details",
+                    "Book your flight once visa is approved"
+                ];
+            } else {
+                icon = "🎊";
+                insight = "Congratulations! All Tasks Complete!";
+                encouragement = "You've completed the entire checklist. Safe travels to Korea!";
+                tips = [
+                    "Keep all original documents safe",
+                    "Complete health screening within 90 days of arrival",
+                    "Apply for ARC within 90 days"
+                ];
+            }
+
+            return { insight, encouragement, completionRate, icon, tips };
+        }
+
+        // Render smart guide widget
+        function renderSmartGuide() {
+            const container = document.getElementById('smart-guide-container');
+            if (!container) return;
+
+            const nextTask = getNextTask();
+
+            if (!nextTask) {
+                container.innerHTML = `
+                    <div class="smart-guide-widget">
+                        <div class="widget-header">
+                            <h3>🎊 All Tasks Completed!</h3>
+                        </div>
+                        <div class="widget-content">
+                            <div class="current-step">
+                                <h4>Congratulations!</h4>
+                                <p>You've completed all tasks in the E-2 visa process guide.</p>
+                                <div class="quick-actions">
+                                    <button class="btn btn-primary" onclick="window.print()">
+                                        Print Completed Checklist
+                                    </button>
+                                    <button class="btn btn-secondary" onclick="exportProgress()">
+                                        Export Progress
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="widget-footer">
+                            <p>💡 Tip: Keep all documents safe and complete health screening within 90 days of arrival in Korea.</p>
+                        </div>
+                    </div>
+                `;
+                return;
+            }
+
+            const estimatedTime = nextTask.urgent ? "30-60 minutes" : "15-30 minutes";
+            const tipText = nextTask.critical
+                ? "This is a critical task - complete it as soon as possible!"
+                : "Take your time and follow the instructions carefully.";
+
+            container.innerHTML = `
+                <div class="smart-guide-widget">
+                    <div class="widget-header">
+                        <h3>🎯 Your Next Step</h3>
+                        <span class="estimated-time">Est. ${estimatedTime}</span>
+                    </div>
+                    <div class="widget-content">
+                        <div class="current-step">
+                            <div style="margin-bottom: 12px;">
+                                <span class="badge badge-info">${nextTask.day}</span>
+                                ${nextTask.urgent ? '<span class="badge badge-urgent">URGENT</span>' : ''}
+                                ${nextTask.critical ? '<span class="badge badge-critical">CRITICAL</span>' : ''}
+                                ${nextTask.cost ? `<span class="badge" style="background: #22c55e; color: white;">$${nextTask.cost.min}-$${nextTask.cost.max}</span>` : ''}
+                            </div>
+                            <h4>${nextTask.title}</h4>
+                            <p>${nextTask.description}</p>
+                            <p style="font-size: 0.9em; color: #9ca3af;"><strong>${nextTask.week}:</strong> ${nextTask.weekTitle}</p>
+                            <div class="quick-actions">
+                                <button class="btn btn-primary" onclick="toggleCheckbox('${nextTask.id}'); renderSmartGuide(); renderProgressInsights();">
+                                    ✓ Mark as Done
+                                </button>
+                                <button class="btn btn-secondary" onclick="toggleSection('interactive-timeline')">
+                                    View Full Timeline
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="widget-footer">
+                        <p>💡 Tip: ${tipText}</p>
+                    </div>
+                </div>
+            `;
+        }
+
+        // Render progress insights
+        function renderProgressInsights() {
+            const container = document.getElementById('progress-insights-container');
+            if (!container) return;
+
+            const insights = generateInsights();
+
+            // Calculate milestones
+            const milestones = [
+                {
+                    title: "Document Preparation",
+                    tasks: timelineData[0].tasks.length,
+                    completed: timelineData[0].tasks.filter(t => checklistItems[t.id]).length
+                },
+                {
+                    title: "Apostille Processing",
+                    tasks: timelineData[1].tasks.length,
+                    completed: timelineData[1].tasks.filter(t => checklistItems[t.id]).length
+                },
+                {
+                    title: "Photos & Application",
+                    tasks: timelineData[2].tasks.length,
+                    completed: timelineData[2].tasks.filter(t => checklistItems[t.id]).length
+                },
+                {
+                    title: "Submission & Processing",
+                    tasks: timelineData[3].tasks.length,
+                    completed: timelineData[3].tasks.filter(t => checklistItems[t.id]).length
+                }
+            ];
+
+            container.innerHTML = `
+                <div class="progress-insights">
+                    <div class="insight-header">
+                        <div class="insight-icon">${insights.icon}</div>
+                        <div class="insight-text">
+                            <h3>${insights.insight}</h3>
+                            <p>${insights.encouragement}</p>
+                        </div>
+                    </div>
+
+                    <div class="milestone-tracker">
+                        ${milestones.map(milestone => {
+                            const progress = milestone.tasks > 0
+                                ? Math.round((milestone.completed / milestone.tasks) * 100)
+                                : 0;
+                            let status = 'pending';
+                            let statusText = `${milestone.completed}/${milestone.tasks} tasks`;
+
+                            if (progress === 100) {
+                                status = 'completed';
+                                statusText = '✓ Completed';
+                            } else if (progress > 0) {
+                                status = 'in-progress';
+                                statusText = `${progress}% (${milestone.completed}/${milestone.tasks})`;
+                            }
+
+                            return `
+                                <div class="milestone ${status}">
+                                    <h4>${milestone.title}</h4>
+                                    <div class="milestone-status">${statusText}</div>
+                                </div>
+                            `;
+                        }).join('')}
+                    </div>
+
+                    ${insights.tips.length > 0 ? `
+                        <div class="quick-tips">
+                            <h4>💡 Quick Tips for Your Current Stage</h4>
+                            <ul>
+                                ${insights.tips.map(tip => `<li>${tip}</li>`).join('')}
+                            </ul>
+                        </div>
+                    ` : ''}
+                </div>
+            `;
+        }
+
         // Expand all sections
         function expandAll() {
             document.querySelectorAll('.section-header').forEach(header => {
@@ -2464,6 +3148,8 @@
         document.addEventListener('DOMContentLoaded', function() {
             loadProgress();
             renderAllSections();
+            renderSmartGuide();
+            renderProgressInsights();
         });
     </script>
 </body>

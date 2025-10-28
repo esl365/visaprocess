@@ -2368,17 +2368,6 @@
                 `
             },
             {
-                id: 'interactive-timeline',
-                title: 'Interactive Timeline - Track Your Progress',
-                content: `
-                    <div class="alert alert-info">
-                        <p><strong>Use this interactive timeline to track your progress through each week.</strong> Check off tasks as you complete them!</p>
-                    </div>
-
-                    <div id="timeline-container"></div>
-                `
-            },
-            {
                 id: 'action-plan',
                 title: '6. Action Plan – 2-3 Week Timeline',
                 content: `
@@ -2514,232 +2503,205 @@
                 `
             },
             {
-                id: 'after-arrival',
-                title: '12. First 90 Days – Essential Procedures in Korea',
+                id: 'interactive-timeline',
+                title: '7. Interactive Timeline – Track Your Progress',
                 content: `
-                    <div class="alert alert-danger">
-                        <h3>🔴 CRITICAL: Drug Screening Warning</h3>
-                        <p><strong>⚠️ MANDATORY HEALTH SCREENING INCLUDES DRUG TEST</strong></p>
-                        <p>All E-2 visa holders must complete health screening within 90 days of arrival.</p>
-
-                        <h4>Tests Performed:</h4>
-                        <ul>
-                            <li>Blood test (HIV, syphilis, general health)</li>
-                            <li><strong>Urine test (drug screening: marijuana/THC, methamphetamine, cocaine, opiates)</strong></li>
-                            <li>Chest X-ray (tuberculosis)</li>
-                            <li>Physical exam (blood pressure, vision)</li>
-                        </ul>
-
-                        <h4>MARIJUANA WARNING:</h4>
-                        <ul>
-                            <li>Marijuana is <strong>STRICTLY ILLEGAL</strong> in Korea</li>
-                            <li>Even if legal in your U.S. state</li>
-                            <li>THC remains in system <strong>2 weeks to 3 months</strong></li>
-                            <li><strong>Positive test = immediate consequences:</strong>
-                                <ul>
-                                    <li>✖ Visa cancellation</li>
-                                    <li>✖ Job termination</li>
-                                    <li>✖ Health insurance loss</li>
-                                    <li>✖ Deportation</li>
-                                    <li>✖ Ban from future entry to Korea</li>
-                                </ul>
-                            </li>
-                        </ul>
-
-                        <p><strong>Action Required:</strong></p>
-                        <ul>
-                            <li>Stop all marijuana/THC products at least 3 months before departure</li>
-                            <li>No exceptions for medical marijuana</li>
-                            <li>No appeals for positive results</li>
-                        </ul>
+                    <div class="alert alert-info">
+                        <p><strong>Use this interactive timeline to track your progress through each week.</strong> Check off tasks as you complete them!</p>
                     </div>
 
-                    <h3>Week 1-2: Health Screening (HIGHEST PRIORITY)</h3>
-
-                    <ul class="checklist">
-                        <li class="checklist-item">
-                            <input type="checkbox" id="korea-health" onchange="toggleCheckbox('korea-health')">
-                            <label for="korea-health">Complete health screening at designated hospital</label>
-                        </li>
-                    </ul>
-
-                    <p><strong>Where:</strong> Designated hospitals only (employer provides list)</p>
-                    <ul>
-                        <li>Seoul: Severance Hospital, Samsung Medical Center, Asan Medical Center</li>
-                        <li>Other cities: International clinics approved by immigration</li>
-                    </ul>
-
-                    <p><strong>What to Bring:</strong></p>
-                    <ul>
-                        <li>Passport with E-2 visa</li>
-                        <li>2 passport photos</li>
-                        <li>Payment (~₩80,000-150,000 / $60-115) – often employer pays</li>
-                    </ul>
-
-                    <h3>Within 14 Days: Address Registration (MANDATORY)</h3>
-
-                    <div class="alert alert-danger">
-                        <p><strong>✅ LEGAL REQUIREMENT:</strong> ₩100,000-1,000,000 fine if missed</p>
-                    </div>
-
-                    <ul class="checklist">
-                        <li class="checklist-item">
-                            <input type="checkbox" id="korea-address" onchange="toggleCheckbox('korea-address')">
-                            <label for="korea-address">Register address at local district office</label>
-                        </li>
-                    </ul>
-
-                    <p><strong>Where:</strong> Local district office (구청), Neighborhood center (읍/면/동 사무소), or Immigration office</p>
-
-                    <p><strong>What to Bring:</strong></p>
-                    <ul>
-                        <li>Passport with E-2 visa</li>
-                        <li>Rental contract or housing letter from employer</li>
-                        <li>Registration form (provided at office)</li>
-                    </ul>
-
-                    <h3>Within 90 Days: ARC Application (Alien Registration Card)</h3>
-
-                    <ul class="checklist">
-                        <li class="checklist-item">
-                            <input type="checkbox" id="korea-arc" onchange="toggleCheckbox('korea-arc')">
-                            <label for="korea-arc">Apply for ARC at Immigration Office</label>
-                        </li>
-                        <li class="checklist-item">
-                            <input type="checkbox" id="korea-arc-receive" onchange="toggleCheckbox('korea-arc-receive')">
-                            <label for="korea-arc-receive">Return to collect ARC (2-3 weeks later)</label>
-                        </li>
-                    </ul>
-
-                    <p><strong>Why Essential:</strong></p>
-                    <ul>
-                        <li>Bank account (can't open without ARC)</li>
-                        <li>Phone contract</li>
-                        <li>Online purchases requiring Korean ID</li>
-                        <li>Gym memberships</li>
-                        <li>Domestic travel bookings</li>
-                    </ul>
-
-                    <p><strong>Required Documents:</strong></p>
-                    <ol>
-                        <li>Passport with E-2 visa</li>
-                        <li>Health check results (passed)</li>
-                        <li>ARC application form</li>
-                        <li>1 passport photo (3.5×4.5cm)</li>
-                        <li>Employer's business registration certificate</li>
-                        <li>Employment contract</li>
-                        <li>Fee: ₩30,000 (~$23)</li>
-                    </ol>
-
-                    <h3>Employment & Legal Restrictions</h3>
-
-                    <div class="alert alert-warning">
-                        <h4>Your E-2 Visa Means:</h4>
-                        <ul>
-                            <li>✅ You can work for your sponsored employer</li>
-                            <li>✅ You can travel in/out of Korea (multiple entry)</li>
-                            <li>❌ You CANNOT do private tutoring (엄격히 불법)</li>
-                            <li>❌ You CANNOT work for other employers without approval</li>
-                            <li>❌ You CANNOT change jobs without immigration permission</li>
-                        </ul>
-
-                        <p><strong>Private Tutoring is ILLEGAL for E-2 Holders:</strong></p>
-                        <ul>
-                            <li>Penalties: Up to ₩30,000,000 fine (~$23,000)</li>
-                            <li>Deportation</li>
-                            <li>1-10 year entry ban to Korea</li>
-                        </ul>
-                    </div>
+                    <div id="timeline-container"></div>
                 `
             },
             {
-                id: 'faq',
-                title: '13. FAQ – Common Questions & Scenarios',
+                id: 'quality-gate',
+                title: '8. Quality Gate – Final Verification Before Shipping',
                 content: `
-                    <h3>Q. I have a DUI/misdemeanor. Can I get an E-2 visa?</h3>
-                    <p><strong>A.</strong> It depends on severity and type.</p>
+                    <div class="alert alert-warning">
+                        <h3>⚠️ STOP! Verify Before Shipping</h3>
+                        <p><strong>Before you ship documents to Korea, complete this quality gate.</strong></p>
+                        <p>One error = weeks of delay. Take 30 minutes to verify everything.</p>
+                    </div>
 
-                    <p><strong>Generally acceptable:</strong></p>
-                    <ul>
-                        <li>Minor traffic violations (speeding tickets, parking)</li>
-                        <li>Very old non-violent misdemeanors (10+ years ago)</li>
+                    <h3>Document Quality Checks</h3>
+
+                    <h4>☐ FBI Background Check:</h4>
+                    <ul class="checklist">
+                        <li class="checklist-item">
+                            <input type="checkbox" id="qg-1">
+                            <label for="qg-1">Name matches passport exactly (including middle names)</label>
+                        </li>
+                        <li class="checklist-item">
+                            <input type="checkbox" id="qg-2">
+                            <label for="qg-2">Issued within last 6 months</label>
+                        </li>
+                        <li class="checklist-item">
+                            <input type="checkbox" id="qg-3">
+                            <label for="qg-3">FBI CJIS seal visible</label>
+                        </li>
+                        <li class="checklist-item">
+                            <input type="checkbox" id="qg-4">
+                            <label for="qg-4"><strong>Federal apostille</strong> (U.S. Department of State) stapled</label>
+                        </li>
+                        <li class="checklist-item">
+                            <input type="checkbox" id="qg-5">
+                            <label for="qg-5">Apostille intact (staple not removed)</label>
+                        </li>
                     </ul>
 
-                    <p><strong>Usually rejected:</strong></p>
-                    <ul>
-                        <li>DUI/DWI (especially recent)</li>
-                        <li>Drug offenses (any type, any time)</li>
-                        <li>Violent crimes</li>
-                        <li>Crimes involving moral turpitude</li>
-                        <li>Sex offenses</li>
+                    <h4>☐ Bachelor's Degree:</h4>
+                    <ul class="checklist">
+                        <li class="checklist-item">
+                            <input type="checkbox" id="qg-6">
+                            <label for="qg-6">Name matches passport exactly</label>
+                        </li>
+                        <li class="checklist-item">
+                            <input type="checkbox" id="qg-7">
+                            <label for="qg-7">Bachelor's degree (4-year minimum)</label>
+                        </li>
+                        <li class="checklist-item">
+                            <input type="checkbox" id="qg-8">
+                            <label for="qg-8">Notarized as "true copy"</label>
+                        </li>
+                        <li class="checklist-item">
+                            <input type="checkbox" id="qg-9">
+                            <label for="qg-9"><strong>State apostille</strong> (Secretary of State of degree-issuing state) stapled</label>
+                        </li>
+                        <li class="checklist-item">
+                            <input type="checkbox" id="qg-10">
+                            <label for="qg-10">Apostille intact</label>
+                        </li>
                     </ul>
 
-                    <hr>
-
-                    <h3>Q. Can I reuse an FBI check I got 8 months ago?</h3>
-                    <p><strong>A.</strong> No. FBI check must be issued within <strong>6 months</strong> of when employer applies for CCVI.</p>
-                    <p>You need a new one. Good news: FBI channeler + Monument Visa = new apostilled FBI check in 1 week.</p>
-
-                    <hr>
-
-                    <h3>Q. What if I'm currently outside the U.S.?</h3>
-                    <p><strong>A.</strong> You need a U.S. address for FBI check delivery. Options:</p>
-                    <ol>
-                        <li>Use channeler + U.S. friend/family address</li>
-                        <li>Friend/family mails FBI result to Monument Visa</li>
-                        <li>Monument Visa ships apostilled docs internationally</li>
-                        <li>OR: Fly to U.S. for 2-3 weeks to complete process in person</li>
-                    </ol>
-
-                    <hr>
-
-                    <h3>Q. Can my spouse/kids come with me?</h3>
-                    <p><strong>A.</strong> Yes, on F-3 dependent visas. But:</p>
-                    <ul>
-                        <li>They need separate visa applications</li>
-                        <li>Additional documents required (marriage certificate, birth certificates – all apostilled)</li>
-                        <li>They cannot work in Korea</li>
-                        <li>Consider if single income is sufficient</li>
+                    <h4>☐ All Documents:</h4>
+                    <ul class="checklist">
+                        <li class="checklist-item">
+                            <input type="checkbox" id="qg-11">
+                            <label for="qg-11">No tears, stains, or damage</label>
+                        </li>
+                        <li class="checklist-item">
+                            <input type="checkbox" id="qg-12">
+                            <label for="qg-12">Text is clearly legible</label>
+                        </li>
+                        <li class="checklist-item">
+                            <input type="checkbox" id="qg-13">
+                            <label for="qg-13">All signatures present where required</label>
+                        </li>
+                        <li class="checklist-item">
+                            <input type="checkbox" id="qg-14">
+                            <label for="qg-14">All dates within valid periods</label>
+                        </li>
+                        <li class="checklist-item">
+                            <input type="checkbox" id="qg-15">
+                            <label for="qg-15">All names spelled consistently across documents</label>
+                        </li>
                     </ul>
 
-                    <hr>
+                    <h3>Scans & Backups</h3>
 
-                    <h3>Q. I have tattoos. Will this affect my visa?</h3>
-                    <p><strong>A.</strong> Visa: No impact on approval</p>
-                    <p>Employment: Depends on employer</p>
-                    <ul>
-                        <li>Public schools (EPIK): Generally okay if coverable</li>
-                        <li>Private academies: Varies by location</li>
-                        <li>Kindergartens: May have restrictions</li>
+                    <ul class="checklist">
+                        <li class="checklist-item">
+                            <input type="checkbox" id="qg-16">
+                            <label for="qg-16">High-resolution scans of all documents (front and back)</label>
+                        </li>
+                        <li class="checklist-item">
+                            <input type="checkbox" id="qg-17">
+                            <label for="qg-17">Saved to cloud storage (Google Drive, Dropbox)</label>
+                        </li>
+                        <li class="checklist-item">
+                            <input type="checkbox" id="qg-18">
+                            <label for="qg-18">Saved to local computer/external drive</label>
+                        </li>
+                        <li class="checklist-item">
+                            <input type="checkbox" id="qg-19">
+                            <label for="qg-19">Shared with employer (optional but helpful)</label>
+                        </li>
                     </ul>
 
-                    <hr>
+                    <h3>Packing Verification</h3>
 
-                    <h3>Q. Can I work while waiting for ARC?</h3>
-                    <p><strong>A.</strong> Technically yes if you entered on E-2 visa – BUT you must pass health check first.</p>
-
-                    <hr>
-
-                    <h3>Q. Can I extend my E-2 visa without leaving Korea?</h3>
-                    <p><strong>A.</strong> Yes, if renewing with same employer:</p>
-                    <ul>
-                        <li>Submit extension 30-60 days before expiration</li>
-                        <li>Need: new contract, health insurance proof, clean tax records</li>
-                        <li>Processing: ~2 weeks</li>
-                        <li>No need to return to U.S.</li>
+                    <ul class="checklist">
+                        <li class="checklist-item">
+                            <input type="checkbox" id="qg-20">
+                            <label for="qg-20">Correct document order (FBI, degree, health, passport, contract, resume, photos)</label>
+                        </li>
+                        <li class="checklist-item">
+                            <input type="checkbox" id="qg-21">
+                            <label for="qg-21">Nothing folded or bent</label>
+                        </li>
+                        <li class="checklist-item">
+                            <input type="checkbox" id="qg-22">
+                            <label for="qg-22">Photos protected in sleeve</label>
+                        </li>
+                        <li class="checklist-item">
+                            <input type="checkbox" id="qg-23">
+                            <label for="qg-23">Rigid mailer used</label>
+                        </li>
+                        <li class="checklist-item">
+                            <input type="checkbox" id="qg-24">
+                            <label for="qg-24">Securely sealed</label>
+                        </li>
                     </ul>
 
-                    <hr>
+                    <h3>Shipping Verification</h3>
 
-                    <h3>Q. My degree is from a foreign university, not U.S. Can I apply?</h3>
-                    <p><strong>A.</strong> Yes, but requires extra steps:</p>
-                    <ol>
-                        <li>Get credential evaluation from NACES member (WES, ECE)</li>
-                        <li>Evaluation must show equivalency to U.S. Bachelor's</li>
-                        <li>Evaluation report needs notarization + State apostille</li>
-                        <li>Adds ~$200-300 cost and 2-4 weeks</li>
-                        <li>Some Korean employers may not accept – verify first</li>
-                    </ol>
+                    <ul class="checklist">
+                        <li class="checklist-item">
+                            <input type="checkbox" id="qg-25">
+                            <label for="qg-25">Using FedEx, DHL, or UPS (NOT USPS)</label>
+                        </li>
+                        <li class="checklist-item">
+                            <input type="checkbox" id="qg-26">
+                            <label for="qg-26">2-5 day international service selected</label>
+                        </li>
+                        <li class="checklist-item">
+                            <input type="checkbox" id="qg-27">
+                            <label for="qg-27">Tracking number obtained</label>
+                        </li>
+                        <li class="checklist-item">
+                            <input type="checkbox" id="qg-28">
+                            <label for="qg-28">Employer's Korea address confirmed correct</label>
+                        </li>
+                        <li class="checklist-item">
+                            <input type="checkbox" id="qg-29">
+                            <label for="qg-29">Your contact info included in package</label>
+                        </li>
+                    </ul>
+
+                    <h3>After Shipping</h3>
+
+                    <ul class="checklist">
+                        <li class="checklist-item">
+                            <input type="checkbox" id="qg-30">
+                            <label for="qg-30">Tracking number emailed to employer</label>
+                        </li>
+                        <li class="checklist-item">
+                            <input type="checkbox" id="qg-31">
+                            <label for="qg-31">Tracking number emailed to Kang & Kriel</label>
+                        </li>
+                        <li class="checklist-item">
+                            <input type="checkbox" id="qg-32">
+                            <label for="qg-32">Daily monitoring until delivery confirmed</label>
+                        </li>
+                    </ul>
+
+                    <div class="alert alert-success">
+                        <h3>✅ All Checked? Ready to Ship!</h3>
+                        <p><strong>You've completed the quality gate.</strong> Your documents are ready for shipment to Korea.</p>
+                        <p>Proceed to Section 10 (Packing & Shipping) for final instructions.</p>
+                    </div>
+
+                    <div class="alert alert-danger">
+                        <h3>❌ Found Issues?</h3>
+                        <p><strong>DO NOT SHIP.</strong> Resolve all issues first:</p>
+                        <ul>
+                            <li><strong>Name mismatch:</strong> Get corrected documents before shipping</li>
+                            <li><strong>Wrong apostille type:</strong> Re-order correct apostille</li>
+                            <li><strong>Damaged documents:</strong> Request new copies</li>
+                            <li><strong>Missing signatures:</strong> Sign all required forms</li>
+                        </ul>
+                        <p>Need help? Contact Kang & Kriel before shipping.</p>
+                    </div>
                 `
             },
             {
@@ -2989,6 +2951,558 @@
                 `
             },
             {
+                id: 'after-arrival',
+                title: '12. First 90 Days – Essential Procedures in Korea',
+                content: `
+                    <div class="alert alert-danger">
+                        <h3>🔴 CRITICAL: Drug Screening Warning</h3>
+                        <p><strong>⚠️ MANDATORY HEALTH SCREENING INCLUDES DRUG TEST</strong></p>
+                        <p>All E-2 visa holders must complete health screening within 90 days of arrival.</p>
+
+                        <h4>Tests Performed:</h4>
+                        <ul>
+                            <li>Blood test (HIV, syphilis, general health)</li>
+                            <li><strong>Urine test (drug screening: marijuana/THC, methamphetamine, cocaine, opiates)</strong></li>
+                            <li>Chest X-ray (tuberculosis)</li>
+                            <li>Physical exam (blood pressure, vision)</li>
+                        </ul>
+
+                        <h4>MARIJUANA WARNING:</h4>
+                        <ul>
+                            <li>Marijuana is <strong>STRICTLY ILLEGAL</strong> in Korea</li>
+                            <li>Even if legal in your U.S. state</li>
+                            <li>THC remains in system <strong>2 weeks to 3 months</strong></li>
+                            <li><strong>Positive test = immediate consequences:</strong>
+                                <ul>
+                                    <li>✖ Visa cancellation</li>
+                                    <li>✖ Job termination</li>
+                                    <li>✖ Health insurance loss</li>
+                                    <li>✖ Deportation</li>
+                                    <li>✖ Ban from future entry to Korea</li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                        <p><strong>Action Required:</strong></p>
+                        <ul>
+                            <li>Stop all marijuana/THC products at least 3 months before departure</li>
+                            <li>No exceptions for medical marijuana</li>
+                            <li>No appeals for positive results</li>
+                        </ul>
+                    </div>
+
+                    <h3>Week 1-2: Health Screening (HIGHEST PRIORITY)</h3>
+
+                    <ul class="checklist">
+                        <li class="checklist-item">
+                            <input type="checkbox" id="korea-health" onchange="toggleCheckbox('korea-health')">
+                            <label for="korea-health">Complete health screening at designated hospital</label>
+                        </li>
+                    </ul>
+
+                    <p><strong>Where:</strong> Designated hospitals only (employer provides list)</p>
+                    <ul>
+                        <li>Seoul: Severance Hospital, Samsung Medical Center, Asan Medical Center</li>
+                        <li>Other cities: International clinics approved by immigration</li>
+                    </ul>
+
+                    <p><strong>What to Bring:</strong></p>
+                    <ul>
+                        <li>Passport with E-2 visa</li>
+                        <li>2 passport photos</li>
+                        <li>Payment (~₩80,000-150,000 / $60-115) – often employer pays</li>
+                    </ul>
+
+                    <h3>Within 14 Days: Address Registration (MANDATORY)</h3>
+
+                    <div class="alert alert-danger">
+                        <p><strong>✅ LEGAL REQUIREMENT:</strong> ₩100,000-1,000,000 fine if missed</p>
+                    </div>
+
+                    <ul class="checklist">
+                        <li class="checklist-item">
+                            <input type="checkbox" id="korea-address" onchange="toggleCheckbox('korea-address')">
+                            <label for="korea-address">Register address at local district office</label>
+                        </li>
+                    </ul>
+
+                    <p><strong>Where:</strong> Local district office (구청), Neighborhood center (읍/면/동 사무소), or Immigration office</p>
+
+                    <p><strong>What to Bring:</strong></p>
+                    <ul>
+                        <li>Passport with E-2 visa</li>
+                        <li>Rental contract or housing letter from employer</li>
+                        <li>Registration form (provided at office)</li>
+                    </ul>
+
+                    <h3>Within 90 Days: ARC Application (Alien Registration Card)</h3>
+
+                    <ul class="checklist">
+                        <li class="checklist-item">
+                            <input type="checkbox" id="korea-arc" onchange="toggleCheckbox('korea-arc')">
+                            <label for="korea-arc">Apply for ARC at Immigration Office</label>
+                        </li>
+                        <li class="checklist-item">
+                            <input type="checkbox" id="korea-arc-receive" onchange="toggleCheckbox('korea-arc-receive')">
+                            <label for="korea-arc-receive">Return to collect ARC (2-3 weeks later)</label>
+                        </li>
+                    </ul>
+
+                    <p><strong>Why Essential:</strong></p>
+                    <ul>
+                        <li>Bank account (can't open without ARC)</li>
+                        <li>Phone contract</li>
+                        <li>Online purchases requiring Korean ID</li>
+                        <li>Gym memberships</li>
+                        <li>Domestic travel bookings</li>
+                    </ul>
+
+                    <p><strong>Required Documents:</strong></p>
+                    <ol>
+                        <li>Passport with E-2 visa</li>
+                        <li>Health check results (passed)</li>
+                        <li>ARC application form</li>
+                        <li>1 passport photo (3.5×4.5cm)</li>
+                        <li>Employer's business registration certificate</li>
+                        <li>Employment contract</li>
+                        <li>Fee: ₩30,000 (~$23)</li>
+                    </ol>
+
+                    <h3>Employment & Legal Restrictions</h3>
+
+                    <div class="alert alert-warning">
+                        <h4>Your E-2 Visa Means:</h4>
+                        <ul>
+                            <li>✅ You can work for your sponsored employer</li>
+                            <li>✅ You can travel in/out of Korea (multiple entry)</li>
+                            <li>❌ You CANNOT do private tutoring (엄격히 불법)</li>
+                            <li>❌ You CANNOT work for other employers without approval</li>
+                            <li>❌ You CANNOT change jobs without immigration permission</li>
+                        </ul>
+
+                        <p><strong>Private Tutoring is ILLEGAL for E-2 Holders:</strong></p>
+                        <ul>
+                            <li>Penalties: Up to ₩30,000,000 fine (~$23,000)</li>
+                            <li>Deportation</li>
+                            <li>1-10 year entry ban to Korea</li>
+                        </ul>
+                    </div>
+                `
+            },
+            {
+                id: 'faq',
+                title: '13. FAQ – Common Questions & Scenarios',
+                content: `
+                    <h3>Q. I have a DUI/misdemeanor. Can I get an E-2 visa?</h3>
+                    <p><strong>A.</strong> It depends on severity and type.</p>
+
+                    <p><strong>Generally acceptable:</strong></p>
+                    <ul>
+                        <li>Minor traffic violations (speeding tickets, parking)</li>
+                        <li>Very old non-violent misdemeanors (10+ years ago)</li>
+                    </ul>
+
+                    <p><strong>Usually rejected:</strong></p>
+                    <ul>
+                        <li>DUI/DWI (especially recent)</li>
+                        <li>Drug offenses (any type, any time)</li>
+                        <li>Violent crimes</li>
+                        <li>Crimes involving moral turpitude</li>
+                        <li>Sex offenses</li>
+                    </ul>
+
+                    <hr>
+
+                    <h3>Q. Can I reuse an FBI check I got 8 months ago?</h3>
+                    <p><strong>A.</strong> No. FBI check must be issued within <strong>6 months</strong> of when employer applies for CCVI.</p>
+                    <p>You need a new one. Good news: FBI channeler + Monument Visa = new apostilled FBI check in 1 week.</p>
+
+                    <hr>
+
+                    <h3>Q. What if I'm currently outside the U.S.?</h3>
+                    <p><strong>A.</strong> You need a U.S. address for FBI check delivery. Options:</p>
+                    <ol>
+                        <li>Use channeler + U.S. friend/family address</li>
+                        <li>Friend/family mails FBI result to Monument Visa</li>
+                        <li>Monument Visa ships apostilled docs internationally</li>
+                        <li>OR: Fly to U.S. for 2-3 weeks to complete process in person</li>
+                    </ol>
+
+                    <hr>
+
+                    <h3>Q. Can my spouse/kids come with me?</h3>
+                    <p><strong>A.</strong> Yes, on F-3 dependent visas. But:</p>
+                    <ul>
+                        <li>They need separate visa applications</li>
+                        <li>Additional documents required (marriage certificate, birth certificates – all apostilled)</li>
+                        <li>They cannot work in Korea</li>
+                        <li>Consider if single income is sufficient</li>
+                    </ul>
+
+                    <hr>
+
+                    <h3>Q. I have tattoos. Will this affect my visa?</h3>
+                    <p><strong>A.</strong> Visa: No impact on approval</p>
+                    <p>Employment: Depends on employer</p>
+                    <ul>
+                        <li>Public schools (EPIK): Generally okay if coverable</li>
+                        <li>Private academies: Varies by location</li>
+                        <li>Kindergartens: May have restrictions</li>
+                    </ul>
+
+                    <hr>
+
+                    <h3>Q. Can I work while waiting for ARC?</h3>
+                    <p><strong>A.</strong> Technically yes if you entered on E-2 visa – BUT you must pass health check first.</p>
+
+                    <hr>
+
+                    <h3>Q. Can I extend my E-2 visa without leaving Korea?</h3>
+                    <p><strong>A.</strong> Yes, if renewing with same employer:</p>
+                    <ul>
+                        <li>Submit extension 30-60 days before expiration</li>
+                        <li>Need: new contract, health insurance proof, clean tax records</li>
+                        <li>Processing: ~2 weeks</li>
+                        <li>No need to return to U.S.</li>
+                    </ul>
+
+                    <hr>
+
+                    <h3>Q. My degree is from a foreign university, not U.S. Can I apply?</h3>
+                    <p><strong>A.</strong> Yes, but requires extra steps:</p>
+                    <ol>
+                        <li>Get credential evaluation from NACES member (WES, ECE)</li>
+                        <li>Evaluation must show equivalency to U.S. Bachelor's</li>
+                        <li>Evaluation report needs notarization + State apostille</li>
+                        <li>Adds ~$200-300 cost and 2-4 weeks</li>
+                        <li>Some Korean employers may not accept – verify first</li>
+                    </ol>
+                `
+            },
+            {
+                id: 'templates',
+                title: '14. Templates – Sample Documents & Forms',
+                content: `
+                    <h3>Document Templates</h3>
+                    <p>Use these templates as guides for preparing your documents.</p>
+
+                    <div class="card">
+                        <h4>📄 Cover Letter Template (for shipping package)</h4>
+                        <pre>
+[Your Name]
+[Your Email]
+[Your Phone Number]
+[Date]
+
+To: [Employer Name]
+[School/Company Name]
+[Korea Address]
+
+Re: E-2 Visa Document Package - [Your Full Name]
+
+Dear [Employer Name],
+
+Enclosed please find my complete E-2 visa document package:
+
+1. FBI Identity History Summary with Federal apostille
+2. Bachelor's degree (notarized copy) with State apostille
+3. Self-Health Statement (signed)
+4. Passport bio page copy
+5. Signed employment contract
+6. Resume/CV (signed)
+7. Passport photos (6 copies)
+
+Tracking Number: [Insert FedEx/DHL/UPS tracking]
+
+Please confirm receipt and review of all documents.
+Contact me immediately if anything is missing or unclear.
+
+Best regards,
+[Your Signature]
+[Your Printed Name]
+                        </pre>
+                    </div>
+
+                    <div class="card">
+                        <h4>✉️ Email Template: To Korean Consulate</h4>
+                        <pre>
+Subject: E-2 Visa Application Inquiry - [Your Name]
+
+Dear Consulate Staff,
+
+I am a U.S. citizen preparing to apply for an E-2 teaching visa.
+
+I have received my VIN (Visa Issuance Number): [VIN NUMBER]
+
+Could you please confirm:
+1. Required documents for E-2 visa application
+2. Visa processing time (standard)
+3. Whether in-person application is required
+4. Visa fee amount and acceptable payment methods
+
+I am currently residing in [Your State] and plan to submit
+my application on [Date].
+
+Thank you for your assistance.
+
+Sincerely,
+[Your Full Name]
+[Your Email]
+[Your Phone Number]
+                        </pre>
+                    </div>
+
+                    <div class="card">
+                        <h4>📧 Email Template: To Employer (After Shipping)</h4>
+                        <pre>
+Subject: Document Package Shipped - Tracking [Number]
+
+Dear [Employer Name],
+
+I have shipped my complete E-2 visa document package today
+via [FedEx/DHL/UPS].
+
+Tracking Number: [TRACKING NUMBER]
+Expected Delivery: [DATE]
+
+You can track the package at: [TRACKING URL]
+
+Package Contents:
+✓ FBI background check with Federal apostille
+✓ Bachelor's degree with State apostille
+✓ Self-Health Statement
+✓ Passport bio page copy
+✓ Signed employment contract
+✓ Resume/CV
+✓ Passport photos (6 copies)
+
+Please confirm receipt and let me know if you need anything else.
+
+Best regards,
+[Your Name]
+                        </pre>
+                    </div>
+
+                    <div class="card">
+                        <h4>📋 Self-Health Statement Template</h4>
+                        <pre>
+SELF-HEALTH STATEMENT
+
+I, [Your Full Name], passport number [PASSPORT #], declare that:
+
+1. I am in good physical and mental health.
+2. I have no communicable diseases.
+3. I have not used illegal drugs in the past 6 months.
+4. I am not currently taking medication that would impair
+   my ability to teach.
+5. I understand that I must complete a health screening
+   within 90 days of arrival in Korea.
+
+I certify that the above information is true and accurate.
+
+Date: [MM/DD/YYYY]
+Signature: _______________________
+Printed Name: [Your Full Name]
+                        </pre>
+                    </div>
+
+                    <h3>Useful Formats</h3>
+
+                    <div class="card-grid">
+                        <div class="card">
+                            <h4>Korean Address Format</h4>
+                            <p><strong>English format (for shipping):</strong></p>
+                            <pre>
+[Recipient Name]
+[Company/School Name]
+[Street Address]
+[Building Name/Number]
+[District Name], [City Name]
+[Postal Code]
+SOUTH KOREA
+                            </pre>
+                            <p><strong>Example:</strong></p>
+                            <pre>
+Kim Min-soo
+ABC English Academy
+123 Gangnam-daero
+Gangnam-gu, Seoul
+06000
+SOUTH KOREA
+                            </pre>
+                        </div>
+
+                        <div class="card">
+                            <h4>Notary Acknowledgment</h4>
+                            <p><strong>What notary should write:</strong></p>
+                            <pre>
+State of [STATE]
+County of [COUNTY]
+
+On [DATE], before me, [NOTARY NAME],
+personally appeared [YOUR NAME], who
+proved to me on the basis of satisfactory
+evidence to be the person whose name is
+subscribed to this document, and
+acknowledged that this is a true and
+correct copy of their original Bachelor's
+degree.
+
+[Notary Signature]
+[Notary Seal]
+[Commission Expiration Date]
+                            </pre>
+                        </div>
+                    </div>
+                `
+            },
+            {
+                id: 'glossary',
+                title: '15. Glossary – Visa Terminology',
+                content: `
+                    <h3>E-2 Visa Key Terms</h3>
+
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Term</th>
+                                <th>Definition</th>
+                                <th>Korean</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>E-2 Visa</strong></td>
+                                <td>Foreign language instructor visa for teaching conversational English in Korea</td>
+                                <td>E-2 비자</td>
+                            </tr>
+                            <tr>
+                                <td><strong>CCVI</strong></td>
+                                <td>Certificate for Confirmation of Visa Issuance (same as VIN)</td>
+                                <td>사증발급인정서</td>
+                            </tr>
+                            <tr>
+                                <td><strong>VIN</strong></td>
+                                <td>Visa Issuance Number (4 letters + 8 numbers)</td>
+                                <td>비자발급번호</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Apostille</strong></td>
+                                <td>Official certification that makes documents valid internationally under Hague Convention</td>
+                                <td>아포스티유</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Federal Apostille</strong></td>
+                                <td>Apostille from U.S. Department of State (for FBI checks)</td>
+                                <td>연방 아포스티유</td>
+                            </tr>
+                            <tr>
+                                <td><strong>State Apostille</strong></td>
+                                <td>Apostille from Secretary of State (for degrees)</td>
+                                <td>주정부 아포스티유</td>
+                            </tr>
+                            <tr>
+                                <td><strong>FBI Channeler</strong></td>
+                                <td>FBI-approved agency that provides fingerprinting and fast background checks (24-72 hours)</td>
+                                <td>FBI 대행 기관</td>
+                            </tr>
+                            <tr>
+                                <td><strong>ARC</strong></td>
+                                <td>Alien Registration Card - your Korean ID card (must get within 90 days)</td>
+                                <td>외국인등록증</td>
+                            </tr>
+                            <tr>
+                                <td><strong>HIKOREA</strong></td>
+                                <td>Immigration office - where you get ARC and handle visa matters</td>
+                                <td>출입국관리사무소</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Health Screening</strong></td>
+                                <td>Mandatory medical exam including drug test (must complete within 90 days)</td>
+                                <td>건강검진</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Notarization</strong></td>
+                                <td>Official certification by notary public that a document copy is authentic</td>
+                                <td>공증</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Live Scan</strong></td>
+                                <td>Digital fingerprinting method (used by FBI channelers)</td>
+                                <td>전자 지문</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <h3>Document Abbreviations</h3>
+
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Abbreviation</th>
+                                <th>Full Name</th>
+                                <th>Notes</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>FBI</td>
+                                <td>Federal Bureau of Investigation</td>
+                                <td>Issues background checks</td>
+                            </tr>
+                            <tr>
+                                <td>CJIS</td>
+                                <td>Criminal Justice Information Services</td>
+                                <td>FBI division that issues background checks</td>
+                            </tr>
+                            <tr>
+                                <td>DOS</td>
+                                <td>Department of State</td>
+                                <td>Issues Federal apostilles</td>
+                            </tr>
+                            <tr>
+                                <td>SOS</td>
+                                <td>Secretary of State</td>
+                                <td>Issues State apostilles</td>
+                            </tr>
+                            <tr>
+                                <td>MOE</td>
+                                <td>Ministry of Education</td>
+                                <td>Korean education authority</td>
+                            </tr>
+                            <tr>
+                                <td>MOFA</td>
+                                <td>Ministry of Foreign Affairs</td>
+                                <td>Korean foreign affairs authority</td>
+                            </tr>
+                            <tr>
+                                <td>MOIS</td>
+                                <td>Ministry of Interior and Safety</td>
+                                <td>Oversees Korean immigration</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <h3>Korean Immigration Terms</h3>
+
+                    <ul>
+                        <li><strong>출입국 (Chulipguk):</strong> Immigration</li>
+                        <li><strong>비자 (Bija):</strong> Visa</li>
+                        <li><strong>여권 (Yeogwon):</strong> Passport</li>
+                        <li><strong>체류 (Cheryu):</strong> Stay/Residence</li>
+                        <li><strong>연장 (Yeonjang):</strong> Extension</li>
+                        <li><strong>등록 (Deungrok):</strong> Registration</li>
+                        <li><strong>신청 (Sincheong):</strong> Application</li>
+                        <li><strong>허가 (Heoga):</strong> Permission/Approval</li>
+                    </ul>
+
+                    <div class="alert alert-info">
+                        <h4>💡 Pro Tip</h4>
+                        <p>Save this glossary for reference when communicating with Korean immigration offices or employers. Many terms are used interchangeably.</p>
+                    </div>
+                `
+            },
+            {
                 id: 'consulate-directory',
                 title: '16. Korean Consulate Directory – United States',
                 content: `
@@ -3066,55 +3580,221 @@
                             <p><strong>Address:</strong> 2756 Pali Hwy, Honolulu, HI 96817</p>
                         </div>
                     </div>
+                `
+            },
+            {
+                id: 'government-resources',
+                title: '17. Korean Government Resources – Official Information',
+                content: `
+                    <h3>Korea Immigration Service</h3>
 
-                    <h3>Korean Government Resources</h3>
+                    <div class="card card-highlight">
+                        <h4>Korea Immigration Service (출입국관리사무소)</h4>
+                        <p><strong>Website:</strong> <a href="https://immigration.go.kr/immigration_eng/index.do" target="_blank">immigration.go.kr/immigration_eng</a></p>
+                        <p><strong>Phone from Korea:</strong> 1345</p>
+                        <p><strong>Phone from abroad:</strong> +82-2-1345</p>
+                        <p><strong>Hours:</strong> Mon-Fri 9 AM - 6 PM (Korea time)</p>
+                        <p><strong>Languages:</strong> 20 languages available</p>
+                        <p><strong>Use for:</strong> Visa inquiries, ARC questions, E-2 policy questions, immigration office locations</p>
+                    </div>
+
+                    <h3>Online Portals</h3>
 
                     <div class="card-grid">
                         <div class="card">
-                            <h4>Korea Immigration Service</h4>
-                            <p><strong>Website:</strong> <a href="https://immigration.go.kr/immigration_eng/index.do" target="_blank">immigration.go.kr/immigration_eng</a></p>
-                            <p><strong>Phone from Korea:</strong> 1345</p>
-                            <p><strong>Phone from abroad:</strong> +82-2-1345</p>
-                            <p><strong>Hours:</strong> Mon-Fri 9 AM - 6 PM (Korea time)</p>
-                            <p><strong>Languages:</strong> 20 languages available</p>
-                        </div>
-
-                        <div class="card">
                             <h4>Hi Korea Portal</h4>
                             <p><strong>Website:</strong> <a href="https://hikorea.go.kr" target="_blank">hikorea.go.kr</a></p>
-                            <p><strong>Services:</strong> Online applications, visa status checks, ARC applications, appointments</p>
+                            <p><strong>Services:</strong></p>
+                            <ul>
+                                <li>Online visa applications</li>
+                                <li>Visa status checks</li>
+                                <li>ARC applications and renewals</li>
+                                <li>Immigration office appointments</li>
+                                <li>Change of address notifications</li>
+                            </ul>
+                            <p><strong>Account:</strong> Required (free registration)</p>
                         </div>
 
                         <div class="card">
                             <h4>Korea Visa Portal</h4>
                             <p><strong>Website:</strong> <a href="https://visa.go.kr" target="_blank">visa.go.kr</a></p>
-                            <p><strong>Use for:</strong> Visa application forms, status tracking, VIN verification</p>
+                            <p><strong>Use for:</strong></p>
+                            <ul>
+                                <li>Visa application forms (download)</li>
+                                <li>VIN verification</li>
+                                <li>Visa status tracking</li>
+                                <li>Visa policy information</li>
+                            </ul>
                         </div>
                     </div>
 
-                    <h3>Essential Service Providers</h3>
+                    <h3>U.S. Government Resources</h3>
 
                     <div class="card-grid">
-                        <div class="card card-highlight">
-                            <h4>Monument Visa Service (REQUIRED)</h4>
-                            <p><strong>Website:</strong> <a href="https://monumentvisa.com" target="_blank">monumentvisa.com</a></p>
-                            <p><strong>Phone:</strong> <a href="tel:1-800-995-6924">1-800-995-6924</a></p>
-                            <p><strong>Location:</strong> Fairfax, VA (next to U.S. Dept of State offices)</p>
-                            <p><strong>Services:</strong></p>
-                            <ul>
-                                <li>FBI Federal apostille: $75</li>
-                                <li>Degree State apostille: $125</li>
-                                <li>Rush processing: 3-5 business days</li>
-                            </ul>
+                        <div class="card">
+                            <h4>FBI Background Check</h4>
+                            <p><strong>Website:</strong> <a href="https://www.fbi.gov/how-we-can-help-you/more-fbi-services-and-information/identity-history-summary-checks" target="_blank">fbi.gov/identity-history-summary-checks</a></p>
+                            <p><strong>Direct DIY:</strong> 16-20 weeks processing</p>
+                            <p><strong>Cost:</strong> $18 (mail-in)</p>
+                            <p><strong>Note:</strong> Use FBI channeler for 24-72 hour results</p>
                         </div>
 
                         <div class="card">
-                            <h4>Accurate Biometrics</h4>
+                            <h4>U.S. Department of State</h4>
+                            <p><strong>Apostille Office:</strong> Office of Authentications</p>
+                            <p><strong>Website:</strong> <a href="https://travel.state.gov/content/travel/en/records-and-authentications/authenticate-your-document/apostille-requirements.html" target="_blank">travel.state.gov/apostille</a></p>
+                            <p><strong>Use for:</strong> Federal apostilles (FBI checks)</p>
+                            <p><strong>Processing:</strong> 2-4 weeks (or use service like Monument Visa)</p>
+                        </div>
+                    </div>
+
+                    <div class="alert alert-info">
+                        <h4>💡 Bookmark These Resources</h4>
+                        <p>Save these links for quick reference during your visa process and after arriving in Korea. The Hi Korea portal will be your primary tool for managing your visa status and ARC in Korea.</p>
+                    </div>
+                `
+            },
+            {
+                id: 'service-providers',
+                title: '18. Essential Service Providers – Trusted Partners',
+                content: `
+                    <div class="alert alert-success">
+                        <h3>✅ Required Services</h3>
+                        <p>These professional services are <strong>essential</strong> for completing your E-2 visa documents on time.</p>
+                    </div>
+
+                    <h3>Apostille Services</h3>
+
+                    <div class="card card-highlight">
+                        <h4>Monument Visa Service (REQUIRED)</h4>
+                        <p><strong>Website:</strong> <a href="https://monumentvisa.com" target="_blank">monumentvisa.com</a></p>
+                        <p><strong>Phone:</strong> <a href="tel:1-800-995-6924">1-800-995-6924</a></p>
+                        <p><strong>Email:</strong> info@monumentvisa.com</p>
+                        <p><strong>Location:</strong> Fairfax, VA (next to U.S. Dept of State offices)</p>
+                        <p><strong>Services & Pricing:</strong></p>
+                        <ul>
+                            <li>FBI Federal apostille: $75</li>
+                            <li>Degree State apostille: $125</li>
+                            <li>Rush processing: 3-5 business days</li>
+                            <li>Return shipping: included</li>
+                        </ul>
+                        <p><strong>Why Monument Visa:</strong></p>
+                        <ul>
+                            <li>Only company with direct access to U.S. Dept of State (Federal) AND all 50 State apostille offices</li>
+                            <li>Handles both FBI check (Federal apostille) and degree (State apostille)</li>
+                            <li>Fast turnaround (3-5 days vs. 2-4 weeks DIY)</li>
+                            <li>Zero errors - they verify everything before submission</li>
+                        </ul>
+                    </div>
+
+                    <h3>FBI Channelers (Background Checks)</h3>
+
+                    <div class="card-grid">
+                        <div class="card">
+                            <h4>Accurate Biometrics (Recommended)</h4>
                             <p><strong>Website:</strong> <a href="https://accuratebiometrics.com" target="_blank">accuratebiometrics.com</a></p>
                             <p><strong>Locations:</strong> 825+ nationwide</p>
                             <p><strong>Cost:</strong> $40-100</p>
-                            <p><strong>Timeline:</strong> 24-72 hours</p>
+                            <p><strong>Processing:</strong> 24-72 hours</p>
+                            <p><strong>How it works:</strong></p>
+                            <ol>
+                                <li>Book online appointment</li>
+                                <li>Visit location for 5-minute fingerprinting</li>
+                                <li>Receive FBI check via email in 1-3 days</li>
+                            </ol>
                         </div>
+
+                        <div class="card">
+                            <h4>Fieldprint</h4>
+                            <p><strong>Website:</strong> <a href="https://www.fieldprintusa.com" target="_blank">fieldprintusa.com</a></p>
+                            <p><strong>Locations:</strong> 500+ nationwide</p>
+                            <p><strong>Cost:</strong> $50-100</p>
+                            <p><strong>Processing:</strong> 24-72 hours</p>
+                        </div>
+                    </div>
+
+                    <h3>International Shipping</h3>
+
+                    <div class="card-grid">
+                        <div class="card">
+                            <h4>FedEx International Priority</h4>
+                            <p><strong>Website:</strong> <a href="https://www.fedex.com" target="_blank">fedex.com</a></p>
+                            <p><strong>Delivery:</strong> 2-5 business days to Korea</p>
+                            <p><strong>Cost:</strong> $40-80</p>
+                            <p><strong>Tracking:</strong> Full tracking to Korea</p>
+                        </div>
+
+                        <div class="card">
+                            <h4>DHL Express Worldwide</h4>
+                            <p><strong>Website:</strong> <a href="https://www.dhl.com" target="_blank">dhl.com</a></p>
+                            <p><strong>Delivery:</strong> 2-5 business days to Korea</p>
+                            <p><strong>Cost:</strong> $40-80</p>
+                            <p><strong>Tracking:</strong> Full tracking to Korea</p>
+                        </div>
+
+                        <div class="card">
+                            <h4>UPS Worldwide Expedited</h4>
+                            <p><strong>Website:</strong> <a href="https://www.ups.com" target="_blank">ups.com</a></p>
+                            <p><strong>Delivery:</strong> 2-5 business days to Korea</p>
+                            <p><strong>Cost:</strong> $40-80</p>
+                            <p><strong>Tracking:</strong> Full tracking to Korea</p>
+                        </div>
+                    </div>
+
+                    <div class="alert alert-warning">
+                        <h4>⚠️ NEVER Use USPS</h4>
+                        <p>USPS International has unreliable tracking in Korea. Korean postal service often loses visibility once package enters Korea. Always use FedEx, DHL, or UPS.</p>
+                    </div>
+
+                    <h3>Notary & Photos</h3>
+
+                    <div class="card-grid">
+                        <div class="card">
+                            <h4>Notary Public</h4>
+                            <p><strong>Where to find:</strong></p>
+                            <ul>
+                                <li>UPS Store: $10-15/document</li>
+                                <li>Banks (often free for customers)</li>
+                                <li>AAA offices (free for AAA members)</li>
+                                <li>Mobile notaries: $20-50</li>
+                            </ul>
+                            <p><strong>What to bring:</strong> Original degree + valid ID</p>
+                        </div>
+
+                        <div class="card">
+                            <h4>Passport Photos</h4>
+                            <p><strong>Where to go:</strong></p>
+                            <ul>
+                                <li>CVS/Walgreens: $10-20 for 6-8 photos</li>
+                                <li>Costco Photo Center: $5-8 (best value)</li>
+                                <li>UPS Store: $15-20</li>
+                            </ul>
+                            <p><strong>Specs:</strong> 2"x2" (5cm x 5cm), white background, recent photo</p>
+                        </div>
+                    </div>
+
+                    <div class="alert alert-success">
+                        <h3>💰 Total Service Cost Estimate</h3>
+                        <ul>
+                            <li>FBI Channeler: $40-100</li>
+                            <li>Monument Visa apostilles: $200</li>
+                            <li>Notary: $10-15</li>
+                            <li>Photos: $10-20</li>
+                            <li>Shipping to Monument: $20</li>
+                            <li>Shipping to Korea: $40-80</li>
+                        </ul>
+                        <p><strong>Total: $320-435</strong></p>
+                        <p><strong>Timeline: 2-3 weeks</strong> (vs. 16-20 weeks DIY)</p>
+                    </div>
+
+                    <div class="alert alert-info">
+                        <h4>💡 Pro Tips</h4>
+                        <ul>
+                            <li><strong>Book FBI channeler FIRST:</strong> Gets the clock started on your 6-month validity</li>
+                            <li><strong>Use Monument Visa:</strong> Don't try to DIY apostilles - too slow and error-prone</li>
+                            <li><strong>Get extra passport photos:</strong> You'll need them in Korea for ARC, health check, etc.</li>
+                            <li><strong>Save all tracking numbers:</strong> Email them to yourself, your employer, and Kang & Kriel</li>
+                        </ul>
                     </div>
                 `
             }

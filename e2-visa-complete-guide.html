@@ -930,6 +930,17 @@
                 `
             },
             {
+                id: 'interactive-timeline',
+                title: 'Interactive Timeline - Track Your Progress',
+                content: `
+                    <div class="alert alert-info">
+                        <p><strong>Use this interactive timeline to track your progress through each week.</strong> Check off tasks as you complete them!</p>
+                    </div>
+
+                    <div id="timeline-container"></div>
+                `
+            },
+            {
                 id: 'action-plan',
                 title: '3) 2-3 Week Action Plan',
                 content: `
@@ -1424,6 +1435,157 @@
                 `
             }
         ];
+
+        // Timeline data for interactive tracking
+        const timelineData = [
+            {
+                week: 'Week 1-3',
+                title: 'Document Preparation Phase',
+                duration: '2-3 weeks',
+                color: 'primary',
+                tasks: [
+                    {
+                        id: 'timeline-fbi-1',
+                        day: 'Day 1',
+                        title: 'Book FBI Channeler Appointment',
+                        description: 'Schedule at Accurate Biometrics or Fieldprint',
+                        urgent: true,
+                        critical: true
+                    },
+                    {
+                        id: 'timeline-fbi-2',
+                        day: 'Day 1-2',
+                        title: 'Get FBI Fingerprints',
+                        description: 'Live Scan digital fingerprinting (5 minutes)',
+                        cost: { min: 40, max: 100 },
+                        urgent: true
+                    },
+                    {
+                        id: 'timeline-degree-1',
+                        day: 'Day 1',
+                        title: 'Locate Original Degree',
+                        description: 'Must be original, not a copy',
+                        critical: true
+                    },
+                    {
+                        id: 'timeline-degree-2',
+                        day: 'Day 2-3',
+                        title: 'Get Degree Notarized',
+                        description: 'Notary public certification of original',
+                        cost: { min: 10, max: 30 }
+                    },
+                    {
+                        id: 'timeline-monument-1',
+                        day: 'Day 3-4',
+                        title: 'Order Monument Visa Service',
+                        description: 'FBI federal apostille ($55-75) + Degree state apostille ($100-125)',
+                        cost: { min: 155, max: 200 },
+                        urgent: true,
+                        critical: true
+                    },
+                    {
+                        id: 'timeline-shipping-1',
+                        day: 'Day 5-7',
+                        title: 'Ship Documents to Monument',
+                        description: 'FedEx/UPS with tracking ($40-80)',
+                        cost: { min: 40, max: 80 }
+                    }
+                ]
+            },
+            {
+                week: 'Week 2-3',
+                title: 'Apostille Processing Phase',
+                duration: '1-2 weeks',
+                color: 'dark',
+                tasks: [
+                    {
+                        id: 'timeline-wait-1',
+                        day: 'Day 7-14',
+                        title: 'Wait for FBI Results',
+                        description: 'Channeler processes in 1-3 business days'
+                    },
+                    {
+                        id: 'timeline-monument-2',
+                        day: 'Day 10-14',
+                        title: 'Monument Processes Apostilles',
+                        description: 'Federal (FBI): 3-5 days, State (Degree): 5-7 days'
+                    },
+                    {
+                        id: 'timeline-receive-1',
+                        day: 'Day 14-21',
+                        title: 'Receive Apostilled Documents',
+                        description: 'Track Monument return shipment',
+                        critical: true
+                    }
+                ]
+            },
+            {
+                week: 'Week 3-5',
+                title: 'Photo & Application Phase',
+                duration: '1-2 weeks',
+                color: 'primary',
+                tasks: [
+                    {
+                        id: 'timeline-photo-1',
+                        day: 'Day 21-23',
+                        title: 'Get Visa Photos',
+                        description: 'Korean visa specs: 3.5cm x 4.5cm, white background',
+                        cost: { min: 30, max: 70 },
+                        critical: true
+                    },
+                    {
+                        id: 'timeline-app-1',
+                        day: 'Day 21-25',
+                        title: 'Complete Online Application',
+                        description: 'Hi Korea portal (hikorea.go.kr)',
+                        urgent: true
+                    },
+                    {
+                        id: 'timeline-review-1',
+                        day: 'Day 25-28',
+                        title: 'Document Review with School',
+                        description: 'School verifies all documents match requirements'
+                    }
+                ]
+            },
+            {
+                week: 'Week 5-7',
+                title: 'Submission & Processing',
+                duration: '2-3 weeks',
+                color: 'dark',
+                tasks: [
+                    {
+                        id: 'timeline-submit-1',
+                        day: 'Day 28-35',
+                        title: 'Submit to Korean Consulate',
+                        description: 'In person or by mail (varies by location)',
+                        cost: { min: 45, max: 45 },
+                        urgent: true,
+                        critical: true
+                    },
+                    {
+                        id: 'timeline-wait-2',
+                        day: 'Day 35-42',
+                        title: 'Wait for Visa Processing',
+                        description: 'Standard processing: 5-7 business days'
+                    },
+                    {
+                        id: 'timeline-receive-2',
+                        day: 'Day 42-49',
+                        title: 'Receive Visa Number',
+                        description: 'Confirmation from consulate or online portal',
+                        critical: true
+                    },
+                    {
+                        id: 'timeline-final-1',
+                        day: 'Day 49+',
+                        title: 'Travel to Korea',
+                        description: 'Convert visa to ARC within 90 days of arrival'
+                    }
+                ]
+            }
+        ];
+
         let checklistItems = {};
 
         // Load saved progress from localStorage
@@ -1449,6 +1611,12 @@
         function toggleCheckbox(id) {
             checklistItems[id] = !checklistItems[id];
             saveProgress();
+            // Re-render timeline to update progress
+            const timelineContainer = document.getElementById('timeline-container');
+            if (timelineContainer) {
+                timelineContainer.innerHTML = '';
+                renderTimeline();
+            }
         }
 
         // Update progress bar
@@ -1540,6 +1708,112 @@
             URL.revokeObjectURL(url);
         }
 
+        // Render timeline
+        function renderTimeline() {
+            const timelineContainer = document.getElementById('timeline-container');
+            if (!timelineContainer) return;
+
+            // Calculate priority tasks
+            const priorityTasks = timelineData
+                .flatMap(w => w.tasks.map(t => ({ ...t, week: w.week })))
+                .filter(t => (t.urgent || t.critical) && !checklistItems[t.id])
+                .slice(0, 3);
+
+            // Priority tasks section
+            if (priorityTasks.length > 0) {
+                const priorityHTML = `
+                    <div style="margin-bottom: 20px; background: white; padding: 20px; border-radius: 10px; box-shadow: 0 2px 10px rgba(0,0,0,0.1);">
+                        <h3 style="margin-bottom: 15px;">⭐ Next Up - Priority Tasks</h3>
+                        <div class="card-grid">
+                            ${priorityTasks.map(task => `
+                                <div class="card" style="background: linear-gradient(135deg, #fff5f5, #ffe5e5); border-color: #f59e0b;">
+                                    <div style="margin-bottom: 8px;">
+                                        ${task.urgent ? '<span class="badge badge-urgent">URGENT</span>' : ''}
+                                        ${task.critical ? '<span class="badge badge-critical">CRITICAL</span>' : ''}
+                                    </div>
+                                    <h4 style="margin-bottom: 5px;">${task.title}</h4>
+                                    <p style="font-size: 0.9em; color: #666; margin-bottom: 5px;">${task.description}</p>
+                                    <p style="font-size: 0.8em; color: #999;">${task.week}</p>
+                                </div>
+                            `).join('')}
+                        </div>
+                    </div>
+                `;
+                timelineContainer.innerHTML += priorityHTML;
+            }
+
+            // Week sections
+            timelineData.forEach((week, weekIndex) => {
+                const weekProgress = calculateWeekProgress(week.tasks);
+                const bgColor = week.color === 'primary' ? '#ae6031' : '#8a4a25';
+                const hoverColor = week.color === 'primary' ? '#8a4a25' : '#6d3a1e';
+
+                const weekHTML = `
+                    <div class="section" style="margin-bottom: 20px;">
+                        <div class="section-header" id="timeline-week-${weekIndex}-header"
+                             onclick="toggleSection('timeline-week-${weekIndex}')"
+                             style="background: ${bgColor};">
+                            <div>
+                                <h3 style="margin-bottom: 5px; font-size: 1.3em;">${week.week}</h3>
+                                <p style="font-size: 0.9em; opacity: 0.9;">${week.title} • ${week.duration}</p>
+                            </div>
+                            <div style="display: flex; align-items: center; gap: 15px;">
+                                <div style="text-align: right;">
+                                    <div style="font-size: 0.8em; opacity: 0.9;">Week Progress</div>
+                                    <div style="font-size: 1.5em; font-weight: bold;">${weekProgress}%</div>
+                                </div>
+                                <span class="toggle-icon">▼</span>
+                            </div>
+                        </div>
+                        <div style="padding: 15px; background: #f9fafb;">
+                            <div style="width: 100%; height: 8px; background: #e5e7eb; border-radius: 4px; overflow: hidden;">
+                                <div style="height: 100%; background: ${bgColor}; width: ${weekProgress}%; transition: width 0.5s;"></div>
+                            </div>
+                        </div>
+                        <div class="section-content" id="timeline-week-${weekIndex}-content">
+                            <div style="padding: 20px;">
+                                ${week.tasks.map((task, taskIndex) => {
+                                    const isCompleted = checklistItems[task.id];
+                                    return `
+                                        <div style="padding: 15px; margin-bottom: 12px; background: ${isCompleted ? '#f9fafb' : 'white'};
+                                                    border: 2px solid ${isCompleted ? '#d1d5db' : '#e5e7eb'}; border-radius: 8px;
+                                                    transition: all 0.3s;">
+                                            <div style="display: flex; align-items: start; gap: 12px;">
+                                                <input type="checkbox"
+                                                       id="${task.id}"
+                                                       ${isCompleted ? 'checked' : ''}
+                                                       onchange="toggleCheckbox('${task.id}')"
+                                                       style="width: 20px; height: 20px; margin-top: 3px; cursor: pointer; accent-color: ${bgColor};">
+                                                <label for="${task.id}" style="flex: 1; cursor: pointer;">
+                                                    <div style="margin-bottom: 8px;">
+                                                        <span class="badge badge-info">Day ${task.day}</span>
+                                                        ${task.urgent ? '<span class="badge badge-urgent">URGENT</span>' : ''}
+                                                        ${task.critical ? '<span class="badge badge-critical">CRITICAL</span>' : ''}
+                                                        ${task.cost ? `<span class="badge" style="background: #22c55e; color: white;">$${task.cost.min}-$${task.cost.max}</span>` : ''}
+                                                        ${isCompleted ? '<span class="badge badge-success">✓ Completed</span>' : ''}
+                                                    </div>
+                                                    <h4 style="margin-bottom: 5px; ${isCompleted ? 'text-decoration: line-through; color: #9ca3af;' : ''}">${task.title}</h4>
+                                                    <p style="font-size: 0.9em; color: ${isCompleted ? '#9ca3af' : '#6b7280'};">${task.description}</p>
+                                                </label>
+                                            </div>
+                                        </div>
+                                    `;
+                                }).join('')}
+                            </div>
+                        </div>
+                    </div>
+                `;
+                timelineContainer.innerHTML += weekHTML;
+            });
+        }
+
+        // Calculate week progress
+        function calculateWeekProgress(tasks) {
+            if (!tasks || tasks.length === 0) return 0;
+            const completed = tasks.filter(t => checklistItems[t.id]).length;
+            return Math.round((completed / tasks.length) * 100);
+        }
+
         // Render all sections
         function renderAllSections() {
             const mainContent = document.getElementById('mainContent');
@@ -1560,8 +1834,9 @@
                 mainContent.appendChild(sectionDiv);
             });
 
-            // Update progress after rendering
+            // Render timeline after sections
             setTimeout(() => {
+                renderTimeline();
                 updateProgress();
             }, 100);
         }

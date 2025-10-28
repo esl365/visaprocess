@@ -244,11 +244,11 @@
         .nav-bar {
             position: sticky;
             top: 0;
-            z-index: 999;  /* Below dashboard (1000) but above content */
+            z-index: 1001;  /* Above dashboard to always be visible */
             background: rgba(255, 255, 255, 0.95);
             backdrop-filter: blur(10px);
             padding: var(--spacing-sm);
-            margin-bottom: var(--spacing-md);
+            margin-bottom: 0;  /* Remove bottom margin for sticky */
             border-radius: 0;  /* Remove border radius for sticky */
             box-shadow: 0 2px 8px rgba(0,0,0,0.1);
             border-bottom: 2px solid rgba(100, 116, 139, 0.15);
@@ -619,7 +619,7 @@
 
         .progress-dashboard {
             position: sticky;
-            top: 0;
+            top: 60px;  /* Below nav bar */
             z-index: 1000;
             background: linear-gradient(135deg, rgba(100, 116, 139, 0.05), rgba(100, 116, 139, 0.1));
             backdrop-filter: blur(10px);
@@ -1483,6 +1483,43 @@
             .timeline-item {
                 padding-left: 30px;
                 margin-bottom: 20px;
+            }
+
+            /* Navigation enhancements mobile */
+            .toc {
+                padding: 16px;
+                margin-bottom: 20px;
+            }
+
+            .toc-grid {
+                grid-template-columns: 1fr;
+                gap: 10px;
+            }
+
+            .toc-item {
+                padding: 12px 14px;
+            }
+
+            .back-to-top {
+                bottom: 20px;
+                right: 20px;
+                width: 48px;
+                height: 48px;
+                font-size: 1.3rem;
+            }
+
+            .quick-jump {
+                right: 10px;
+                padding: 8px;
+            }
+
+            .quick-jump-item {
+                padding: 10px;
+                font-size: 1.1rem;
+            }
+
+            .progress-dashboard {
+                top: 48px;  /* Adjust for smaller nav bar on mobile */
             }
 
             /* ========================================
@@ -2483,37 +2520,37 @@
                 <span>Quick Navigation</span>
             </h2>
             <div class="toc-grid">
-                <a href="#next-step" class="toc-item" onclick="smoothScroll(event, 'next-step')">
-                    <span class="toc-icon">🎯</span>
-                    <span>Your Next Step</span>
+                <a href="#quick-start-header" class="toc-item" onclick="smoothScroll(event, 'quick-start-header')">
+                    <span class="toc-icon">🚀</span>
+                    <span>Quick Start Guide</span>
                 </a>
-                <a href="#timeline-header" class="toc-item" onclick="smoothScroll(event, 'timeline-header')">
+                <a href="#interactive-timeline-header" class="toc-item" onclick="smoothScroll(event, 'interactive-timeline-header')">
                     <span class="toc-icon">📅</span>
                     <span>Interactive Timeline</span>
                 </a>
-                <a href="#smart-guide-header" class="toc-item" onclick="smoothScroll(event, 'smart-guide-header')">
+                <a href="#smart-guide-container" class="toc-item" onclick="smoothScroll(event, 'smart-guide-container')">
                     <span class="toc-icon">🧭</span>
                     <span>Smart Guide</span>
                 </a>
-                <a href="#process-reality" class="toc-item" onclick="smoothScroll(event, 'process-reality')">
-                    <span class="toc-icon">⏱️</span>
-                    <span>Process Reality Check</span>
-                </a>
-                <a href="#pre-start-checklist" class="toc-item" onclick="smoothScroll(event, 'pre-start-checklist')">
+                <a href="#pre-start-checklist-header" class="toc-item" onclick="smoothScroll(event, 'pre-start-checklist-header')">
                     <span class="toc-icon">✅</span>
                     <span>Pre-Start Checklist</span>
                 </a>
-                <a href="#master-checklist" class="toc-item" onclick="smoothScroll(event, 'master-checklist')">
+                <a href="#master-checklist-header" class="toc-item" onclick="smoothScroll(event, 'master-checklist-header')">
                     <span class="toc-icon">📋</span>
                     <span>Master Checklist</span>
                 </a>
-                <a href="#faq" class="toc-item" onclick="smoothScroll(event, 'faq')">
+                <a href="#investment-breakdown-header" class="toc-item" onclick="smoothScroll(event, 'investment-breakdown-header')">
+                    <span class="toc-icon">💰</span>
+                    <span>Cost Breakdown</span>
+                </a>
+                <a href="#faq-header" class="toc-item" onclick="smoothScroll(event, 'faq-header')">
                     <span class="toc-icon">❓</span>
                     <span>FAQs</span>
                 </a>
-                <a href="#cost-guide" class="toc-item" onclick="smoothScroll(event, 'cost-guide')">
-                    <span class="toc-icon">💰</span>
-                    <span>Cost Guide</span>
+                <a href="#after-arrival-header" class="toc-item" onclick="smoothScroll(event, 'after-arrival-header')">
+                    <span class="toc-icon">🛬</span>
+                    <span>After Arrival</span>
                 </a>
             </div>
         </div>
@@ -6315,7 +6352,7 @@ degree.
             event.preventDefault();
             const element = document.getElementById(targetId);
             if (element) {
-                const yOffset = -80; // Offset for sticky nav
+                const yOffset = -140; // Offset for sticky nav + dashboard (approx 60px + 80px)
                 const y = element.getBoundingClientRect().top + window.pageYOffset + yOffset;
                 window.scrollTo({top: y, behavior: 'smooth'});
 
@@ -6351,9 +6388,9 @@ degree.
 
         function updateActiveSection() {
             const sections = [
-                'next-step', 'timeline-header', 'smart-guide-header',
-                'process-reality', 'pre-start-checklist', 'master-checklist',
-                'faq', 'cost-guide'
+                'quick-start-header', 'interactive-timeline-header', 'smart-guide-container',
+                'pre-start-checklist-header', 'master-checklist-header',
+                'investment-breakdown-header', 'faq-header', 'after-arrival-header'
             ];
 
             let currentSection = '';
@@ -6362,7 +6399,8 @@ degree.
                 const element = document.getElementById(sectionId);
                 if (element) {
                     const rect = element.getBoundingClientRect();
-                    if (rect.top <= 150 && rect.bottom >= 150) {
+                    // Adjusted for sticky nav + dashboard (approx 180px total height)
+                    if (rect.top <= 200 && rect.bottom >= 200) {
                         currentSection = sectionId;
                         break;
                     }
@@ -6391,7 +6429,7 @@ degree.
         function scrollToSection(sectionId) {
             const element = document.getElementById(sectionId);
             if (element) {
-                const yOffset = -80;
+                const yOffset = -140; // Offset for sticky nav + dashboard
                 const y = element.getBoundingClientRect().top + window.pageYOffset + yOffset;
                 window.scrollTo({top: y, behavior: 'smooth'});
             }
@@ -6405,19 +6443,19 @@ degree.
 
     <!-- Quick Jump Menu -->
     <div class="quick-jump" aria-label="Quick navigation menu">
-        <a href="#next-step" class="quick-jump-item" onclick="scrollToSection('next-step'); return false;" title="Your Next Step">
-            🎯
+        <a href="#quick-start-header" class="quick-jump-item" onclick="scrollToSection('quick-start-header'); return false;" title="Quick Start">
+            🚀
         </a>
-        <a href="#timeline-header" class="quick-jump-item" onclick="scrollToSection('timeline-header'); return false;" title="Timeline">
+        <a href="#interactive-timeline-header" class="quick-jump-item" onclick="scrollToSection('interactive-timeline-header'); return false;" title="Timeline">
             📅
         </a>
-        <a href="#smart-guide-header" class="quick-jump-item" onclick="scrollToSection('smart-guide-header'); return false;" title="Smart Guide">
+        <a href="#smart-guide-container" class="quick-jump-item" onclick="scrollToSection('smart-guide-container'); return false;" title="Smart Guide">
             🧭
         </a>
-        <a href="#master-checklist" class="quick-jump-item" onclick="scrollToSection('master-checklist'); return false;" title="Master Checklist">
+        <a href="#master-checklist-header" class="quick-jump-item" onclick="scrollToSection('master-checklist-header'); return false;" title="Master Checklist">
             📋
         </a>
-        <a href="#faq" class="quick-jump-item" onclick="scrollToSection('faq'); return false;" title="FAQ">
+        <a href="#faq-header" class="quick-jump-item" onclick="scrollToSection('faq-header'); return false;" title="FAQ">
             ❓
         </a>
     </div>

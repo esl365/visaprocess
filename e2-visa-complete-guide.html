@@ -240,15 +240,18 @@
             color: var(--gray-700);
         }
 
-        /* Navigation - Minimalistic */
+        /* Navigation - Minimalistic & Sticky */
         .nav-bar {
-            background: rgba(255, 255, 255, 0.8);
+            position: sticky;
+            top: 0;
+            z-index: 999;  /* Below dashboard (1000) but above content */
+            background: rgba(255, 255, 255, 0.95);
             backdrop-filter: blur(10px);
             padding: var(--spacing-sm);
             margin-bottom: var(--spacing-md);
-            border-radius: var(--spacing-xs);
-            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
-            border: 1px solid rgba(100, 116, 139, 0.1);
+            border-radius: 0;  /* Remove border radius for sticky */
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            border-bottom: 2px solid rgba(100, 116, 139, 0.15);
         }
 
         .nav-buttons {
@@ -340,28 +343,28 @@
 
         /* Critical Alert - 애니메이션 및 강조 */
         .alert-danger {
-            background: linear-gradient(135deg, #fef2f2, #fee2e2);
-            border-left: 8px solid #dc2626;
-            color: #991b1b;
-            box-shadow: 0 4px 15px rgba(220, 38, 38, 0.15);
+            background: linear-gradient(135deg, #f1f5f9, #e2e8f0);
+            border-left: 8px solid #64748b;
+            color: #334155;
+            box-shadow: 0 4px 15px rgba(100, 116, 139, 0.15);
             animation: pulseAlert 2s ease-in-out infinite;
         }
 
         @keyframes pulseAlert {
             0%, 100% {
-                box-shadow: 0 4px 15px rgba(220, 38, 38, 0.15);
+                box-shadow: 0 4px 15px rgba(100, 116, 139, 0.15);
             }
             50% {
-                box-shadow: 0 4px 20px rgba(220, 38, 38, 0.25);
+                box-shadow: 0 4px 20px rgba(100, 116, 139, 0.25);
             }
         }
 
         /* Warning Alert - 강조 */
         .alert-warning {
-            background: linear-gradient(135deg, #fffbeb, #fef3c7);
-            border-left: 6px solid var(--accent-warning);
-            color: #92400e;
-            box-shadow: 0 2px 10px rgba(234, 179, 8, 0.1);
+            background: linear-gradient(135deg, #eff6ff, #dbeafe);
+            border-left: 6px solid #3b82f6;
+            color: #1e40af;
+            box-shadow: 0 2px 10px rgba(59, 130, 246, 0.1);
         }
 
         /* Info Alert */
@@ -884,7 +887,7 @@
 
         /* Highlight animation for search results */
         @keyframes highlightFade {
-            0% { background: #fef3c7; }
+            0% { background: #dbeafe; }
             100% { background: transparent; }
         }
 
@@ -1063,8 +1066,8 @@
         }
 
         .card-highlight {
-            background: linear-gradient(135deg, #fef3c7, #fde68a);
-            border-color: #f59e0b;
+            background: linear-gradient(135deg, #eff6ff, #dbeafe);
+            border-color: #3b82f6;
         }
 
         /* Code/Pre blocks */
@@ -1616,6 +1619,163 @@
             }
         }
 
+        /* ========================================
+           NAVIGATION ENHANCEMENTS
+           ======================================== */
+
+        /* Table of Contents */
+        .toc {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 20px;
+            margin-bottom: 24px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+            border: 1px solid rgba(100, 116, 139, 0.15);
+        }
+
+        .toc h2 {
+            color: var(--gray-900);
+            font-size: var(--font-h3);
+            margin-bottom: 16px;
+            font-weight: var(--font-weight-bold);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .toc-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 12px;
+        }
+
+        .toc-item {
+            display: flex;
+            align-items: center;
+            padding: 12px 16px;
+            background: rgba(255, 255, 255, 0.6);
+            border: 1px solid rgba(100, 116, 139, 0.1);
+            border-radius: 6px;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-decoration: none;
+            color: var(--gray-700);
+            font-weight: 500;
+        }
+
+        .toc-item:hover {
+            background: var(--gray-50);
+            border-color: var(--gray-300);
+            transform: translateX(4px);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
+
+        .toc-item.active {
+            background: linear-gradient(135deg, #eff6ff, #dbeafe);
+            border-color: #3b82f6;
+            color: var(--gray-900);
+            font-weight: 600;
+        }
+
+        .toc-icon {
+            font-size: 1.2rem;
+            margin-right: 8px;
+        }
+
+        /* Back to Top Button */
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background: var(--gray-900);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+            z-index: 998;
+            transition: all 0.3s;
+        }
+
+        .back-to-top:hover {
+            background: var(--gray-700);
+            transform: translateY(-3px);
+            box-shadow: 0 6px 16px rgba(0,0,0,0.25);
+        }
+
+        .back-to-top.show {
+            display: flex;
+            animation: fadeInUp 0.3s ease;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Quick Jump Menu */
+        .quick-jump {
+            position: fixed;
+            right: 30px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 12px;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            border: 1px solid rgba(100, 116, 139, 0.15);
+            z-index: 997;
+            display: none;
+        }
+
+        .quick-jump.show {
+            display: block;
+            animation: fadeIn 0.3s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .quick-jump-item {
+            display: block;
+            padding: 8px 12px;
+            margin: 4px 0;
+            border-radius: 4px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.2s;
+            font-size: 1.2rem;
+            color: var(--gray-700);
+            text-decoration: none;
+            min-width: 40px;
+        }
+
+        .quick-jump-item:hover {
+            background: var(--gray-100);
+            transform: translateX(-3px);
+        }
+
+        .quick-jump-item.active {
+            background: linear-gradient(135deg, #eff6ff, #dbeafe);
+            color: #3b82f6;
+        }
+
         /* Link Styles */
         a {
             color: var(--primary-500); /* Blue - web standard */
@@ -1656,7 +1816,7 @@
             }
             50% {
                 transform: scale(1.05);
-                background: linear-gradient(135deg, #fef3c7, #fde68a);
+                background: linear-gradient(135deg, #eff6ff, #dbeafe);
             }
             100% {
                 transform: scale(1);
@@ -1772,7 +1932,7 @@
         }
 
         .toast.error {
-            border-left: 4px solid #dc2626;
+            border-left: 4px solid #64748b;
         }
 
         .toast.info {
@@ -1991,7 +2151,7 @@
 
         /* 2.4 Smart Next Step Widget */
         .smart-guide-widget {
-            background: linear-gradient(135deg, #ffffff, #fef3c7);
+            background: linear-gradient(135deg, #ffffff, #dbeafe);
             border: 3px solid var(--brand-primary);
             border-radius: 12px;
             padding: 0;
@@ -2061,7 +2221,7 @@
         }
 
         .widget-footer {
-            background: #fef3c7;
+            background: #dbeafe;
             padding: 15px 25px;
             border-top: 2px solid #fde68a;
         }
@@ -2128,7 +2288,7 @@
         }
 
         .milestone.in-progress {
-            background: #fffbeb;
+            background: #eff6ff;
             border-left-color: #f59e0b;
         }
 
@@ -2316,6 +2476,48 @@
         <input type="file" id="importFile" accept="application/json" style="display:none"
                aria-label="Import saved progress file">
 
+        <!-- Table of Contents -->
+        <div class="toc" id="table-of-contents" role="navigation" aria-label="Table of contents">
+            <h2>
+                <span>📑</span>
+                <span>Quick Navigation</span>
+            </h2>
+            <div class="toc-grid">
+                <a href="#next-step" class="toc-item" onclick="smoothScroll(event, 'next-step')">
+                    <span class="toc-icon">🎯</span>
+                    <span>Your Next Step</span>
+                </a>
+                <a href="#timeline-header" class="toc-item" onclick="smoothScroll(event, 'timeline-header')">
+                    <span class="toc-icon">📅</span>
+                    <span>Interactive Timeline</span>
+                </a>
+                <a href="#smart-guide-header" class="toc-item" onclick="smoothScroll(event, 'smart-guide-header')">
+                    <span class="toc-icon">🧭</span>
+                    <span>Smart Guide</span>
+                </a>
+                <a href="#process-reality" class="toc-item" onclick="smoothScroll(event, 'process-reality')">
+                    <span class="toc-icon">⏱️</span>
+                    <span>Process Reality Check</span>
+                </a>
+                <a href="#pre-start-checklist" class="toc-item" onclick="smoothScroll(event, 'pre-start-checklist')">
+                    <span class="toc-icon">✅</span>
+                    <span>Pre-Start Checklist</span>
+                </a>
+                <a href="#master-checklist" class="toc-item" onclick="smoothScroll(event, 'master-checklist')">
+                    <span class="toc-icon">📋</span>
+                    <span>Master Checklist</span>
+                </a>
+                <a href="#faq" class="toc-item" onclick="smoothScroll(event, 'faq')">
+                    <span class="toc-icon">❓</span>
+                    <span>FAQs</span>
+                </a>
+                <a href="#cost-guide" class="toc-item" onclick="smoothScroll(event, 'cost-guide')">
+                    <span class="toc-icon">💰</span>
+                    <span>Cost Guide</span>
+                </a>
+            </div>
+        </div>
+
         <!-- PHASE 2: Search Container -->
         <div class="search-container" role="search">
             <input type="search"
@@ -2369,7 +2571,7 @@
             <div style="background: rgba(255,255,255,0.9); padding: 20px; border-radius: 8px; margin: 15px 0;">
                 <h4 style="color: #dc2626; margin-top: 0;">⚠️ Common Misconception vs. Reality</h4>
                 <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-top: 10px;">
-                    <div style="background: #fee2e2; padding: 15px; border-radius: 6px;">
+                    <div style="background: #e2e8f0; padding: 15px; border-radius: 6px;">
                         <strong style="color: #991b1b;">❌ What online guides say:</strong>
                         <p style="margin: 10px 0 0 0;">"You have 90 days to register for ARC"</p>
                     </div>
@@ -2386,21 +2588,21 @@
 
             <h4 style="color: #dc2626;">📅 Your First Week Timeline:</h4>
             <div style="background: rgba(255,255,255,0.9); padding: 15px; border-radius: 8px; margin: 10px 0;">
-                <div style="margin-bottom: 12px; padding: 12px; background: #fef2f2; border-left: 4px solid #dc2626; border-radius: 4px;">
+                <div style="margin-bottom: 12px; padding: 12px; background: #f1f5f9; border-left: 4px solid #64748b; border-radius: 4px;">
                     <strong style="color: #991b1b;">Day 1-2: Health Check at MOJ Designated Hospital</strong>
                     <p style="margin: 5px 0 0 0;">Required for ARC application. Bring passport, ₩60,000-100,000, passport photo. Results same day or next day.</p>
                 </div>
-                <div style="margin-bottom: 12px; padding: 12px; background: #fef2f2; border-left: 4px solid #dc2626; border-radius: 4px;">
+                <div style="margin-bottom: 12px; padding: 12px; background: #f1f5f9; border-left: 4px solid #64748b; border-radius: 4px;">
                     <strong style="color: #991b1b;">Day 3-5: Apply for ARC at Immigration Office</strong>
                     <p style="margin: 5px 0 0 0;">Bring health certificate, passport, housing contract, 2 photos, ₩30,000. Processing takes 1-2 weeks. <strong>Keep your receipt (접수증)!</strong></p>
                 </div>
-                <div style="margin-bottom: 12px; padding: 12px; background: #fef2f2; border-left: 4px solid #f59e0b; border-radius: 4px;">
+                <div style="margin-bottom: 12px; padding: 12px; background: #f1f5f9; border-left: 4px solid #3b82f6; border-radius: 4px;">
                     <strong style="color: #92400e;">Day 7-10: Education Office Teacher Registration</strong>
                     <p style="margin: 5px 0 0 0;"><strong>CRITICAL:</strong> Register with education office using ARC receipt. Required to legally teach and receive salary. Your school HR will assist.</p>
                 </div>
             </div>
 
-            <div style="background: #fef3c7; padding: 15px; border-radius: 8px; border: 2px solid #f59e0b; margin-top: 15px;">
+            <div style="background: #dbeafe; padding: 15px; border-radius: 8px; border: 2px solid #3b82f6; margin-top: 15px;">
                 <strong style="color: #92400e;">💡 Key Insight:</strong>
                 <p style="margin: 5px 0 0 0;">You don't need to wait for the physical ARC card! The application receipt (접수증) is accepted by banks, phone companies, and education offices. Start these processes immediately after applying for ARC.</p>
             </div>
@@ -2531,7 +2733,7 @@
                                 <td>~$45</td>
                                 <td>Government fee</td>
                             </tr>
-                            <tr style="background: #fef3c7; font-weight: bold;">
+                            <tr style="background: #dbeafe; font-weight: bold;">
                                 <td>TOTAL</td>
                                 <td>$320-525</td>
                                 <td>Protects $24K+ annual job</td>
@@ -3665,7 +3867,7 @@
                         <h3>🚨 REALITY CHECK: 90 Days vs. 7 Days</h3>
                         <div style="background: rgba(255,255,255,0.95); padding: 20px; border-radius: 8px; margin: 15px 0;">
                             <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
-                                <div style="padding: 15px; background: #fee2e2; border-radius: 8px;">
+                                <div style="padding: 15px; background: #e2e8f0; border-radius: 8px;">
                                     <h4 style="color: #991b1b; margin-top: 0;">❌ What You'll Read Online</h4>
                                     <ul style="margin: 10px 0; color: #991b1b;">
                                         <li>"You have 90 days to get your ARC"</li>
@@ -3682,7 +3884,7 @@
                                     </ul>
                                 </div>
                             </div>
-                            <p style="margin-top: 15px; padding: 15px; background: #fef3c7; border-left: 4px solid #f59e0b; border-radius: 4px;">
+                            <p style="margin-top: 15px; padding: 15px; background: #dbeafe; border-left: 4px solid #3b82f6; border-radius: 4px;">
                                 <strong style="color: #92400e;">The Truth:</strong> While immigration law gives you 90 days for ARC, education offices require it (or the application receipt) to register you as a teacher. Without education office registration, you cannot legally teach or receive salary.
                             </p>
                         </div>
@@ -3836,17 +4038,17 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr style="background: #fef2f2;">
+                            <tr style="background: #f1f5f9;">
                                 <td><strong>1-2</strong></td>
                                 <td>Health check at MOJ designated hospital</td>
                                 <td>Required for ARC application</td>
                             </tr>
-                            <tr style="background: #fef2f2;">
+                            <tr style="background: #f1f5f9;">
                                 <td><strong>3-5</strong></td>
                                 <td>Apply for ARC at immigration office</td>
                                 <td>Get receipt for education office</td>
                             </tr>
-                            <tr style="background: #fef3c7;">
+                            <tr style="background: #dbeafe;">
                                 <td><strong>7-10</strong></td>
                                 <td>Education office teacher registration</td>
                                 <td>Required to legally teach and receive salary</td>
@@ -3974,7 +4176,7 @@
                                     <td style="color: #f59e0b; font-weight: bold;">⚠️ Limited</td>
                                     <td>For best plans</td>
                                 </tr>
-                                <tr style="background: #fef3c7;">
+                                <tr style="background: #dbeafe;">
                                     <td><strong>Education Office Registration</strong></td>
                                     <td style="color: #dc2626; font-weight: bold;">❌ NO</td>
                                     <td style="color: #22c55e; font-weight: bold;">✅ MANDATORY</td>
@@ -5395,7 +5597,7 @@ degree.
                             <p style="font-size: 1.1rem; margin: 15px 0;"><strong>Day ${daysSinceArrival} in Korea</strong></p>
 
                             ${daysSinceArrival <= 2 ? `
-                                <div style="background: #fef2f2; padding: 15px; border-radius: 8px; margin: 15px 0;">
+                                <div style="background: #f1f5f9; padding: 15px; border-radius: 8px; margin: 15px 0;">
                                     <h4 style="color: #dc2626; margin-top: 0;">TODAY/TOMORROW PRIORITY:</h4>
                                     <ol style="margin: 10px 0;">
                                         <li><strong>Go to MOJ designated hospital for health check</strong></li>
@@ -5406,7 +5608,7 @@ degree.
                             ` : ''}
 
                             ${daysSinceArrival >= 3 ? `
-                                <div style="background: #fef3c7; padding: 15px; border-radius: 8px; margin: 15px 0;">
+                                <div style="background: #dbeafe; padding: 15px; border-radius: 8px; margin: 15px 0;">
                                     <h4 style="color: #92400e; margin-top: 0;">NEXT PRIORITY:</h4>
                                     <ol style="margin: 10px 0;">
                                         <li><strong>Apply for ARC at immigration office</strong></li>
@@ -5768,7 +5970,7 @@ degree.
                         <h3 style="margin-bottom: 15px;">⭐ Next Up - Priority Tasks</h3>
                         <div class="card-grid">
                             ${priorityTasks.map(task => `
-                                <div class="card" style="background: linear-gradient(135deg, #fff5f5, #ffe5e5); border-color: #f59e0b;">
+                                <div class="card" style="background: linear-gradient(135deg, #f1f5f9, #e2e8f0); border-color: #3b82f6;">
                                     <div style="margin-bottom: 8px;">
                                         ${task.urgent ? '<span class="badge badge-urgent">URGENT</span>' : ''}
                                         ${task.critical ? '<span class="badge badge-critical">CRITICAL</span>' : ''}
@@ -6100,7 +6302,125 @@ degree.
 
             // PHASE 1.3: Initialize import
             setupImportFunctionality();
+
+            // Initialize navigation enhancements
+            initializeNavigationEnhancements();
         });
+
+        // ========================================
+        // NAVIGATION ENHANCEMENTS FUNCTIONS
+        // ========================================
+
+        function smoothScroll(event, targetId) {
+            event.preventDefault();
+            const element = document.getElementById(targetId);
+            if (element) {
+                const yOffset = -80; // Offset for sticky nav
+                const y = element.getBoundingClientRect().top + window.pageYOffset + yOffset;
+                window.scrollTo({top: y, behavior: 'smooth'});
+
+                // Update active TOC item
+                document.querySelectorAll('.toc-item').forEach(item => item.classList.remove('active'));
+                event.currentTarget.classList.add('active');
+            }
+        }
+
+        function initializeNavigationEnhancements() {
+            const backToTop = document.querySelector('.back-to-top');
+            const quickJump = document.querySelector('.quick-jump');
+
+            // Back to top button visibility
+            window.addEventListener('scroll', () => {
+                if (window.pageYOffset > 300) {
+                    backToTop.classList.add('show');
+                    quickJump.classList.add('show');
+                } else {
+                    backToTop.classList.remove('show');
+                    quickJump.classList.remove('show');
+                }
+
+                // Update active section in TOC and Quick Jump
+                updateActiveSection();
+            });
+
+            // Back to top click handler
+            backToTop.addEventListener('click', () => {
+                window.scrollTo({top: 0, behavior: 'smooth'});
+            });
+        }
+
+        function updateActiveSection() {
+            const sections = [
+                'next-step', 'timeline-header', 'smart-guide-header',
+                'process-reality', 'pre-start-checklist', 'master-checklist',
+                'faq', 'cost-guide'
+            ];
+
+            let currentSection = '';
+
+            for (const sectionId of sections) {
+                const element = document.getElementById(sectionId);
+                if (element) {
+                    const rect = element.getBoundingClientRect();
+                    if (rect.top <= 150 && rect.bottom >= 150) {
+                        currentSection = sectionId;
+                        break;
+                    }
+                }
+            }
+
+            if (currentSection) {
+                // Update TOC
+                document.querySelectorAll('.toc-item').forEach(item => {
+                    item.classList.remove('active');
+                    if (item.getAttribute('href') === '#' + currentSection) {
+                        item.classList.add('active');
+                    }
+                });
+
+                // Update Quick Jump
+                document.querySelectorAll('.quick-jump-item').forEach(item => {
+                    item.classList.remove('active');
+                    if (item.getAttribute('href') === '#' + currentSection) {
+                        item.classList.add('active');
+                    }
+                });
+            }
+        }
+
+        function scrollToSection(sectionId) {
+            const element = document.getElementById(sectionId);
+            if (element) {
+                const yOffset = -80;
+                const y = element.getBoundingClientRect().top + window.pageYOffset + yOffset;
+                window.scrollTo({top: y, behavior: 'smooth'});
+            }
+        }
     </script>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top" aria-label="Back to top" title="Back to top">
+        ↑
+    </button>
+
+    <!-- Quick Jump Menu -->
+    <div class="quick-jump" aria-label="Quick navigation menu">
+        <a href="#next-step" class="quick-jump-item" onclick="scrollToSection('next-step'); return false;" title="Your Next Step">
+            🎯
+        </a>
+        <a href="#timeline-header" class="quick-jump-item" onclick="scrollToSection('timeline-header'); return false;" title="Timeline">
+            📅
+        </a>
+        <a href="#smart-guide-header" class="quick-jump-item" onclick="scrollToSection('smart-guide-header'); return false;" title="Smart Guide">
+            🧭
+        </a>
+        <a href="#master-checklist" class="quick-jump-item" onclick="scrollToSection('master-checklist'); return false;" title="Master Checklist">
+            📋
+        </a>
+        <a href="#faq" class="quick-jump-item" onclick="scrollToSection('faq'); return false;" title="FAQ">
+            ❓
+        </a>
+    </div>
+
 </body>
 </html>

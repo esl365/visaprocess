@@ -252,6 +252,16 @@
             border-radius: 0;  /* Remove border radius for sticky */
             box-shadow: 0 2px 8px rgba(0,0,0,0.1);
             border-bottom: 2px solid rgba(100, 116, 139, 0.15);
+            transition: transform 0.3s ease, opacity 0.3s ease;
+        }
+
+        /* Mobile: Hide on scroll down */
+        @media (max-width: 768px) {
+            .nav-bar.hide-on-scroll {
+                transform: translateY(-100%);
+                opacity: 0;
+                pointer-events: none;
+            }
         }
 
         .nav-buttons {
@@ -335,6 +345,63 @@
             border-left: 5px solid;
             position: relative;
             overflow: hidden;
+        }
+
+        /* Collapsible alert for mobile */
+        .alert-collapsible {
+            overflow: visible;
+        }
+
+        .alert-collapsible-header {
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            user-select: none;
+            -webkit-tap-highlight-color: rgba(0,0,0,0.1);
+        }
+
+        .alert-collapsible-toggle {
+            font-size: 1.5rem;
+            transition: transform 0.3s ease;
+            margin-left: 10px;
+            flex-shrink: 0;
+        }
+
+        .alert-collapsible-content {
+            transition: max-height 0.4s ease, opacity 0.3s ease, margin-top 0.3s ease;
+            overflow: hidden;
+        }
+
+        .alert-collapsible.collapsed .alert-collapsible-content {
+            max-height: 0 !important;
+            opacity: 0;
+            margin-top: 0 !important;
+        }
+
+        .alert-collapsible.collapsed .alert-collapsible-toggle {
+            transform: rotate(-90deg);
+        }
+
+        /* Mobile: Optimize collapsible alerts */
+        @media (max-width: 768px) {
+            .alert-collapsible {
+                padding: 15px 18px;
+            }
+
+            .alert-collapsible.collapsed {
+                padding-bottom: 15px;
+            }
+
+            .alert-collapsible-header h3 {
+                margin: 0;
+                font-size: 1rem;
+                flex: 1;
+            }
+
+            .alert-collapsible-content {
+                margin-top: 12px;
+            }
         }
 
         /* ========================================
@@ -628,6 +695,16 @@
             box-shadow: 0 1px 3px rgba(0,0,0,0.05);
             margin-bottom: 30px;
             border-bottom: 1px solid rgba(100, 116, 139, 0.1);
+            transition: transform 0.3s ease, opacity 0.3s ease;
+        }
+
+        /* Mobile: Hide on scroll down */
+        @media (max-width: 768px) {
+            .progress-dashboard.hide-on-scroll {
+                transform: translateY(-100%);
+                opacity: 0;
+                pointer-events: none;
+            }
         }
 
         .dashboard-grid {
@@ -1412,14 +1489,20 @@
             .header h1 {
                 font-size: var(--font-h2);
             }
+
+            /* Navigation buttons - 2x2 grid on mobile */
             .nav-buttons {
-                flex-direction: column;
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 8px;
             }
+
             .btn {
                 width: 100%;
                 min-height: 44px; /* iOS 권장 최소 터치 타겟 */
-                padding: 12px 20px;
-                font-size: var(--font-size-md); /* iOS 자동 줌 방지 */
+                padding: 10px 14px;
+                font-size: 0.85rem; /* Slightly smaller to fit grid */
+                text-align: center;
             }
             .card-grid {
                 grid-template-columns: 1fr;
@@ -1492,7 +1575,7 @@
             /* Dashboard mobile layout */
             .dashboard-grid {
                 grid-template-columns: 1fr 1fr !important;
-                gap: 12px;
+                gap: 10px;
             }
 
             .main-progress {
@@ -1501,26 +1584,65 @@
             }
 
             .progress-circle {
-                width: 120px;
-                height: 120px;
+                width: 100px;
+                height: 100px;
             }
 
             .percentage {
-                font-size: 2rem;
+                font-size: 1.75rem;
             }
 
             .stat-value {
-                font-size: 1.5rem;
+                font-size: 1.25rem;
             }
 
             .stat-label {
-                font-size: 0.75rem;
+                font-size: 0.7rem;
             }
 
             .progress-dashboard {
-                padding: 15px;
-                margin-bottom: 20px;
+                padding: 12px;
+                margin-bottom: 16px;
             }
+
+            .dashboard-card {
+                padding: 10px;
+            }
+        }
+
+        /* Small mobile devices - Single column dashboard */
+        @media (max-width: 480px) {
+            .dashboard-grid {
+                grid-template-columns: 1fr !important;
+                gap: 8px;
+            }
+
+            .dashboard-card {
+                padding: 12px;
+            }
+
+            .main-progress {
+                margin-bottom: 8px;
+            }
+
+            .progress-circle {
+                width: 90px;
+                height: 90px;
+            }
+
+            .percentage {
+                font-size: 1.5rem;
+            }
+
+            .stat-value {
+                font-size: 1.1rem;
+            }
+
+            /* Hide mini progress bar on very small screens */
+            .mini-progress-bar {
+                display: none;
+            }
+        }
 
             /* Search container mobile */
             .search-container {
@@ -1599,6 +1721,20 @@
             .alert {
                 padding: 12px;
             }
+
+            .container {
+                padding: 12px;
+            }
+
+            /* Reduce TOC padding on very small screens */
+            .toc {
+                padding: 15px;
+            }
+
+            .toc-item {
+                padding: 12px 14px;
+                font-size: 0.95rem;
+            }
         }
 
         /* 큰 모바일 디바이스 (태블릿) */
@@ -1664,6 +1800,30 @@
             font-weight: 500;
         }
 
+        /* Mobile TOC optimization */
+        @media (max-width: 768px) {
+            .toc-grid {
+                grid-template-columns: 1fr;  /* Single column for mobile */
+                gap: 10px;
+            }
+
+            .toc-item {
+                min-height: 52px;  /* Larger touch target */
+                padding: 14px 18px;
+                font-size: 1rem;
+            }
+
+            .toc-item:active {
+                transform: scale(0.98);
+                background: var(--gray-100);
+            }
+
+            .toc-icon {
+                font-size: 1.4rem;
+                margin-right: 12px;
+            }
+        }
+
         .toc-item:hover {
             background: var(--gray-50);
             border-color: var(--gray-300);
@@ -1713,6 +1873,26 @@
         .back-to-top.show {
             display: flex;
             animation: fadeInUp 0.3s ease;
+        }
+
+        /* Mobile-specific Back-to-Top positioning */
+        @media (max-width: 768px) {
+            .back-to-top {
+                /* Move to bottom-left for left-thumb accessibility */
+                bottom: 85px;  /* Above quick-jump menu */
+                left: 20px;
+                right: auto;
+                width: 48px;
+                height: 48px;
+                font-size: 1.3rem;
+
+                /* Enhanced mobile shadow */
+                box-shadow: 0 2px 12px rgba(0,0,0,0.3);
+            }
+
+            .back-to-top:active {
+                transform: scale(0.9);
+            }
         }
 
         @keyframes fadeInUp {
@@ -1774,6 +1954,54 @@
         .quick-jump-item.active {
             background: linear-gradient(135deg, #eff6ff, #dbeafe);
             color: #3b82f6;
+        }
+
+        /* Mobile-specific Quick Jump styles */
+        @media (max-width: 768px) {
+            .quick-jump {
+                /* Reposition to bottom center for thumb accessibility */
+                top: auto;
+                bottom: 20px;
+                right: 50%;
+                left: auto;
+                transform: translateX(50%);
+
+                /* Horizontal layout */
+                display: none;
+                flex-direction: row;
+                padding: 8px 12px;
+                border-radius: 24px;
+                gap: 4px;
+
+                /* Better mobile shadow */
+                box-shadow: 0 -2px 16px rgba(0,0,0,0.2);
+            }
+
+            .quick-jump.show {
+                display: flex;
+            }
+
+            .quick-jump-item {
+                /* Horizontal inline items */
+                display: inline-flex;
+                margin: 0;
+                padding: 10px 14px;
+                min-width: 44px;
+                min-height: 44px;
+                align-items: center;
+                justify-content: center;
+                font-size: 1.4rem;
+            }
+
+            .quick-jump-item:hover {
+                transform: scale(1.1);
+                background: var(--gray-100);
+            }
+
+            .quick-jump-item:active {
+                transform: scale(0.95);
+                background: var(--gray-200);
+            }
         }
 
         /* Link Styles */
@@ -2552,59 +2780,68 @@
         <div id="progress-insights-container"></div>
 
         <!-- Critical Warning -->
-        <div class="alert alert-danger" style="animation: pulse 2s infinite;">
-            <h3>🚨 CRITICAL WARNING - Read This First!</h3>
-            <ul>
-                <li><strong>FBI Check</strong> must get <strong>FEDERAL</strong> apostille from U.S. Department of State</li>
-                <li><strong>Degree</strong> must get <strong>STATE</strong> apostille from Secretary of State (state where degree issued)</li>
-                <li><strong>Names must match EXACTLY</strong> across all documents (passport, FBI, degree) including middle names</li>
-                <li><strong>DIY FBI processing takes 14-16 weeks</strong>. Use a channeler (3-5 days) to avoid delays</li>
-                <li><strong>Total Investment: $320-525</strong> for 2-3 week document preparation</li>
-                <li><strong>Total Timeline: 5-7 weeks</strong> from start to visa in passport</li>
-            </ul>
+        <div id="alert-critical-warning" class="alert alert-danger alert-collapsible" style="animation: pulse 2s infinite;">
+            <div class="alert-collapsible-header" onclick="toggleAlert('alert-critical-warning')">
+                <h3>🚨 CRITICAL WARNING - Read This First!</h3>
+                <span class="alert-collapsible-toggle">▼</span>
+            </div>
+            <div class="alert-collapsible-content">
+                <ul>
+                    <li><strong>FBI Check</strong> must get <strong>FEDERAL</strong> apostille from U.S. Department of State</li>
+                    <li><strong>Degree</strong> must get <strong>STATE</strong> apostille from Secretary of State (state where degree issued)</li>
+                    <li><strong>Names must match EXACTLY</strong> across all documents (passport, FBI, degree) including middle names</li>
+                    <li><strong>DIY FBI processing takes 14-16 weeks</strong>. Use a channeler (3-5 days) to avoid delays</li>
+                    <li><strong>Total Investment: $320-525</strong> for 2-3 week document preparation</li>
+                    <li><strong>Total Timeline: 5-7 weeks</strong> from start to visa in passport</li>
+                </ul>
+            </div>
         </div>
 
         <!-- NEW: Critical Post-Arrival Actions -->
-        <div class="alert alert-danger" style="border-left: 8px solid #dc2626;">
-            <h3>🚨 CRITICAL: Immediate Action Required Upon Arrival in Korea</h3>
-
-            <div style="background: rgba(255,255,255,0.9); padding: 20px; border-radius: 8px; margin: 15px 0;">
-                <h4 style="color: #dc2626; margin-top: 0;">⚠️ Common Misconception vs. Reality</h4>
-                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-top: 10px;">
-                    <div style="background: #e2e8f0; padding: 15px; border-radius: 6px;">
-                        <strong style="color: #991b1b;">❌ What online guides say:</strong>
-                        <p style="margin: 10px 0 0 0;">"You have 90 days to register for ARC"</p>
-                    </div>
-                    <div style="background: #dcfce7; padding: 15px; border-radius: 6px;">
-                        <strong style="color: #166534;">✅ Your E-2 reality:</strong>
-                        <p style="margin: 10px 0 0 0;">"You need to start teaching within days of arrival"</p>
-                    </div>
-                </div>
-                <p style="margin-top: 15px; font-weight: bold; color: #991b1b;">
-                    The Problem: Education offices require ARC (or application receipt) to register you as a teacher.
-                    No registration = No teaching = No salary
-                </p>
+        <div id="alert-post-arrival" class="alert alert-danger alert-collapsible" style="border-left: 8px solid #dc2626;">
+            <div class="alert-collapsible-header" onclick="toggleAlert('alert-post-arrival')">
+                <h3>🚨 CRITICAL: Immediate Action Required Upon Arrival in Korea</h3>
+                <span class="alert-collapsible-toggle">▼</span>
             </div>
+            <div class="alert-collapsible-content">
+                <div style="background: rgba(255,255,255,0.9); padding: 20px; border-radius: 8px; margin: 15px 0;">
+                    <h4 style="color: #dc2626; margin-top: 0;">⚠️ Common Misconception vs. Reality</h4>
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-top: 10px;">
+                        <div style="background: #e2e8f0; padding: 15px; border-radius: 6px;">
+                            <strong style="color: #991b1b;">❌ What online guides say:</strong>
+                            <p style="margin: 10px 0 0 0;">"You have 90 days to register for ARC"</p>
+                        </div>
+                        <div style="background: #dcfce7; padding: 15px; border-radius: 6px;">
+                            <strong style="color: #166534;">✅ Your E-2 reality:</strong>
+                            <p style="margin: 10px 0 0 0;">"You need to start teaching within days of arrival"</p>
+                        </div>
+                    </div>
+                    <p style="margin-top: 15px; font-weight: bold; color: #991b1b;">
+                        The Problem: Education offices require ARC (or application receipt) to register you as a teacher.
+                        No registration = No teaching = No salary
+                    </p>
+                </div>
 
-            <h4 style="color: #dc2626;">📅 Your First Week Timeline:</h4>
-            <div style="background: rgba(255,255,255,0.9); padding: 15px; border-radius: 8px; margin: 10px 0;">
-                <div style="margin-bottom: 12px; padding: 12px; background: #f1f5f9; border-left: 4px solid #64748b; border-radius: 4px;">
-                    <strong style="color: #991b1b;">Day 1-2: Health Check at MOJ Designated Hospital</strong>
-                    <p style="margin: 5px 0 0 0;">Required for ARC application. Bring passport, ₩60,000-100,000, passport photo. Results same day or next day.</p>
+                <h4 style="color: #dc2626;">📅 Your First Week Timeline:</h4>
+                <div style="background: rgba(255,255,255,0.9); padding: 15px; border-radius: 8px; margin: 10px 0;">
+                    <div style="margin-bottom: 12px; padding: 12px; background: #f1f5f9; border-left: 4px solid #64748b; border-radius: 4px;">
+                        <strong style="color: #991b1b;">Day 1-2: Health Check at MOJ Designated Hospital</strong>
+                        <p style="margin: 5px 0 0 0;">Required for ARC application. Bring passport, ₩60,000-100,000, passport photo. Results same day or next day.</p>
+                    </div>
+                    <div style="margin-bottom: 12px; padding: 12px; background: #f1f5f9; border-left: 4px solid #64748b; border-radius: 4px;">
+                        <strong style="color: #991b1b;">Day 3-5: Apply for ARC at Immigration Office</strong>
+                        <p style="margin: 5px 0 0 0;">Bring health certificate, passport, housing contract, 2 photos, ₩30,000. Processing takes 1-2 weeks. <strong>Keep your receipt (접수증)!</strong></p>
+                    </div>
+                    <div style="margin-bottom: 12px; padding: 12px; background: #f1f5f9; border-left: 4px solid #3b82f6; border-radius: 4px;">
+                        <strong style="color: #92400e;">Day 7-10: Education Office Teacher Registration</strong>
+                        <p style="margin: 5px 0 0 0;"><strong>CRITICAL:</strong> Register with education office using ARC receipt. Required to legally teach and receive salary. Your school HR will assist.</p>
+                    </div>
                 </div>
-                <div style="margin-bottom: 12px; padding: 12px; background: #f1f5f9; border-left: 4px solid #64748b; border-radius: 4px;">
-                    <strong style="color: #991b1b;">Day 3-5: Apply for ARC at Immigration Office</strong>
-                    <p style="margin: 5px 0 0 0;">Bring health certificate, passport, housing contract, 2 photos, ₩30,000. Processing takes 1-2 weeks. <strong>Keep your receipt (접수증)!</strong></p>
-                </div>
-                <div style="margin-bottom: 12px; padding: 12px; background: #f1f5f9; border-left: 4px solid #3b82f6; border-radius: 4px;">
-                    <strong style="color: #92400e;">Day 7-10: Education Office Teacher Registration</strong>
-                    <p style="margin: 5px 0 0 0;"><strong>CRITICAL:</strong> Register with education office using ARC receipt. Required to legally teach and receive salary. Your school HR will assist.</p>
-                </div>
-            </div>
 
-            <div style="background: #dbeafe; padding: 15px; border-radius: 8px; border: 2px solid #3b82f6; margin-top: 15px;">
-                <strong style="color: #92400e;">💡 Key Insight:</strong>
-                <p style="margin: 5px 0 0 0;">You don't need to wait for the physical ARC card! The application receipt (접수증) is accepted by banks, phone companies, and education offices. Start these processes immediately after applying for ARC.</p>
+                <div style="background: #dbeafe; padding: 15px; border-radius: 8px; border: 2px solid #3b82f6; margin-top: 15px;">
+                    <strong style="color: #92400e;">💡 Key Insight:</strong>
+                    <p style="margin: 5px 0 0 0;">You don't need to wait for the physical ARC card! The application receipt (접수증) is accepted by banks, phone companies, and education offices. Start these processes immediately after applying for ARC.</p>
+                </div>
             </div>
         </div>
 
@@ -6309,6 +6546,9 @@ degree.
             // Initialize navigation enhancements
             initializeNavigationEnhancements();
 
+            // Initialize collapsible alerts (mobile optimization)
+            initializeCollapsibleAlerts();
+
             console.log('[E2 Visa Guide] Initialization complete');
         });
 
@@ -6333,6 +6573,8 @@ degree.
         function initializeNavigationEnhancements() {
             const backToTop = document.querySelector('.back-to-top');
             const quickJump = document.querySelector('.quick-jump');
+            const progressDashboard = document.querySelector('.progress-dashboard');
+            const navBar = document.querySelector('.nav-bar');
 
             // Add null checks to prevent errors
             if (!backToTop || !quickJump) {
@@ -6344,9 +6586,17 @@ degree.
                 console.log('[Navigation] Quick Jump and Back-to-Top initialized successfully');
             }
 
-            // Back to top button visibility
+            // Scroll direction detection for mobile sticky elements
+            let lastScrollTop = 0;
+            let scrollTimeout;
+            const isMobile = window.innerWidth <= 768;
+
+            // Back to top button visibility and scroll direction handling
             window.addEventListener('scroll', () => {
-                if (window.pageYOffset > 300) {
+                const currentScroll = window.pageYOffset;
+
+                // Show/hide back-to-top and quick-jump
+                if (currentScroll > 300) {
                     if (backToTop) backToTop.classList.add('show');
                     if (quickJump) quickJump.classList.add('show');
                 } else {
@@ -6354,14 +6604,90 @@ degree.
                     if (quickJump) quickJump.classList.remove('show');
                 }
 
+                // Mobile: Hide sticky elements on scroll down, show on scroll up
+                if (isMobile && currentScroll > 100) {
+                    // Clear previous timeout
+                    clearTimeout(scrollTimeout);
+
+                    if (currentScroll > lastScrollTop) {
+                        // Scrolling DOWN - hide sticky elements
+                        if (progressDashboard) progressDashboard.classList.add('hide-on-scroll');
+                        if (navBar) navBar.classList.add('hide-on-scroll');
+                    } else {
+                        // Scrolling UP - show sticky elements
+                        if (progressDashboard) progressDashboard.classList.remove('hide-on-scroll');
+                        if (navBar) navBar.classList.remove('hide-on-scroll');
+                    }
+
+                    lastScrollTop = currentScroll;
+                } else if (currentScroll <= 100) {
+                    // At top of page - always show
+                    if (progressDashboard) progressDashboard.classList.remove('hide-on-scroll');
+                    if (navBar) navBar.classList.remove('hide-on-scroll');
+                }
+
                 // Update active section in TOC and Quick Jump
                 updateActiveSection();
-            });
+            }, { passive: true });
 
             // Back to top click handler
             if (backToTop) {
                 backToTop.addEventListener('click', () => {
                     window.scrollTo({top: 0, behavior: 'smooth'});
+                });
+            }
+
+            console.log('[Navigation] Scroll direction detection enabled for mobile');
+        }
+
+        // Toggle collapsible alert boxes
+        function toggleAlert(alertId) {
+            const alert = document.getElementById(alertId);
+            if (!alert) return;
+
+            const content = alert.querySelector('.alert-collapsible-content');
+            if (!content) return;
+
+            const isCollapsed = alert.classList.contains('collapsed');
+
+            if (isCollapsed) {
+                // Expand
+                alert.classList.remove('collapsed');
+                content.style.maxHeight = content.scrollHeight + 'px';
+                console.log(`[Alert] Expanded: ${alertId}`);
+            } else {
+                // Collapse
+                content.style.maxHeight = content.scrollHeight + 'px';
+                // Force reflow
+                content.offsetHeight;
+                content.style.maxHeight = '0';
+                alert.classList.add('collapsed');
+                console.log(`[Alert] Collapsed: ${alertId}`);
+            }
+        }
+
+        // Initialize collapsible alerts on mobile
+        function initializeCollapsibleAlerts() {
+            if (window.innerWidth <= 768) {
+                const collapsibleAlerts = document.querySelectorAll('.alert-collapsible');
+                collapsibleAlerts.forEach(alert => {
+                    // Start collapsed on mobile
+                    alert.classList.add('collapsed');
+                    const content = alert.querySelector('.alert-collapsible-content');
+                    if (content) {
+                        content.style.maxHeight = '0';
+                    }
+                });
+                console.log(`[Alert] Initialized ${collapsibleAlerts.length} collapsible alerts on mobile`);
+            } else {
+                // Desktop: expand all
+                const collapsibleAlerts = document.querySelectorAll('.alert-collapsible');
+                collapsibleAlerts.forEach(alert => {
+                    alert.classList.remove('collapsed');
+                    const content = alert.querySelector('.alert-collapsible-content');
+                    if (content) {
+                        content.style.maxHeight = 'none';
+                    }
                 });
             }
         }

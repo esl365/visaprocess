@@ -2704,8 +2704,24 @@
                             <label for="doc-degree"><strong>Bachelor's degree copy</strong> (notarized true copy) with State apostille attached</label>
                         </li>
                         <li class="checklist-item">
+                            <input type="checkbox" id="doc-certificate-app" onchange="toggleCheckbox('doc-certificate-app')">
+                            <label for="doc-certificate-app">
+                                <strong>APPLICATION FOR CERTIFICATE OF VISA ELIGIBILITY</strong> (Items 1-7 completed by you; employer will complete the rest)
+                                <br>
+                                <a href="https://github.com/esl365/e2-visa-forms/raw/refs/heads/main/APPLICATION%20FOR%20CERTIFICATE%20OF%20VISA%20ELIGIBILITY.pdf" target="_blank" rel="noopener noreferrer" style="color: var(--primary-500); text-decoration: underline; font-size: 0.9rem;">
+                                    📥 Download Form (PDF)
+                                </a>
+                            </label>
+                        </li>
+                        <li class="checklist-item">
                             <input type="checkbox" id="doc-health" onchange="toggleCheckbox('doc-health')">
-                            <label for="doc-health"><strong>Self-Health Statement</strong> (E-2 health questionnaire; signed)</label>
+                            <label for="doc-health">
+                                <strong>Self-Health Statement</strong> (E-2 health questionnaire; signed)
+                                <br>
+                                <a href="https://github.com/esl365/e2-visa-forms/raw/refs/heads/main/E2_Applicants_Health_Statement.pdf" target="_blank" rel="noopener noreferrer" style="color: var(--primary-500); text-decoration: underline; font-size: 0.9rem;">
+                                    📥 Download Form (PDF)
+                                </a>
+                            </label>
                         </li>
                         <li class="checklist-item">
                             <input type="checkbox" id="doc-passport-copy" onchange="toggleCheckbox('doc-passport-copy')">
@@ -4915,12 +4931,19 @@ degree.
         // Reset progress function
         function resetProgress() {
             if (confirm('Are you sure you want to reset all progress? This will uncheck all completed tasks.')) {
-                localStorage.removeItem('e2-visa-checklist');
+                // Remove both old and new storage keys
+                localStorage.removeItem('e2-visa-checklist'); // Old key
+                localStorage.removeItem(STORAGE_KEY); // New key
 
                 // Reset all checkboxes
-                Object.keys(checklistItems).forEach(key => {
-                    checklistItems[key] = false;
-                });
+                checklistItems = {};
+
+                // Clear undo stack
+                undoStack = [];
+                const undoBtn = document.getElementById('undoBtn');
+                if (undoBtn) {
+                    undoBtn.disabled = true;
+                }
 
                 // Re-render everything
                 const timelineContainer = document.getElementById('timeline-container');
@@ -4932,8 +4955,9 @@ degree.
                 renderSmartGuide();
                 renderProgressInsights();
                 updateProgress();
+                updateDashboard();
 
-                showToast('Progress reset successfully! Starting fresh.', 'info');
+                showToast('Progress reset', 'info');
             }
         }
 

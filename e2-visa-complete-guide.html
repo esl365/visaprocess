@@ -498,6 +498,323 @@
             color: #6b7280;
         }
 
+        /* ========================================
+           PHASE 1.1: ACCESSIBILITY ENHANCEMENTS
+           ======================================== */
+
+        /* Keyboard focus improvements - WCAG 2.1 Level AAA */
+        button:focus-visible,
+        input:focus-visible,
+        a:focus-visible,
+        .section-header:focus-visible {
+            outline: 4px solid var(--primary-500);
+            outline-offset: 3px;
+            box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.2);
+        }
+
+        /* Touch target minimum size - WCAG 2.1 Level AAA (48x48px) */
+        .section-header,
+        input[type="checkbox"],
+        button,
+        .btn {
+            min-height: 48px;
+            min-width: 48px;
+        }
+
+        /* Checkbox size enhancement */
+        input[type="checkbox"] {
+            width: 24px;
+            height: 24px;
+            margin-top: 0;
+            flex-shrink: 0; /* Prevent checkbox shrinking */
+        }
+
+        /* Skip to main content link */
+        .skip-link {
+            position: absolute;
+            top: -40px;
+            left: 0;
+            background: var(--primary-700);
+            color: white;
+            padding: 8px 16px;
+            text-decoration: none;
+            z-index: 10001;
+        }
+
+        .skip-link:focus {
+            top: 0;
+        }
+
+        /* Ensure proper label clickability */
+        .checklist-item label {
+            cursor: pointer;
+            -webkit-tap-highlight-color: rgba(59, 130, 246, 0.1);
+        }
+
+        /* ========================================
+           PHASE 1.2: PROGRESS DASHBOARD
+           ======================================== */
+
+        .progress-dashboard {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: linear-gradient(135deg, var(--primary-700), var(--primary-500));
+            color: white;
+            padding: 20px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+            margin-bottom: 30px;
+        }
+
+        .dashboard-grid {
+            display: grid;
+            grid-template-columns: 180px repeat(auto-fit, minmax(120px, 1fr));
+            gap: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+            align-items: center;
+        }
+
+        .dashboard-card {
+            text-align: center;
+            padding: 15px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            transition: all 0.3s ease;
+        }
+
+        .dashboard-card:hover {
+            background: rgba(255, 255, 255, 0.15);
+            transform: translateY(-2px);
+        }
+
+        .main-progress {
+            grid-column: 1;
+            justify-self: center;
+        }
+
+        .progress-circle {
+            position: relative;
+            width: 140px;
+            height: 140px;
+        }
+
+        .progress-text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+        }
+
+        .percentage {
+            display: block;
+            font-size: 2.5rem;
+            font-weight: 700;
+            line-height: 1;
+        }
+
+        .percentage + .label {
+            display: block;
+            font-size: 0.875rem;
+            opacity: 0.9;
+            margin-top: 5px;
+        }
+
+        .stat-value {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 5px;
+            line-height: 1;
+        }
+
+        .stat-label {
+            font-size: 0.875rem;
+            opacity: 0.9;
+        }
+
+        .urgent-card .stat-value {
+            color: #fbbf24;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.7; }
+        }
+
+        .mini-progress-bar {
+            height: 4px;
+            background: rgba(255,255,255,0.2);
+            border-radius: 2px;
+            margin-top: 15px;
+            overflow: hidden;
+        }
+
+        #mini-progress-fill {
+            height: 100%;
+            background: white;
+            transition: width 0.5s ease;
+        }
+
+        /* Toast notification */
+        .toast {
+            position: fixed;
+            bottom: -100px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--gray-900);
+            color: white;
+            padding: 12px 20px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+            transition: bottom 0.3s ease;
+            z-index: 10000;
+        }
+
+        .toast.show {
+            bottom: 30px;
+        }
+
+        .toast.success {
+            background: var(--accent-success);
+        }
+
+        .toast.error {
+            background: var(--accent-danger);
+        }
+
+        .toast.info {
+            background: var(--accent-info);
+        }
+
+        .undo-link {
+            background: var(--primary-500);
+            color: white;
+            border: none;
+            padding: 6px 12px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 0.875rem;
+        }
+
+        .undo-link:hover {
+            background: var(--primary-700);
+        }
+
+        /* ========================================
+           PHASE 2: SEARCH & FILTER FUNCTIONALITY
+           ======================================== */
+
+        .search-container {
+            position: sticky;
+            top: 220px;
+            z-index: 999;
+            background: white;
+            padding: 15px 20px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+            border-radius: 8px;
+        }
+
+        .search-container input {
+            width: 100%;
+            padding: 12px 20px 12px 45px;
+            font-size: 16px;
+            border: 2px solid var(--gray-200);
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="%23666" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>');
+            background-repeat: no-repeat;
+            background-position: 15px center;
+        }
+
+        .search-container input:focus {
+            outline: none;
+            border-color: var(--primary-500);
+            box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+        }
+
+        .search-results {
+            position: absolute;
+            top: 100%;
+            left: 20px;
+            right: 20px;
+            background: white;
+            border: 1px solid var(--gray-200);
+            border-radius: 8px;
+            max-height: 400px;
+            overflow-y: auto;
+            display: none;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+            margin-top: 8px;
+        }
+
+        .search-results.show {
+            display: block;
+        }
+
+        .search-result-item {
+            padding: 12px 16px;
+            border-bottom: 1px solid var(--gray-100);
+            cursor: pointer;
+            transition: background 0.2s ease;
+        }
+
+        .search-result-item:hover {
+            background: var(--gray-50);
+        }
+
+        .search-result-item:last-child {
+            border-bottom: none;
+        }
+
+        .result-type {
+            font-size: 0.75rem;
+            color: var(--primary-500);
+            font-weight: 600;
+            margin-bottom: 4px;
+        }
+
+        .result-title {
+            font-weight: 600;
+            margin-bottom: 4px;
+            color: var(--gray-900);
+        }
+
+        .result-excerpt {
+            font-size: 0.875rem;
+            color: var(--gray-500);
+            line-height: 1.4;
+        }
+
+        .search-result-item mark {
+            background: #fef08a;
+            padding: 2px 4px;
+            border-radius: 2px;
+            font-weight: 600;
+        }
+
+        .search-no-results {
+            padding: 20px;
+            text-align: center;
+            color: var(--gray-500);
+        }
+
+        /* Highlight animation for search results */
+        @keyframes highlightFade {
+            0% { background: #fef3c7; }
+            100% { background: transparent; }
+        }
+
+        .search-highlight {
+            animation: highlightFade 2s ease-out;
+        }
+
         /* Table */
         table {
             width: 100%;
@@ -1004,6 +1321,97 @@
             .timeline-item {
                 padding-left: 30px;
                 margin-bottom: 20px;
+            }
+
+            /* ========================================
+               PHASE 1.2 & 1.4: DASHBOARD MOBILE OPTIMIZATION
+               ======================================== */
+
+            /* Dashboard mobile layout */
+            .dashboard-grid {
+                grid-template-columns: 1fr 1fr !important;
+                gap: 12px;
+            }
+
+            .main-progress {
+                grid-column: 1 / -1 !important;
+                justify-self: center;
+            }
+
+            .progress-circle {
+                width: 120px;
+                height: 120px;
+            }
+
+            .percentage {
+                font-size: 2rem;
+            }
+
+            .stat-value {
+                font-size: 1.5rem;
+            }
+
+            .stat-label {
+                font-size: 0.75rem;
+            }
+
+            .progress-dashboard {
+                padding: 15px;
+                margin-bottom: 20px;
+            }
+
+            /* Search container mobile */
+            .search-container {
+                padding: 10px 15px;
+            }
+
+            .search-container input {
+                font-size: 16px; /* Prevent iOS zoom */
+            }
+
+            /* Badge adjustments */
+            .badge {
+                font-size: 0.7rem;
+                padding: 3px 8px;
+                margin: 2px;
+            }
+
+            /* Navigation stack */
+            .nav-buttons {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .nav-buttons button,
+            .nav-buttons .btn {
+                width: 100%;
+            }
+
+            /* Smart guide mobile */
+            .smart-guide-widget {
+                margin-bottom: 20px;
+            }
+
+            /* Section spacing */
+            .section {
+                margin-bottom: 16px;
+            }
+
+            /* Alert mobile */
+            .alert {
+                padding: 12px;
+                font-size: 0.9rem;
+            }
+
+            /* Text wrapping */
+            h1, h2, h3, h4, h5, h6 {
+                word-break: keep-all;
+                overflow-wrap: break-word;
+                hyphens: auto;
+            }
+
+            p, li, td {
+                word-break: break-word;
             }
         }
 
@@ -1647,6 +2055,55 @@
     </div>
 
     <div class="container" id="main-content" role="main">
+        <!-- PHASE 1.2: Progress Dashboard -->
+        <div id="progress-dashboard" class="progress-dashboard" role="region" aria-label="Progress overview">
+            <div class="dashboard-grid">
+                <!-- Main Progress Circle -->
+                <div class="dashboard-card main-progress">
+                    <div class="progress-circle" role="img" aria-label="Overall progress">
+                        <svg viewBox="0 0 100 100">
+                            <circle cx="50" cy="50" r="45" fill="none" stroke="#e5e7eb" stroke-width="8"/>
+                            <circle id="progress-ring" cx="50" cy="50" r="45" fill="none"
+                                    stroke="white" stroke-width="8"
+                                    stroke-dasharray="283" stroke-dashoffset="283"
+                                    transform="rotate(-90 50 50)"
+                                    style="transition: stroke-dashoffset 0.5s ease;"/>
+                        </svg>
+                        <div class="progress-text">
+                            <span id="overall-percentage" class="percentage">0%</span>
+                            <span class="label">Complete</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Statistics Cards -->
+                <div class="dashboard-card">
+                    <div class="stat-value" id="tasks-completed">0/0</div>
+                    <div class="stat-label">Tasks Done</div>
+                </div>
+
+                <div class="dashboard-card urgent-card">
+                    <div class="stat-value urgent" id="urgent-count">0</div>
+                    <div class="stat-label">🔥 Urgent Left</div>
+                </div>
+
+                <div class="dashboard-card">
+                    <div class="stat-value" id="days-until">--</div>
+                    <div class="stat-label">Days to Arrival</div>
+                </div>
+
+                <div class="dashboard-card">
+                    <div class="stat-value" id="estimated-cost">$0-$0</div>
+                    <div class="stat-label">💰 Remaining Cost</div>
+                </div>
+            </div>
+
+            <!-- Mini Progress Bar -->
+            <div class="mini-progress-bar">
+                <div id="mini-progress-fill" style="width: 0%"></div>
+            </div>
+        </div>
+
         <!-- Navigation -->
         <nav class="nav-bar" role="navigation" aria-label="Main navigation">
             <div class="nav-buttons">
@@ -1668,7 +2125,18 @@
                 <button class="btn btn-secondary"
                         onclick="exportProgress()"
                         aria-label="Export your progress data">
-                    Export Progress
+                    📥 Export Progress
+                </button>
+                <button class="btn btn-secondary"
+                        onclick="document.getElementById('importFile').click()"
+                        aria-label="Import previously saved progress">
+                    📤 Import Progress
+                </button>
+                <button id="undoBtn" class="btn btn-secondary"
+                        onclick="undoLastAction()"
+                        disabled
+                        aria-label="Undo last action">
+                    ↩️ Undo
                 </button>
                 <button class="btn btn-secondary"
                         onclick="window.print()"
@@ -1677,6 +2145,19 @@
                 </button>
             </div>
         </nav>
+
+        <!-- Hidden file input for import -->
+        <input type="file" id="importFile" accept="application/json" style="display:none"
+               aria-label="Import saved progress file">
+
+        <!-- PHASE 2: Search Container -->
+        <div class="search-container" role="search">
+            <input type="search"
+                   id="globalSearch"
+                   placeholder="Search tasks, documents, or topics..."
+                   aria-label="Search guide content">
+            <div id="searchResults" class="search-results" role="listbox"></div>
+        </div>
 
         <!-- Progress Tracker -->
         <section class="progress-section" aria-labelledby="progress-heading">
@@ -4291,25 +4772,59 @@ degree.
             }
         ];
 
+        // ========================================
+        // PHASE 1.3: VERSION MANAGEMENT & UNDO
+        // ========================================
+        const STORAGE_VERSION = '1.0';
+        const STORAGE_KEY = `e2-visa-progress-v${STORAGE_VERSION}`;
+
         let checklistItems = {};
 
-        // Load saved progress from localStorage
+        // Undo stack (최근 5개 작업)
+        let undoStack = [];
+        const MAX_UNDO = 5;
+
+        // Search index for Phase 2
+        let searchIndex = [];
+
+        // Load saved progress from localStorage with version management
         function loadProgress() {
-            const saved = localStorage.getItem('e2-visa-checklist');
+            const saved = localStorage.getItem(STORAGE_KEY);
             if (saved) {
                 try {
-                    checklistItems = JSON.parse(saved);
+                    const data = JSON.parse(saved);
+                    // Version check
+                    if (data.version === STORAGE_VERSION) {
+                        checklistItems = data.checkedItems || {};
+                    } else {
+                        // Fallback to old format
+                        checklistItems = data;
+                    }
                 } catch (e) {
-                    console.error('Failed to load progress');
+                    console.error('Failed to load progress', e);
                 }
             }
             updateProgress();
+            updateDashboard();
         }
 
-        // Save progress to localStorage
+        // Save progress to localStorage with version management
         function saveProgress() {
-            localStorage.setItem('e2-visa-checklist', JSON.stringify(checklistItems));
-            updateProgress();
+            try {
+                const data = {
+                    version: STORAGE_VERSION,
+                    lastUpdated: new Date().toISOString(),
+                    checkedItems: checklistItems
+                };
+                localStorage.setItem(STORAGE_KEY, JSON.stringify(data));
+                updateProgress();
+                updateDashboard();
+            } catch (e) {
+                if (e.name === 'QuotaExceededError') {
+                    showToast('Storage full. Please export your progress.', 'error');
+                }
+                console.error('Failed to save progress', e);
+            }
         }
 
         // Reset progress function
@@ -4364,10 +4879,29 @@ degree.
             }, 3000);
         }
 
-        // Toggle checkbox with animation
+        // Toggle checkbox with animation and undo support
         function toggleCheckbox(id) {
             const wasChecked = checklistItems[id];
-            checklistItems[id] = !checklistItems[id];
+
+            // PHASE 1.3: Add to undo stack
+            undoStack.push({
+                id: id,
+                state: wasChecked || false,
+                timestamp: Date.now()
+            });
+
+            // 스택 크기 제한
+            if (undoStack.length > MAX_UNDO) {
+                undoStack.shift();
+            }
+
+            // Undo 버튼 활성화
+            const undoBtn = document.getElementById('undoBtn');
+            if (undoBtn) {
+                undoBtn.disabled = false;
+            }
+
+            checklistItems[id] = !wasChecked;
 
             // 시각적 피드백: 체크박스 부모 요소에 애니메이션 추가
             const checkbox = document.getElementById(id);
@@ -4836,12 +5370,15 @@ degree.
         }
 
         // Export progress
+        // PHASE 1.3: Enhanced export with version management
         function exportProgress() {
+            const allTasks = timelineData.flatMap(w => w.tasks);
             const data = {
+                version: STORAGE_VERSION,
                 exportDate: new Date().toISOString(),
                 checkedItems: checklistItems,
-                totalItems: document.querySelectorAll('.checklist-item input[type="checkbox"]').length,
-                completedItems: Object.values(checklistItems).filter(v => v).length
+                totalTasks: allTasks.length,
+                completedTasks: Object.values(checklistItems).filter(v => v).length
             };
 
             const blob = new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' });
@@ -4853,6 +5390,107 @@ degree.
             a.click();
             document.body.removeChild(a);
             URL.revokeObjectURL(url);
+
+            showToast('Progress exported successfully', 'success');
+        }
+
+        // PHASE 1.3: Undo last action
+        function undoLastAction() {
+            if (undoStack.length === 0) return;
+
+            const lastAction = undoStack.pop();
+            checklistItems[lastAction.id] = lastAction.state;
+
+            // UI 업데이트
+            const checkbox = document.getElementById(lastAction.id);
+            if (checkbox) {
+                checkbox.checked = lastAction.state;
+            }
+
+            saveProgress();
+            renderSmartGuide();
+            renderProgressInsights();
+
+            // Undo 버튼 비활성화 (스택 비었을 때)
+            if (undoStack.length === 0) {
+                const undoBtn = document.getElementById('undoBtn');
+                if (undoBtn) {
+                    undoBtn.disabled = true;
+                }
+            }
+
+            showToast('Action undone', 'info');
+        }
+
+        // PHASE 1.2: Update dashboard
+        function updateDashboard() {
+            const allTasks = timelineData.flatMap(w => w.tasks);
+            const total = allTasks.length;
+            const completed = Object.values(checklistItems).filter(Boolean).length;
+            const percentage = total > 0 ? Math.round((completed / total) * 100) : 0;
+
+            // 원형 진행률
+            const circumference = 283;
+            const offset = circumference - (percentage / 100) * circumference;
+            const progressRing = document.getElementById('progress-ring');
+            if (progressRing) {
+                progressRing.style.strokeDashoffset = offset;
+            }
+
+            const percentageEl = document.getElementById('overall-percentage');
+            if (percentageEl) {
+                percentageEl.textContent = `${percentage}%`;
+            }
+
+            // 통계
+            const tasksCompletedEl = document.getElementById('tasks-completed');
+            if (tasksCompletedEl) {
+                tasksCompletedEl.textContent = `${completed}/${total}`;
+            }
+
+            // 긴급 태스크 수
+            const urgentTasks = allTasks.filter(t => (t.urgent || t.critical) && !checklistItems[t.id]).length;
+            const urgentCountEl = document.getElementById('urgent-count');
+            if (urgentCountEl) {
+                urgentCountEl.textContent = urgentTasks;
+            }
+
+            // 남은 비용 계산
+            const remainingCost = calculateRemainingCost();
+            const estimatedCostEl = document.getElementById('estimated-cost');
+            if (estimatedCostEl) {
+                estimatedCostEl.textContent = `$${remainingCost.min}-$${remainingCost.max}`;
+            }
+
+            // 도착일까지 남은 일수
+            const preferences = JSON.parse(localStorage.getItem('e2-visa-preferences') || '{}');
+            const daysUntilEl = document.getElementById('days-until');
+            if (daysUntilEl && preferences.arrivalDate) {
+                const arrivalDate = new Date(preferences.arrivalDate);
+                const today = new Date();
+                const daysUntil = Math.ceil((arrivalDate - today) / (1000 * 60 * 60 * 24));
+                daysUntilEl.textContent = daysUntil > 0 ? daysUntil : 'Arrived';
+            }
+
+            // 미니 프로그레스 바
+            const miniProgressFill = document.getElementById('mini-progress-fill');
+            if (miniProgressFill) {
+                miniProgressFill.style.width = `${percentage}%`;
+            }
+        }
+
+        // PHASE 1.2: Calculate remaining cost
+        function calculateRemainingCost() {
+            let min = 0, max = 0;
+            timelineData.forEach(week => {
+                week.tasks.forEach(task => {
+                    if (!checklistItems[task.id] && task.cost) {
+                        min += task.cost.min || 0;
+                        max += task.cost.max || 0;
+                    }
+                });
+            });
+            return { min, max };
         }
 
         // Render timeline
@@ -4997,12 +5635,214 @@ degree.
             }, 100);
         }
 
+        // ========================================
+        // PHASE 2: SEARCH FUNCTIONALITY
+        // ========================================
+
+        // Build search index
+        function buildSearchIndex() {
+            searchIndex = [];
+
+            // Index all sections
+            document.querySelectorAll('.section').forEach(section => {
+                const title = section.querySelector('h2')?.textContent || '';
+                const content = section.querySelector('.section-content')?.textContent || '';
+
+                if (title) {
+                    searchIndex.push({
+                        id: section.id || section.querySelector('.section-header')?.id || '',
+                        title: title,
+                        content: content.substring(0, 500), // 처음 500자만
+                        type: 'section'
+                    });
+                }
+            });
+
+            // Index all tasks
+            timelineData.forEach(week => {
+                week.tasks.forEach(task => {
+                    searchIndex.push({
+                        id: task.id,
+                        title: task.title,
+                        content: task.description,
+                        week: week.week,
+                        type: 'task'
+                    });
+                });
+            });
+        }
+
+        // Highlight match
+        function highlightMatch(text, query) {
+            const regex = new RegExp(`(${query.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')})`, 'gi');
+            return text.replace(regex, '<mark>$1</mark>');
+        }
+
+        // Truncate text
+        function truncate(text, length) {
+            return text.length > length ? text.substring(0, length) + '...' : text;
+        }
+
+        // Navigate to search result
+        function navigateToResult(id, type) {
+            const resultsContainer = document.getElementById('searchResults');
+            const searchInput = document.getElementById('globalSearch');
+
+            if (resultsContainer) resultsContainer.classList.remove('show');
+            if (searchInput) searchInput.value = '';
+
+            if (type === 'task') {
+                // 해당 태스크로 이동
+                const taskElement = document.getElementById(id);
+                if (taskElement) {
+                    const weekSection = taskElement.closest('.section');
+                    if (weekSection) {
+                        const weekContent = weekSection.querySelector('.section-content');
+                        const weekHeader = weekSection.querySelector('.section-header');
+
+                        // 섹션 펼치기
+                        if (weekContent && !weekContent.classList.contains('expanded')) {
+                            weekHeader?.click();
+                        }
+
+                        // 스크롤 및 하이라이트
+                        setTimeout(() => {
+                            taskElement.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                            taskElement.classList.add('search-highlight');
+                            setTimeout(() => taskElement.classList.remove('search-highlight'), 2000);
+                        }, 300);
+                    }
+                }
+            } else {
+                // 섹션으로 이동
+                const section = document.getElementById(id);
+                if (section) {
+                    section.scrollIntoView({ behavior: 'smooth' });
+                    const header = section.querySelector('.section-header');
+                    if (header && !section.querySelector('.section-content')?.classList.contains('expanded')) {
+                        header.click();
+                    }
+                }
+            }
+        }
+
+        // PHASE 1.3: Import functionality
+        function setupImportFunctionality() {
+            const importFileInput = document.getElementById('importFile');
+            if (!importFileInput) return;
+
+            importFileInput.addEventListener('change', (e) => {
+                const file = e.target.files[0];
+                if (!file) return;
+
+                const reader = new FileReader();
+                reader.onload = (event) => {
+                    try {
+                        const data = JSON.parse(event.target.result);
+
+                        // 버전 체크
+                        if (data.version && data.version !== STORAGE_VERSION) {
+                            if (!confirm('This file is from a different version. Import anyway?')) {
+                                return;
+                            }
+                        }
+
+                        // 데이터 병합 (기존 데이터 보존 옵션)
+                        const existingCount = Object.keys(checklistItems).length;
+                        if (existingCount > 0) {
+                            if (!confirm('You have existing progress. Overwrite it?')) {
+                                // 병합 모드
+                                checklistItems = { ...checklistItems, ...(data.checkedItems || data) };
+                            } else {
+                                checklistItems = data.checkedItems || data;
+                            }
+                        } else {
+                            checklistItems = data.checkedItems || data;
+                        }
+
+                        saveProgress();
+                        location.reload(); // 전체 UI 갱신
+
+                    } catch (error) {
+                        showToast('Invalid file format', 'error');
+                        console.error('Import error:', error);
+                    }
+                };
+                reader.readAsText(file);
+            });
+        }
+
+        // Setup search functionality
+        function setupSearchFunctionality() {
+            const searchInput = document.getElementById('globalSearch');
+            const resultsContainer = document.getElementById('searchResults');
+
+            if (!searchInput || !resultsContainer) return;
+
+            // 실시간 검색
+            searchInput.addEventListener('input', (e) => {
+                const query = e.target.value.toLowerCase().trim();
+
+                if (query.length < 2) {
+                    resultsContainer.classList.remove('show');
+                    return;
+                }
+
+                // 검색 수행
+                const results = searchIndex.filter(item =>
+                    item.title.toLowerCase().includes(query) ||
+                    item.content.toLowerCase().includes(query)
+                ).slice(0, 10);
+
+                // 결과 렌더링
+                if (results.length > 0) {
+                    resultsContainer.innerHTML = results.map(result => `
+                        <div class="search-result-item"
+                             onclick="navigateToResult('${result.id}', '${result.type}')"
+                             role="option">
+                            <div class="result-type">${result.type === 'task' ? '📋 Task' : '📚 Section'}</div>
+                            <div class="result-title">${highlightMatch(result.title, query)}</div>
+                            <div class="result-excerpt">${highlightMatch(truncate(result.content, 80), query)}</div>
+                        </div>
+                    `).join('');
+                    resultsContainer.classList.add('show');
+                } else {
+                    resultsContainer.innerHTML = '<div class="search-no-results">No results found</div>';
+                    resultsContainer.classList.add('show');
+                }
+            });
+
+            // ESC 키로 검색 결과 닫기
+            searchInput.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape') {
+                    resultsContainer.classList.remove('show');
+                    searchInput.value = '';
+                }
+            });
+
+            // 외부 클릭 시 검색 결과 닫기
+            document.addEventListener('click', (e) => {
+                if (!searchInput.contains(e.target) && !resultsContainer.contains(e.target)) {
+                    resultsContainer.classList.remove('show');
+                }
+            });
+        }
+
         // Initialize on page load
         document.addEventListener('DOMContentLoaded', function() {
             loadProgress();
             renderAllSections();
             renderSmartGuide();
             renderProgressInsights();
+
+            // PHASE 2: Initialize search
+            setTimeout(() => {
+                buildSearchIndex();
+                setupSearchFunctionality();
+            }, 500);
+
+            // PHASE 1.3: Initialize import
+            setupImportFunctionality();
         });
     </script>
 </body>

@@ -205,7 +205,7 @@
         .container {
             max-width: 1000px;  /* Optimized for better readability */
             margin: 0 auto;
-            padding: var(--spacing-md);
+            padding: 20px;  /* Increased from var(--spacing-md) for better spacing */
         }
 
         /* Header - Minimalistic */
@@ -326,7 +326,7 @@
 
         /* Alert Box */
         .alert {
-            padding: var(--spacing-md);
+            padding: 20px 24px;  /* Increased horizontal padding */
             border-radius: var(--spacing-xs);
             margin-bottom: var(--spacing-md);
             border-left: 5px solid;
@@ -381,17 +381,42 @@
         .alert h3 {
             font-size: var(--font-h3);
             line-height: var(--line-height-tight);
-            margin-bottom: 10px;
+            margin-top: 0;  /* Remove top margin */
+            margin-bottom: 12px;  /* Increased from 10px */
             font-weight: var(--font-weight-bold);
+        }
+
+        .alert h4 {
+            font-size: var(--font-h4);
+            line-height: var(--line-height-normal);
+            margin-top: 0;  /* Remove top margin */
+            margin-bottom: 10px;
+            font-weight: var(--font-weight-medium);
         }
 
         .alert ul {
             margin-left: 20px;
             margin-top: 10px;
+            margin-bottom: 10px;
+        }
+
+        .alert ol {
+            margin-left: 20px;
+            margin-top: 10px;
+            margin-bottom: 10px;
         }
 
         .alert li {
             margin-bottom: 8px;
+            line-height: var(--line-height-normal);
+        }
+
+        .alert p {
+            margin-bottom: 10px;
+        }
+
+        .alert p:last-child {
+            margin-bottom: 0;
         }
 
         /* Section */
@@ -447,7 +472,7 @@
         }
 
         .section-content.expanded {
-            padding: var(--spacing-md);
+            padding: 24px;  /* Increased from var(--spacing-md) which is 16px */
             max-height: 10000px;
         }
 
@@ -456,8 +481,12 @@
             font-size: var(--font-h3);
             line-height: var(--line-height-tight);
             margin-top: var(--spacing-md);
-            margin-bottom: var(--spacing-xs);
+            margin-bottom: 12px;  /* Increased from var(--spacing-xs) */
             font-weight: var(--font-weight-bold);
+        }
+
+        .section-content h3:first-child {
+            margin-top: 0;  /* Remove top margin for first h3 */
         }
 
         .section-content h4 {
@@ -465,8 +494,28 @@
             font-size: var(--font-h4);
             line-height: var(--line-height-normal);
             margin-top: var(--spacing-sm);
-            margin-bottom: var(--spacing-xs);
+            margin-bottom: 10px;  /* Increased from var(--spacing-xs) */
             font-weight: var(--font-weight-medium);
+        }
+
+        .section-content > h4:first-child {
+            margin-top: 0;  /* Remove top margin for first h4 */
+        }
+
+        .section-content p {
+            margin-bottom: 12px;
+            line-height: var(--line-height-normal);
+        }
+
+        .section-content ul,
+        .section-content ol {
+            margin-left: 24px;
+            margin-bottom: 16px;
+        }
+
+        .section-content li {
+            margin-bottom: 8px;
+            line-height: var(--line-height-normal);
         }
 
         /* Checklist */
@@ -843,6 +892,61 @@
             animation: highlightFade 2s ease-out;
         }
 
+        /* ========================================
+           FEEDBACK CONTACT BANNER
+           ======================================== */
+
+        .feedback-banner {
+            background: linear-gradient(135deg, #10b981, #059669);
+            color: white;
+            padding: 20px 30px;
+            margin: 30px auto;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(16, 185, 129, 0.2);
+            text-align: center;
+            max-width: 900px;
+            border: 2px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .feedback-banner h3 {
+            margin: 0 0 10px 0;
+            font-size: 1.5rem;
+            font-weight: 700;
+        }
+
+        .feedback-banner p {
+            margin: 10px 0;
+            font-size: 1rem;
+            line-height: 1.6;
+        }
+
+        .feedback-banner a {
+            color: white;
+            font-weight: 700;
+            text-decoration: underline;
+            font-size: 1.1rem;
+        }
+
+        .feedback-banner a:hover {
+            color: #fef3c7;
+            text-decoration: none;
+        }
+
+        @media (max-width: 768px) {
+            .feedback-banner {
+                padding: 15px 20px;
+                margin: 20px 15px;
+            }
+
+            .feedback-banner h3 {
+                font-size: 1.2rem;
+            }
+
+            .feedback-banner p {
+                font-size: 0.9rem;
+            }
+        }
+
         /* Table */
         table {
             width: 100%;
@@ -852,7 +956,7 @@
         }
 
         th, td {
-            padding: 12px;
+            padding: 14px 16px;  /* Increased padding for better spacing */
             text-align: left;
             border-bottom: 1px solid #e5e7eb;
         }
@@ -922,7 +1026,7 @@
 
         .card {
             background: white;
-            padding: 20px;
+            padding: 24px;  /* Increased from 20px */
             border-radius: 10px;
             border: 2px solid #e5e7eb;
             transition: all 0.3s;
@@ -936,7 +1040,26 @@
 
         .card h3 {
             color: var(--brand-dark);
-            margin-bottom: 10px;
+            margin-bottom: 15px;  /* Increased from 10px */
+            margin-top: 0;
+        }
+
+        .card h4 {
+            color: var(--gray-700);
+            margin-top: 0;  /* Remove top margin since card padding handles it */
+            margin-bottom: 12px;
+            font-weight: var(--font-weight-medium);
+        }
+
+        .card ul,
+        .card ol {
+            margin-left: 20px;
+            margin-top: 10px;
+        }
+
+        .card li {
+            margin-bottom: 8px;
+            line-height: var(--line-height-normal);
         }
 
         .card-highlight {
@@ -1101,7 +1224,7 @@
 
             .section-content {
                 max-height: none !important;
-                padding: 15px !important;
+                padding: 20px !important;  /* Increased from 15px */
                 opacity: 1 !important;
                 display: block !important;
                 border: 1px solid #ddd;
@@ -1159,7 +1282,7 @@
                 background: white;
                 page-break-inside: avoid;
                 margin-bottom: 10px;
-                padding: 10px;
+                padding: 12px 16px;  /* Better horizontal padding */
             }
 
             .alert-danger {
@@ -1275,6 +1398,14 @@
 
         /* Mobile Responsive */
         @media (max-width: 768px) {
+            .container {
+                padding: 16px;  /* Slightly reduced for mobile but still comfortable */
+            }
+
+            .section-content.expanded {
+                padding: 20px;  /* Consistent mobile padding */
+            }
+
             .header h1 {
                 font-size: var(--font-h2);
             }
@@ -1336,13 +1467,13 @@
 
             /* Alert 박스 여백 조정 */
             .alert {
-                padding: 15px;
+                padding: 16px 20px;  /* Better horizontal padding */
                 margin-bottom: 15px;
             }
 
             /* 카드 패딩 조정 */
             .card {
-                padding: 15px;
+                padding: 20px;  /* Increased from 15px for better mobile spacing */
             }
 
             /* 타임라인 아이템 간격 */
@@ -2082,6 +2213,13 @@
         <p style="font-size: var(--font-size-sm); margin-top: 10px;">Fast-Track 2-3 Week Document Preparation + Complete Process Guide</p>
     </div>
 
+    <!-- Feedback Contact Banner -->
+    <div class="feedback-banner">
+        <h3>📧 가이드 개선에 도움을 주세요!</h3>
+        <p>이 가이드의 내용이 실제와 다르거나, 추가/개선이 필요한 부분이 있다면</p>
+        <p><a href="mailto:jobs@esl365.com?subject=E-2 Visa Guide Feedback">jobs@esl365.com</a>으로 알려주세요</p>
+    </div>
+
     <div class="container" id="main-content" role="main">
         <!-- PHASE 1.2: Progress Dashboard -->
         <div id="progress-dashboard" class="progress-dashboard" role="region" aria-label="Progress overview">
@@ -2519,13 +2657,13 @@
                             <tr>
                                 <td>Health screening</td>
                                 <td>$60-115</td>
-                                <td>Usually employer</td>
+                                <td>본인 부담 (체류 비용)</td>
                                 <td>Week 1-2 in Korea</td>
                             </tr>
                             <tr>
                                 <td>ARC application</td>
-                                <td>~$23</td>
-                                <td>Applicant</td>
+                                <td>~$30</td>
+                                <td>본인 부담 (₩39,000: 발급 ₩35,000 + 우편 ₩4,000)</td>
                                 <td>Within 90 days</td>
                             </tr>
                         </tbody>
@@ -2704,8 +2842,24 @@
                             <label for="doc-degree"><strong>Bachelor's degree copy</strong> (notarized true copy) with State apostille attached</label>
                         </li>
                         <li class="checklist-item">
+                            <input type="checkbox" id="doc-certificate-app" onchange="toggleCheckbox('doc-certificate-app')">
+                            <label for="doc-certificate-app">
+                                <strong>APPLICATION FOR CERTIFICATE OF VISA ELIGIBILITY</strong> (Items 1-7 completed by you; employer will complete the rest)
+                                <br>
+                                <a href="https://github.com/esl365/e2-visa-forms/raw/refs/heads/main/APPLICATION%20FOR%20CERTIFICATE%20OF%20VISA%20ELIGIBILITY.pdf" target="_blank" rel="noopener noreferrer" style="color: var(--primary-500); text-decoration: underline; font-size: 0.9rem;">
+                                    📥 Download Form (PDF)
+                                </a>
+                            </label>
+                        </li>
+                        <li class="checklist-item">
                             <input type="checkbox" id="doc-health" onchange="toggleCheckbox('doc-health')">
-                            <label for="doc-health"><strong>Self-Health Statement</strong> (E-2 health questionnaire; signed)</label>
+                            <label for="doc-health">
+                                <strong>Self-Health Statement</strong> (E-2 health questionnaire; signed)
+                                <br>
+                                <a href="https://github.com/esl365/e2-visa-forms/raw/refs/heads/main/E2_Applicants_Health_Statement.pdf" target="_blank" rel="noopener noreferrer" style="color: var(--primary-500); text-decoration: underline; font-size: 0.9rem;">
+                                    📥 Download Form (PDF)
+                                </a>
+                            </label>
                         </li>
                         <li class="checklist-item">
                             <input type="checkbox" id="doc-passport-copy" onchange="toggleCheckbox('doc-passport-copy')">
@@ -3657,7 +3811,7 @@
                         <li>2 passport photos (3.5×4.5cm, white background)</li>
                         <li>Housing contract OR employer confirmation letter</li>
                         <li>Employment contract (optional but helpful)</li>
-                        <li>Fee: ₩30,000 (~$23) - cash or card</li>
+                        <li>Fee: ₩39,000 (~$30) - ₩35,000 발급 + ₩4,000 우편 배송 - cash or card</li>
                     </ol>
 
                     <div class="alert alert-success" style="margin-top: 15px;">
@@ -4660,29 +4814,29 @@ degree.
             },
             {
                 week: 'Week 4-5',
-                title: 'CNO Application in Korea (사증발급인정신청)',
+                title: 'CCVI Application in Korea (사증발급인정신청)',
                 duration: '1-2 weeks',
                 color: 'dark',
                 tasks: [
                     {
                         id: 'timeline-cno-submit',
                         day: 'Day 28-30',
-                        title: '🏛️ School Submits CNO Application',
+                        title: '🏛️ School Submits CCVI Application',
                         description: 'Korean employer submits "Certificate of Confirmation of Visa Issuance" (사증발급인정신청) to local immigration office with all combined documents. You do not need to be present.',
                         critical: true
                     },
                     {
                         id: 'timeline-cno-wait',
                         day: 'Day 30-42',
-                        title: '⏳ Wait for CNO Number',
+                        title: '⏳ Wait for CCVI Number',
                         description: 'Immigration office reviews application. Processing time: 1-2 weeks. School will receive notification when approved.',
                         urgent: false
                     },
                     {
                         id: 'timeline-cno-receive',
                         day: 'Day 42-45',
-                        title: '📧 Receive CNO & Visa Application Form',
-                        description: 'Employer or K&K emails you: CNO number (사증발급인정번호) and completed visa application form. Verify all information is correct.',
+                        title: '📧 Receive CCVI & Visa Application Form',
+                        description: 'Employer or K&K emails you: CCVI number (사증발급인정번호) and completed visa application form. Verify all information is correct.',
                         urgent: true,
                         critical: true
                     }
@@ -4698,14 +4852,14 @@ degree.
                         id: 'timeline-app-complete',
                         day: 'Day 45-46',
                         title: '✍️ Complete Visa Application',
-                        description: 'Fill out visa application form with CNO number. Sign all required sections. Print passport photos.',
+                        description: 'Fill out visa application form with CCVI number. Sign all required sections. Print passport photos.',
                         urgent: true
                     },
                     {
                         id: 'timeline-consulate-prep',
                         day: 'Day 46-47',
                         title: '📂 Prepare Consulate Package',
-                        description: 'Required: Passport (valid 6+ months), visa application with CNO, 1 photo, visa fee payment. Check your local consulate requirements.',
+                        description: 'Required: Passport (valid 6+ months), visa application with CCVI, 1 photo, visa fee payment. Check your local consulate requirements.',
                         urgent: true,
                         critical: true
                     },
@@ -4722,7 +4876,7 @@ degree.
                         id: 'timeline-visa-wait',
                         day: 'Day 48-58',
                         title: '⏳ Wait for Visa Processing',
-                        description: 'Consulate reviews with CNO verification. Standard processing: 5-10 business days. Track status online or by phone.',
+                        description: 'Consulate reviews with CCVI verification. Standard processing: 5-10 business days. Track status online or by phone.',
                         urgent: false
                     },
                     {
@@ -4768,7 +4922,7 @@ degree.
                         id: 'arrival-arc-application',
                         day: '3-5',
                         title: '📝 Apply for Alien Registration Card (ARC)',
-                        description: 'Visit local immigration office IMMEDIATELY (do not wait 90 days!). Bring health check results, passport, photos, apartment contract. Application takes 30-45 minutes. You will receive a receipt - this receipt is needed for education office registration.',
+                        description: 'Visit local immigration office IMMEDIATELY (do not wait 90 days!). Bring health check results, passport, photos, apartment contract. Fee: ₩39,000 (₩35,000 발급 + ₩4,000 우편). You will receive a receipt - this receipt is needed for education office registration.',
                         urgent: true,
                         critical: true,
                         cost: { min: 30, max: 30 }
@@ -4915,12 +5069,19 @@ degree.
         // Reset progress function
         function resetProgress() {
             if (confirm('Are you sure you want to reset all progress? This will uncheck all completed tasks.')) {
-                localStorage.removeItem('e2-visa-checklist');
+                // Remove both old and new storage keys
+                localStorage.removeItem('e2-visa-checklist'); // Old key
+                localStorage.removeItem(STORAGE_KEY); // New key
 
                 // Reset all checkboxes
-                Object.keys(checklistItems).forEach(key => {
-                    checklistItems[key] = false;
-                });
+                checklistItems = {};
+
+                // Clear undo stack
+                undoStack = [];
+                const undoBtn = document.getElementById('undoBtn');
+                if (undoBtn) {
+                    undoBtn.disabled = true;
+                }
 
                 // Re-render everything
                 const timelineContainer = document.getElementById('timeline-container');
@@ -4932,8 +5093,9 @@ degree.
                 renderSmartGuide();
                 renderProgressInsights();
                 updateProgress();
+                updateDashboard();
 
-                showToast('Progress reset successfully! Starting fresh.', 'info');
+                showToast('Progress reset', 'info');
             }
         }
 
@@ -5569,12 +5731,17 @@ degree.
             }
         }
 
-        // PHASE 1.2: Calculate remaining cost
+        // PHASE 1.2: Calculate remaining cost (미국에서의 비자 준비 비용만)
         function calculateRemainingCost() {
             let min = 0, max = 0;
+
+            // 한국 도착 후 비용 제외 (건강검진, ARC 등)
+            const excludeIds = ['arrival-health-check', 'arrival-arc-application'];
+
             timelineData.forEach(week => {
                 week.tasks.forEach(task => {
-                    if (!checklistItems[task.id] && task.cost) {
+                    // 체크되지 않았고, 비용이 있으며, 제외 목록에 없는 경우만 합산
+                    if (!checklistItems[task.id] && task.cost && !excludeIds.includes(task.id)) {
                         min += task.cost.min || 0;
                         max += task.cost.max || 0;
                     }

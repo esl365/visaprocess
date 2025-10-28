@@ -252,6 +252,16 @@
             border-radius: 0;  /* Remove border radius for sticky */
             box-shadow: 0 2px 8px rgba(0,0,0,0.1);
             border-bottom: 2px solid rgba(100, 116, 139, 0.15);
+            transition: transform 0.3s ease, opacity 0.3s ease;
+        }
+
+        /* Mobile: Hide on scroll down */
+        @media (max-width: 768px) {
+            .nav-bar.hide-on-scroll {
+                transform: translateY(-100%);
+                opacity: 0;
+                pointer-events: none;
+            }
         }
 
         .nav-buttons {
@@ -628,6 +638,16 @@
             box-shadow: 0 1px 3px rgba(0,0,0,0.05);
             margin-bottom: 30px;
             border-bottom: 1px solid rgba(100, 116, 139, 0.1);
+            transition: transform 0.3s ease, opacity 0.3s ease;
+        }
+
+        /* Mobile: Hide on scroll down */
+        @media (max-width: 768px) {
+            .progress-dashboard.hide-on-scroll {
+                transform: translateY(-100%);
+                opacity: 0;
+                pointer-events: none;
+            }
         }
 
         .dashboard-grid {
@@ -1715,6 +1735,26 @@
             animation: fadeInUp 0.3s ease;
         }
 
+        /* Mobile-specific Back-to-Top positioning */
+        @media (max-width: 768px) {
+            .back-to-top {
+                /* Move to bottom-left for left-thumb accessibility */
+                bottom: 85px;  /* Above quick-jump menu */
+                left: 20px;
+                right: auto;
+                width: 48px;
+                height: 48px;
+                font-size: 1.3rem;
+
+                /* Enhanced mobile shadow */
+                box-shadow: 0 2px 12px rgba(0,0,0,0.3);
+            }
+
+            .back-to-top:active {
+                transform: scale(0.9);
+            }
+        }
+
         @keyframes fadeInUp {
             from {
                 opacity: 0;
@@ -1774,6 +1814,54 @@
         .quick-jump-item.active {
             background: linear-gradient(135deg, #eff6ff, #dbeafe);
             color: #3b82f6;
+        }
+
+        /* Mobile-specific Quick Jump styles */
+        @media (max-width: 768px) {
+            .quick-jump {
+                /* Reposition to bottom center for thumb accessibility */
+                top: auto;
+                bottom: 20px;
+                right: 50%;
+                left: auto;
+                transform: translateX(50%);
+
+                /* Horizontal layout */
+                display: none;
+                flex-direction: row;
+                padding: 8px 12px;
+                border-radius: 24px;
+                gap: 4px;
+
+                /* Better mobile shadow */
+                box-shadow: 0 -2px 16px rgba(0,0,0,0.2);
+            }
+
+            .quick-jump.show {
+                display: flex;
+            }
+
+            .quick-jump-item {
+                /* Horizontal inline items */
+                display: inline-flex;
+                margin: 0;
+                padding: 10px 14px;
+                min-width: 44px;
+                min-height: 44px;
+                align-items: center;
+                justify-content: center;
+                font-size: 1.4rem;
+            }
+
+            .quick-jump-item:hover {
+                transform: scale(1.1);
+                background: var(--gray-100);
+            }
+
+            .quick-jump-item:active {
+                transform: scale(0.95);
+                background: var(--gray-200);
+            }
         }
 
         /* Link Styles */
@@ -6333,6 +6421,8 @@ degree.
         function initializeNavigationEnhancements() {
             const backToTop = document.querySelector('.back-to-top');
             const quickJump = document.querySelector('.quick-jump');
+            const progressDashboard = document.querySelector('.progress-dashboard');
+            const navBar = document.querySelector('.nav-bar');
 
             // Add null checks to prevent errors
             if (!backToTop || !quickJump) {
@@ -6344,9 +6434,17 @@ degree.
                 console.log('[Navigation] Quick Jump and Back-to-Top initialized successfully');
             }
 
-            // Back to top button visibility
+            // Scroll direction detection for mobile sticky elements
+            let lastScrollTop = 0;
+            let scrollTimeout;
+            const isMobile = window.innerWidth <= 768;
+
+            // Back to top button visibility and scroll direction handling
             window.addEventListener('scroll', () => {
-                if (window.pageYOffset > 300) {
+                const currentScroll = window.pageYOffset;
+
+                // Show/hide back-to-top and quick-jump
+                if (currentScroll > 300) {
                     if (backToTop) backToTop.classList.add('show');
                     if (quickJump) quickJump.classList.add('show');
                 } else {
@@ -6354,9 +6452,31 @@ degree.
                     if (quickJump) quickJump.classList.remove('show');
                 }
 
+                // Mobile: Hide sticky elements on scroll down, show on scroll up
+                if (isMobile && currentScroll > 100) {
+                    // Clear previous timeout
+                    clearTimeout(scrollTimeout);
+
+                    if (currentScroll > lastScrollTop) {
+                        // Scrolling DOWN - hide sticky elements
+                        if (progressDashboard) progressDashboard.classList.add('hide-on-scroll');
+                        if (navBar) navBar.classList.add('hide-on-scroll');
+                    } else {
+                        // Scrolling UP - show sticky elements
+                        if (progressDashboard) progressDashboard.classList.remove('hide-on-scroll');
+                        if (navBar) navBar.classList.remove('hide-on-scroll');
+                    }
+
+                    lastScrollTop = currentScroll;
+                } else if (currentScroll <= 100) {
+                    // At top of page - always show
+                    if (progressDashboard) progressDashboard.classList.remove('hide-on-scroll');
+                    if (navBar) navBar.classList.remove('hide-on-scroll');
+                }
+
                 // Update active section in TOC and Quick Jump
                 updateActiveSection();
-            });
+            }, { passive: true });
 
             // Back to top click handler
             if (backToTop) {
@@ -6364,6 +6484,8 @@ degree.
                     window.scrollTo({top: 0, behavior: 'smooth'});
                 });
             }
+
+            console.log('[Navigation] Scroll direction detection enabled for mobile');
         }
 
         function updateActiveSection() {

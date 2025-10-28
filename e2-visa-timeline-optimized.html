@@ -1,0 +1,1110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Complete E-2 Visa Timeline & Interactive Checklist for teachers moving from US to South Korea. Track your progress through FBI checks, document apostilles, and visa application steps.">
+    <meta property="og:title" content="E-2 Visa Timeline & Guide - Interactive Checklist">
+    <meta property="og:description" content="Step-by-step guide for E-2 visa application: FBI checks, apostilles, document preparation, and timeline management.">
+    <meta property="og:type" content="article">
+    <meta property="og:image" content="https://via.placeholder.com/1200x630.png?text=E-2+Visa+Guide">
+    <title>E-2 Visa Timeline & Guide - Interactive Checklist | Kang & Kriel Recruitment</title>
+    
+    <!-- Preconnect for Performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Structured Data for SEO -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "HowTo",
+      "name": "E-2 Visa Application Timeline (US to Korea)",
+      "description": "Complete step-by-step guide for obtaining an E-2 visa for teaching in South Korea",
+      "totalTime": "P7W",
+      "estimatedCost": {
+        "@type": "MonetaryAmount",
+        "currency": "USD",
+        "value": "320-525"
+      },
+      "step": [
+        {
+          "@type": "HowToStep",
+          "name": "Book FBI Channeler Appointment",
+          "position": 1,
+          "text": "Schedule fingerprinting at Accurate Biometrics or Fieldprint"
+        },
+        {
+          "@type": "HowToStep",
+          "name": "Get FBI Background Check",
+          "position": 2,
+          "text": "Complete Live Scan digital fingerprinting"
+        },
+        {
+          "@type": "HowToStep",
+          "name": "Notarize Degree",
+          "position": 3,
+          "text": "Get original degree notarized by notary public"
+        },
+        {
+          "@type": "HowToStep",
+          "name": "Order Federal Apostille",
+          "position": 4,
+          "text": "Send FBI check to Monument Visa for federal apostille"
+        },
+        {
+          "@type": "HowToStep",
+          "name": "Order State Apostille",
+          "position": 5,
+          "text": "Send notarized degree for state apostille"
+        },
+        {
+          "@type": "HowToStep",
+          "name": "Prepare Visa Photos",
+          "position": 6,
+          "text": "Get passport photos meeting Korean visa specifications"
+        },
+        {
+          "@type": "HowToStep",
+          "name": "Submit Visa Application",
+          "position": 7,
+          "text": "Complete online application and submit documents to Korean consulate"
+        }
+      ]
+    }
+    </script>
+    
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+        
+        :root {
+            --brand-primary: #ae6031;
+            --brand-dark: #8a4a25;
+            --brand-light: #d4936f;
+            --brand-bg: #faf8f6;
+        }
+        
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+        }
+        
+        .lucide {
+            width: 1em;
+            height: 1em;
+            display: inline-block;
+            vertical-align: middle;
+        }
+        
+        /* Focus Styles for Accessibility */
+        button:focus-visible,
+        input:focus-visible,
+        a:focus-visible {
+            outline: 3px solid var(--brand-primary);
+            outline-offset: 2px;
+        }
+        
+        /* Custom Checkbox Styles */
+        input[type="checkbox"] {
+            accent-color: var(--brand-primary);
+            cursor: pointer;
+        }
+        
+        input[type="checkbox"]:focus-visible {
+            outline: 3px solid var(--brand-primary);
+            outline-offset: 2px;
+        }
+        
+        /* Smooth Transitions */
+        .transition-all {
+            transition: all 0.3s ease;
+        }
+        
+        /* Print Styles */
+        @media print {
+            .no-print {
+                display: none !important;
+            }
+            
+            .sticky {
+                position: relative !important;
+            }
+            
+            .shadow-lg, .shadow-md {
+                box-shadow: none !important;
+            }
+            
+            .bg-gradient-to-br, .bg-gradient-to-r {
+                background: white !important;
+            }
+            
+            body {
+                background: white !important;
+            }
+            
+            .page-break {
+                page-break-before: always;
+            }
+        }
+        
+        /* Reduce Motion for Accessibility */
+        @media (prefers-reduced-motion: reduce) {
+            * {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+        
+        /* Mobile HUD */
+        .mobile-hud {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            z-index: 40;
+        }
+        
+        /* Floating Button */
+        .floating-button {
+            position: fixed;
+            bottom: 80px;
+            right: 20px;
+            z-index: 50;
+            box-shadow: 0 4px 12px rgba(174, 96, 49, 0.3);
+        }
+        
+        @media (min-width: 768px) {
+            .mobile-hud {
+                display: none;
+            }
+        }
+        
+        /* Currency Formatting */
+        .currency::before {
+            content: '$';
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <div id="root"></div>
+    
+    <script type="text/babel">
+        const { useState, useEffect, useRef } = React;
+
+        // Translations
+        const translations = {
+            en: {
+                title: "E-2 Visa Timeline & Guide",
+                subtitle: "Interactive Checklist for US → Korea",
+                language: "Language",
+                resetProgress: "Reset Progress",
+                expandAll: "Expand All",
+                collapseAll: "Collapse All",
+                exportData: "Export Progress",
+                overallProgress: "Overall Progress",
+                nextUp: "Next Up - Priority Tasks",
+                weekProgress: "Week Progress",
+                costCalculator: "Cost Calculator",
+                minimumCost: "Minimum Cost",
+                maximumCost: "Maximum Cost",
+                criticalRules: "Critical Rules",
+                keyContacts: "Key Contacts",
+                needHelp: "Need Help?",
+                needHelpDesc: "Are you a Kang & Kriel candidate? Contact your recruiter directly for assistance with your visa process.",
+                contactRecruiter: "Contact Your Recruiter",
+                disclaimer: "Disclaimer: Information current as of October 2025. Visa requirements may change.",
+                verifyWith: "Always verify with Korea Immigration Service",
+                docVersion: "Document Version: Optimized v3.0",
+                autoSave: "Your progress is automatically saved in your browser",
+                confirmReset: "Are you sure you want to reset all progress? This cannot be undone.",
+                day: "Day",
+                urgent: "URGENT",
+                critical: "CRITICAL",
+                completed: "Completed",
+                copyPhone: "Copy Phone",
+                copyEmail: "Copy Email",
+                copied: "Copied!",
+                phoneCopied: "Phone number copied to clipboard",
+                emailCopied: "Email copied to clipboard",
+                urlCopied: "URL copied to clipboard"
+            },
+            ko: {
+                title: "E-2 비자 타임라인 & 가이드",
+                subtitle: "미국 → 한국 대화형 체크리스트",
+                language: "언어",
+                resetProgress: "진행 상황 초기화",
+                expandAll: "모두 펼치기",
+                collapseAll: "모두 접기",
+                exportData: "진행 상황 내보내기",
+                overallProgress: "전체 진행률",
+                nextUp: "다음 할 일 - 우선순위 작업",
+                weekProgress: "주차 진행률",
+                costCalculator: "비용 계산기",
+                minimumCost: "최소 비용",
+                maximumCost: "최대 비용",
+                criticalRules: "중요 규칙",
+                keyContacts: "주요 연락처",
+                needHelp: "도움이 필요하신가요?",
+                needHelpDesc: "Kang & Kriel 후보자이신가요? 비자 절차와 관련하여 담당 리크루터에게 직접 연락하세요.",
+                contactRecruiter: "담당 리크루터에게 연락하기",
+                disclaimer: "면책 조항: 2025년 10월 기준 정보입니다. 비자 요건은 변경될 수 있습니다.",
+                verifyWith: "항상 한국 출입국관리사무소에 확인하세요",
+                docVersion: "문서 버전: 최적화 v3.0",
+                autoSave: "진행 상황이 브라우저에 자동으로 저장됩니다",
+                confirmReset: "모든 진행 상황을 초기화하시겠습니까? 이 작업은 되돌릴 수 없습니다.",
+                day: "일차",
+                urgent: "긴급",
+                critical: "중요",
+                completed: "완료됨",
+                copyPhone: "전화번호 복사",
+                copyEmail: "이메일 복사",
+                copied: "복사됨!",
+                phoneCopied: "전화번호가 클립보드에 복사되었습니다",
+                emailCopied: "이메일이 클립보드에 복사되었습니다",
+                urlCopied: "URL이 클립보드에 복사되었습니다"
+            }
+        };
+
+        // Lucide Icons as SVG components
+        const Icon = ({ d, ...props }) => (
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide" {...props}>
+                <path d={d} />
+            </svg>
+        );
+
+        const CheckCircle2 = (props) => <Icon d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z M9 12l2 2 4-4" {...props} />;
+        const Circle = (props) => <Icon d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z" {...props} />;
+        const AlertCircle = (props) => <Icon d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z M12 8v4 M12 16h.01" {...props} />;
+        const AlertTriangle = (props) => <Icon d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3z M12 9v4 M12 17h.01" {...props} />;
+        const Clock = (props) => <Icon d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z M12 6v6l4 2" {...props} />;
+        const DollarSign = (props) => <Icon d="M12 2v20 M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" {...props} />;
+        const Calendar = (props) => <Icon d="M8 2v4 M16 2v4 M3 10h18 M5 4h14a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2z" {...props} />;
+        const FileText = (props) => <Icon d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z M14 2v4a2 2 0 0 0 2 2h4 M10 9H8 M16 13H8 M16 17H8" {...props} />;
+        const ChevronDown = (props) => <Icon d="m6 9 6 6 6-6" {...props} />;
+        const ChevronUp = (props) => <Icon d="m18 15-6-6-6 6" {...props} />;
+        const MapPin = (props) => <Icon d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0Z M12 13a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z" {...props} />;
+        const ExternalLink = (props) => <Icon d="M15 3h6v6 M10 14 21 3 M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" {...props} />;
+        const Info = (props) => <Icon d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z M12 16v-4 M12 8h.01" {...props} />;
+        const Phone = (props) => <Icon d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" {...props} />;
+        const Mail = (props) => <Icon d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z M22 6l-10 7L2 6" {...props} />;
+        const Globe = (props) => <Icon d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z M2 12h20 M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" {...props} />;
+        const Download = (props) => <Icon d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4 M7 10l5 5 5-5 M12 15V3" {...props} />;
+        const Copy = (props) => <Icon d="M8 4v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V7.242a2 2 0 0 0-.602-1.43L16.083 2.57A2 2 0 0 0 14.685 2H10a2 2 0 0 0-2 2Z M16 18v2a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V9a2 2 0 0 1 2-2h2" {...props} />;
+        const Check = (props) => <Icon d="M20 6 9 17l-5-5" {...props} />;
+        const RefreshCw = (props) => <Icon d="M3 12a9 9 0 0 1 9-9 9.75 9.75 0 0 1 6.74 2.74L21 8 M21 3v5h-5 M21 12a9 9 0 0 1-9 9 9.75 9.75 0 0 1-6.74-2.74L3 16 M3 21v-5h5" {...props} />;
+        const Maximize2 = (props) => <Icon d="M15 3h6v6 M9 21H3v-6 M21 3l-7 7 M3 21l7-7" {...props} />;
+        const Minimize2 = (props) => <Icon d="M4 14h6v6 M20 10h-6V4 M14 10l7-7 M3 21l7-7" {...props} />;
+        const Languages = (props) => <Icon d="m5 8 6 6 M4 14l6-6 2-3 M2 5h12 M7 2h1 M22 22l-5-10-5 10 M14 18h8" {...props} />;
+        const MessageCircle = (props) => <Icon d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z" {...props} />;
+
+        const E2VisaTimeline = () => {
+            const [expandedWeek, setExpandedWeek] = useState(null);
+            const [checkedItems, setCheckedItems] = useState({});
+            const [allExpanded, setAllExpanded] = useState(false);
+            const [language, setLanguage] = useState('en');
+            const [showCopyFeedback, setShowCopyFeedback] = useState({ show: false, message: '' });
+
+            const t = translations[language];
+
+            // Load saved state from localStorage
+            useEffect(() => {
+                const saved = localStorage.getItem('e2-visa-progress');
+                const savedLang = localStorage.getItem('e2-visa-language');
+                if (saved) {
+                    try {
+                        setCheckedItems(JSON.parse(saved));
+                    } catch (e) {
+                        console.error('Failed to load saved progress');
+                    }
+                }
+                if (savedLang) {
+                    setLanguage(savedLang);
+                }
+            }, []);
+
+            // Save state to localStorage
+            useEffect(() => {
+                localStorage.setItem('e2-visa-progress', JSON.stringify(checkedItems));
+            }, [checkedItems]);
+
+            useEffect(() => {
+                localStorage.setItem('e2-visa-language', language);
+            }, [language]);
+
+            // Handle deep linking
+            useEffect(() => {
+                const hash = window.location.hash;
+                if (hash) {
+                    const weekId = hash.substring(1);
+                    setExpandedWeek(weekId);
+                    setTimeout(() => {
+                        const element = document.getElementById(weekId);
+                        if (element) {
+                            element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                        }
+                    }, 100);
+                }
+            }, []);
+
+            const toggleTask = (taskId) => {
+                setCheckedItems(prev => ({
+                    ...prev,
+                    [taskId]: !prev[taskId]
+                }));
+            };
+
+            const resetProgress = () => {
+                if (window.confirm(t.confirmReset)) {
+                    setCheckedItems({});
+                    localStorage.removeItem('e2-visa-progress');
+                }
+            };
+
+            const exportProgress = () => {
+                const data = {
+                    exportDate: new Date().toISOString(),
+                    checkedItems: checkedItems,
+                    progress: {
+                        overall: calculateOverallProgress(),
+                        byWeek: timelineData.map(week => ({
+                            week: week.week,
+                            progress: calculateWeekProgress(week.tasks)
+                        }))
+                    }
+                };
+                const blob = new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' });
+                const url = URL.createObjectURL(blob);
+                const a = document.createElement('a');
+                a.href = url;
+                a.download = `e2-visa-progress-${new Date().toISOString().split('T')[0]}.json`;
+                document.body.appendChild(a);
+                a.click();
+                document.body.removeChild(a);
+                URL.revokeObjectURL(url);
+            };
+
+            const toggleAllWeeks = () => {
+                if (allExpanded) {
+                    setExpandedWeek(null);
+                } else {
+                    setExpandedWeek('all');
+                }
+                setAllExpanded(!allExpanded);
+            };
+
+            const copyToClipboard = async (text, type) => {
+                try {
+                    await navigator.clipboard.writeText(text);
+                    const messages = {
+                        phone: t.phoneCopied,
+                        email: t.emailCopied,
+                        url: t.urlCopied
+                    };
+                    setShowCopyFeedback({ show: true, message: messages[type] || t.copied });
+                    setTimeout(() => setShowCopyFeedback({ show: false, message: '' }), 2000);
+                } catch (err) {
+                    console.error('Failed to copy:', err);
+                }
+            };
+
+            const timelineData = [
+                {
+                    week: 'Week 1-3',
+                    title: 'Document Preparation Phase',
+                    duration: '2-3 weeks',
+                    color: 'primary',
+                    icon: FileText,
+                    tasks: [
+                        {
+                            id: 'fbi-1',
+                            day: 'Day 1',
+                            title: 'Book FBI Channeler Appointment',
+                            description: 'Schedule at Accurate Biometrics or Fieldprint',
+                            urgent: true,
+                            critical: true
+                        },
+                        {
+                            id: 'fbi-2',
+                            day: 'Day 1-2',
+                            title: 'Get FBI Fingerprints',
+                            description: 'Live Scan digital fingerprinting (5 minutes)',
+                            cost: { min: 40, max: 100 },
+                            urgent: true
+                        },
+                        {
+                            id: 'degree-1',
+                            day: 'Day 1',
+                            title: 'Locate Original Degree',
+                            description: 'Must be original, not a copy',
+                            critical: true
+                        },
+                        {
+                            id: 'degree-2',
+                            day: 'Day 2-3',
+                            title: 'Get Degree Notarized',
+                            description: 'Notary public certification of original',
+                            cost: { min: 10, max: 30 }
+                        },
+                        {
+                            id: 'monument-1',
+                            day: 'Day 3-4',
+                            title: 'Order Monument Visa Service',
+                            description: 'FBI federal apostille ($55-75) + Degree state apostille ($100-125)',
+                            cost: { min: 155, max: 200 },
+                            urgent: true,
+                            critical: true
+                        },
+                        {
+                            id: 'shipping-1',
+                            day: 'Day 5-7',
+                            title: 'Ship Documents to Monument',
+                            description: 'FedEx/UPS with tracking ($40-80)',
+                            cost: { min: 40, max: 80 }
+                        }
+                    ]
+                },
+                {
+                    week: 'Week 2-3',
+                    title: 'Apostille Processing Phase',
+                    duration: '1-2 weeks',
+                    color: 'dark',
+                    icon: Clock,
+                    tasks: [
+                        {
+                            id: 'wait-1',
+                            day: 'Day 7-14',
+                            title: 'Wait for FBI Results',
+                            description: 'Channeler processes in 1-3 business days',
+                        },
+                        {
+                            id: 'monument-2',
+                            day: 'Day 10-14',
+                            title: 'Monument Processes Apostilles',
+                            description: 'Federal (FBI): 3-5 days, State (Degree): 5-7 days'
+                        },
+                        {
+                            id: 'receive-1',
+                            day: 'Day 14-21',
+                            title: 'Receive Apostilled Documents',
+                            description: 'Track Monument return shipment',
+                            critical: true
+                        }
+                    ]
+                },
+                {
+                    week: 'Week 3-5',
+                    title: 'Photo & Application Phase',
+                    duration: '1-2 weeks',
+                    color: 'primary',
+                    icon: MapPin,
+                    tasks: [
+                        {
+                            id: 'photo-1',
+                            day: 'Day 21-23',
+                            title: 'Get Visa Photos',
+                            description: 'Korean visa specs: 3.5cm x 4.5cm, white background',
+                            cost: { min: 30, max: 70 },
+                            critical: true
+                        },
+                        {
+                            id: 'app-1',
+                            day: 'Day 21-25',
+                            title: 'Complete Online Application',
+                            description: 'Hi Korea portal (hikorea.go.kr)',
+                            urgent: true
+                        },
+                        {
+                            id: 'review-1',
+                            day: 'Day 25-28',
+                            title: 'Document Review with School',
+                            description: 'School verifies all documents match requirements'
+                        }
+                    ]
+                },
+                {
+                    week: 'Week 5-7',
+                    title: 'Submission & Processing',
+                    duration: '2-3 weeks',
+                    color: 'dark',
+                    icon: DollarSign,
+                    tasks: [
+                        {
+                            id: 'submit-1',
+                            day: 'Day 28-35',
+                            title: 'Submit to Korean Consulate',
+                            description: 'In person or by mail (varies by location)',
+                            cost: { min: 45, max: 45 },
+                            urgent: true,
+                            critical: true
+                        },
+                        {
+                            id: 'wait-2',
+                            day: 'Day 35-42',
+                            title: 'Wait for Visa Processing',
+                            description: 'Standard processing: 5-7 business days'
+                        },
+                        {
+                            id: 'receive-2',
+                            day: 'Day 42-49',
+                            title: 'Receive Visa Number',
+                            description: 'Confirmation from consulate or online portal',
+                            critical: true
+                        },
+                        {
+                            id: 'final-1',
+                            day: 'Day 49+',
+                            title: 'Travel to Korea',
+                            description: 'Convert visa to ARC within 90 days of arrival'
+                        }
+                    ]
+                }
+            ];
+
+            const getColorClasses = (color, type = 'bg') => {
+                const colors = {
+                    primary: {
+                        bg: 'bg-[#ae6031]',
+                        text: 'text-[#ae6031]',
+                        border: 'border-[#ae6031]',
+                        light: 'bg-[#faf8f6]',
+                        hover: 'hover:bg-[#8a4a25]'
+                    },
+                    dark: {
+                        bg: 'bg-[#8a4a25]',
+                        text: 'text-[#8a4a25]',
+                        border: 'border-[#8a4a25]',
+                        light: 'bg-gray-50',
+                        hover: 'hover:bg-[#6d3a1e]'
+                    }
+                };
+                return colors[color]?.[type] || colors.primary[type];
+            };
+
+            // Fixed cost calculation
+            const totalCost = timelineData
+                .flatMap(w => w.tasks)
+                .filter(t => t.cost && checkedItems[t.id])
+                .reduce((acc, t) => ({
+                    min: acc.min + t.cost.min,
+                    max: acc.max + t.cost.max
+                }), { min: 0, max: 0 });
+
+            const calculateOverallProgress = () => {
+                const allTasks = timelineData.flatMap(w => w.tasks);
+                const completed = allTasks.filter(t => checkedItems[t.id]).length;
+                return Math.round((completed / allTasks.length) * 100);
+            };
+
+            const calculateWeekProgress = (tasks) => {
+                const completed = tasks.filter(t => checkedItems[t.id]).length;
+                return Math.round((completed / tasks.length) * 100);
+            };
+
+            const getPriorityTasks = () => {
+                return timelineData
+                    .flatMap(w => w.tasks.map(t => ({ ...t, week: w.week })))
+                    .filter(t => (t.urgent || t.critical) && !checkedItems[t.id])
+                    .slice(0, 3);
+            };
+
+            const priorityTasks = getPriorityTasks();
+            const overallProgress = calculateOverallProgress();
+            const remainingCriticalTasks = timelineData
+                .flatMap(w => w.tasks)
+                .filter(t => t.critical && !checkedItems[t.id]).length;
+
+            return (
+                <div className="min-h-screen bg-gray-50">
+                    {/* Copy Feedback Toast */}
+                    {showCopyFeedback.show && (
+                        <div className="fixed top-20 right-4 z-50 bg-[#ae6031] text-white px-6 py-3 rounded-lg shadow-lg flex items-center gap-2 animate-fade-in no-print">
+                            <Check className="w-5 h-5" />
+                            <span>{showCopyFeedback.message}</span>
+                        </div>
+                    )}
+
+                    {/* Sticky Header */}
+                    <div className="sticky top-0 z-40 bg-white border-b-2 border-gray-200 shadow-md no-print">
+                        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+                            <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+                                <div className="flex items-center gap-4">
+                                    <div className="text-2xl font-black text-[#ae6031]">
+                                        Kang & Kriel Recruitment
+                                    </div>
+                                </div>
+                                <div className="flex flex-wrap items-center gap-2">
+                                    <button
+                                        onClick={() => setLanguage(language === 'en' ? 'ko' : 'en')}
+                                        className="px-3 py-2 bg-gray-100 hover:bg-gray-200 rounded-lg flex items-center gap-2 text-sm font-medium transition-all"
+                                        aria-label={t.language}
+                                    >
+                                        <Languages className="w-4 h-4" />
+                                        <span>{language === 'en' ? 'EN' : 'KO'}</span>
+                                    </button>
+                                    <button
+                                        onClick={toggleAllWeeks}
+                                        className="px-3 py-2 bg-gray-100 hover:bg-gray-200 rounded-lg flex items-center gap-2 text-sm font-medium transition-all"
+                                        aria-label={allExpanded ? t.collapseAll : t.expandAll}
+                                    >
+                                        {allExpanded ? <Minimize2 className="w-4 h-4" /> : <Maximize2 className="w-4 h-4" />}
+                                        <span className="hidden sm:inline">{allExpanded ? t.collapseAll : t.expandAll}</span>
+                                    </button>
+                                    <button
+                                        onClick={exportProgress}
+                                        className="px-3 py-2 bg-gray-100 hover:bg-gray-200 rounded-lg flex items-center gap-2 text-sm font-medium transition-all"
+                                        aria-label={t.exportData}
+                                    >
+                                        <Download className="w-4 h-4" />
+                                        <span className="hidden sm:inline">{t.exportData}</span>
+                                    </button>
+                                    <button
+                                        onClick={resetProgress}
+                                        className="px-3 py-2 bg-red-100 hover:bg-red-200 text-red-700 rounded-lg flex items-center gap-2 text-sm font-medium transition-all"
+                                        aria-label={t.resetProgress}
+                                    >
+                                        <RefreshCw className="w-4 h-4" />
+                                        <span className="hidden sm:inline">{t.resetProgress}</span>
+                                    </button>
+                                </div>
+                            </div>
+                            
+                            {/* Overall Progress Bar */}
+                            <div className="mt-4">
+                                <div className="flex items-center justify-between mb-2">
+                                    <span className="text-sm font-semibold text-gray-700">{t.overallProgress}</span>
+                                    <span className="text-sm font-bold text-[#ae6031]">{overallProgress}%</span>
+                                </div>
+                                <div className="w-full bg-gray-200 rounded-full h-3" role="progressbar" aria-valuenow={overallProgress} aria-valuemin="0" aria-valuemax="100">
+                                    <div 
+                                        className="bg-gradient-to-r from-[#ae6031] to-[#8a4a25] h-3 rounded-full transition-all duration-500"
+                                        style={{ width: `${overallProgress}%` }}
+                                    />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    {/* Main Content */}
+                    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+                        {/* Title Section */}
+                        <div className="text-center mb-8">
+                            <h1 className="text-4xl sm:text-5xl font-black text-gray-900 mb-3">{t.title}</h1>
+                            <p className="text-xl text-gray-600">{t.subtitle}</p>
+                        </div>
+
+                        {/* Critical Warning */}
+                        <div className="mb-8 bg-red-50 border-2 border-red-500 rounded-xl p-6 shadow-lg">
+                            <div className="flex items-start gap-4">
+                                <AlertTriangle className="w-8 h-8 text-red-600 flex-shrink-0 mt-1" aria-hidden="true" />
+                                <div>
+                                    <h2 className="text-xl font-bold text-gray-900 mb-3">⚠️ Critical Warning - Read First!</h2>
+                                    <ul className="space-y-2 text-gray-800">
+                                        <li className="flex items-start gap-2">
+                                            <span className="text-red-600 font-bold">•</span>
+                                            <span><strong>FBI Check</strong> must get <strong>FEDERAL</strong> apostille from U.S. Department of State</span>
+                                        </li>
+                                        <li className="flex items-start gap-2">
+                                            <span className="text-red-600 font-bold">•</span>
+                                            <span><strong>Degree</strong> must get <strong>STATE</strong> apostille from Secretary of State (state where degree issued)</span>
+                                        </li>
+                                        <li className="flex items-start gap-2">
+                                            <span className="text-red-600 font-bold">•</span>
+                                            <span><strong>Names must match EXACTLY</strong> across all documents (passport, FBI, degree) including middle names</span>
+                                        </li>
+                                        <li className="flex items-start gap-2">
+                                            <span className="text-red-600 font-bold">•</span>
+                                            <span><strong>DIY FBI processing takes 14-16 weeks</strong>. Use a channeler (3-5 days) to avoid delays</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        {/* Next Up - Priority Tasks */}
+                        {priorityTasks.length > 0 && (
+                            <div className="mb-8 bg-white rounded-xl shadow-lg p-6">
+                                <h2 className="text-2xl font-bold text-gray-900 mb-4">{t.nextUp}</h2>
+                                <div className="grid md:grid-cols-3 gap-4">
+                                    {priorityTasks.map(task => (
+                                        <div key={task.id} className="p-4 bg-gradient-to-br from-orange-50 to-red-50 border-2 border-orange-300 rounded-lg">
+                                            <div className="flex items-start gap-2 mb-2">
+                                                {task.urgent && (
+                                                    <span className="px-2 py-1 rounded text-xs font-bold bg-red-600 text-white">{t.urgent}</span>
+                                                )}
+                                                {task.critical && (
+                                                    <span className="px-2 py-1 rounded text-xs font-bold bg-orange-600 text-white">{t.critical}</span>
+                                                )}
+                                            </div>
+                                            <h3 className="font-bold text-gray-900 mb-1">{task.title}</h3>
+                                            <p className="text-sm text-gray-600 mb-2">{task.description}</p>
+                                            <p className="text-xs text-gray-500">{task.week}</p>
+                                        </div>
+                                    ))}
+                                </div>
+                            </div>
+                        )}
+
+                        {/* Timeline */}
+                        <div className="space-y-6">
+                            {timelineData.map((week, weekIndex) => {
+                                const weekProgress = calculateWeekProgress(week.tasks);
+                                const isExpanded = expandedWeek === week.week || expandedWeek === 'all';
+                                const weekId = week.week.toLowerCase().replace(/\s+/g, '-');
+                                const WeekIcon = week.icon;
+
+                                return (
+                                    <div key={weekIndex} id={weekId} className="bg-white rounded-xl shadow-lg overflow-hidden page-break">
+                                        {/* Week Header */}
+                                        <button
+                                            onClick={() => {
+                                                setExpandedWeek(isExpanded ? null : week.week);
+                                                window.history.pushState(null, '', `#${weekId}`);
+                                            }}
+                                            className={`w-full p-6 flex items-center justify-between ${getColorClasses(week.color, 'bg')} ${getColorClasses(week.color, 'hover')} text-white transition-all`}
+                                            aria-expanded={isExpanded}
+                                            aria-controls={`${weekId}-content`}
+                                        >
+                                            <div className="flex items-center gap-4">
+                                                <WeekIcon className="w-8 h-8" aria-hidden="true" />
+                                                <div className="text-left">
+                                                    <h2 className="text-2xl font-bold">{week.week}</h2>
+                                                    <p className="text-sm opacity-90">{week.title} • {week.duration}</p>
+                                                </div>
+                                            </div>
+                                            <div className="flex items-center gap-4">
+                                                <div className="text-right hidden sm:block">
+                                                    <div className="text-sm opacity-90">{t.weekProgress}</div>
+                                                    <div className="text-2xl font-bold">{weekProgress}%</div>
+                                                </div>
+                                                {isExpanded ? (
+                                                    <ChevronUp className="w-6 h-6" aria-hidden="true" />
+                                                ) : (
+                                                    <ChevronDown className="w-6 h-6" aria-hidden="true" />
+                                                )}
+                                            </div>
+                                        </button>
+
+                                        {/* Week Progress Bar */}
+                                        <div className="px-6 pt-4 pb-2 bg-gray-50">
+                                            <div className="w-full bg-gray-200 rounded-full h-2" role="progressbar" aria-valuenow={weekProgress} aria-valuemin="0" aria-valuemax="100">
+                                                <div 
+                                                    className={`${getColorClasses(week.color, 'bg')} h-2 rounded-full transition-all duration-500`}
+                                                    style={{ width: `${weekProgress}%` }}
+                                                />
+                                            </div>
+                                        </div>
+
+                                        {/* Tasks */}
+                                        {isExpanded && (
+                                            <div id={`${weekId}-content`} className="p-6 space-y-4">
+                                                {week.tasks.map((task, taskIndex) => (
+                                                    <div key={taskIndex} className={`p-4 rounded-lg border-2 ${checkedItems[task.id] ? 'bg-gray-50 border-gray-300' : 'bg-white border-gray-200'} transition-all`}>
+                                                        <div className="flex items-start gap-4">
+                                                            <input
+                                                                type="checkbox"
+                                                                id={task.id}
+                                                                checked={!!checkedItems[task.id]}
+                                                                onChange={() => toggleTask(task.id)}
+                                                                className="mt-1 h-5 w-5 rounded focus:ring-2 focus:ring-offset-2 focus:ring-[#ae6031]"
+                                                                aria-describedby={`${task.id}-desc`}
+                                                            />
+
+                                                            <label htmlFor={task.id} className="flex-1 cursor-pointer">
+                                                                <div className="flex items-center gap-2 flex-wrap mb-2">
+                                                                    <span className={`px-2 py-1 rounded text-xs font-medium ${getColorClasses(week.color, 'light')} ${getColorClasses(week.color, 'text')}`}>
+                                                                        {t.day} {task.day}
+                                                                    </span>
+                                                                    {task.urgent && (
+                                                                        <span className="px-2 py-1 rounded text-xs font-bold bg-red-600 text-white flex items-center gap-1">
+                                                                            <AlertCircle className="w-3 h-3" aria-hidden="true" />
+                                                                            {t.urgent}
+                                                                        </span>
+                                                                    )}
+                                                                    {task.critical && (
+                                                                        <span className="px-2 py-1 rounded text-xs font-bold bg-orange-600 text-white flex items-center gap-1">
+                                                                            <AlertTriangle className="w-3 h-3" aria-hidden="true" />
+                                                                            {t.critical}
+                                                                        </span>
+                                                                    )}
+                                                                    {task.cost && (
+                                                                        <span className="px-2 py-1 rounded text-xs font-medium bg-green-100 text-green-700">
+                                                                            ${task.cost.min.toLocaleString()}-${task.cost.max.toLocaleString()}
+                                                                        </span>
+                                                                    )}
+                                                                    {checkedItems[task.id] && (
+                                                                        <span className="px-2 py-1 rounded text-xs font-medium bg-green-600 text-white flex items-center gap-1">
+                                                                            <Check className="w-3 h-3" aria-hidden="true" />
+                                                                            {t.completed}
+                                                                        </span>
+                                                                    )}
+                                                                </div>
+
+                                                                <h4 className={`text-lg font-semibold mb-1 ${checkedItems[task.id] ? 'text-gray-500 line-through' : 'text-gray-900'}`}>
+                                                                    {task.title}
+                                                                </h4>
+                                                                <p id={`${task.id}-desc`} className={`text-sm ${checkedItems[task.id] ? 'text-gray-500' : 'text-gray-600'}`}>
+                                                                    {task.description}
+                                                                </p>
+                                                            </label>
+                                                        </div>
+                                                    </div>
+                                                ))}
+                                            </div>
+                                        )}
+                                    </div>
+                                );
+                            })}
+                        </div>
+
+                        {/* Cost Summary */}
+                        <div className="mt-8 bg-white rounded-xl shadow-lg p-8">
+                            <h2 className="text-2xl font-bold text-gray-900 mb-6">💰 {t.costCalculator}</h2>
+                            <div className="grid md:grid-cols-2 gap-6">
+                                <div className="p-6 bg-gradient-to-br from-[#faf8f6] to-[#f5f1ed] rounded-lg border-2 border-[#ae6031]">
+                                    <div className="text-sm text-[#8a4a25] font-medium mb-1">{t.minimumCost}</div>
+                                    <div className="text-3xl font-bold text-[#ae6031]">${(totalCost.min || 320).toLocaleString()}</div>
+                                </div>
+                                <div className="p-6 bg-gradient-to-br from-gray-50 to-gray-100 rounded-lg border-2 border-gray-800">
+                                    <div className="text-sm text-gray-600 font-medium mb-1">{t.maximumCost}</div>
+                                    <div className="text-3xl font-bold text-gray-900">${(totalCost.max || 525).toLocaleString()}</div>
+                                </div>
+                            </div>
+                            <p className="mt-4 text-sm text-gray-600 italic">
+                                * Cost calculation is based on checked items with associated costs
+                            </p>
+                        </div>
+
+                        {/* Need Help Section */}
+                        <div className="mt-8 bg-gradient-to-br from-[#ae6031] to-[#8a4a25] rounded-xl shadow-lg p-8 text-white">
+                            <div className="flex items-start gap-4">
+                                <MessageCircle className="w-8 h-8 flex-shrink-0 mt-1" aria-hidden="true" />
+                                <div className="flex-1">
+                                    <h2 className="text-2xl font-bold mb-3">{t.needHelp}</h2>
+                                    <p className="text-lg mb-4 opacity-90">{t.needHelpDesc}</p>
+                                    <div className="flex flex-wrap gap-3">
+                                        <a
+                                            href="mailto:support@kangkriel.com"
+                                            className="px-6 py-3 bg-white text-[#ae6031] rounded-lg font-semibold hover:bg-gray-100 transition-all inline-flex items-center gap-2"
+                                            rel="noopener noreferrer"
+                                        >
+                                            <Mail className="w-5 h-5" aria-hidden="true" />
+                                            <span>{t.contactRecruiter}</span>
+                                        </a>
+                                        <button
+                                            onClick={() => copyToClipboard('support@kangkriel.com', 'email')}
+                                            className="px-6 py-3 bg-white/10 text-white rounded-lg font-semibold hover:bg-white/20 transition-all inline-flex items-center gap-2"
+                                            aria-label={t.copyEmail}
+                                        >
+                                            <Copy className="w-5 h-5" aria-hidden="true" />
+                                            <span>{t.copyEmail}</span>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        {/* Critical Rules */}
+                        <div className="mt-8 bg-white rounded-xl shadow-lg p-8 page-break">
+                            <h2 className="text-2xl font-bold text-gray-900 mb-6">🔴 {t.criticalRules}</h2>
+                            <div className="space-y-4">
+                                <div className="p-6 rounded-lg border-2 border-red-500 bg-red-50">
+                                    <h3 className="text-lg font-bold text-gray-900 mb-2 flex items-center gap-2">
+                                        <AlertCircle className="w-5 h-5 text-red-600" aria-hidden="true" />
+                                        FBI Check → Federal Apostille
+                                    </h3>
+                                    <p className="text-gray-700">FBI must receive apostille from U.S. Department of State (Federal)</p>
+                                </div>
+                                <div className="p-6 rounded-lg border-2 border-red-500 bg-red-50">
+                                    <h3 className="text-lg font-bold text-gray-900 mb-2 flex items-center gap-2">
+                                        <AlertCircle className="w-5 h-5 text-red-600" aria-hidden="true" />
+                                        Degree → State Apostille
+                                    </h3>
+                                    <p className="text-gray-700">Degree must receive apostille from Secretary of State (State where issued)</p>
+                                </div>
+                                <div className="p-6 rounded-lg border-2 border-orange-500 bg-orange-50">
+                                    <h3 className="text-lg font-bold text-gray-900 mb-2 flex items-center gap-2">
+                                        <AlertTriangle className="w-5 h-5 text-orange-600" aria-hidden="true" />
+                                        Names Must Match EXACTLY
+                                    </h3>
+                                    <p className="text-gray-700">Passport, FBI, and degree names must match including middle names</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        {/* Key Contacts */}
+                        <div className="mt-8 bg-white rounded-xl shadow-lg p-8">
+                            <h2 className="text-2xl font-bold text-gray-900 mb-6">📞 {t.keyContacts}</h2>
+                            <div className="grid md:grid-cols-2 gap-4">
+                                <div className="p-4 border-2 border-gray-200 rounded-lg hover:border-[#ae6031] transition-all">
+                                    <h3 className="font-bold mb-3 text-lg">Monument Visa</h3>
+                                    <div className="space-y-2">
+                                        <div className="flex items-center justify-between">
+                                            <a href="tel:1-800-995-6924" className="text-sm text-[#ae6031] hover:underline flex items-center gap-2">
+                                                <Phone className="w-4 h-4" aria-hidden="true" />
+                                                1-800-995-6924
+                                            </a>
+                                            <button
+                                                onClick={() => copyToClipboard('1-800-995-6924', 'phone')}
+                                                className="p-1 hover:bg-gray-100 rounded"
+                                                aria-label={t.copyPhone}
+                                            >
+                                                <Copy className="w-4 h-4 text-gray-600" aria-hidden="true" />
+                                            </button>
+                                        </div>
+                                        <div className="flex items-center justify-between">
+                                            <a href="https://monumentvisa.com" target="_blank" rel="noopener noreferrer" className="text-sm text-[#ae6031] hover:underline flex items-center gap-2">
+                                                <Globe className="w-4 h-4" aria-hidden="true" />
+                                                monumentvisa.com
+                                                <ExternalLink className="w-3 h-3" aria-hidden="true" />
+                                            </a>
+                                            <button
+                                                onClick={() => copyToClipboard('https://monumentvisa.com', 'url')}
+                                                className="p-1 hover:bg-gray-100 rounded"
+                                                aria-label="Copy URL"
+                                            >
+                                                <Copy className="w-4 h-4 text-gray-600" aria-hidden="true" />
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className="p-4 border-2 border-gray-200 rounded-lg hover:border-[#ae6031] transition-all">
+                                    <h3 className="font-bold mb-3 text-lg">Accurate Biometrics</h3>
+                                    <div className="space-y-2">
+                                        <p className="text-sm text-gray-600">825+ locations nationwide</p>
+                                        <div className="flex items-center justify-between">
+                                            <a href="https://accuratebiometrics.com" target="_blank" rel="noopener noreferrer" className="text-sm text-[#ae6031] hover:underline flex items-center gap-2">
+                                                <Globe className="w-4 h-4" aria-hidden="true" />
+                                                accuratebiometrics.com
+                                                <ExternalLink className="w-3 h-3" aria-hidden="true" />
+                                            </a>
+                                            <button
+                                                onClick={() => copyToClipboard('https://accuratebiometrics.com', 'url')}
+                                                className="p-1 hover:bg-gray-100 rounded"
+                                                aria-label="Copy URL"
+                                            >
+                                                <Copy className="w-4 h-4 text-gray-600" aria-hidden="true" />
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className="p-4 border-2 border-gray-200 rounded-lg hover:border-[#ae6031] transition-all">
+                                    <h3 className="font-bold mb-3 text-lg">Korea Immigration</h3>
+                                    <div className="space-y-2">
+                                        <div className="flex items-center justify-between">
+                                            <a href="tel:1345" className="text-sm text-[#ae6031] hover:underline flex items-center gap-2">
+                                                <Phone className="w-4 h-4" aria-hidden="true" />
+                                                From Korea: 1345
+                                            </a>
+                                            <button
+                                                onClick={() => copyToClipboard('1345', 'phone')}
+                                                className="p-1 hover:bg-gray-100 rounded"
+                                                aria-label={t.copyPhone}
+                                            >
+                                                <Copy className="w-4 h-4 text-gray-600" aria-hidden="true" />
+                                            </button>
+                                        </div>
+                                        <div className="flex items-center justify-between">
+                                            <a href="tel:+82-2-1345" className="text-sm text-[#ae6031] hover:underline flex items-center gap-2">
+                                                <Phone className="w-4 h-4" aria-hidden="true" />
+                                                International: +82-2-1345
+                                            </a>
+                                            <button
+                                                onClick={() => copyToClipboard('+82-2-1345', 'phone')}
+                                                className="p-1 hover:bg-gray-100 rounded"
+                                                aria-label={t.copyPhone}
+                                            >
+                                                <Copy className="w-4 h-4 text-gray-600" aria-hidden="true" />
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className="p-4 border-2 border-gray-200 rounded-lg hover:border-[#ae6031] transition-all">
+                                    <h3 className="font-bold mb-3 text-lg">Hi Korea Portal</h3>
+                                    <div className="space-y-2">
+                                        <div className="flex items-center justify-between">
+                                            <a href="https://hikorea.go.kr" target="_blank" rel="noopener noreferrer" className="text-sm text-[#ae6031] hover:underline flex items-center gap-2">
+                                                <Globe className="w-4 h-4" aria-hidden="true" />
+                                                hikorea.go.kr
+                                                <ExternalLink className="w-3 h-3" aria-hidden="true" />
+                                            </a>
+                                            <button
+                                                onClick={() => copyToClipboard('https://hikorea.go.kr', 'url')}
+                                                className="p-1 hover:bg-gray-100 rounded"
+                                                aria-label="Copy URL"
+                                            >
+                                                <Copy className="w-4 h-4 text-gray-600" aria-hidden="true" />
+                                            </button>
+                                        </div>
+                                        <p className="text-sm text-gray-600">Online visa services</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    {/* Mobile HUD */}
+                    <div className="mobile-hud bg-white border-t-2 border-gray-200 shadow-lg p-4 no-print">
+                        <div className="flex items-center justify-between">
+                            <div className="flex-1">
+                                <div className="text-xs text-gray-600 mb-1">{t.overallProgress}</div>
+                                <div className="flex items-center gap-2">
+                                    <div className="flex-1 bg-gray-200 rounded-full h-2">
+                                        <div 
+                                            className="bg-gradient-to-r from-[#ae6031] to-[#8a4a25] h-2 rounded-full transition-all"
+                                            style={{ width: `${overallProgress}%` }}
+                                        />
+                                    </div>
+                                    <span className="text-sm font-bold text-[#ae6031]">{overallProgress}%</span>
+                                </div>
+                            </div>
+                            {remainingCriticalTasks > 0 && (
+                                <div className="ml-4 px-3 py-1 bg-orange-100 text-orange-700 rounded-full text-xs font-bold">
+                                    {remainingCriticalTasks} {t.critical}
+                                </div>
+                            )}
+                        </div>
+                    </div>
+
+                    {/* Floating CTA Button */}
+                    <a
+                        href="mailto:support@kangkriel.com"
+                        className="floating-button bg-[#ae6031] hover:bg-[#8a4a25] text-white px-6 py-3 rounded-full font-semibold transition-all inline-flex items-center gap-2 no-print"
+                        aria-label={t.needHelp}
+                    >
+                        <MessageCircle className="w-5 h-5" aria-hidden="true" />
+                        <span className="hidden sm:inline">{t.needHelp}</span>
+                    </a>
+
+                    {/* Footer */}
+                    <div className="bg-gray-900 text-white mt-16">
+                        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+                            <div className="text-center">
+                                <div className="text-2xl font-black text-[#ae6031] mb-4">
+                                    Kang & Kriel Recruitment
+                                </div>
+                                <div className="text-sm text-gray-400 space-y-2">
+                                    <p className="mb-2">⚠️ {t.disclaimer}</p>
+                                    <p>{t.verifyWith} • {t.docVersion}</p>
+                                    <p className="mt-4 text-gray-500">{t.autoSave}</p>
+                                    <p className="mt-4 text-gray-600">© 2025 Kang & Kriel Recruitment. All rights reserved.</p>
+                                    <p className="text-xs text-gray-600 mt-2">
+                                        Build Date: {new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            );
+        };
+
+        ReactDOM.render(<E2VisaTimeline />, document.getElementById('root'));
+    </script>
+</body>
+</html>

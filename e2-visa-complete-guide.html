@@ -16,25 +16,25 @@
                NEW COLOR SYSTEM - Dual Color Design
                ======================================== */
 
-            /* Primary - Trust & Professional (Navy Blue) */
-            --primary-900: #1e293b;    /* Darkest navy */
-            --primary-700: #1e3a8a;    /* Main navy blue */
-            --primary-500: #3b82f6;    /* Bright blue */
-            --primary-300: #93c5fd;    /* Light blue */
-            --primary-100: #dbeafe;    /* Very light blue */
+            /* Primary - Minimalistic Blue */
+            --primary-900: #1e293b;
+            --primary-700: #334155;
+            --primary-500: #64748b;
+            --primary-300: #94a3b8;
+            --primary-100: #f1f5f9;
 
-            /* Secondary - Brand Heritage (Brown) */
-            --secondary-700: #8a4a25;  /* Dark brown (original) */
-            --secondary-500: #ae6031;  /* Main brown (original) */
-            --secondary-300: #d4936f;  /* Light brown (original) */
-            --secondary-100: #faf8f6;  /* Beige (original) */
+            /* Secondary - Subtle Gray */
+            --secondary-700: #475569;
+            --secondary-500: #64748b;
+            --secondary-300: #cbd5e1;
+            --secondary-100: #f8fafc;
 
-            /* Accent - Energy & Action */
-            --accent-energy: #f59e0b;  /* Orange - CTA */
-            --accent-success: #22c55e; /* Green - Success */
-            --accent-warning: #eab308; /* Yellow - Warning */
-            --accent-danger: #dc2626;  /* Red - Danger */
-            --accent-info: #3b82f6;    /* Blue - Info */
+            /* Accent - Minimal & Functional */
+            --accent-energy: #64748b;     /* Neutral gray instead of orange */
+            --accent-success: #10b981;    /* Subtle green */
+            --accent-warning: #f59e0b;    /* Keep warning visible */
+            --accent-danger: #ef4444;     /* Keep danger visible */
+            --accent-info: #64748b;       /* Neutral blue-gray */
 
             /* Neutral - Backgrounds & Text (WCAG AAA optimized) */
             --gray-50: #f9fafb;
@@ -208,13 +208,15 @@
             padding: var(--spacing-md);
         }
 
-        /* Header */
+        /* Header - Minimalistic */
         .header {
-            background: linear-gradient(135deg, var(--brand-primary), var(--brand-dark));
-            color: white;
+            background: linear-gradient(135deg, rgba(100, 116, 139, 0.03), rgba(100, 116, 139, 0.05));
+            backdrop-filter: blur(10px);
+            color: var(--gray-900);
             padding: var(--spacing-xl) var(--spacing-md);
             text-align: center;
             margin-bottom: var(--spacing-lg);
+            border-bottom: 1px solid rgba(100, 116, 139, 0.1);
         }
 
         .header h1 {
@@ -235,19 +237,18 @@
             line-height: var(--line-height-tight);
             font-weight: var(--font-weight-bold);
             margin-bottom: var(--spacing-md);
-            color: var(--secondary-500); /* Brown for brand identity */
+            color: var(--gray-700);
         }
 
-        /* Navigation */
+        /* Navigation - Minimalistic */
         .nav-bar {
-            background: white;
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(10px);
             padding: var(--spacing-sm);
             margin-bottom: var(--spacing-md);
             border-radius: var(--spacing-xs);
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-            position: sticky;
-            top: 0;
-            z-index: 100;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+            border: 1px solid rgba(100, 116, 139, 0.1);
         }
 
         .nav-buttons {
@@ -268,31 +269,38 @@
         }
 
         .btn-primary {
-            background: var(--accent-energy); /* Orange for action */
+            background: var(--gray-900);
             color: white;
         }
 
         .btn-primary:hover {
-            background: #d97706; /* Darker orange */
-            transform: translateY(-2px);
+            background: var(--gray-700);
+            transform: translateY(-1px);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
         }
 
         .btn-secondary {
-            background: #e5e7eb;
-            color: #374151;
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(5px);
+            color: var(--gray-700);
+            border: 1px solid rgba(100, 116, 139, 0.2);
         }
 
         .btn-secondary:hover {
-            background: #d1d5db;
+            background: white;
+            border-color: var(--gray-300);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
         }
 
-        /* Progress Bar */
+        /* Progress Bar - Minimalistic */
         .progress-section {
-            background: white;
+            background: rgba(255, 255, 255, 0.6);
+            backdrop-filter: blur(10px);
             padding: var(--spacing-md);
             border-radius: var(--spacing-xs);
             margin-bottom: var(--spacing-md);
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+            border: 1px solid rgba(100, 116, 139, 0.1);
         }
 
         .progress-bar-container {
@@ -306,7 +314,7 @@
 
         .progress-bar-fill {
             height: 100%;
-            background: linear-gradient(90deg, var(--primary-500), var(--primary-700)); /* Blue gradient */
+            background: linear-gradient(90deg, var(--gray-700), var(--gray-900));
             transition: width 0.5s;
             display: flex;
             align-items: center;
@@ -396,22 +404,24 @@
         }
 
         .section-header {
-            background: var(--brand-primary);
-            color: white;
+            background: rgba(100, 116, 139, 0.08);
+            backdrop-filter: blur(5px);
+            color: var(--gray-900);
             padding: var(--spacing-md);
             cursor: pointer;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            transition: background 0.3s;
+            transition: all 0.3s;
             border: none;
             width: 100%;
             text-align: left;
             font-family: inherit;
+            border-bottom: 1px solid rgba(100, 116, 139, 0.1);
         }
 
         .section-header:hover {
-            background: var(--brand-dark);
+            background: rgba(100, 116, 139, 0.12);
         }
 
         .section-header h2 {
@@ -442,7 +452,7 @@
         }
 
         .section-content h3 {
-            color: var(--brand-dark);
+            color: var(--gray-900);
             font-size: var(--font-h3);
             line-height: var(--line-height-tight);
             margin-top: var(--spacing-md);
@@ -451,7 +461,7 @@
         }
 
         .section-content h4 {
-            color: var(--brand-primary);
+            color: var(--gray-700);
             font-size: var(--font-h4);
             line-height: var(--line-height-normal);
             margin-top: var(--spacing-sm);
@@ -559,11 +569,13 @@
             position: sticky;
             top: 0;
             z-index: 1000;
-            background: linear-gradient(135deg, var(--primary-700), var(--primary-500));
-            color: white;
+            background: linear-gradient(135deg, rgba(100, 116, 139, 0.05), rgba(100, 116, 139, 0.1));
+            backdrop-filter: blur(10px);
+            color: var(--gray-900);
             padding: 20px;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
             margin-bottom: 30px;
+            border-bottom: 1px solid rgba(100, 116, 139, 0.1);
         }
 
         .dashboard-grid {
@@ -578,14 +590,17 @@
         .dashboard-card {
             text-align: center;
             padding: 15px;
-            background: rgba(255, 255, 255, 0.1);
+            background: rgba(255, 255, 255, 0.6);
+            backdrop-filter: blur(5px);
             border-radius: 12px;
             transition: all 0.3s ease;
+            border: 1px solid rgba(100, 116, 139, 0.1);
         }
 
         .dashboard-card:hover {
-            background: rgba(255, 255, 255, 0.15);
-            transform: translateY(-2px);
+            background: rgba(255, 255, 255, 0.8);
+            transform: translateY(-1px);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
         }
 
         .main-progress {
@@ -645,7 +660,7 @@
 
         .mini-progress-bar {
             height: 4px;
-            background: rgba(255,255,255,0.2);
+            background: rgba(100, 116, 139, 0.15);
             border-radius: 2px;
             margin-top: 15px;
             overflow: hidden;
@@ -653,26 +668,29 @@
 
         #mini-progress-fill {
             height: 100%;
-            background: white;
+            background: var(--gray-900);
             transition: width 0.5s ease;
         }
 
-        /* Toast notification */
+        /* Toast notification - Minimized */
         .toast {
             position: fixed;
             bottom: -100px;
             left: 50%;
             transform: translateX(-50%);
-            background: var(--gray-900);
+            background: rgba(30, 41, 59, 0.95);
+            backdrop-filter: blur(10px);
             color: white;
-            padding: 12px 20px;
-            border-radius: 8px;
+            padding: 8px 16px;
+            border-radius: 6px;
             display: flex;
             align-items: center;
-            gap: 15px;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+            gap: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.15);
             transition: bottom 0.3s ease;
             z-index: 10000;
+            font-size: 0.875rem;
+            max-width: 320px;
         }
 
         .toast.show {
@@ -2062,9 +2080,9 @@
                 <div class="dashboard-card main-progress">
                     <div class="progress-circle" role="img" aria-label="Overall progress">
                         <svg viewBox="0 0 100 100">
-                            <circle cx="50" cy="50" r="45" fill="none" stroke="#e5e7eb" stroke-width="8"/>
+                            <circle cx="50" cy="50" r="45" fill="none" stroke="rgba(100, 116, 139, 0.15)" stroke-width="8"/>
                             <circle id="progress-ring" cx="50" cy="50" r="45" fill="none"
-                                    stroke="white" stroke-width="8"
+                                    stroke="var(--gray-900)" stroke-width="8"
                                     stroke-dasharray="283" stroke-dashoffset="283"
                                     transform="rotate(-90 50 50)"
                                     style="transition: stroke-dashoffset 0.5s ease;"/>
@@ -4511,6 +4529,209 @@ degree.
         // Timeline data for interactive tracking
         const timelineData = [
             {
+                week: 'Week 1-3',
+                title: 'Document Preparation Phase',
+                duration: '2-3 weeks',
+                color: 'primary',
+                tasks: [
+                    {
+                        id: 'timeline-fbi-1',
+                        day: 'Day 1',
+                        title: 'Book FBI Channeler Appointment',
+                        description: 'Schedule at Accurate Biometrics or Fieldprint',
+                        urgent: true,
+                        critical: true
+                    },
+                    {
+                        id: 'timeline-fbi-2',
+                        day: 'Day 1-2',
+                        title: 'Get FBI Fingerprints',
+                        description: 'Live Scan digital fingerprinting (5 minutes)',
+                        cost: { min: 40, max: 100 },
+                        urgent: true
+                    },
+                    {
+                        id: 'timeline-degree-1',
+                        day: 'Day 1',
+                        title: 'Locate Original Degree',
+                        description: 'Must be original, not a copy',
+                        critical: true
+                    },
+                    {
+                        id: 'timeline-degree-2',
+                        day: 'Day 2-3',
+                        title: 'Get Degree Notarized',
+                        description: 'Notary public certification of original',
+                        cost: { min: 10, max: 30 }
+                    },
+                    {
+                        id: 'timeline-monument-1',
+                        day: 'Day 3-4',
+                        title: 'Order Monument Visa Service',
+                        description: 'FBI federal apostille ($55-75) + Degree state apostille ($100-125)',
+                        cost: { min: 155, max: 200 },
+                        urgent: true,
+                        critical: true
+                    },
+                    {
+                        id: 'timeline-shipping-1',
+                        day: 'Day 5-7',
+                        title: 'Ship Documents to Monument',
+                        description: 'FedEx/UPS with tracking ($40-80)',
+                        cost: { min: 40, max: 80 }
+                    }
+                ]
+            },
+            {
+                week: 'Week 2-3',
+                title: 'Apostille Processing Phase',
+                duration: '1-2 weeks',
+                color: 'dark',
+                tasks: [
+                    {
+                        id: 'timeline-wait-1',
+                        day: 'Day 7-14',
+                        title: 'Wait for FBI Results',
+                        description: 'Channeler processes in 1-3 business days'
+                    },
+                    {
+                        id: 'timeline-monument-2',
+                        day: 'Day 10-14',
+                        title: 'Monument Processes Apostilles',
+                        description: 'Federal (FBI): 3-5 days, State (Degree): 5-7 days'
+                    },
+                    {
+                        id: 'timeline-receive-1',
+                        day: 'Day 14-21',
+                        title: 'Receive Apostilled Documents',
+                        description: 'Track Monument return shipment',
+                        critical: true
+                    }
+                ]
+            },
+            {
+                week: 'Week 3-4',
+                title: 'Ship Documents to Korea',
+                duration: '1 week',
+                color: 'primary',
+                tasks: [
+                    {
+                        id: 'timeline-photo-1',
+                        day: 'Day 21-22',
+                        title: '📸 Get Visa Photos',
+                        description: 'Korean visa specs: 3.5cm x 4.5cm, white background. Get multiple copies (10+ recommended).',
+                        cost: { min: 30, max: 70 },
+                        critical: true
+                    },
+                    {
+                        id: 'timeline-review-1',
+                        day: 'Day 22-23',
+                        title: '📋 Document Review with K&K',
+                        description: 'Final verification: All documents apostilled, names match exactly, photos meet specs. Prepare for shipping.',
+                        urgent: true
+                    },
+                    {
+                        id: 'timeline-ship-korea-1',
+                        day: 'Day 23-24',
+                        title: '📦 Ship Documents to Korean School',
+                        description: 'CRITICAL: Use FedEx/DHL/UPS Express to school address provided by Kang & Kriel. Include: Apostilled FBI check, apostilled degree, passport copy, visa photos, completed forms. Arrival time: up to 5 days.',
+                        cost: { min: 80, max: 150 },
+                        urgent: true,
+                        critical: true
+                    },
+                    {
+                        id: 'timeline-track-1',
+                        day: 'Day 24-28',
+                        title: '🔍 Track Package & Confirm Receipt',
+                        description: 'Monitor tracking number daily. Confirm with school when received. They will combine your documents with school documents.',
+                        urgent: true
+                    }
+                ]
+            },
+            {
+                week: 'Week 4-5',
+                title: 'CNO Application in Korea (사증발급인정신청)',
+                duration: '1-2 weeks',
+                color: 'dark',
+                tasks: [
+                    {
+                        id: 'timeline-cno-submit',
+                        day: 'Day 28-30',
+                        title: '🏛️ School Submits CNO Application',
+                        description: 'Korean employer submits "Certificate of Confirmation of Visa Issuance" (사증발급인정신청) to local immigration office with all combined documents. You do not need to be present.',
+                        critical: true
+                    },
+                    {
+                        id: 'timeline-cno-wait',
+                        day: 'Day 30-42',
+                        title: '⏳ Wait for CNO Number',
+                        description: 'Immigration office reviews application. Processing time: 1-2 weeks. School will receive notification when approved.',
+                        urgent: false
+                    },
+                    {
+                        id: 'timeline-cno-receive',
+                        day: 'Day 42-45',
+                        title: '📧 Receive CNO & Visa Application Form',
+                        description: 'Employer or K&K emails you: CNO number (사증발급인정번호) and completed visa application form. Verify all information is correct.',
+                        urgent: true,
+                        critical: true
+                    }
+                ]
+            },
+            {
+                week: 'Week 6-7',
+                title: 'Consulate Application & Visa Issuance',
+                duration: '1-2 weeks',
+                color: 'primary',
+                tasks: [
+                    {
+                        id: 'timeline-app-complete',
+                        day: 'Day 45-46',
+                        title: '✍️ Complete Visa Application',
+                        description: 'Fill out visa application form with CNO number. Sign all required sections. Print passport photos.',
+                        urgent: true
+                    },
+                    {
+                        id: 'timeline-consulate-prep',
+                        day: 'Day 46-47',
+                        title: '📂 Prepare Consulate Package',
+                        description: 'Required: Passport (valid 6+ months), visa application with CNO, 1 photo, visa fee payment. Check your local consulate requirements.',
+                        urgent: true,
+                        critical: true
+                    },
+                    {
+                        id: 'timeline-consulate-submit',
+                        day: 'Day 47-48',
+                        title: '🏛️ Submit to Korean Consulate',
+                        description: 'Visit local Korean consulate or use mail service (varies by location). Pay visa fee: $45 USD equivalent. Processing: 5-10 business days.',
+                        cost: { min: 45, max: 45 },
+                        urgent: true,
+                        critical: true
+                    },
+                    {
+                        id: 'timeline-visa-wait',
+                        day: 'Day 48-58',
+                        title: '⏳ Wait for Visa Processing',
+                        description: 'Consulate reviews with CNO verification. Standard processing: 5-10 business days. Track status online or by phone.',
+                        urgent: false
+                    },
+                    {
+                        id: 'timeline-visa-receive',
+                        day: 'Day 58-62',
+                        title: '🎉 Receive E-2 Visa in Passport',
+                        description: 'Pick up passport with E-2 visa sticker. Verify: Correct name, visa type (E-2), validity dates. Keep visa page clean and undamaged.',
+                        critical: true
+                    },
+                    {
+                        id: 'timeline-book-flight',
+                        day: 'Day 62+',
+                        title: '✈️ Book Flight to Korea',
+                        description: 'Coordinate arrival date with school. Book flight. Prepare for departure. Review arrival procedures.',
+                        urgent: true
+                    }
+                ]
+            },
+            {
                 week: 'Week 0 – Arrival Week',
                 title: 'CRITICAL: First Week in Korea',
                 duration: '7 days',
@@ -4621,152 +4842,6 @@ degree.
                         title: '🗺️ Explore & Settle In',
                         description: 'Find grocery stores, restaurants, subway routes, post office, hospital. Join expat communities. Download essential apps: Naver Map, Papago, KakaoTalk.',
                         urgent: false
-                    }
-                ]
-            },
-            {
-                week: 'Week 1-3',
-                title: 'Document Preparation Phase',
-                duration: '2-3 weeks',
-                color: 'primary',
-                tasks: [
-                    {
-                        id: 'timeline-fbi-1',
-                        day: 'Day 1',
-                        title: 'Book FBI Channeler Appointment',
-                        description: 'Schedule at Accurate Biometrics or Fieldprint',
-                        urgent: true,
-                        critical: true
-                    },
-                    {
-                        id: 'timeline-fbi-2',
-                        day: 'Day 1-2',
-                        title: 'Get FBI Fingerprints',
-                        description: 'Live Scan digital fingerprinting (5 minutes)',
-                        cost: { min: 40, max: 100 },
-                        urgent: true
-                    },
-                    {
-                        id: 'timeline-degree-1',
-                        day: 'Day 1',
-                        title: 'Locate Original Degree',
-                        description: 'Must be original, not a copy',
-                        critical: true
-                    },
-                    {
-                        id: 'timeline-degree-2',
-                        day: 'Day 2-3',
-                        title: 'Get Degree Notarized',
-                        description: 'Notary public certification of original',
-                        cost: { min: 10, max: 30 }
-                    },
-                    {
-                        id: 'timeline-monument-1',
-                        day: 'Day 3-4',
-                        title: 'Order Monument Visa Service',
-                        description: 'FBI federal apostille ($55-75) + Degree state apostille ($100-125)',
-                        cost: { min: 155, max: 200 },
-                        urgent: true,
-                        critical: true
-                    },
-                    {
-                        id: 'timeline-shipping-1',
-                        day: 'Day 5-7',
-                        title: 'Ship Documents to Monument',
-                        description: 'FedEx/UPS with tracking ($40-80)',
-                        cost: { min: 40, max: 80 }
-                    }
-                ]
-            },
-            {
-                week: 'Week 2-3',
-                title: 'Apostille Processing Phase',
-                duration: '1-2 weeks',
-                color: 'dark',
-                tasks: [
-                    {
-                        id: 'timeline-wait-1',
-                        day: 'Day 7-14',
-                        title: 'Wait for FBI Results',
-                        description: 'Channeler processes in 1-3 business days'
-                    },
-                    {
-                        id: 'timeline-monument-2',
-                        day: 'Day 10-14',
-                        title: 'Monument Processes Apostilles',
-                        description: 'Federal (FBI): 3-5 days, State (Degree): 5-7 days'
-                    },
-                    {
-                        id: 'timeline-receive-1',
-                        day: 'Day 14-21',
-                        title: 'Receive Apostilled Documents',
-                        description: 'Track Monument return shipment',
-                        critical: true
-                    }
-                ]
-            },
-            {
-                week: 'Week 3-5',
-                title: 'Photo & Application Phase',
-                duration: '1-2 weeks',
-                color: 'primary',
-                tasks: [
-                    {
-                        id: 'timeline-photo-1',
-                        day: 'Day 21-23',
-                        title: 'Get Visa Photos',
-                        description: 'Korean visa specs: 3.5cm x 4.5cm, white background',
-                        cost: { min: 30, max: 70 },
-                        critical: true
-                    },
-                    {
-                        id: 'timeline-app-1',
-                        day: 'Day 21-25',
-                        title: 'Complete Online Application',
-                        description: 'Hi Korea portal (hikorea.go.kr)',
-                        urgent: true
-                    },
-                    {
-                        id: 'timeline-review-1',
-                        day: 'Day 25-28',
-                        title: 'Document Review with School',
-                        description: 'School verifies all documents match requirements'
-                    }
-                ]
-            },
-            {
-                week: 'Week 5-7',
-                title: 'Submission & Processing',
-                duration: '2-3 weeks',
-                color: 'dark',
-                tasks: [
-                    {
-                        id: 'timeline-submit-1',
-                        day: 'Day 28-35',
-                        title: 'Submit to Korean Consulate',
-                        description: 'In person or by mail (varies by location)',
-                        cost: { min: 45, max: 45 },
-                        urgent: true,
-                        critical: true
-                    },
-                    {
-                        id: 'timeline-wait-2',
-                        day: 'Day 35-42',
-                        title: 'Wait for Visa Processing',
-                        description: 'Standard processing: 5-7 business days'
-                    },
-                    {
-                        id: 'timeline-receive-2',
-                        day: 'Day 42-49',
-                        title: 'Receive Visa Number',
-                        description: 'Confirmation from consulate or online portal',
-                        critical: true
-                    },
-                    {
-                        id: 'timeline-final-1',
-                        day: 'Day 49+',
-                        title: 'Travel to Korea',
-                        description: 'Convert visa to ARC within 90 days of arrival'
                     }
                 ]
             }

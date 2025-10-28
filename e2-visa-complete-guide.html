@@ -244,7 +244,7 @@
         .nav-bar {
             position: sticky;
             top: 0;
-            z-index: 999;  /* Below dashboard (1000) but above content */
+            z-index: 999;  /* Above dashboard (998) but below back-to-top (998) */
             background: rgba(255, 255, 255, 0.95);
             backdrop-filter: blur(10px);
             padding: var(--spacing-sm);
@@ -620,7 +620,7 @@
         .progress-dashboard {
             position: sticky;
             top: 0;
-            z-index: 1000;
+            z-index: 998;  /* Below nav-bar (999) */
             background: linear-gradient(135deg, rgba(100, 116, 139, 0.05), rgba(100, 116, 139, 0.1));
             backdrop-filter: blur(10px);
             color: var(--gray-900);
@@ -5404,6 +5404,7 @@ degree.
             });
 
             const percentage = total > 0 ? Math.round((completed / total) * 100) : 0;
+            console.log('[Progress] Updated:', {completed, total, percentage: percentage + '%'});
             const progressBar = document.getElementById('progressBar');
             const progressBarContainer = progressBar ? progressBar.parentElement : null;
             const progressText = document.getElementById('progressText');
@@ -6289,6 +6290,8 @@ degree.
 
         // Initialize on page load
         document.addEventListener('DOMContentLoaded', function() {
+            console.log('[E2 Visa Guide] Initializing...');
+
             loadProgress();
             renderAllSections();
             renderSmartGuide();
@@ -6305,6 +6308,8 @@ degree.
 
             // Initialize navigation enhancements
             initializeNavigationEnhancements();
+
+            console.log('[E2 Visa Guide] Initialization complete');
         });
 
         // ========================================
@@ -6329,14 +6334,24 @@ degree.
             const backToTop = document.querySelector('.back-to-top');
             const quickJump = document.querySelector('.quick-jump');
 
+            // Add null checks to prevent errors
+            if (!backToTop || !quickJump) {
+                console.warn('[Navigation] Elements not found:', {
+                    backToTop: !!backToTop,
+                    quickJump: !!quickJump
+                });
+            } else {
+                console.log('[Navigation] Quick Jump and Back-to-Top initialized successfully');
+            }
+
             // Back to top button visibility
             window.addEventListener('scroll', () => {
                 if (window.pageYOffset > 300) {
-                    backToTop.classList.add('show');
-                    quickJump.classList.add('show');
+                    if (backToTop) backToTop.classList.add('show');
+                    if (quickJump) quickJump.classList.add('show');
                 } else {
-                    backToTop.classList.remove('show');
-                    quickJump.classList.remove('show');
+                    if (backToTop) backToTop.classList.remove('show');
+                    if (quickJump) quickJump.classList.remove('show');
                 }
 
                 // Update active section in TOC and Quick Jump
@@ -6344,9 +6359,11 @@ degree.
             });
 
             // Back to top click handler
-            backToTop.addEventListener('click', () => {
-                window.scrollTo({top: 0, behavior: 'smooth'});
-            });
+            if (backToTop) {
+                backToTop.addEventListener('click', () => {
+                    window.scrollTo({top: 0, behavior: 'smooth'});
+                });
+            }
         }
 
         function updateActiveSection() {

@@ -141,29 +141,51 @@
             border-radius: 10px;
             margin-bottom: 20px;
             border-left: 5px solid;
+            position: relative;
+            overflow: hidden;
         }
 
+        /* ========================================
+           PHASE 1.3: 시각적 계층 강화
+           ======================================== */
+
+        /* Critical Alert - 애니메이션 및 강조 */
         .alert-danger {
-            background: #fef2f2;
-            border-color: #dc2626;
+            background: linear-gradient(135deg, #fef2f2, #fee2e2);
+            border-left: 8px solid #dc2626;
             color: #991b1b;
+            box-shadow: 0 4px 15px rgba(220, 38, 38, 0.15);
+            animation: pulseAlert 2s ease-in-out infinite;
         }
 
+        @keyframes pulseAlert {
+            0%, 100% {
+                box-shadow: 0 4px 15px rgba(220, 38, 38, 0.15);
+            }
+            50% {
+                box-shadow: 0 4px 20px rgba(220, 38, 38, 0.25);
+            }
+        }
+
+        /* Warning Alert - 강조 */
         .alert-warning {
-            background: #fffbeb;
-            border-color: #f59e0b;
+            background: linear-gradient(135deg, #fffbeb, #fef3c7);
+            border-left: 6px solid #f59e0b;
             color: #92400e;
+            box-shadow: 0 2px 10px rgba(245, 158, 11, 0.1);
         }
 
+        /* Info Alert */
         .alert-info {
-            background: #eff6ff;
-            border-color: #3b82f6;
+            background: linear-gradient(135deg, #eff6ff, #dbeafe);
+            border-left: 5px solid #3b82f6;
             color: #1e40af;
         }
 
+        /* Success Alert */
         .alert-success {
-            background: #f0fdf4;
-            border-color: #22c55e;
+            background: linear-gradient(135deg, #f0fdf4, #dcfce7);
+            border-left: 5px solid #22c55e;
             color: #166534;
         }
 
@@ -200,6 +222,10 @@
             justify-content: space-between;
             align-items: center;
             transition: background 0.3s;
+            border: none;
+            width: 100%;
+            text-align: left;
+            font-family: inherit;
         }
 
         .section-header:hover {
@@ -411,34 +437,53 @@
             padding: 0;
         }
 
-        /* Badge */
+        /* Badge - 시각적 강화 */
         .badge {
             display: inline-block;
-            padding: 4px 12px;
+            padding: 5px 14px;
             border-radius: 20px;
             font-size: 0.85em;
-            font-weight: 600;
+            font-weight: 700;
             margin-right: 8px;
             margin-bottom: 8px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            transition: all 0.2s ease;
+        }
+
+        .badge:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
         }
 
         .badge-urgent {
-            background: #dc2626;
+            background: linear-gradient(135deg, #dc2626, #b91c1c);
             color: white;
+            animation: badgePulse 2s ease-in-out infinite;
+        }
+
+        @keyframes badgePulse {
+            0%, 100% {
+                box-shadow: 0 2px 5px rgba(220, 38, 38, 0.3);
+            }
+            50% {
+                box-shadow: 0 4px 10px rgba(220, 38, 38, 0.5);
+            }
         }
 
         .badge-critical {
-            background: #f59e0b;
+            background: linear-gradient(135deg, #f59e0b, #d97706);
             color: white;
         }
 
         .badge-info {
-            background: #3b82f6;
+            background: linear-gradient(135deg, #3b82f6, #2563eb);
             color: white;
         }
 
         .badge-success {
-            background: #22c55e;
+            background: linear-gradient(135deg, #22c55e, #16a34a);
             color: white;
         }
 
@@ -480,9 +525,114 @@
             }
             .btn {
                 width: 100%;
+                min-height: 44px; /* iOS 권장 최소 터치 타겟 */
+                padding: 12px 20px;
+                font-size: 16px; /* iOS 자동 줌 방지 */
             }
             .card-grid {
                 grid-template-columns: 1fr;
+                gap: 15px; /* 모바일에서 간격 조정 */
+            }
+
+            /* 체크박스 터치 타겟 확대 */
+            .checklist-item input[type="checkbox"] {
+                width: 28px;
+                height: 28px;
+                margin-right: 15px;
+            }
+
+            /* 섹션 헤더 터치 영역 확대 */
+            .section-header {
+                min-height: 60px;
+                padding: 20px;
+                cursor: pointer;
+                -webkit-tap-highlight-color: rgba(174, 96, 49, 0.1);
+            }
+
+            /* 네비게이션 버튼 간격 */
+            .nav-bar {
+                padding: 12px;
+            }
+
+            .nav-buttons {
+                gap: 8px;
+            }
+
+            /* 모바일에서 테이블 스크롤 */
+            table {
+                display: block;
+                overflow-x: auto;
+                -webkit-overflow-scrolling: touch;
+            }
+
+            /* 텍스트 가독성 향상 */
+            body {
+                font-size: 16px;
+                line-height: 1.6;
+            }
+
+            /* Progress bar 터치 영역 */
+            .progress-section {
+                padding: 15px;
+            }
+
+            /* Alert 박스 여백 조정 */
+            .alert {
+                padding: 15px;
+                margin-bottom: 15px;
+            }
+
+            /* 카드 패딩 조정 */
+            .card {
+                padding: 15px;
+            }
+
+            /* 타임라인 아이템 간격 */
+            .timeline-item {
+                padding-left: 30px;
+                margin-bottom: 20px;
+            }
+        }
+
+        /* 작은 모바일 디바이스 (iPhone SE 등) */
+        @media (max-width: 375px) {
+            .header h1 {
+                font-size: 1.5em;
+            }
+
+            .brand-title {
+                font-size: 1.2em;
+            }
+
+            .btn {
+                padding: 10px 15px;
+                font-size: 14px;
+            }
+
+            .card {
+                padding: 12px;
+            }
+
+            .alert {
+                padding: 12px;
+            }
+        }
+
+        /* 큰 모바일 디바이스 (태블릿) */
+        @media (min-width: 768px) and (max-width: 1024px) {
+            .card-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .nav-buttons {
+                flex-direction: row;
+                flex-wrap: wrap;
+            }
+
+            .btn {
+                width: auto;
+                flex: 1;
+                min-width: 140px;
             }
         }
 
@@ -510,9 +660,355 @@
             border-top: 2px solid #e5e7eb;
             margin: 30px 0;
         }
+
+        /* ========================================
+           PHASE 1.2: 인터랙션 피드백 애니메이션
+           ======================================== */
+
+        /* 체크박스 클릭 애니메이션 */
+        .checkbox-animate {
+            animation: checkPulse 0.3s ease-out;
+        }
+
+        @keyframes checkPulse {
+            0% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.05);
+                background: linear-gradient(135deg, #fef3c7, #fde68a);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        /* 체크박스 체크 시 애니메이션 */
+        .checklist-item input[type="checkbox"]:checked {
+            animation: checkSuccess 0.3s ease-out;
+        }
+
+        @keyframes checkSuccess {
+            0% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.2);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        /* 진행률 바 부드러운 전환 */
+        .progress-bar-fill {
+            transition: width 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        /* 섹션 확장 부드러운 애니메이션 */
+        .section-content {
+            transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+                        padding 0.4s ease,
+                        opacity 0.3s ease;
+            opacity: 0;
+        }
+
+        .section-content.expanded {
+            opacity: 1;
+        }
+
+        /* 토글 아이콘 회전 애니메이션 */
+        .section-header .toggle-icon {
+            transition: transform 0.3s ease;
+        }
+
+        .section-header.expanded .toggle-icon {
+            transform: rotate(180deg);
+        }
+
+        /* 버튼 호버 및 액티브 효과 강화 */
+        .btn {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.3);
+            transform: translate(-50%, -50%);
+            transition: width 0.6s, height 0.6s;
+        }
+
+        .btn:active::before {
+            width: 300px;
+            height: 300px;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        .btn:active {
+            transform: translateY(0);
+        }
+
+        /* 카드 호버 효과 강화 */
+        .card {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(174, 96, 49, 0.15);
+        }
+
+        /* Toast 알림 (성공 피드백용) */
+        .toast {
+            position: fixed;
+            top: 100px;
+            right: 20px;
+            background: white;
+            padding: 16px 24px;
+            border-radius: 8px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+            z-index: 9999;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            animation: slideInRight 0.3s ease-out;
+            max-width: 320px;
+        }
+
+        .toast.success {
+            border-left: 4px solid #22c55e;
+        }
+
+        .toast.error {
+            border-left: 4px solid #dc2626;
+        }
+
+        .toast.info {
+            border-left: 4px solid #3b82f6;
+        }
+
+        @keyframes slideInRight {
+            from {
+                transform: translateX(400px);
+                opacity: 0;
+            }
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideOutRight {
+            from {
+                transform: translateX(0);
+                opacity: 1;
+            }
+            to {
+                transform: translateX(400px);
+                opacity: 0;
+            }
+        }
+
+        .toast.hiding {
+            animation: slideOutRight 0.3s ease-out forwards;
+        }
+
+        /* 로딩 스피너 */
+        .spinner {
+            width: 20px;
+            height: 20px;
+            border: 3px solid #f3f4f6;
+            border-top-color: var(--brand-primary);
+            border-radius: 50%;
+            animation: spin 0.8s linear infinite;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        /* 페이드 인 애니메이션 (새 콘텐츠용) */
+        .fade-in {
+            animation: fadeIn 0.4s ease-out;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Reduced Motion 지원 */
+        @media (prefers-reduced-motion: reduce) {
+            *,
+            *::before,
+            *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+
+        /* 포커스 가시성 향상 */
+        *:focus-visible {
+            outline: 3px solid var(--brand-primary);
+            outline-offset: 2px;
+            border-radius: 4px;
+        }
+
+        /* 체크리스트 아이템 호버 효과 */
+        .checklist-item {
+            transition: all 0.2s ease;
+        }
+
+        .checklist-item:hover {
+            background: #f3f4f6;
+            transform: translateX(5px);
+        }
+
+        /* ========================================
+           PHASE 1.4: 접근성 개선 (WCAG 2.1 AA)
+           ======================================== */
+
+        /* Skip to content 링크 */
+        .skip-to-content {
+            position: absolute;
+            top: -100px;
+            left: 0;
+            background: var(--brand-primary);
+            color: white;
+            padding: 12px 20px;
+            text-decoration: none;
+            z-index: 1000;
+            font-weight: 600;
+            border-radius: 0 0 8px 0;
+            transition: top 0.3s;
+        }
+
+        .skip-to-content:focus {
+            top: 0;
+            outline: 3px solid white;
+            outline-offset: -3px;
+        }
+
+        /* 스크린 리더 전용 텍스트 */
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border-width: 0;
+        }
+
+        /* 키보드 포커스 강화 (모든 인터랙티브 요소) */
+        button:focus-visible,
+        input:focus-visible,
+        a:focus-visible,
+        [tabindex]:focus-visible {
+            outline: 3px solid var(--brand-primary);
+            outline-offset: 3px;
+            border-radius: 4px;
+        }
+
+        /* 체크박스 포커스 특별 처리 */
+        input[type="checkbox"]:focus-visible {
+            outline: 3px solid var(--brand-primary);
+            outline-offset: 3px;
+            box-shadow: 0 0 0 6px rgba(174, 96, 49, 0.1);
+        }
+
+        /* 색맹 사용자를 위한 추가 표시 */
+        .badge-urgent::before {
+            content: "⚠️ ";
+        }
+
+        .badge-critical::before {
+            content: "❗ ";
+        }
+
+        .badge-success::before {
+            content: "✓ ";
+        }
+
+        /* 고대비 모드 지원 */
+        @media (prefers-contrast: high) {
+            .alert-danger {
+                border-left-width: 10px;
+                background: #fff;
+                color: #000;
+            }
+
+            .alert-warning {
+                border-left-width: 10px;
+                background: #fff;
+                color: #000;
+            }
+
+            .badge {
+                border: 2px solid currentColor;
+            }
+        }
+
+        /* 텍스트 크기 조정 시 레이아웃 유지 */
+        @media (min-width: 1px) {
+            html {
+                font-size: 16px;
+            }
+        }
+
+        /* 200% 확대 시 레이아웃 대응 */
+        @media (max-width: 640px) {
+            .nav-buttons {
+                flex-direction: column;
+            }
+
+            .card-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* 포커스 표시 영역 확대 */
+        .section-header:focus-visible {
+            outline: 4px solid var(--brand-primary);
+            outline-offset: 2px;
+            z-index: 10;
+        }
+
+        /* 링크 방문 상태 명확화 */
+        a:visited {
+            color: var(--brand-dark);
+        }
+
+        a:focus {
+            background-color: rgba(174, 96, 49, 0.1);
+            outline: 2px solid var(--brand-primary);
+        }
     </style>
 </head>
 <body>
+    <!-- Skip to content 링크 (접근성) -->
+    <a href="#main-content" class="skip-to-content">Skip to main content</a>
     <div class="header">
         <div class="brand-title">Kang & Kriel Recruitment</div>
         <h1>E-2 Visa Complete Guide</h1>
@@ -520,28 +1016,55 @@
         <p style="font-size: 0.9em; margin-top: 10px;">Fast-Track 2-3 Week Document Preparation + Complete Process Guide</p>
     </div>
 
-    <div class="container">
+    <div class="container" id="main-content" role="main">
         <!-- Navigation -->
-        <div class="nav-bar">
+        <nav class="nav-bar" role="navigation" aria-label="Main navigation">
             <div class="nav-buttons">
-                <button class="btn btn-primary" onclick="expandAll()">Expand All Sections</button>
-                <button class="btn btn-primary" onclick="collapseAll()">Collapse All Sections</button>
-                <button class="btn btn-secondary" onclick="resetProgress()">Reset Progress</button>
-                <button class="btn btn-secondary" onclick="exportProgress()">Export Progress</button>
-                <button class="btn btn-secondary" onclick="window.print()">Print Guide</button>
+                <button class="btn btn-primary"
+                        onclick="expandAll()"
+                        aria-label="Expand all guide sections">
+                    Expand All Sections
+                </button>
+                <button class="btn btn-primary"
+                        onclick="collapseAll()"
+                        aria-label="Collapse all guide sections">
+                    Collapse All Sections
+                </button>
+                <button class="btn btn-secondary"
+                        onclick="resetProgress()"
+                        aria-label="Reset all progress tracking">
+                    Reset Progress
+                </button>
+                <button class="btn btn-secondary"
+                        onclick="exportProgress()"
+                        aria-label="Export your progress data">
+                    Export Progress
+                </button>
+                <button class="btn btn-secondary"
+                        onclick="window.print()"
+                        aria-label="Print this guide">
+                    Print Guide
+                </button>
             </div>
-        </div>
+        </nav>
 
         <!-- Progress Tracker -->
-        <div class="progress-section">
-            <h3>Overall Progress</h3>
-            <div class="progress-bar-container">
-                <div class="progress-bar-fill" id="progressBar" style="width: 0%;">0%</div>
+        <section class="progress-section" aria-labelledby="progress-heading">
+            <h3 id="progress-heading">Overall Progress</h3>
+            <div class="progress-bar-container" role="progressbar"
+                 aria-valuenow="0"
+                 aria-valuemin="0"
+                 aria-valuemax="100"
+                 aria-label="Overall visa application progress">
+                <div class="progress-bar-fill" id="progressBar" style="width: 0%;">
+                    <span class="sr-only" id="progressSRText">0% complete</span>
+                    0%
+                </div>
             </div>
             <p style="margin-top: 10px; font-size: 0.9em; color: #6b7280;">
-                <span id="progressText">0 of 0 tasks completed</span>
+                <span id="progressText" aria-live="polite" aria-atomic="true">0 of 0 tasks completed</span>
             </p>
-        </div>
+        </section>
 
         <!-- Critical Warning -->
         <div class="alert alert-danger">
@@ -927,6 +1450,17 @@
                     <p><strong>How Many:</strong> Get 6-8 total copies</p>
 
                     <p><strong>Cost:</strong> $10-20 for 6-8 photos</p>
+                `
+            },
+            {
+                id: 'interactive-timeline',
+                title: 'Interactive Timeline - Track Your Progress',
+                content: `
+                    <div class="alert alert-info">
+                        <p><strong>Use this interactive timeline to track your progress through each week.</strong> Check off tasks as you complete them!</p>
+                    </div>
+
+                    <div id="timeline-container"></div>
                 `
             },
             {
@@ -1424,6 +1958,157 @@
                 `
             }
         ];
+
+        // Timeline data for interactive tracking
+        const timelineData = [
+            {
+                week: 'Week 1-3',
+                title: 'Document Preparation Phase',
+                duration: '2-3 weeks',
+                color: 'primary',
+                tasks: [
+                    {
+                        id: 'timeline-fbi-1',
+                        day: 'Day 1',
+                        title: 'Book FBI Channeler Appointment',
+                        description: 'Schedule at Accurate Biometrics or Fieldprint',
+                        urgent: true,
+                        critical: true
+                    },
+                    {
+                        id: 'timeline-fbi-2',
+                        day: 'Day 1-2',
+                        title: 'Get FBI Fingerprints',
+                        description: 'Live Scan digital fingerprinting (5 minutes)',
+                        cost: { min: 40, max: 100 },
+                        urgent: true
+                    },
+                    {
+                        id: 'timeline-degree-1',
+                        day: 'Day 1',
+                        title: 'Locate Original Degree',
+                        description: 'Must be original, not a copy',
+                        critical: true
+                    },
+                    {
+                        id: 'timeline-degree-2',
+                        day: 'Day 2-3',
+                        title: 'Get Degree Notarized',
+                        description: 'Notary public certification of original',
+                        cost: { min: 10, max: 30 }
+                    },
+                    {
+                        id: 'timeline-monument-1',
+                        day: 'Day 3-4',
+                        title: 'Order Monument Visa Service',
+                        description: 'FBI federal apostille ($55-75) + Degree state apostille ($100-125)',
+                        cost: { min: 155, max: 200 },
+                        urgent: true,
+                        critical: true
+                    },
+                    {
+                        id: 'timeline-shipping-1',
+                        day: 'Day 5-7',
+                        title: 'Ship Documents to Monument',
+                        description: 'FedEx/UPS with tracking ($40-80)',
+                        cost: { min: 40, max: 80 }
+                    }
+                ]
+            },
+            {
+                week: 'Week 2-3',
+                title: 'Apostille Processing Phase',
+                duration: '1-2 weeks',
+                color: 'dark',
+                tasks: [
+                    {
+                        id: 'timeline-wait-1',
+                        day: 'Day 7-14',
+                        title: 'Wait for FBI Results',
+                        description: 'Channeler processes in 1-3 business days'
+                    },
+                    {
+                        id: 'timeline-monument-2',
+                        day: 'Day 10-14',
+                        title: 'Monument Processes Apostilles',
+                        description: 'Federal (FBI): 3-5 days, State (Degree): 5-7 days'
+                    },
+                    {
+                        id: 'timeline-receive-1',
+                        day: 'Day 14-21',
+                        title: 'Receive Apostilled Documents',
+                        description: 'Track Monument return shipment',
+                        critical: true
+                    }
+                ]
+            },
+            {
+                week: 'Week 3-5',
+                title: 'Photo & Application Phase',
+                duration: '1-2 weeks',
+                color: 'primary',
+                tasks: [
+                    {
+                        id: 'timeline-photo-1',
+                        day: 'Day 21-23',
+                        title: 'Get Visa Photos',
+                        description: 'Korean visa specs: 3.5cm x 4.5cm, white background',
+                        cost: { min: 30, max: 70 },
+                        critical: true
+                    },
+                    {
+                        id: 'timeline-app-1',
+                        day: 'Day 21-25',
+                        title: 'Complete Online Application',
+                        description: 'Hi Korea portal (hikorea.go.kr)',
+                        urgent: true
+                    },
+                    {
+                        id: 'timeline-review-1',
+                        day: 'Day 25-28',
+                        title: 'Document Review with School',
+                        description: 'School verifies all documents match requirements'
+                    }
+                ]
+            },
+            {
+                week: 'Week 5-7',
+                title: 'Submission & Processing',
+                duration: '2-3 weeks',
+                color: 'dark',
+                tasks: [
+                    {
+                        id: 'timeline-submit-1',
+                        day: 'Day 28-35',
+                        title: 'Submit to Korean Consulate',
+                        description: 'In person or by mail (varies by location)',
+                        cost: { min: 45, max: 45 },
+                        urgent: true,
+                        critical: true
+                    },
+                    {
+                        id: 'timeline-wait-2',
+                        day: 'Day 35-42',
+                        title: 'Wait for Visa Processing',
+                        description: 'Standard processing: 5-7 business days'
+                    },
+                    {
+                        id: 'timeline-receive-2',
+                        day: 'Day 42-49',
+                        title: 'Receive Visa Number',
+                        description: 'Confirmation from consulate or online portal',
+                        critical: true
+                    },
+                    {
+                        id: 'timeline-final-1',
+                        day: 'Day 49+',
+                        title: 'Travel to Korea',
+                        description: 'Convert visa to ARC within 90 days of arrival'
+                    }
+                ]
+            }
+        ];
+
         let checklistItems = {};
 
         // Load saved progress from localStorage
@@ -1445,13 +2130,63 @@
             updateProgress();
         }
 
-        // Toggle checkbox
-        function toggleCheckbox(id) {
-            checklistItems[id] = !checklistItems[id];
-            saveProgress();
+        // Toast 알림 표시 함수
+        function showToast(message, type = 'success') {
+            // 기존 toast 제거
+            const existingToast = document.querySelector('.toast');
+            if (existingToast) {
+                existingToast.remove();
+            }
+
+            // 새 toast 생성
+            const toast = document.createElement('div');
+            toast.className = `toast ${type}`;
+
+            const icon = type === 'success' ? '✓' : type === 'error' ? '✗' : 'ℹ';
+            toast.innerHTML = `
+                <span style="font-size: 20px; font-weight: bold;">${icon}</span>
+                <span>${message}</span>
+            `;
+
+            document.body.appendChild(toast);
+
+            // 3초 후 자동 제거
+            setTimeout(() => {
+                toast.classList.add('hiding');
+                setTimeout(() => toast.remove(), 300);
+            }, 3000);
         }
 
-        // Update progress bar
+        // Toggle checkbox with animation
+        function toggleCheckbox(id) {
+            const wasChecked = checklistItems[id];
+            checklistItems[id] = !checklistItems[id];
+
+            // 시각적 피드백: 체크박스 부모 요소에 애니메이션 추가
+            const checkbox = document.getElementById(id);
+            if (checkbox && checkbox.parentElement) {
+                checkbox.parentElement.classList.add('checkbox-animate');
+                setTimeout(() => {
+                    checkbox.parentElement.classList.remove('checkbox-animate');
+                }, 300);
+            }
+
+            // Toast 알림 표시
+            if (checklistItems[id]) {
+                showToast('Task completed! Great progress! 🎉', 'success');
+            }
+
+            saveProgress();
+
+            // Re-render timeline to update progress
+            const timelineContainer = document.getElementById('timeline-container');
+            if (timelineContainer) {
+                timelineContainer.innerHTML = '';
+                renderTimeline();
+            }
+        }
+
+        // Update progress bar with accessibility
         function updateProgress() {
             const checkboxes = document.querySelectorAll('.checklist-item input[type="checkbox"]');
             const total = checkboxes.length;
@@ -1461,34 +2196,77 @@
                 const id = cb.id;
                 if (checklistItems[id]) {
                     cb.checked = true;
+                    cb.setAttribute('aria-checked', 'true');
                     cb.parentElement.classList.add('completed');
                     completed++;
                 } else {
                     cb.checked = false;
+                    cb.setAttribute('aria-checked', 'false');
                     cb.parentElement.classList.remove('completed');
                 }
             });
 
             const percentage = total > 0 ? Math.round((completed / total) * 100) : 0;
             const progressBar = document.getElementById('progressBar');
+            const progressBarContainer = progressBar ? progressBar.parentElement : null;
             const progressText = document.getElementById('progressText');
+            const progressSRText = document.getElementById('progressSRText');
 
             if (progressBar && progressText) {
                 progressBar.style.width = percentage + '%';
                 progressBar.textContent = percentage + '%';
                 progressText.textContent = `${completed} of ${total} tasks completed`;
+
+                // Update ARIA attributes
+                if (progressBarContainer) {
+                    progressBarContainer.setAttribute('aria-valuenow', percentage);
+                }
+
+                if (progressSRText) {
+                    progressSRText.textContent = `${percentage}% complete`;
+                }
             }
         }
 
-        // Toggle section
+        // Toggle section with accessibility
         function toggleSection(sectionId) {
             const header = document.getElementById(sectionId + '-header');
             const content = document.getElementById(sectionId + '-content');
 
             if (header && content) {
+                const isExpanded = header.classList.contains('expanded');
+
                 header.classList.toggle('expanded');
                 content.classList.toggle('expanded');
+
+                // Update ARIA attributes
+                header.setAttribute('aria-expanded', !isExpanded);
+                content.setAttribute('aria-hidden', isExpanded);
+
+                // Announce to screen readers
+                const sectionName = header.querySelector('h2')?.textContent || 'Section';
+                const announcement = !isExpanded
+                    ? `${sectionName} expanded`
+                    : `${sectionName} collapsed`;
+
+                // Create temporary live region for announcement
+                announceToScreenReader(announcement);
             }
+        }
+
+        // Announce to screen reader
+        function announceToScreenReader(message) {
+            const liveRegion = document.createElement('div');
+            liveRegion.setAttribute('role', 'status');
+            liveRegion.setAttribute('aria-live', 'polite');
+            liveRegion.className = 'sr-only';
+            liveRegion.textContent = message;
+
+            document.body.appendChild(liveRegion);
+
+            setTimeout(() => {
+                document.body.removeChild(liveRegion);
+            }, 1000);
         }
 
         // Expand all sections
@@ -1540,7 +2318,113 @@
             URL.revokeObjectURL(url);
         }
 
-        // Render all sections
+        // Render timeline
+        function renderTimeline() {
+            const timelineContainer = document.getElementById('timeline-container');
+            if (!timelineContainer) return;
+
+            // Calculate priority tasks
+            const priorityTasks = timelineData
+                .flatMap(w => w.tasks.map(t => ({ ...t, week: w.week })))
+                .filter(t => (t.urgent || t.critical) && !checklistItems[t.id])
+                .slice(0, 3);
+
+            // Priority tasks section
+            if (priorityTasks.length > 0) {
+                const priorityHTML = `
+                    <div style="margin-bottom: 20px; background: white; padding: 20px; border-radius: 10px; box-shadow: 0 2px 10px rgba(0,0,0,0.1);">
+                        <h3 style="margin-bottom: 15px;">⭐ Next Up - Priority Tasks</h3>
+                        <div class="card-grid">
+                            ${priorityTasks.map(task => `
+                                <div class="card" style="background: linear-gradient(135deg, #fff5f5, #ffe5e5); border-color: #f59e0b;">
+                                    <div style="margin-bottom: 8px;">
+                                        ${task.urgent ? '<span class="badge badge-urgent">URGENT</span>' : ''}
+                                        ${task.critical ? '<span class="badge badge-critical">CRITICAL</span>' : ''}
+                                    </div>
+                                    <h4 style="margin-bottom: 5px;">${task.title}</h4>
+                                    <p style="font-size: 0.9em; color: #666; margin-bottom: 5px;">${task.description}</p>
+                                    <p style="font-size: 0.8em; color: #999;">${task.week}</p>
+                                </div>
+                            `).join('')}
+                        </div>
+                    </div>
+                `;
+                timelineContainer.innerHTML += priorityHTML;
+            }
+
+            // Week sections
+            timelineData.forEach((week, weekIndex) => {
+                const weekProgress = calculateWeekProgress(week.tasks);
+                const bgColor = week.color === 'primary' ? '#ae6031' : '#8a4a25';
+                const hoverColor = week.color === 'primary' ? '#8a4a25' : '#6d3a1e';
+
+                const weekHTML = `
+                    <div class="section" style="margin-bottom: 20px;">
+                        <div class="section-header" id="timeline-week-${weekIndex}-header"
+                             onclick="toggleSection('timeline-week-${weekIndex}')"
+                             style="background: ${bgColor};">
+                            <div>
+                                <h3 style="margin-bottom: 5px; font-size: 1.3em;">${week.week}</h3>
+                                <p style="font-size: 0.9em; opacity: 0.9;">${week.title} • ${week.duration}</p>
+                            </div>
+                            <div style="display: flex; align-items: center; gap: 15px;">
+                                <div style="text-align: right;">
+                                    <div style="font-size: 0.8em; opacity: 0.9;">Week Progress</div>
+                                    <div style="font-size: 1.5em; font-weight: bold;">${weekProgress}%</div>
+                                </div>
+                                <span class="toggle-icon">▼</span>
+                            </div>
+                        </div>
+                        <div style="padding: 15px; background: #f9fafb;">
+                            <div style="width: 100%; height: 8px; background: #e5e7eb; border-radius: 4px; overflow: hidden;">
+                                <div style="height: 100%; background: ${bgColor}; width: ${weekProgress}%; transition: width 0.5s;"></div>
+                            </div>
+                        </div>
+                        <div class="section-content" id="timeline-week-${weekIndex}-content">
+                            <div style="padding: 20px;">
+                                ${week.tasks.map((task, taskIndex) => {
+                                    const isCompleted = checklistItems[task.id];
+                                    return `
+                                        <div style="padding: 15px; margin-bottom: 12px; background: ${isCompleted ? '#f9fafb' : 'white'};
+                                                    border: 2px solid ${isCompleted ? '#d1d5db' : '#e5e7eb'}; border-radius: 8px;
+                                                    transition: all 0.3s;">
+                                            <div style="display: flex; align-items: start; gap: 12px;">
+                                                <input type="checkbox"
+                                                       id="${task.id}"
+                                                       ${isCompleted ? 'checked' : ''}
+                                                       onchange="toggleCheckbox('${task.id}')"
+                                                       style="width: 20px; height: 20px; margin-top: 3px; cursor: pointer; accent-color: ${bgColor};">
+                                                <label for="${task.id}" style="flex: 1; cursor: pointer;">
+                                                    <div style="margin-bottom: 8px;">
+                                                        <span class="badge badge-info">Day ${task.day}</span>
+                                                        ${task.urgent ? '<span class="badge badge-urgent">URGENT</span>' : ''}
+                                                        ${task.critical ? '<span class="badge badge-critical">CRITICAL</span>' : ''}
+                                                        ${task.cost ? `<span class="badge" style="background: #22c55e; color: white;">$${task.cost.min}-$${task.cost.max}</span>` : ''}
+                                                        ${isCompleted ? '<span class="badge badge-success">✓ Completed</span>' : ''}
+                                                    </div>
+                                                    <h4 style="margin-bottom: 5px; ${isCompleted ? 'text-decoration: line-through; color: #9ca3af;' : ''}">${task.title}</h4>
+                                                    <p style="font-size: 0.9em; color: ${isCompleted ? '#9ca3af' : '#6b7280'};">${task.description}</p>
+                                                </label>
+                                            </div>
+                                        </div>
+                                    `;
+                                }).join('')}
+                            </div>
+                        </div>
+                    </div>
+                `;
+                timelineContainer.innerHTML += weekHTML;
+            });
+        }
+
+        // Calculate week progress
+        function calculateWeekProgress(tasks) {
+            if (!tasks || tasks.length === 0) return 0;
+            const completed = tasks.filter(t => checklistItems[t.id]).length;
+            return Math.round((completed / tasks.length) * 100);
+        }
+
+        // Render all sections with accessibility
         function renderAllSections() {
             const mainContent = document.getElementById('mainContent');
             if (!mainContent) return;
@@ -1549,19 +2433,29 @@
                 const sectionDiv = document.createElement('div');
                 sectionDiv.className = 'section';
                 sectionDiv.innerHTML = `
-                    <div class="section-header" id="${section.id}-header" onclick="toggleSection('${section.id}')">
+                    <button class="section-header"
+                            id="${section.id}-header"
+                            onclick="toggleSection('${section.id}')"
+                            aria-expanded="false"
+                            aria-controls="${section.id}-content"
+                            type="button">
                         <h2>${section.title}</h2>
-                        <span class="toggle-icon">▼</span>
-                    </div>
-                    <div class="section-content" id="${section.id}-content">
+                        <span class="toggle-icon" aria-hidden="true">▼</span>
+                    </button>
+                    <div class="section-content"
+                         id="${section.id}-content"
+                         aria-hidden="true"
+                         role="region"
+                         aria-labelledby="${section.id}-header">
                         ${section.content}
                     </div>
                 `;
                 mainContent.appendChild(sectionDiv);
             });
 
-            // Update progress after rendering
+            // Render timeline after sections
             setTimeout(() => {
+                renderTimeline();
                 updateProgress();
             }, 100);
         }

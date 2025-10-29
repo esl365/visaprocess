@@ -327,7 +327,6 @@
             border-radius: 0;
             box-shadow: 0 2px 8px rgba(0,0,0,0.1);
             border-bottom: 2px solid rgba(100, 116, 139, 0.15);
-            transition: transform 0.3s ease, opacity 0.3s ease;
             transform: translateZ(0);
             -webkit-backface-visibility: hidden;
             backface-visibility: hidden;
@@ -456,14 +455,8 @@
             pointer-events: all;
         }
 
-        /* Mobile: Hide on scroll down */
+        /* Mobile: Adjust menu size */
         @media (max-width: 768px) {
-            .nav-bar.hide-on-scroll {
-                transform: translateY(-100%);
-                opacity: 0;
-                pointer-events: none;
-            }
-
             .nav-menu {
                 width: 100%;
                 max-width: 320px;
@@ -6891,12 +6884,7 @@ degree.
                 console.log('[Navigation] Quick Jump and Back-to-Top initialized successfully');
             }
 
-            // Scroll direction detection for mobile sticky elements
-            let lastScrollTop = 0;
-            let scrollTimeout;
-            const isMobile = window.innerWidth <= 768;
-
-            // Back to top button visibility and scroll direction handling
+            // Back to top button visibility handling
             window.addEventListener('scroll', () => {
                 const currentScroll = window.pageYOffset;
 
@@ -6907,28 +6895,6 @@ degree.
                 } else {
                     if (backToTop) backToTop.classList.remove('show');
                     if (quickJump) quickJump.classList.remove('show');
-                }
-
-                // Mobile: Hide sticky elements on scroll down, show on scroll up
-                if (isMobile && currentScroll > 100) {
-                    // Clear previous timeout
-                    clearTimeout(scrollTimeout);
-
-                    if (currentScroll > lastScrollTop) {
-                        // Scrolling DOWN - hide sticky elements
-                        if (progressDashboard) progressDashboard.classList.add('hide-on-scroll');
-                        if (navBar) navBar.classList.add('hide-on-scroll');
-                    } else {
-                        // Scrolling UP - show sticky elements
-                        if (progressDashboard) progressDashboard.classList.remove('hide-on-scroll');
-                        if (navBar) navBar.classList.remove('hide-on-scroll');
-                    }
-
-                    lastScrollTop = currentScroll;
-                } else if (currentScroll <= 100) {
-                    // At top of page - always show
-                    if (progressDashboard) progressDashboard.classList.remove('hide-on-scroll');
-                    if (navBar) navBar.classList.remove('hide-on-scroll');
                 }
 
                 // Update active section in TOC and Quick Jump
@@ -6943,7 +6909,6 @@ degree.
             }
 
             updateActiveSection();
-            console.log('[Navigation] Scroll direction detection enabled for mobile');
         }
 
         // Toggle collapsible alert boxes

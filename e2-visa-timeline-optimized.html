@@ -192,6 +192,80 @@
         .currency::before {
             content: '$';
         }
+
+        /* Dark Mode Styles */
+        body.dark-mode {
+            background-color: #111827 !important;
+            color: #f9fafb;
+        }
+
+        body.dark-mode .bg-white {
+            background-color: #1f2937 !important;
+        }
+
+        body.dark-mode .bg-gray-50 {
+            background-color: #111827 !important;
+        }
+
+        body.dark-mode .bg-gray-100 {
+            background-color: #374151 !important;
+        }
+
+        body.dark-mode .text-gray-900 {
+            color: #f9fafb !important;
+        }
+
+        body.dark-mode .text-gray-700 {
+            color: #d1d5db !important;
+        }
+
+        body.dark-mode .text-gray-600 {
+            color: #9ca3af !important;
+        }
+
+        body.dark-mode .border-gray-200 {
+            border-color: #374151 !important;
+        }
+
+        body.dark-mode .shadow-lg,
+        body.dark-mode .shadow-md {
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.5), 0 4px 6px -2px rgba(0, 0, 0, 0.3) !important;
+        }
+
+        /* Dark mode toggle button */
+        .dark-mode-toggle {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 100;
+            background: #1f2937;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 48px;
+            height: 48px;
+            cursor: pointer;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            transition: all 0.3s ease;
+        }
+
+        body.dark-mode .dark-mode-toggle {
+            background: #f3f4f6;
+            color: #1f2937;
+        }
+
+        .dark-mode-toggle:hover {
+            transform: scale(1.1);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+        }
+
+        .dark-mode-toggle:active {
+            transform: scale(0.95);
+        }
     </style>
 </head>
 <body class="bg-gray-50">
@@ -312,6 +386,7 @@
             const [allExpanded, setAllExpanded] = useState(false);
             const [language, setLanguage] = useState('en');
             const [showCopyFeedback, setShowCopyFeedback] = useState({ show: false, message: '' });
+            const [darkMode, setDarkMode] = useState(false);
 
             const t = translations[language];
 
@@ -319,6 +394,8 @@
             useEffect(() => {
                 const saved = localStorage.getItem('e2-visa-progress');
                 const savedLang = localStorage.getItem('e2-visa-language');
+                const savedDarkMode = localStorage.getItem('darkMode');
+
                 if (saved) {
                     try {
                         setCheckedItems(JSON.parse(saved));
@@ -328,6 +405,10 @@
                 }
                 if (savedLang) {
                     setLanguage(savedLang);
+                }
+                if (savedDarkMode === 'enabled') {
+                    setDarkMode(true);
+                    document.body.classList.add('dark-mode');
                 }
             }, []);
 
@@ -339,6 +420,21 @@
             useEffect(() => {
                 localStorage.setItem('e2-visa-language', language);
             }, [language]);
+
+            // Handle dark mode changes
+            useEffect(() => {
+                if (darkMode) {
+                    document.body.classList.add('dark-mode');
+                    localStorage.setItem('darkMode', 'enabled');
+                } else {
+                    document.body.classList.remove('dark-mode');
+                    localStorage.setItem('darkMode', 'disabled');
+                }
+            }, [darkMode]);
+
+            const toggleDarkMode = () => {
+                setDarkMode(prev => !prev);
+            };
 
             // Handle deep linking
             useEffect(() => {
@@ -624,6 +720,15 @@
 
             return (
                 <div className="min-h-screen bg-gray-50">
+                    {/* Dark Mode Toggle */}
+                    <button
+                        onClick={toggleDarkMode}
+                        className="dark-mode-toggle no-print"
+                        aria-label="Toggle dark mode"
+                    >
+                        <span>{darkMode ? '☀️' : '🌙'}</span>
+                    </button>
+
                     {/* Copy Feedback Toast */}
                     {showCopyFeedback.show && (
                         <div className="fixed top-20 right-4 z-50 bg-[#ae6031] text-white px-6 py-3 rounded-lg shadow-lg flex items-center gap-2 animate-fade-in no-print">

@@ -3067,7 +3067,7 @@
                     <li><strong>Names must match EXACTLY</strong> across all documents (passport, FBI, degree) including middle names</li>
                     <li><strong>DIY FBI processing takes 14-16 weeks</strong>. Use a channeler (3-5 days) to avoid delays</li>
                     <li><strong>Total Investment: $320-525</strong> for 2-3 week document preparation</li>
-                    <li><strong>Total Timeline: 5-7 weeks</strong> from start to visa in passport</li>
+                    <li><strong>Total Timeline: 5-7 weeks</strong> from start to arrival in Korea</li>
                 </ul>
             </div>
         </div>
@@ -3386,7 +3386,7 @@
                     <div class="alert alert-success">
                         <h3>💰 TOTAL INVESTMENT</h3>
                         <h4>Grand Total: $320-525</h4>
-                        <p><strong>Timeline: 5-7 weeks start to visa in passport</strong></p>
+                        <p><strong>Timeline: 5-7 weeks start to arrival in Korea</strong></p>
                     </div>
 
                     <h3>ROI Analysis</h3>
@@ -5940,7 +5940,7 @@ degree.
         }
 
         // Toggle section with accessibility
-        function toggleSection(sectionId) {
+        function toggleSection(sectionId, shouldScroll = false) {
             const header = document.getElementById(sectionId + '-header');
             const content = document.getElementById(sectionId + '-content');
 
@@ -5962,6 +5962,18 @@ degree.
 
                 // Create temporary live region for announcement
                 announceToScreenReader(announcement);
+
+                // Scroll to section if requested and section is being expanded
+                if (shouldScroll && !isExpanded) {
+                    setTimeout(() => {
+                        const yOffset = -80; // Account for sticky nav
+                        const element = document.getElementById(sectionId);
+                        if (element) {
+                            const y = element.getBoundingClientRect().top + window.pageYOffset + yOffset;
+                            window.scrollTo({top: y, behavior: 'smooth'});
+                        }
+                    }, 100); // Small delay to let expansion animation start
+                }
             }
         }
 
@@ -6225,7 +6237,7 @@ degree.
                                 <button class="btn btn-primary" onclick="toggleCheckbox('${nextTask.id}'); renderSmartGuide(); renderProgressInsights();">
                                     ✓ Complete & Next Step
                                 </button>
-                                <button class="btn btn-secondary" onclick="toggleSection('interactive-timeline')">
+                                <button class="btn btn-secondary" onclick="toggleSection('interactive-timeline', true)">
                                     View Full Timeline
                                 </button>
                                 ${undoButtonHtml}

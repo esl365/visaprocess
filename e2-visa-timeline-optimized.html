@@ -1,1110 +1,1625 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang='en'>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Complete E-2 Visa Timeline & Interactive Checklist for teachers moving from US to South Korea. Track your progress through FBI checks, document apostilles, and visa application steps.">
-    <meta property="og:title" content="E-2 Visa Timeline & Guide - Interactive Checklist">
-    <meta property="og:description" content="Step-by-step guide for E-2 visa application: FBI checks, apostilles, document preparation, and timeline management.">
-    <meta property="og:type" content="article">
-    <meta property="og:image" content="https://via.placeholder.com/1200x630.png?text=E-2+Visa+Guide">
-    <title>E-2 Visa Timeline & Guide - Interactive Checklist | Kang & Kriel Recruitment</title>
-    
-    <!-- Preconnect for Performance -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-    
-    <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
-    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
-    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
-    <script src="https://cdn.tailwindcss.com"></script>
-    
-    <!-- Structured Data for SEO -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "HowTo",
-      "name": "E-2 Visa Application Timeline (US to Korea)",
-      "description": "Complete step-by-step guide for obtaining an E-2 visa for teaching in South Korea",
-      "totalTime": "P7W",
-      "estimatedCost": {
-        "@type": "MonetaryAmount",
-        "currency": "USD",
-        "value": "320-525"
-      },
-      "step": [
-        {
-          "@type": "HowToStep",
-          "name": "Book FBI Channeler Appointment",
-          "position": 1,
-          "text": "Schedule fingerprinting at Accurate Biometrics or Fieldprint"
-        },
-        {
-          "@type": "HowToStep",
-          "name": "Get FBI Background Check",
-          "position": 2,
-          "text": "Complete Live Scan digital fingerprinting"
-        },
-        {
-          "@type": "HowToStep",
-          "name": "Notarize Degree",
-          "position": 3,
-          "text": "Get original degree notarized by notary public"
-        },
-        {
-          "@type": "HowToStep",
-          "name": "Order Federal Apostille",
-          "position": 4,
-          "text": "Send FBI check to Monument Visa for federal apostille"
-        },
-        {
-          "@type": "HowToStep",
-          "name": "Order State Apostille",
-          "position": 5,
-          "text": "Send notarized degree for state apostille"
-        },
-        {
-          "@type": "HowToStep",
-          "name": "Prepare Visa Photos",
-          "position": 6,
-          "text": "Get passport photos meeting Korean visa specifications"
-        },
-        {
-          "@type": "HowToStep",
-          "name": "Submit Visa Application",
-          "position": 7,
-          "text": "Complete online application and submit documents to Korean consulate"
-        }
-      ]
-    }
-    </script>
-    
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
-        
-        :root {
-            --brand-primary: #ae6031;
-            --brand-dark: #8a4a25;
-            --brand-light: #d4936f;
-            --brand-bg: #faf8f6;
-        }
-        
-        body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
-        }
-        
-        .lucide {
-            width: 1em;
-            height: 1em;
-            display: inline-block;
-            vertical-align: middle;
-        }
-        
-        /* Focus Styles for Accessibility */
-        button:focus-visible,
-        input:focus-visible,
-        a:focus-visible {
-            outline: 3px solid var(--brand-primary);
-            outline-offset: 2px;
-        }
-        
-        /* Custom Checkbox Styles */
-        input[type="checkbox"] {
-            accent-color: var(--brand-primary);
-            cursor: pointer;
-        }
-        
-        input[type="checkbox"]:focus-visible {
-            outline: 3px solid var(--brand-primary);
-            outline-offset: 2px;
-        }
-        
-        /* Smooth Transitions */
-        .transition-all {
-            transition: all 0.3s ease;
-        }
-        
-        /* Print Styles */
-        @media print {
-            .no-print {
-                display: none !important;
-            }
-            
-            .sticky {
-                position: relative !important;
-            }
-            
-            .shadow-lg, .shadow-md {
-                box-shadow: none !important;
-            }
-            
-            .bg-gradient-to-br, .bg-gradient-to-r {
-                background: white !important;
-            }
-            
-            body {
-                background: white !important;
-            }
-            
-            .page-break {
-                page-break-before: always;
-            }
-        }
-        
-        /* Reduce Motion for Accessibility */
-        @media (prefers-reduced-motion: reduce) {
-            * {
-                animation-duration: 0.01ms !important;
-                animation-iteration-count: 1 !important;
-                transition-duration: 0.01ms !important;
-            }
-        }
-        
-        /* Mobile HUD */
-        .mobile-hud {
-            position: fixed;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            z-index: 40;
-        }
-        
-        /* Floating Button */
-        .floating-button {
-            position: fixed;
-            bottom: 80px;
-            right: 20px;
-            z-index: 50;
-            box-shadow: 0 4px 12px rgba(174, 96, 49, 0.3);
-        }
-        
-        @media (min-width: 768px) {
-            .mobile-hud {
-                display: none;
-            }
-        }
-        
-        /* Currency Formatting */
-        .currency::before {
-            content: '$';
-        }
-    </style>
+<meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'>
+<title>Kang & Kriel Recruitment – E-2 Visa Document Prep Guide</title>
+<meta name='description' content='Complete E-2 visa timeline and document preparation guide for U.S. citizens heading to Korea.'>
+<style>
+:root {
+  color-scheme: light;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica Neue', sans-serif;
+}
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #f7f4f1;
+  color: #2b2118;
+}
+main {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 3rem 1.5rem 5rem;
+  line-height: 1.65;
+}
+header {
+  background: linear-gradient(135deg, #45260a, #8d5524);
+  color: #fff;
+  padding: 3rem 1.5rem;
+  text-align: center;
+  box-shadow: 0 8px 20px rgba(69, 38, 10, 0.25);
+}
+header h1 {
+  font-size: 2.4rem;
+  margin-bottom: 0.75rem;
+}
+header p {
+  font-size: 1.1rem;
+  max-width: 720px;
+  margin: 0.5rem auto 0;
+}
+.toc {
+  background: #fff;
+  border-radius: 16px;
+  padding: 1.75rem;
+  box-shadow: 0 12px 24px rgba(0,0,0,0.08);
+  margin: -4rem auto 3rem;
+  max-width: 860px;
+  border: 1px solid rgba(69,38,10,0.08);
+}
+.toc ul {
+  list-style: none;
+  padding-left: 1rem;
+  margin: 0;
+}
+.toc li {
+  margin: 0.35rem 0;
+}
+.toc a {
+  color: #8d5524;
+  text-decoration: none;
+}
+.toc a:hover,
+.toc a:focus {
+  text-decoration: underline;
+}
+h1, h2, h3, h4, h5, h6 {
+  color: #42210b;
+  margin-top: 2.4rem;
+  margin-bottom: 1rem;
+  line-height: 1.25;
+}
+p {
+  margin: 1rem 0;
+  font-size: 1.02rem;
+}
+ul, ol {
+  margin: 0.75rem 0 0.75rem 1.5rem;
+}
+li {
+  margin: 0.4rem 0;
+}
+blockquote {
+  border-left: 4px solid #ae6031;
+  padding-left: 1rem;
+  margin-left: 0;
+  background: rgba(174, 96, 49, 0.08);
+  border-radius: 0 12px 12px 0;
+}
+hr {
+  border: none;
+  border-top: 2px solid rgba(69,38,10,0.12);
+  margin: 3rem 0;
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1.5rem 0;
+  background: #fff;
+  overflow: hidden;
+  border-radius: 14px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+}
+th, td {
+  padding: 0.85rem 1rem;
+  border-bottom: 1px solid rgba(69,38,10,0.08);
+  text-align: left;
+}
+th {
+  background: rgba(174, 96, 49, 0.12);
+  font-weight: 700;
+}
+tr:last-child td {
+  border-bottom: none;
+}
+a {
+  color: #8d5524;
+}
+.checkbox {
+  display: inline-flex;
+  width: 1.25rem;
+  height: 1.25rem;
+  align-items: center;
+  justify-content: center;
+  border-radius: 6px;
+  border: 2px solid rgba(69,38,10,0.4);
+  margin-right: 0.5rem;
+  font-size: 0.9rem;
+}
+.checkbox.checked {
+  background: #ae6031;
+  color: #fff;
+  border-color: #ae6031;
+}
+code {
+  font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace;
+  background: rgba(174, 96, 49, 0.15);
+  padding: 0.15rem 0.3rem;
+  border-radius: 6px;
+}
+@media (max-width: 768px) {
+  main {
+    padding: 2rem 1rem 3rem;
+  }
+  header {
+    padding: 2.5rem 1rem;
+  }
+  .toc {
+    margin-top: -3.5rem;
+    padding: 1.25rem;
+  }
+  table {
+    font-size: 0.95rem;
+    overflow-x: auto;
+    display: block;
+  }
+}
+</style>
 </head>
-<body class="bg-gray-50">
-    <div id="root"></div>
-    
-    <script type="text/babel">
-        const { useState, useEffect, useRef } = React;
-
-        // Translations
-        const translations = {
-            en: {
-                title: "E-2 Visa Timeline & Guide",
-                subtitle: "Interactive Checklist for US → Korea",
-                language: "Language",
-                resetProgress: "Reset Progress",
-                expandAll: "Expand All",
-                collapseAll: "Collapse All",
-                exportData: "Export Progress",
-                overallProgress: "Overall Progress",
-                nextUp: "Next Up - Priority Tasks",
-                weekProgress: "Week Progress",
-                costCalculator: "Cost Calculator",
-                minimumCost: "Minimum Cost",
-                maximumCost: "Maximum Cost",
-                criticalRules: "Critical Rules",
-                keyContacts: "Key Contacts",
-                needHelp: "Need Help?",
-                needHelpDesc: "Are you a Kang & Kriel candidate? Contact your recruiter directly for assistance with your visa process.",
-                contactRecruiter: "Contact Your Recruiter",
-                disclaimer: "Disclaimer: Information current as of October 2025. Visa requirements may change.",
-                verifyWith: "Always verify with Korea Immigration Service",
-                docVersion: "Document Version: Optimized v3.0",
-                autoSave: "Your progress is automatically saved in your browser",
-                confirmReset: "Are you sure you want to reset all progress? This cannot be undone.",
-                day: "Day",
-                urgent: "URGENT",
-                critical: "CRITICAL",
-                completed: "Completed",
-                copyPhone: "Copy Phone",
-                copyEmail: "Copy Email",
-                copied: "Copied!",
-                phoneCopied: "Phone number copied to clipboard",
-                emailCopied: "Email copied to clipboard",
-                urlCopied: "URL copied to clipboard"
-            },
-            ko: {
-                title: "E-2 비자 타임라인 & 가이드",
-                subtitle: "미국 → 한국 대화형 체크리스트",
-                language: "언어",
-                resetProgress: "진행 상황 초기화",
-                expandAll: "모두 펼치기",
-                collapseAll: "모두 접기",
-                exportData: "진행 상황 내보내기",
-                overallProgress: "전체 진행률",
-                nextUp: "다음 할 일 - 우선순위 작업",
-                weekProgress: "주차 진행률",
-                costCalculator: "비용 계산기",
-                minimumCost: "최소 비용",
-                maximumCost: "최대 비용",
-                criticalRules: "중요 규칙",
-                keyContacts: "주요 연락처",
-                needHelp: "도움이 필요하신가요?",
-                needHelpDesc: "Kang & Kriel 후보자이신가요? 비자 절차와 관련하여 담당 리크루터에게 직접 연락하세요.",
-                contactRecruiter: "담당 리크루터에게 연락하기",
-                disclaimer: "면책 조항: 2025년 10월 기준 정보입니다. 비자 요건은 변경될 수 있습니다.",
-                verifyWith: "항상 한국 출입국관리사무소에 확인하세요",
-                docVersion: "문서 버전: 최적화 v3.0",
-                autoSave: "진행 상황이 브라우저에 자동으로 저장됩니다",
-                confirmReset: "모든 진행 상황을 초기화하시겠습니까? 이 작업은 되돌릴 수 없습니다.",
-                day: "일차",
-                urgent: "긴급",
-                critical: "중요",
-                completed: "완료됨",
-                copyPhone: "전화번호 복사",
-                copyEmail: "이메일 복사",
-                copied: "복사됨!",
-                phoneCopied: "전화번호가 클립보드에 복사되었습니다",
-                emailCopied: "이메일이 클립보드에 복사되었습니다",
-                urlCopied: "URL이 클립보드에 복사되었습니다"
-            }
-        };
-
-        // Lucide Icons as SVG components
-        const Icon = ({ d, ...props }) => (
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide" {...props}>
-                <path d={d} />
-            </svg>
-        );
-
-        const CheckCircle2 = (props) => <Icon d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z M9 12l2 2 4-4" {...props} />;
-        const Circle = (props) => <Icon d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z" {...props} />;
-        const AlertCircle = (props) => <Icon d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z M12 8v4 M12 16h.01" {...props} />;
-        const AlertTriangle = (props) => <Icon d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3z M12 9v4 M12 17h.01" {...props} />;
-        const Clock = (props) => <Icon d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z M12 6v6l4 2" {...props} />;
-        const DollarSign = (props) => <Icon d="M12 2v20 M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" {...props} />;
-        const Calendar = (props) => <Icon d="M8 2v4 M16 2v4 M3 10h18 M5 4h14a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2z" {...props} />;
-        const FileText = (props) => <Icon d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z M14 2v4a2 2 0 0 0 2 2h4 M10 9H8 M16 13H8 M16 17H8" {...props} />;
-        const ChevronDown = (props) => <Icon d="m6 9 6 6 6-6" {...props} />;
-        const ChevronUp = (props) => <Icon d="m18 15-6-6-6 6" {...props} />;
-        const MapPin = (props) => <Icon d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0Z M12 13a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z" {...props} />;
-        const ExternalLink = (props) => <Icon d="M15 3h6v6 M10 14 21 3 M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" {...props} />;
-        const Info = (props) => <Icon d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z M12 16v-4 M12 8h.01" {...props} />;
-        const Phone = (props) => <Icon d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" {...props} />;
-        const Mail = (props) => <Icon d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z M22 6l-10 7L2 6" {...props} />;
-        const Globe = (props) => <Icon d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z M2 12h20 M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" {...props} />;
-        const Download = (props) => <Icon d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4 M7 10l5 5 5-5 M12 15V3" {...props} />;
-        const Copy = (props) => <Icon d="M8 4v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V7.242a2 2 0 0 0-.602-1.43L16.083 2.57A2 2 0 0 0 14.685 2H10a2 2 0 0 0-2 2Z M16 18v2a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V9a2 2 0 0 1 2-2h2" {...props} />;
-        const Check = (props) => <Icon d="M20 6 9 17l-5-5" {...props} />;
-        const RefreshCw = (props) => <Icon d="M3 12a9 9 0 0 1 9-9 9.75 9.75 0 0 1 6.74 2.74L21 8 M21 3v5h-5 M21 12a9 9 0 0 1-9 9 9.75 9.75 0 0 1-6.74-2.74L3 16 M3 21v-5h5" {...props} />;
-        const Maximize2 = (props) => <Icon d="M15 3h6v6 M9 21H3v-6 M21 3l-7 7 M3 21l7-7" {...props} />;
-        const Minimize2 = (props) => <Icon d="M4 14h6v6 M20 10h-6V4 M14 10l7-7 M3 21l7-7" {...props} />;
-        const Languages = (props) => <Icon d="m5 8 6 6 M4 14l6-6 2-3 M2 5h12 M7 2h1 M22 22l-5-10-5 10 M14 18h8" {...props} />;
-        const MessageCircle = (props) => <Icon d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z" {...props} />;
-
-        const E2VisaTimeline = () => {
-            const [expandedWeek, setExpandedWeek] = useState(null);
-            const [checkedItems, setCheckedItems] = useState({});
-            const [allExpanded, setAllExpanded] = useState(false);
-            const [language, setLanguage] = useState('en');
-            const [showCopyFeedback, setShowCopyFeedback] = useState({ show: false, message: '' });
-
-            const t = translations[language];
-
-            // Load saved state from localStorage
-            useEffect(() => {
-                const saved = localStorage.getItem('e2-visa-progress');
-                const savedLang = localStorage.getItem('e2-visa-language');
-                if (saved) {
-                    try {
-                        setCheckedItems(JSON.parse(saved));
-                    } catch (e) {
-                        console.error('Failed to load saved progress');
-                    }
-                }
-                if (savedLang) {
-                    setLanguage(savedLang);
-                }
-            }, []);
-
-            // Save state to localStorage
-            useEffect(() => {
-                localStorage.setItem('e2-visa-progress', JSON.stringify(checkedItems));
-            }, [checkedItems]);
-
-            useEffect(() => {
-                localStorage.setItem('e2-visa-language', language);
-            }, [language]);
-
-            // Handle deep linking
-            useEffect(() => {
-                const hash = window.location.hash;
-                if (hash) {
-                    const weekId = hash.substring(1);
-                    setExpandedWeek(weekId);
-                    setTimeout(() => {
-                        const element = document.getElementById(weekId);
-                        if (element) {
-                            element.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                        }
-                    }, 100);
-                }
-            }, []);
-
-            const toggleTask = (taskId) => {
-                setCheckedItems(prev => ({
-                    ...prev,
-                    [taskId]: !prev[taskId]
-                }));
-            };
-
-            const resetProgress = () => {
-                if (window.confirm(t.confirmReset)) {
-                    setCheckedItems({});
-                    localStorage.removeItem('e2-visa-progress');
-                }
-            };
-
-            const exportProgress = () => {
-                const data = {
-                    exportDate: new Date().toISOString(),
-                    checkedItems: checkedItems,
-                    progress: {
-                        overall: calculateOverallProgress(),
-                        byWeek: timelineData.map(week => ({
-                            week: week.week,
-                            progress: calculateWeekProgress(week.tasks)
-                        }))
-                    }
-                };
-                const blob = new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' });
-                const url = URL.createObjectURL(blob);
-                const a = document.createElement('a');
-                a.href = url;
-                a.download = `e2-visa-progress-${new Date().toISOString().split('T')[0]}.json`;
-                document.body.appendChild(a);
-                a.click();
-                document.body.removeChild(a);
-                URL.revokeObjectURL(url);
-            };
-
-            const toggleAllWeeks = () => {
-                if (allExpanded) {
-                    setExpandedWeek(null);
-                } else {
-                    setExpandedWeek('all');
-                }
-                setAllExpanded(!allExpanded);
-            };
-
-            const copyToClipboard = async (text, type) => {
-                try {
-                    await navigator.clipboard.writeText(text);
-                    const messages = {
-                        phone: t.phoneCopied,
-                        email: t.emailCopied,
-                        url: t.urlCopied
-                    };
-                    setShowCopyFeedback({ show: true, message: messages[type] || t.copied });
-                    setTimeout(() => setShowCopyFeedback({ show: false, message: '' }), 2000);
-                } catch (err) {
-                    console.error('Failed to copy:', err);
-                }
-            };
-
-            const timelineData = [
-                {
-                    week: 'Week 1-3',
-                    title: 'Document Preparation Phase',
-                    duration: '2-3 weeks',
-                    color: 'primary',
-                    icon: FileText,
-                    tasks: [
-                        {
-                            id: 'fbi-1',
-                            day: 'Day 1',
-                            title: 'Book FBI Channeler Appointment',
-                            description: 'Schedule at Accurate Biometrics or Fieldprint',
-                            urgent: true,
-                            critical: true
-                        },
-                        {
-                            id: 'fbi-2',
-                            day: 'Day 1-2',
-                            title: 'Get FBI Fingerprints',
-                            description: 'Live Scan digital fingerprinting (5 minutes)',
-                            cost: { min: 40, max: 100 },
-                            urgent: true
-                        },
-                        {
-                            id: 'degree-1',
-                            day: 'Day 1',
-                            title: 'Locate Original Degree',
-                            description: 'Must be original, not a copy',
-                            critical: true
-                        },
-                        {
-                            id: 'degree-2',
-                            day: 'Day 2-3',
-                            title: 'Get Degree Notarized',
-                            description: 'Notary public certification of original',
-                            cost: { min: 10, max: 30 }
-                        },
-                        {
-                            id: 'monument-1',
-                            day: 'Day 3-4',
-                            title: 'Order Monument Visa Service',
-                            description: 'FBI federal apostille ($55-75) + Degree state apostille ($100-125)',
-                            cost: { min: 155, max: 200 },
-                            urgent: true,
-                            critical: true
-                        },
-                        {
-                            id: 'shipping-1',
-                            day: 'Day 5-7',
-                            title: 'Ship Documents to Monument',
-                            description: 'FedEx/UPS with tracking ($40-80)',
-                            cost: { min: 40, max: 80 }
-                        }
-                    ]
-                },
-                {
-                    week: 'Week 2-3',
-                    title: 'Apostille Processing Phase',
-                    duration: '1-2 weeks',
-                    color: 'dark',
-                    icon: Clock,
-                    tasks: [
-                        {
-                            id: 'wait-1',
-                            day: 'Day 7-14',
-                            title: 'Wait for FBI Results',
-                            description: 'Channeler processes in 1-3 business days',
-                        },
-                        {
-                            id: 'monument-2',
-                            day: 'Day 10-14',
-                            title: 'Monument Processes Apostilles',
-                            description: 'Federal (FBI): 3-5 days, State (Degree): 5-7 days'
-                        },
-                        {
-                            id: 'receive-1',
-                            day: 'Day 14-21',
-                            title: 'Receive Apostilled Documents',
-                            description: 'Track Monument return shipment',
-                            critical: true
-                        }
-                    ]
-                },
-                {
-                    week: 'Week 3-5',
-                    title: 'Photo & Application Phase',
-                    duration: '1-2 weeks',
-                    color: 'primary',
-                    icon: MapPin,
-                    tasks: [
-                        {
-                            id: 'photo-1',
-                            day: 'Day 21-23',
-                            title: 'Get Visa Photos',
-                            description: 'Korean visa specs: 3.5cm x 4.5cm, white background',
-                            cost: { min: 30, max: 70 },
-                            critical: true
-                        },
-                        {
-                            id: 'app-1',
-                            day: 'Day 21-25',
-                            title: 'Complete Online Application',
-                            description: 'Hi Korea portal (hikorea.go.kr)',
-                            urgent: true
-                        },
-                        {
-                            id: 'review-1',
-                            day: 'Day 25-28',
-                            title: 'Document Review with School',
-                            description: 'School verifies all documents match requirements'
-                        }
-                    ]
-                },
-                {
-                    week: 'Week 5-7',
-                    title: 'Submission & Processing',
-                    duration: '2-3 weeks',
-                    color: 'dark',
-                    icon: DollarSign,
-                    tasks: [
-                        {
-                            id: 'submit-1',
-                            day: 'Day 28-35',
-                            title: 'Submit to Korean Consulate',
-                            description: 'In person or by mail (varies by location)',
-                            cost: { min: 45, max: 45 },
-                            urgent: true,
-                            critical: true
-                        },
-                        {
-                            id: 'wait-2',
-                            day: 'Day 35-42',
-                            title: 'Wait for Visa Processing',
-                            description: 'Standard processing: 5-7 business days'
-                        },
-                        {
-                            id: 'receive-2',
-                            day: 'Day 42-49',
-                            title: 'Receive Visa Number',
-                            description: 'Confirmation from consulate or online portal',
-                            critical: true
-                        },
-                        {
-                            id: 'final-1',
-                            day: 'Day 49+',
-                            title: 'Travel to Korea',
-                            description: 'Convert visa to ARC within 90 days of arrival'
-                        }
-                    ]
-                }
-            ];
-
-            const getColorClasses = (color, type = 'bg') => {
-                const colors = {
-                    primary: {
-                        bg: 'bg-[#ae6031]',
-                        text: 'text-[#ae6031]',
-                        border: 'border-[#ae6031]',
-                        light: 'bg-[#faf8f6]',
-                        hover: 'hover:bg-[#8a4a25]'
-                    },
-                    dark: {
-                        bg: 'bg-[#8a4a25]',
-                        text: 'text-[#8a4a25]',
-                        border: 'border-[#8a4a25]',
-                        light: 'bg-gray-50',
-                        hover: 'hover:bg-[#6d3a1e]'
-                    }
-                };
-                return colors[color]?.[type] || colors.primary[type];
-            };
-
-            // Fixed cost calculation
-            const totalCost = timelineData
-                .flatMap(w => w.tasks)
-                .filter(t => t.cost && checkedItems[t.id])
-                .reduce((acc, t) => ({
-                    min: acc.min + t.cost.min,
-                    max: acc.max + t.cost.max
-                }), { min: 0, max: 0 });
-
-            const calculateOverallProgress = () => {
-                const allTasks = timelineData.flatMap(w => w.tasks);
-                const completed = allTasks.filter(t => checkedItems[t.id]).length;
-                return Math.round((completed / allTasks.length) * 100);
-            };
-
-            const calculateWeekProgress = (tasks) => {
-                const completed = tasks.filter(t => checkedItems[t.id]).length;
-                return Math.round((completed / tasks.length) * 100);
-            };
-
-            const getPriorityTasks = () => {
-                return timelineData
-                    .flatMap(w => w.tasks.map(t => ({ ...t, week: w.week })))
-                    .filter(t => (t.urgent || t.critical) && !checkedItems[t.id])
-                    .slice(0, 3);
-            };
-
-            const priorityTasks = getPriorityTasks();
-            const overallProgress = calculateOverallProgress();
-            const remainingCriticalTasks = timelineData
-                .flatMap(w => w.tasks)
-                .filter(t => t.critical && !checkedItems[t.id]).length;
-
-            return (
-                <div className="min-h-screen bg-gray-50">
-                    {/* Copy Feedback Toast */}
-                    {showCopyFeedback.show && (
-                        <div className="fixed top-20 right-4 z-50 bg-[#ae6031] text-white px-6 py-3 rounded-lg shadow-lg flex items-center gap-2 animate-fade-in no-print">
-                            <Check className="w-5 h-5" />
-                            <span>{showCopyFeedback.message}</span>
-                        </div>
-                    )}
-
-                    {/* Sticky Header */}
-                    <div className="sticky top-0 z-40 bg-white border-b-2 border-gray-200 shadow-md no-print">
-                        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
-                            <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
-                                <div className="flex items-center gap-4">
-                                    <div className="text-2xl font-black text-[#ae6031]">
-                                        Kang & Kriel Recruitment
-                                    </div>
-                                </div>
-                                <div className="flex flex-wrap items-center gap-2">
-                                    <button
-                                        onClick={() => setLanguage(language === 'en' ? 'ko' : 'en')}
-                                        className="px-3 py-2 bg-gray-100 hover:bg-gray-200 rounded-lg flex items-center gap-2 text-sm font-medium transition-all"
-                                        aria-label={t.language}
-                                    >
-                                        <Languages className="w-4 h-4" />
-                                        <span>{language === 'en' ? 'EN' : 'KO'}</span>
-                                    </button>
-                                    <button
-                                        onClick={toggleAllWeeks}
-                                        className="px-3 py-2 bg-gray-100 hover:bg-gray-200 rounded-lg flex items-center gap-2 text-sm font-medium transition-all"
-                                        aria-label={allExpanded ? t.collapseAll : t.expandAll}
-                                    >
-                                        {allExpanded ? <Minimize2 className="w-4 h-4" /> : <Maximize2 className="w-4 h-4" />}
-                                        <span className="hidden sm:inline">{allExpanded ? t.collapseAll : t.expandAll}</span>
-                                    </button>
-                                    <button
-                                        onClick={exportProgress}
-                                        className="px-3 py-2 bg-gray-100 hover:bg-gray-200 rounded-lg flex items-center gap-2 text-sm font-medium transition-all"
-                                        aria-label={t.exportData}
-                                    >
-                                        <Download className="w-4 h-4" />
-                                        <span className="hidden sm:inline">{t.exportData}</span>
-                                    </button>
-                                    <button
-                                        onClick={resetProgress}
-                                        className="px-3 py-2 bg-red-100 hover:bg-red-200 text-red-700 rounded-lg flex items-center gap-2 text-sm font-medium transition-all"
-                                        aria-label={t.resetProgress}
-                                    >
-                                        <RefreshCw className="w-4 h-4" />
-                                        <span className="hidden sm:inline">{t.resetProgress}</span>
-                                    </button>
-                                </div>
-                            </div>
-                            
-                            {/* Overall Progress Bar */}
-                            <div className="mt-4">
-                                <div className="flex items-center justify-between mb-2">
-                                    <span className="text-sm font-semibold text-gray-700">{t.overallProgress}</span>
-                                    <span className="text-sm font-bold text-[#ae6031]">{overallProgress}%</span>
-                                </div>
-                                <div className="w-full bg-gray-200 rounded-full h-3" role="progressbar" aria-valuenow={overallProgress} aria-valuemin="0" aria-valuemax="100">
-                                    <div 
-                                        className="bg-gradient-to-r from-[#ae6031] to-[#8a4a25] h-3 rounded-full transition-all duration-500"
-                                        style={{ width: `${overallProgress}%` }}
-                                    />
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    {/* Main Content */}
-                    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-                        {/* Title Section */}
-                        <div className="text-center mb-8">
-                            <h1 className="text-4xl sm:text-5xl font-black text-gray-900 mb-3">{t.title}</h1>
-                            <p className="text-xl text-gray-600">{t.subtitle}</p>
-                        </div>
-
-                        {/* Critical Warning */}
-                        <div className="mb-8 bg-red-50 border-2 border-red-500 rounded-xl p-6 shadow-lg">
-                            <div className="flex items-start gap-4">
-                                <AlertTriangle className="w-8 h-8 text-red-600 flex-shrink-0 mt-1" aria-hidden="true" />
-                                <div>
-                                    <h2 className="text-xl font-bold text-gray-900 mb-3">⚠️ Critical Warning - Read First!</h2>
-                                    <ul className="space-y-2 text-gray-800">
-                                        <li className="flex items-start gap-2">
-                                            <span className="text-red-600 font-bold">•</span>
-                                            <span><strong>FBI Check</strong> must get <strong>FEDERAL</strong> apostille from U.S. Department of State</span>
-                                        </li>
-                                        <li className="flex items-start gap-2">
-                                            <span className="text-red-600 font-bold">•</span>
-                                            <span><strong>Degree</strong> must get <strong>STATE</strong> apostille from Secretary of State (state where degree issued)</span>
-                                        </li>
-                                        <li className="flex items-start gap-2">
-                                            <span className="text-red-600 font-bold">•</span>
-                                            <span><strong>Names must match EXACTLY</strong> across all documents (passport, FBI, degree) including middle names</span>
-                                        </li>
-                                        <li className="flex items-start gap-2">
-                                            <span className="text-red-600 font-bold">•</span>
-                                            <span><strong>DIY FBI processing takes 14-16 weeks</strong>. Use a channeler (3-5 days) to avoid delays</span>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-
-                        {/* Next Up - Priority Tasks */}
-                        {priorityTasks.length > 0 && (
-                            <div className="mb-8 bg-white rounded-xl shadow-lg p-6">
-                                <h2 className="text-2xl font-bold text-gray-900 mb-4">{t.nextUp}</h2>
-                                <div className="grid md:grid-cols-3 gap-4">
-                                    {priorityTasks.map(task => (
-                                        <div key={task.id} className="p-4 bg-gradient-to-br from-orange-50 to-red-50 border-2 border-orange-300 rounded-lg">
-                                            <div className="flex items-start gap-2 mb-2">
-                                                {task.urgent && (
-                                                    <span className="px-2 py-1 rounded text-xs font-bold bg-red-600 text-white">{t.urgent}</span>
-                                                )}
-                                                {task.critical && (
-                                                    <span className="px-2 py-1 rounded text-xs font-bold bg-orange-600 text-white">{t.critical}</span>
-                                                )}
-                                            </div>
-                                            <h3 className="font-bold text-gray-900 mb-1">{task.title}</h3>
-                                            <p className="text-sm text-gray-600 mb-2">{task.description}</p>
-                                            <p className="text-xs text-gray-500">{task.week}</p>
-                                        </div>
-                                    ))}
-                                </div>
-                            </div>
-                        )}
-
-                        {/* Timeline */}
-                        <div className="space-y-6">
-                            {timelineData.map((week, weekIndex) => {
-                                const weekProgress = calculateWeekProgress(week.tasks);
-                                const isExpanded = expandedWeek === week.week || expandedWeek === 'all';
-                                const weekId = week.week.toLowerCase().replace(/\s+/g, '-');
-                                const WeekIcon = week.icon;
-
-                                return (
-                                    <div key={weekIndex} id={weekId} className="bg-white rounded-xl shadow-lg overflow-hidden page-break">
-                                        {/* Week Header */}
-                                        <button
-                                            onClick={() => {
-                                                setExpandedWeek(isExpanded ? null : week.week);
-                                                window.history.pushState(null, '', `#${weekId}`);
-                                            }}
-                                            className={`w-full p-6 flex items-center justify-between ${getColorClasses(week.color, 'bg')} ${getColorClasses(week.color, 'hover')} text-white transition-all`}
-                                            aria-expanded={isExpanded}
-                                            aria-controls={`${weekId}-content`}
-                                        >
-                                            <div className="flex items-center gap-4">
-                                                <WeekIcon className="w-8 h-8" aria-hidden="true" />
-                                                <div className="text-left">
-                                                    <h2 className="text-2xl font-bold">{week.week}</h2>
-                                                    <p className="text-sm opacity-90">{week.title} • {week.duration}</p>
-                                                </div>
-                                            </div>
-                                            <div className="flex items-center gap-4">
-                                                <div className="text-right hidden sm:block">
-                                                    <div className="text-sm opacity-90">{t.weekProgress}</div>
-                                                    <div className="text-2xl font-bold">{weekProgress}%</div>
-                                                </div>
-                                                {isExpanded ? (
-                                                    <ChevronUp className="w-6 h-6" aria-hidden="true" />
-                                                ) : (
-                                                    <ChevronDown className="w-6 h-6" aria-hidden="true" />
-                                                )}
-                                            </div>
-                                        </button>
-
-                                        {/* Week Progress Bar */}
-                                        <div className="px-6 pt-4 pb-2 bg-gray-50">
-                                            <div className="w-full bg-gray-200 rounded-full h-2" role="progressbar" aria-valuenow={weekProgress} aria-valuemin="0" aria-valuemax="100">
-                                                <div 
-                                                    className={`${getColorClasses(week.color, 'bg')} h-2 rounded-full transition-all duration-500`}
-                                                    style={{ width: `${weekProgress}%` }}
-                                                />
-                                            </div>
-                                        </div>
-
-                                        {/* Tasks */}
-                                        {isExpanded && (
-                                            <div id={`${weekId}-content`} className="p-6 space-y-4">
-                                                {week.tasks.map((task, taskIndex) => (
-                                                    <div key={taskIndex} className={`p-4 rounded-lg border-2 ${checkedItems[task.id] ? 'bg-gray-50 border-gray-300' : 'bg-white border-gray-200'} transition-all`}>
-                                                        <div className="flex items-start gap-4">
-                                                            <input
-                                                                type="checkbox"
-                                                                id={task.id}
-                                                                checked={!!checkedItems[task.id]}
-                                                                onChange={() => toggleTask(task.id)}
-                                                                className="mt-1 h-5 w-5 rounded focus:ring-2 focus:ring-offset-2 focus:ring-[#ae6031]"
-                                                                aria-describedby={`${task.id}-desc`}
-                                                            />
-
-                                                            <label htmlFor={task.id} className="flex-1 cursor-pointer">
-                                                                <div className="flex items-center gap-2 flex-wrap mb-2">
-                                                                    <span className={`px-2 py-1 rounded text-xs font-medium ${getColorClasses(week.color, 'light')} ${getColorClasses(week.color, 'text')}`}>
-                                                                        {t.day} {task.day}
-                                                                    </span>
-                                                                    {task.urgent && (
-                                                                        <span className="px-2 py-1 rounded text-xs font-bold bg-red-600 text-white flex items-center gap-1">
-                                                                            <AlertCircle className="w-3 h-3" aria-hidden="true" />
-                                                                            {t.urgent}
-                                                                        </span>
-                                                                    )}
-                                                                    {task.critical && (
-                                                                        <span className="px-2 py-1 rounded text-xs font-bold bg-orange-600 text-white flex items-center gap-1">
-                                                                            <AlertTriangle className="w-3 h-3" aria-hidden="true" />
-                                                                            {t.critical}
-                                                                        </span>
-                                                                    )}
-                                                                    {task.cost && (
-                                                                        <span className="px-2 py-1 rounded text-xs font-medium bg-green-100 text-green-700">
-                                                                            ${task.cost.min.toLocaleString()}-${task.cost.max.toLocaleString()}
-                                                                        </span>
-                                                                    )}
-                                                                    {checkedItems[task.id] && (
-                                                                        <span className="px-2 py-1 rounded text-xs font-medium bg-green-600 text-white flex items-center gap-1">
-                                                                            <Check className="w-3 h-3" aria-hidden="true" />
-                                                                            {t.completed}
-                                                                        </span>
-                                                                    )}
-                                                                </div>
-
-                                                                <h4 className={`text-lg font-semibold mb-1 ${checkedItems[task.id] ? 'text-gray-500 line-through' : 'text-gray-900'}`}>
-                                                                    {task.title}
-                                                                </h4>
-                                                                <p id={`${task.id}-desc`} className={`text-sm ${checkedItems[task.id] ? 'text-gray-500' : 'text-gray-600'}`}>
-                                                                    {task.description}
-                                                                </p>
-                                                            </label>
-                                                        </div>
-                                                    </div>
-                                                ))}
-                                            </div>
-                                        )}
-                                    </div>
-                                );
-                            })}
-                        </div>
-
-                        {/* Cost Summary */}
-                        <div className="mt-8 bg-white rounded-xl shadow-lg p-8">
-                            <h2 className="text-2xl font-bold text-gray-900 mb-6">💰 {t.costCalculator}</h2>
-                            <div className="grid md:grid-cols-2 gap-6">
-                                <div className="p-6 bg-gradient-to-br from-[#faf8f6] to-[#f5f1ed] rounded-lg border-2 border-[#ae6031]">
-                                    <div className="text-sm text-[#8a4a25] font-medium mb-1">{t.minimumCost}</div>
-                                    <div className="text-3xl font-bold text-[#ae6031]">${(totalCost.min || 320).toLocaleString()}</div>
-                                </div>
-                                <div className="p-6 bg-gradient-to-br from-gray-50 to-gray-100 rounded-lg border-2 border-gray-800">
-                                    <div className="text-sm text-gray-600 font-medium mb-1">{t.maximumCost}</div>
-                                    <div className="text-3xl font-bold text-gray-900">${(totalCost.max || 525).toLocaleString()}</div>
-                                </div>
-                            </div>
-                            <p className="mt-4 text-sm text-gray-600 italic">
-                                * Cost calculation is based on checked items with associated costs
-                            </p>
-                        </div>
-
-                        {/* Need Help Section */}
-                        <div className="mt-8 bg-gradient-to-br from-[#ae6031] to-[#8a4a25] rounded-xl shadow-lg p-8 text-white">
-                            <div className="flex items-start gap-4">
-                                <MessageCircle className="w-8 h-8 flex-shrink-0 mt-1" aria-hidden="true" />
-                                <div className="flex-1">
-                                    <h2 className="text-2xl font-bold mb-3">{t.needHelp}</h2>
-                                    <p className="text-lg mb-4 opacity-90">{t.needHelpDesc}</p>
-                                    <div className="flex flex-wrap gap-3">
-                                        <a
-                                            href="mailto:support@kangkriel.com"
-                                            className="px-6 py-3 bg-white text-[#ae6031] rounded-lg font-semibold hover:bg-gray-100 transition-all inline-flex items-center gap-2"
-                                            rel="noopener noreferrer"
-                                        >
-                                            <Mail className="w-5 h-5" aria-hidden="true" />
-                                            <span>{t.contactRecruiter}</span>
-                                        </a>
-                                        <button
-                                            onClick={() => copyToClipboard('support@kangkriel.com', 'email')}
-                                            className="px-6 py-3 bg-white/10 text-white rounded-lg font-semibold hover:bg-white/20 transition-all inline-flex items-center gap-2"
-                                            aria-label={t.copyEmail}
-                                        >
-                                            <Copy className="w-5 h-5" aria-hidden="true" />
-                                            <span>{t.copyEmail}</span>
-                                        </button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        {/* Critical Rules */}
-                        <div className="mt-8 bg-white rounded-xl shadow-lg p-8 page-break">
-                            <h2 className="text-2xl font-bold text-gray-900 mb-6">🔴 {t.criticalRules}</h2>
-                            <div className="space-y-4">
-                                <div className="p-6 rounded-lg border-2 border-red-500 bg-red-50">
-                                    <h3 className="text-lg font-bold text-gray-900 mb-2 flex items-center gap-2">
-                                        <AlertCircle className="w-5 h-5 text-red-600" aria-hidden="true" />
-                                        FBI Check → Federal Apostille
-                                    </h3>
-                                    <p className="text-gray-700">FBI must receive apostille from U.S. Department of State (Federal)</p>
-                                </div>
-                                <div className="p-6 rounded-lg border-2 border-red-500 bg-red-50">
-                                    <h3 className="text-lg font-bold text-gray-900 mb-2 flex items-center gap-2">
-                                        <AlertCircle className="w-5 h-5 text-red-600" aria-hidden="true" />
-                                        Degree → State Apostille
-                                    </h3>
-                                    <p className="text-gray-700">Degree must receive apostille from Secretary of State (State where issued)</p>
-                                </div>
-                                <div className="p-6 rounded-lg border-2 border-orange-500 bg-orange-50">
-                                    <h3 className="text-lg font-bold text-gray-900 mb-2 flex items-center gap-2">
-                                        <AlertTriangle className="w-5 h-5 text-orange-600" aria-hidden="true" />
-                                        Names Must Match EXACTLY
-                                    </h3>
-                                    <p className="text-gray-700">Passport, FBI, and degree names must match including middle names</p>
-                                </div>
-                            </div>
-                        </div>
-
-                        {/* Key Contacts */}
-                        <div className="mt-8 bg-white rounded-xl shadow-lg p-8">
-                            <h2 className="text-2xl font-bold text-gray-900 mb-6">📞 {t.keyContacts}</h2>
-                            <div className="grid md:grid-cols-2 gap-4">
-                                <div className="p-4 border-2 border-gray-200 rounded-lg hover:border-[#ae6031] transition-all">
-                                    <h3 className="font-bold mb-3 text-lg">Monument Visa</h3>
-                                    <div className="space-y-2">
-                                        <div className="flex items-center justify-between">
-                                            <a href="tel:1-800-995-6924" className="text-sm text-[#ae6031] hover:underline flex items-center gap-2">
-                                                <Phone className="w-4 h-4" aria-hidden="true" />
-                                                1-800-995-6924
-                                            </a>
-                                            <button
-                                                onClick={() => copyToClipboard('1-800-995-6924', 'phone')}
-                                                className="p-1 hover:bg-gray-100 rounded"
-                                                aria-label={t.copyPhone}
-                                            >
-                                                <Copy className="w-4 h-4 text-gray-600" aria-hidden="true" />
-                                            </button>
-                                        </div>
-                                        <div className="flex items-center justify-between">
-                                            <a href="https://monumentvisa.com" target="_blank" rel="noopener noreferrer" className="text-sm text-[#ae6031] hover:underline flex items-center gap-2">
-                                                <Globe className="w-4 h-4" aria-hidden="true" />
-                                                monumentvisa.com
-                                                <ExternalLink className="w-3 h-3" aria-hidden="true" />
-                                            </a>
-                                            <button
-                                                onClick={() => copyToClipboard('https://monumentvisa.com', 'url')}
-                                                className="p-1 hover:bg-gray-100 rounded"
-                                                aria-label="Copy URL"
-                                            >
-                                                <Copy className="w-4 h-4 text-gray-600" aria-hidden="true" />
-                                            </button>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div className="p-4 border-2 border-gray-200 rounded-lg hover:border-[#ae6031] transition-all">
-                                    <h3 className="font-bold mb-3 text-lg">Accurate Biometrics</h3>
-                                    <div className="space-y-2">
-                                        <p className="text-sm text-gray-600">825+ locations nationwide</p>
-                                        <div className="flex items-center justify-between">
-                                            <a href="https://accuratebiometrics.com" target="_blank" rel="noopener noreferrer" className="text-sm text-[#ae6031] hover:underline flex items-center gap-2">
-                                                <Globe className="w-4 h-4" aria-hidden="true" />
-                                                accuratebiometrics.com
-                                                <ExternalLink className="w-3 h-3" aria-hidden="true" />
-                                            </a>
-                                            <button
-                                                onClick={() => copyToClipboard('https://accuratebiometrics.com', 'url')}
-                                                className="p-1 hover:bg-gray-100 rounded"
-                                                aria-label="Copy URL"
-                                            >
-                                                <Copy className="w-4 h-4 text-gray-600" aria-hidden="true" />
-                                            </button>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div className="p-4 border-2 border-gray-200 rounded-lg hover:border-[#ae6031] transition-all">
-                                    <h3 className="font-bold mb-3 text-lg">Korea Immigration</h3>
-                                    <div className="space-y-2">
-                                        <div className="flex items-center justify-between">
-                                            <a href="tel:1345" className="text-sm text-[#ae6031] hover:underline flex items-center gap-2">
-                                                <Phone className="w-4 h-4" aria-hidden="true" />
-                                                From Korea: 1345
-                                            </a>
-                                            <button
-                                                onClick={() => copyToClipboard('1345', 'phone')}
-                                                className="p-1 hover:bg-gray-100 rounded"
-                                                aria-label={t.copyPhone}
-                                            >
-                                                <Copy className="w-4 h-4 text-gray-600" aria-hidden="true" />
-                                            </button>
-                                        </div>
-                                        <div className="flex items-center justify-between">
-                                            <a href="tel:+82-2-1345" className="text-sm text-[#ae6031] hover:underline flex items-center gap-2">
-                                                <Phone className="w-4 h-4" aria-hidden="true" />
-                                                International: +82-2-1345
-                                            </a>
-                                            <button
-                                                onClick={() => copyToClipboard('+82-2-1345', 'phone')}
-                                                className="p-1 hover:bg-gray-100 rounded"
-                                                aria-label={t.copyPhone}
-                                            >
-                                                <Copy className="w-4 h-4 text-gray-600" aria-hidden="true" />
-                                            </button>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div className="p-4 border-2 border-gray-200 rounded-lg hover:border-[#ae6031] transition-all">
-                                    <h3 className="font-bold mb-3 text-lg">Hi Korea Portal</h3>
-                                    <div className="space-y-2">
-                                        <div className="flex items-center justify-between">
-                                            <a href="https://hikorea.go.kr" target="_blank" rel="noopener noreferrer" className="text-sm text-[#ae6031] hover:underline flex items-center gap-2">
-                                                <Globe className="w-4 h-4" aria-hidden="true" />
-                                                hikorea.go.kr
-                                                <ExternalLink className="w-3 h-3" aria-hidden="true" />
-                                            </a>
-                                            <button
-                                                onClick={() => copyToClipboard('https://hikorea.go.kr', 'url')}
-                                                className="p-1 hover:bg-gray-100 rounded"
-                                                aria-label="Copy URL"
-                                            >
-                                                <Copy className="w-4 h-4 text-gray-600" aria-hidden="true" />
-                                            </button>
-                                        </div>
-                                        <p className="text-sm text-gray-600">Online visa services</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    {/* Mobile HUD */}
-                    <div className="mobile-hud bg-white border-t-2 border-gray-200 shadow-lg p-4 no-print">
-                        <div className="flex items-center justify-between">
-                            <div className="flex-1">
-                                <div className="text-xs text-gray-600 mb-1">{t.overallProgress}</div>
-                                <div className="flex items-center gap-2">
-                                    <div className="flex-1 bg-gray-200 rounded-full h-2">
-                                        <div 
-                                            className="bg-gradient-to-r from-[#ae6031] to-[#8a4a25] h-2 rounded-full transition-all"
-                                            style={{ width: `${overallProgress}%` }}
-                                        />
-                                    </div>
-                                    <span className="text-sm font-bold text-[#ae6031]">{overallProgress}%</span>
-                                </div>
-                            </div>
-                            {remainingCriticalTasks > 0 && (
-                                <div className="ml-4 px-3 py-1 bg-orange-100 text-orange-700 rounded-full text-xs font-bold">
-                                    {remainingCriticalTasks} {t.critical}
-                                </div>
-                            )}
-                        </div>
-                    </div>
-
-                    {/* Floating CTA Button */}
-                    <a
-                        href="mailto:support@kangkriel.com"
-                        className="floating-button bg-[#ae6031] hover:bg-[#8a4a25] text-white px-6 py-3 rounded-full font-semibold transition-all inline-flex items-center gap-2 no-print"
-                        aria-label={t.needHelp}
-                    >
-                        <MessageCircle className="w-5 h-5" aria-hidden="true" />
-                        <span className="hidden sm:inline">{t.needHelp}</span>
-                    </a>
-
-                    {/* Footer */}
-                    <div className="bg-gray-900 text-white mt-16">
-                        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-                            <div className="text-center">
-                                <div className="text-2xl font-black text-[#ae6031] mb-4">
-                                    Kang & Kriel Recruitment
-                                </div>
-                                <div className="text-sm text-gray-400 space-y-2">
-                                    <p className="mb-2">⚠️ {t.disclaimer}</p>
-                                    <p>{t.verifyWith} • {t.docVersion}</p>
-                                    <p className="mt-4 text-gray-500">{t.autoSave}</p>
-                                    <p className="mt-4 text-gray-600">© 2025 Kang & Kriel Recruitment. All rights reserved.</p>
-                                    <p className="text-xs text-gray-600 mt-2">
-                                        Build Date: {new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            );
-        };
-
-        ReactDOM.render(<E2VisaTimeline />, document.getElementById('root'));
-    </script>
+<body>
+<header>
+  <h1>Kang &amp; Kriel Recruitment – E-2 Visa Document Prep Guide</h1>
+  <p>Complete step-by-step guide for preparing, authenticating, and shipping documents for the Korean E-2 visa. Includes fast-track checklists, professional service recommendations, and arrival tasks.</p>
+</header>
+<nav class='toc'>
+  <h2>Table of Contents</h2>
+  <ul>
+    <li><a href='#kang-kriel-recruitment'>Kang &amp; Kriel Recruitment</a>
+      <ul>
+        <li><a href='#e-2-korea-ccvi-visa-issuance-number-document-pack'>E-2 (Korea) – CCVI/&quot;Visa Issuance Number&quot; Document Pack</a>
+          <ul>
+            <li><a href='#u-s-citizen-applicant-guide-2-3-week-fast-track'>U.S. Citizen Applicant Guide – 2-3 Week Fast-Track</a>
+            </li>
+          </ul>
+        </li>
+        <li><a href='#0-quick-win-overview-2-3-week-document-prep'>0) Quick Win Overview – 2-3 Week Document Prep</a>
+          <ul>
+            <li><a href='#total-timeline-5-7-weeks-start-to-visa'>Total Timeline: 5-7 Weeks Start to Visa</a>
+            </li>
+            <li><a href='#the-only-viable-process'>The Only Viable Process</a>
+            </li>
+            <li><a href='#two-must-not-fail-rules'>Two Must-Not-Fail Rules</a>
+            </li>
+            <li><a href='#investment-required'>Investment Required</a>
+            </li>
+            <li><a href='#bottom-line'>Bottom Line</a>
+            </li>
+          </ul>
+        </li>
+        <li><a href='#1-master-checklist'>1) Master Checklist</a>
+          <ul>
+            <li><a href='#documents-you-ll-ship-to-korea-for-ccvi'>Documents You&#x27;ll Ship to Korea (for CCVI)</a>
+            </li>
+            <li><a href='#documents-for-consulate-after-receiving-vin'>Documents for Consulate (after receiving VIN)</a>
+            </li>
+            <li><a href='#after-arrival-in-korea'>After Arrival in Korea</a>
+            </li>
+          </ul>
+        </li>
+        <li><a href='#2-document-preparation-professional-service-method'>2) Document Preparation – Professional Service Method</a>
+          <ul>
+            <li><a href='#2-1-fbi-identity-history-summary-channeler-method-only'>2.1 FBI Identity History Summary – Channeler Method ONLY</a>
+            </li>
+            <li><a href='#2-2-bachelor-s-degree-notarization-for-state-apostille'>2.2 Bachelor&#x27;s Degree – Notarization for State Apostille</a>
+            </li>
+            <li><a href='#2-3-self-health-statement'>2.3 Self-Health Statement</a>
+            </li>
+            <li><a href='#2-4-passport-photos'>2.4 Passport Photos</a>
+            </li>
+            <li><a href='#2-5-other-documents'>2.5 Other Documents</a>
+            </li>
+          </ul>
+        </li>
+        <li><a href='#3-2-3-week-action-plan'>3) 2-3 Week Action Plan</a>
+          <ul>
+            <li><a href='#week-1-fbi-channeler-document-collection'>WEEK 1: FBI Channeler + Document Collection</a>
+            </li>
+            <li><a href='#week-2-3-monument-visa-professional-apostille-service'>WEEK 2-3: Monument Visa Professional Apostille Service</a>
+            </li>
+            <li><a href='#week-3-pack-ship-to-korea'>WEEK 3: Pack &amp; Ship to Korea</a>
+            </li>
+            <li><a href='#week-4-5-vin-processing-in-korea-not-in-your-control'>WEEK 4-5: VIN Processing in Korea (Not in Your Control)</a>
+            </li>
+            <li><a href='#week-6-7-consulate-visa-application'>WEEK 6-7: Consulate Visa Application</a>
+            </li>
+          </ul>
+        </li>
+        <li><a href='#4-investment-breakdown-2-3-week-timeline'>4) Investment Breakdown – 2-3 Week Timeline</a>
+          <ul>
+            <li><a href='#document-preparation-costs'>Document Preparation Costs</a>
+            </li>
+            <li><a href='#shipping-application'>Shipping &amp; Application</a>
+            </li>
+            <li><a href='#after-arrival-in-korea-2'>After Arrival in Korea</a>
+            </li>
+            <li><a href='#total-investment'>TOTAL INVESTMENT</a>
+            </li>
+            <li><a href='#roi-analysis'>ROI Analysis</a>
+            </li>
+            <li><a href='#payment-tips'>Payment Tips</a>
+            </li>
+          </ul>
+        </li>
+        <li><a href='#5-packing-shipping-to-korea-final-checklist'>5) Packing &amp; Shipping to Korea – Final Checklist</a>
+          <ul>
+            <li><a href='#document-order-top-to-bottom'>Document Order (Top to Bottom)</a>
+            </li>
+            <li><a href='#packing-rules'>Packing Rules</a>
+            </li>
+            <li><a href='#shipping-requirements'>Shipping Requirements</a>
+            </li>
+            <li><a href='#tracking-protocol'>Tracking Protocol</a>
+            </li>
+          </ul>
+        </li>
+        <li><a href='#6-vin-consulate-visa-process'>6) VIN → Consulate → Visa Process</a>
+          <ul>
+            <li><a href='#after-your-employer-receives-documents'>After Your Employer Receives Documents</a>
+            </li>
+            <li><a href='#what-you-do-with-vin'>What You Do With VIN</a>
+            </li>
+          </ul>
+        </li>
+        <li><a href='#7-after-you-arrive-in-korea-first-90-days'>7) After You Arrive in Korea – First 90 Days</a>
+          <ul>
+            <li><a href='#critical-drug-screening-warning'>&#128308; CRITICAL: Drug Screening Warning</a>
+            </li>
+            <li><a href='#week-1-2-health-screening-highest-priority'>Week 1-2: Health Screening (HIGHEST PRIORITY)</a>
+            </li>
+            <li><a href='#within-14-days-address-registration-mandatory'>Within 14 Days: Address Registration (MANDATORY)</a>
+            </li>
+            <li><a href='#within-90-days-arc-application-alien-registration-card'>Within 90 Days: ARC Application (Alien Registration Card)</a>
+            </li>
+            <li><a href='#employment-legal-restrictions'>Employment &amp; Legal Restrictions</a>
+            </li>
+            <li><a href='#national-health-insurance-pension'>National Health Insurance &amp; Pension</a>
+            </li>
+          </ul>
+        </li>
+        <li><a href='#8-quality-gate-pre-shipment-verification'>8) Quality Gate – Pre-Shipment Verification</a>
+          <ul>
+            <li><a href='#document-quality-checks'>Document Quality Checks</a>
+            </li>
+            <li><a href='#scans-backups'>Scans &amp; Backups</a>
+            </li>
+            <li><a href='#packing-verification'>Packing Verification</a>
+            </li>
+            <li><a href='#shipping-verification'>Shipping Verification</a>
+            </li>
+          </ul>
+        </li>
+        <li><a href='#9-document-red-flags-what-gets-rejected'>9) Document Red Flags – What Gets Rejected</a>
+          <ul>
+            <li><a href='#fbi-background-check-red-flags'>FBI Background Check Red Flags</a>
+            </li>
+            <li><a href='#degree-red-flags'>Degree Red Flags</a>
+            </li>
+            <li><a href='#application-red-flags'>Application Red Flags</a>
+            </li>
+            <li><a href='#health-check-red-flags-after-arrival'>Health Check Red Flags (After Arrival)</a>
+            </li>
+            <li><a href='#prevention-checklist'>Prevention Checklist</a>
+            </li>
+          </ul>
+        </li>
+        <li><a href='#10-faq-common-scenarios'>10) FAQ &amp; Common Scenarios</a>
+        </li>
+        <li><a href='#11-glossary'>11) Glossary</a>
+        </li>
+        <li><a href='#12-templates'>12) Templates</a>
+          <ul>
+            <li><a href='#12-1-email-to-monument-visa-initial-contact'>12.1 Email to Monument Visa – Initial Contact</a>
+            </li>
+            <li><a href='#12-2-cover-letter-for-korea-document-pack'>12.2 Cover Letter for Korea Document Pack</a>
+            </li>
+            <li><a href='#12-3-email-to-employer-after-shipment'>12.3 Email to Employer After Shipment</a>
+            </li>
+          </ul>
+        </li>
+        <li><a href='#13-korean-consulate-directory-u-s'>13) Korean Consulate Directory (U.S.)</a>
+          <ul>
+            <li><a href='#korean-embassy-in-washington-dc'>Korean Embassy in Washington, DC</a>
+            </li>
+            <li><a href='#consulate-general-in-new-york'>Consulate General in New York</a>
+            </li>
+            <li><a href='#consulate-general-in-los-angeles'>Consulate General in Los Angeles</a>
+            </li>
+            <li><a href='#consulate-general-in-san-francisco'>Consulate General in San Francisco</a>
+            </li>
+            <li><a href='#consulate-general-in-chicago'>Consulate General in Chicago</a>
+            </li>
+            <li><a href='#consulate-general-in-seattle'>Consulate General in Seattle</a>
+            </li>
+            <li><a href='#consulate-general-in-atlanta'>Consulate General in Atlanta</a>
+            </li>
+            <li><a href='#consulate-general-in-boston'>Consulate General in Boston</a>
+            </li>
+            <li><a href='#consulate-general-in-houston'>Consulate General in Houston</a>
+            </li>
+            <li><a href='#consulate-general-in-honolulu'>Consulate General in Honolulu</a>
+            </li>
+            <li><a href='#consulate-in-anchorage'>Consulate in Anchorage</a>
+            </li>
+          </ul>
+        </li>
+        <li><a href='#14-korean-government-resources'>14) Korean Government Resources</a>
+          <ul>
+            <li><a href='#korea-immigration-service'>Korea Immigration Service (출입국·외국인정책본부)</a>
+            </li>
+            <li><a href='#hi-korea-portal'>Hi Korea Portal</a>
+            </li>
+            <li><a href='#korea-visa-portal'>Korea Visa Portal</a>
+            </li>
+          </ul>
+        </li>
+        <li><a href='#15-essential-service-providers'>15) Essential Service Providers</a>
+          <ul>
+            <li><a href='#monument-visa-service-required-for-2-3-week-timeline'>Monument Visa Service (REQUIRED FOR 2-3 WEEK TIMELINE)</a>
+            </li>
+            <li><a href='#fbi-channelers'>FBI Channelers</a>
+            </li>
+            <li><a href='#alternative-apostille-services'>Alternative Apostille Services</a>
+            </li>
+          </ul>
+        </li>
+        <li><a href='#16-final-checklist-ready-to-start'>16) Final Checklist – Ready to Start?</a>
+          <ul>
+            <li><a href='#before-you-begin'>Before You Begin</a>
+            </li>
+            <li><a href='#week-1-checklist'>Week 1 Checklist</a>
+            </li>
+            <li><a href='#week-2-3-checklist'>Week 2-3 Checklist</a>
+            </li>
+            <li><a href='#week-4-5-checklist'>Week 4-5 Checklist</a>
+            </li>
+            <li><a href='#week-6-7-checklist'>Week 6-7 Checklist</a>
+            </li>
+            <li><a href='#after-arrival-checklist'>After Arrival Checklist</a>
+            </li>
+          </ul>
+        </li>
+        <li><a href='#conclusion'>Conclusion</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+<main>
+<h1 id="kang-kriel-recruitment">Kang &amp; Kriel Recruitment</h1>
+<h2 id="e-2-korea-ccvi-visa-issuance-number-document-pack">E-2 (Korea) – CCVI/&quot;Visa Issuance Number&quot; Document Pack</h2>
+<h3 id="u-s-citizen-applicant-guide-2-3-week-fast-track">U.S. Citizen Applicant Guide – 2-3 Week Fast-Track</h3>
+<blockquote>
+<p>This guide shows <strong>U.S. citizens</strong> how to prepare E-2 visa documents in <strong>2-3 weeks</strong> using professional services, ship to Korea for <strong>CCVI</strong> (Certificate for Confirmation of Visa Issuance / <strong>Visa Issuance Number</strong>), and complete the visa process in <strong>5-7 weeks total</strong>.</p>
+</blockquote>
+<hr>
+<h2 id="0-quick-win-overview-2-3-week-document-prep">0) Quick Win Overview – 2-3 Week Document Prep</h2>
+<h3 id="total-timeline-5-7-weeks-start-to-visa">Total Timeline: 5-7 Weeks Start to Visa</h3>
+<p><strong>Phase Breakdown:</strong></p>
+<ol class="list-level">
+<li><strong>Week 1-3: Document preparation</strong> (FBI + degree + apostilles) = <strong>2-3 weeks</strong></li>
+<li><strong>Week 4-5: Korea shipping + VIN processing</strong> = <strong>2-3 weeks</strong></li>
+<li><strong>Week 6-7: Consulate visa application</strong> = <strong>3-5 days</strong></li>
+<li><strong>Arrival: Medical check + ARC</strong> within 90 days</li>
+</ol>
+<h3 id="the-only-viable-process">The Only Viable Process</h3>
+<p><strong>FBI Background Check:</strong></p>
+<ul class="list-level">
+<li>FBI-approved channeler (Accurate Biometrics, Fieldprint): <strong>24-72 hours</strong></li>
+<li>Monument Visa Federal apostille (rush): <strong>3-5 days</strong></li>
+<li>&#9989; Total: <strong>1 week</strong></li>
+<p><strong>Degree Authentication:</strong></p>
+<li>Local notary: <strong>Same day</strong> ($10-30)</li>
+<li>Monument Visa State apostille (rush): <strong>3-5 days</strong></li>
+<li>&#9989; Total: <strong>1 week</strong></li>
+<p><strong>All documents ready to ship:</strong> <strong>2-3 weeks maximum</strong></p>
+</ul>
+<h3 id="two-must-not-fail-rules">Two Must-Not-Fail Rules</h3>
+<p>&#128308; <strong>CRITICAL:</strong></p>
+<ul class="list-level">
+<li><strong>FBI check ⇒ U.S. Department of State (Federal) apostille</strong></li>
+<li><strong>Degree copy ⇒ Secretary of State of issuing state (State) apostille</strong></li>
+<p>Mixing these up = automatic rejection. Monument Visa handles both correctly.</p>
+</ul>
+<h3 id="investment-required">Investment Required</h3>
+<table>
+<thead><tr><th>Item</th><th>Cost</th><th>Why Essential</th></tr></thead>
+<tbody>
+<tr><td>FBI channeler</td><td>$40-100</td><td>24-72hr results vs. 14 weeks</td></tr>
+<tr><td>Monument Visa FBI apostille</td><td>$55-75</td><td>Rush Federal apostille (10 days)</td></tr>
+<tr><td>Monument Visa degree apostille</td><td>$100-125</td><td>Rush State apostille (2-3 days)</td></tr>
+<tr><td>Notary (degree)</td><td>$10-30</td><td>Required before apostille</td></tr>
+<tr><td>Photos, transcripts</td><td>$30-70</td><td>Standard requirements</td></tr>
+<tr><td>Shipping to Korea</td><td>$40-80</td><td>Tracking essential</td></tr>
+<tr><td>Consulate visa fee</td><td>~$45</td><td>Government fee</td></tr>
+<tr><td><strong>TOTAL</strong></td><td><strong>$320-525</strong></td><td><strong>Protects $24K+ annual job</strong></td></tr>
+</tbody></table>
+<hr>
+<h3 id="bottom-line">Bottom Line</h3>
+<p>Monument Visa + FBI channeler is not a &quot;premium upgrade&quot; or &quot;optional fast-track.&quot;</p>
+<p><strong>It&#x27;s the only method that works for real-world hiring timelines.</strong></p>
+<p>Budget for this from Day 1. Consider it mandatory job offer insurance.</p>
+<hr>
+<h2 id="1-master-checklist">1) Master Checklist</h2>
+<h3 id="documents-you-ll-ship-to-korea-for-ccvi">Documents You&#x27;ll Ship to Korea (for CCVI)</h3>
+<ul class="list-level">
+<li>&#9744; <strong>FBI Identity History Summary</strong> (issued ≤ <strong>6 months</strong>; <strong>Federal apostille</strong> attached)</li>
+<li>&#9744; <strong>Bachelor&#x27;s degree copy</strong> (notarized <strong>true copy</strong>) with <strong>State apostille</strong> attached</li>
+<li>&#9744; <strong>Self-Health Statement</strong> (E-2 health questionnaire; signed)</li>
+<li>&#9744; <strong>Passport bio page copy</strong> (color, high-res)</li>
+<li>&#9744; <strong>Signed employment contract</strong> (original, fully executed)</li>
+<li>&#9744; <strong>Resume/CV</strong> (signed and dated)</li>
+<li>&#9744; <strong>Passport photos</strong> (2-4 spares, 3.5×4.5cm)</li>
+</ul>
+<h3 id="documents-for-consulate-after-receiving-vin">Documents for Consulate (after receiving VIN)</h3>
+<ul class="list-level">
+<li>&#9744; <strong>VIN</strong> (Visa Issuance Number) from employer</li>
+<li>&#9744; <strong>Visa Application Form</strong> (complete, <strong>signed</strong>)</li>
+<li>&#9744; <strong>1 passport photo</strong> (attached to application)</li>
+<li>&#9744; <strong>Original passport</strong> (≥ 6 months validity, 1+ blank page)</li>
+<li>&#9744; <strong>Visa fee</strong> (~$45 cash/money order)</li>
+<li>&#9744; <strong>Driver&#x27;s license</strong> (proof of residency)</li>
+<li>&#9744; <strong>Prepaid return envelope</strong> (if mailing)</li>
+</ul>
+<h3 id="after-arrival-in-korea">After Arrival in Korea</h3>
+<ul class="list-level">
+<li>&#9744; <strong>Health screening</strong> at designated hospital (within 2 weeks recommended)</li>
+<li>&#9744; <strong>Address registration</strong> (within 14 days, mandatory)</li>
+<li>&#9744; <strong>ARC application</strong> (within 90 days of entry)</li>
+</ul>
+<hr>
+<h2 id="2-document-preparation-professional-service-method">2) Document Preparation – Professional Service Method</h2>
+<h3 id="2-1-fbi-identity-history-summary-channeler-method-only">2.1 FBI Identity History Summary – Channeler Method ONLY</h3>
+<p><strong>Goal:</strong> FBI background check in 24-72 hours</p>
+<p>&#9203; <strong>TIME-CRITICAL:</strong> Start this on Day 1 of your visa process</p>
+<p><strong>The Only Viable Method: FBI-Approved Channeler</strong></p>
+<p>FBI-approved channelers provide digital fingerprinting (Live Scan) and submit electronically to FBI. Results delivered in 24-72 hours.</p>
+<p><strong>Recommended Channelers:</strong></p>
+<p><strong>Accurate Biometrics</strong> (MOST RECOMMENDED)</p>
+<ul class="list-level">
+<li>825+ locations nationwide (often inside/near UPS stores)</li>
+<li>Website: accuratebiometrics.com</li>
+<li>Online appointment booking</li>
+<li>Cost: $40-100 (includes FBI $18 fee)</li>
+<li>PDF results emailed in 24-72 hours</li>
+<li>Monument Visa accepts their PDFs</li>
+<p><strong>Fieldprint</strong></p>
+<li>National coverage</li>
+<li>Website: fieldprintusa.com</li>
+<li>Similar pricing and timeline</li>
+<p><strong>Idemia</strong></p>
+<li>Many locations</li>
+<li>Website: idemia.com</li>
+<p><strong>Full FBI-approved list:</strong> fbi.gov (search &quot;FBI channeler list&quot;)</p>
+<p><strong>Process:</strong></p>
+</ul>
+<ol class="list-level">
+<li>Visit channeler website and find nearest location</li>
+<li>Book appointment online</li>
+<li>Arrive with photo ID (driver&#x27;s license or passport)</li>
+<li>Get fingerprints taken (Live Scan, 5 minutes)</li>
+<li>Pay $40-100</li>
+<li>Tell them: &quot;For international employment in Korea, E-2 visa&quot;</li>
+<li>Receive PDF by email in 24-72 hours</li>
+<p><strong>Quality Requirements:</strong></p>
+</ol>
+<ul class="list-level">
+<li>Name must match passport <strong>exactly</strong> (including middle names)</li>
+<li>PDF must show FBI CJIS seal and signature block</li>
+<li>Must be suitable for apostille (channelers know this)</li>
+<p><strong>What Your FBI Check Must Show:</strong></p>
+<li>FBI seal and CJIS Division signature/stamp</li>
+<li>Your full name exactly as on passport</li>
+<li>Date of issue (must be within 6 months when used for CCVI)</li>
+<li>Summary of criminal history (or statement of no record)</li>
+<p>❌ <strong>NEVER:</strong></p>
+<li>DO NOT apply directly to FBI (14-16 weeks, impractical)</li>
+<li>DO NOT use state/local police checks (not accepted for E-2)</li>
+<li>DO NOT try to rush FBI direct process (impossible)</li>
+<p><strong>Next Step:</strong> After receiving FBI PDF (24-72 hours), immediately submit to Monument Visa for Federal apostille (see Week 2 timeline).</p>
+</ul>
+<hr>
+<h3 id="2-2-bachelor-s-degree-notarization-for-state-apostille">2.2 Bachelor&#x27;s Degree – Notarization for State Apostille</h3>
+<p><strong>Goal:</strong> Notarized true copy of diploma ready for apostille</p>
+<p>&#9989; <strong>MUST DO:</strong> Name on degree must match passport exactly (including middle names)</p>
+<p><strong>Process:</strong></p>
+<p><strong>Step 1: Prepare Your Degree</strong></p>
+<ul class="list-level">
+<li>Locate your Bachelor&#x27;s degree diploma (4-year degree required)</li>
+<li>Make a high-quality photocopy</li>
+<li>If degree is in Latin: Get English version from university first</li>
+<p><strong>Step 2: Get Notarized</strong></p>
+<li>Find a notary public:</li>
+<ul class="list-level">
+<li>Your bank (often free for customers)</li>
+<li>UPS Store</li>
+<li>Shipping stores (FedEx Office, etc.)</li>
+<li>Mobile notaries (search &quot;notary near me&quot;)</li>
+</ul>
+<li>Bring: Original diploma + photocopy + photo ID</li>
+<li>Request: &quot;Notarized true copy&quot; certification</li>
+<li>Cost: $10-30</li>
+<li>Time: 10 minutes</li>
+<p><strong>What the Notary Does:</strong></p>
+<li>Compares copy to original</li>
+<li>Stamps and signs the copy</li>
+<li>Certifies it as a &quot;true copy&quot; of the original</li>
+<li>Adds notarial seal and date</li>
+<p><strong>Common Issues to Avoid:</strong> ❌ Middle name missing from degree but on passport → Contact university for corrected diploma ❌ Name changed after marriage → Use maiden name degree + marriage certificate (apostilled) ❌ Degree in Latin → Get English version or official translation first ❌ Associate&#x27;s degree (2-year) → Not acceptable; must be Bachelor&#x27;s (4-year)</p>
+<p><strong>Next Step:</strong> Send notarized degree copy to Monument Visa for State apostille (see Week 2 timeline).</p>
+</ul>
+<hr>
+<h3 id="2-3-self-health-statement">2.3 Self-Health Statement</h3>
+<p><strong>What It Is:</strong> Pre-arrival health questionnaire about communicable diseases, mental health, drug use.</p>
+<p><strong>Where to Get:</strong></p>
+<ul class="list-level">
+<li>Download from Korean consulate website, or</li>
+<li>Your employer will provide, or</li>
+<li>Korea Visa Portal (visa.go.kr)</li>
+<p><strong>How to Complete:</strong></p>
+</ul>
+<ol class="list-level">
+<li>Download and print form</li>
+<li>Answer all questions <strong>honestly</strong></li>
+<li>Common questions include:</li>
+<ul class="list-level">
+<li>History of tuberculosis</li>
+<li>Mental health conditions</li>
+<li>Drug/substance use</li>
+<li>Communicable diseases</li>
+</ul>
+<li>Sign and date</li>
+<li>Scan for backup</li>
+<p>&#9989; <strong>IMPORTANT:</strong> Be truthful. False statements = deportation if discovered.</p>
+<p>❌ <strong>WARNING:</strong> This is NOT your final health check. You&#x27;ll do a full medical screening in Korea within 90 days (see Section 6).</p>
+<p><strong>No Notarization or Apostille Required</strong></p>
+</ol>
+<hr>
+<h3 id="2-4-passport-photos">2.4 Passport Photos</h3>
+<p><strong>Specifications:</strong></p>
+<ul class="list-level">
+<li>Size: <strong>2×2 inches</strong> (U.S. standard) or <strong>3.5×4.5cm</strong> (Korea standard)</li>
+<li>Background: White</li>
+<li>Recent: Taken within 6 months</li>
+<li>Requirements: No glasses, no hat, facing forward</li>
+<li>Color photos</li>
+<p><strong>Where to Get:</strong></p>
+<li>CVS Pharmacy</li>
+<li>Walgreens</li>
+<li>UPS Store</li>
+<li>Costco (if member)</li>
+<li>Passport photo booths</li>
+<p><strong>How Many:</strong></p>
+<li>2-4 photos for Korea document pack</li>
+<li>Extra 2-4 photos for later use (health check, ARC application)</li>
+<li><strong>Get 6-8 total copies</strong></li>
+<p><strong>Cost:</strong> $10-20 for 6-8 photos</p>
+</ul>
+<hr>
+<h3 id="2-5-other-documents">2.5 Other Documents</h3>
+<p><strong>Passport Bio Page Copy:</strong></p>
+<ul class="list-level">
+<li>Color photocopy or scan</li>
+<li>High resolution (must be clearly readable)</li>
+<li>Full page showing photo and all info</li>
+<p><strong>Employment Contract:</strong></p>
+<li>Korean employer provides</li>
+<li>Review: salary, hours, housing, benefits, start date, contract length</li>
+<li>Sign all required pages</li>
+<li>Scan before mailing original to Korea</li>
+<p><strong>Resume/CV:</strong></p>
+<li>1-2 pages</li>
+<li>Include: education, work experience, certifications, contact info</li>
+<li>Sign and date at bottom</li>
+<li>Update with recent experience</li>
+</ul>
+<hr>
+<h2 id="3-2-3-week-action-plan">3) 2-3 Week Action Plan</h2>
+<h3 id="week-1-fbi-channeler-document-collection">WEEK 1: FBI Channeler + Document Collection</h3>
+<p><strong>Day 1-2: FBI Channeler Appointment</strong></p>
+<p>&#9744; <strong>Select channeler:</strong> Visit accuratebiometrics.com (recommended) &#9744; <strong>Find location:</strong> 825+ locations nationwide, often inside UPS stores &#9744; <strong>Book appointment:</strong> Online scheduling available &#9744; <strong>Prepare:</strong> Photo ID (driver&#x27;s license or passport) &#9744; <strong>Attend appointment:</strong></p>
+<ul class="list-level">
+<li>Arrive on time</li>
+<li>Digital fingerprints taken (5 minutes)</li>
+<li>Pay $40-100</li>
+<li>Specify: &quot;For Korea E-2 visa, international employment&quot; &#9744; <strong>Confirm:</strong> Get receipt/confirmation number</li>
+<p><strong>Day 2-4: Receive FBI Results</strong></p>
+<p>&#9744; <strong>Check email:</strong> PDF typically arrives in 24-72 hours &#9744; <strong>Download:</strong> Save to computer and cloud backup &#9744; <strong>Verify:</strong></p>
+<li>FBI CJIS seal visible</li>
+<li>Your full name matches passport (including middle names)</li>
+<li>Date of issue shown</li>
+<li>No criminal record statement (or record details if applicable) &#9744; <strong>Forward:</strong> Immediately send PDF to Monument Visa</li>
+<p><strong>Day 1-3: University Transcripts</strong> (if required)</p>
+<p>&#9744; <strong>Contact registrar:</strong> Call or email university registrar&#x27;s office &#9744; <strong>Order:</strong> 2 sets of official sealed transcripts &#9744; <strong>Specify:</strong> &quot;For international employment – seal required&quot; &#9744; <strong>Pay:</strong> $10-25 per set (credit card usually accepted) &#9744; <strong>Wait:</strong> 5-10 business days for delivery &#9744; <strong>Note:</strong> These will arrive during Week 2</p>
+<p><strong>Day 1: Degree Notarization</strong></p>
+<p>&#9744; <strong>Locate degree:</strong> Find your Bachelor&#x27;s diploma &#9744; <strong>Photocopy:</strong> Make high-quality copy &#9744; <strong>Find notary:</strong></p>
+<li>Check your bank (often free)</li>
+<li>UPS Store (walk-in)</li>
+<li>Search &quot;notary public near me&quot; &#9744; <strong>Bring:</strong> Original diploma + photocopy + photo ID &#9744; <strong>Get notarized:</strong> Request &quot;notarized true copy&quot; &#9744; <strong>Pay:</strong> $10-30 &#9744; <strong>Verify:</strong> Notary stamp and signature on copy &#9744; <strong>Save:</strong> Keep notarized copy for Monument Visa</li>
+<p><strong>Day 1: Passport Photos</strong></p>
+<p>&#9744; <strong>Visit:</strong> CVS, Walgreens, UPS Store, or photo booth &#9744; <strong>Specify:</strong></p>
+<li>&quot;Passport photos&quot; or &quot;2×2 inches&quot;</li>
+<li>&quot;Need 6-8 copies&quot;</li>
+<li>&quot;White background&quot; &#9744; <strong>Take photos:</strong> Follow photographer instructions (no glasses, hat) &#9744; <strong>Pay:</strong> $10-20 for 6-8 copies &#9744; <strong>Receive:</strong> Usually ready in 10-30 minutes</li>
+<p><strong>Day 1-7: Administrative Prep</strong></p>
+<p>&#9744; <strong>Request contract:</strong> Email employer if not yet received &#9744; <strong>Update resume:</strong> Add recent experience, sign and date &#9744; <strong>Download health form:</strong> Get Self-Health Statement from employer or consulate website &#9744; <strong>Complete health form:</strong> Fill out all sections honestly, sign and date &#9744; <strong>Passport copy:</strong> Make color copy of bio page (high-res) &#9744; <strong>Organize:</strong> Create digital folder for all document scans</p>
+</ul>
+<hr>
+<h3 id="week-2-3-monument-visa-professional-apostille-service">WEEK 2-3: Monument Visa Professional Apostille Service</h3>
+<p><strong>Day 7-8: Contact Monument Visa</strong></p>
+<p>&#9744; <strong>Visit:</strong> monumentvisa.com</p>
+<p>&#9744; <strong>Call or email:</strong> Explain you need:</p>
+<ul class="list-level">
+<li>Federal apostille for FBI check (rush)</li>
+<li>State apostille for degree (rush)</li>
+<li>Both for Korea E-2 visa</li>
+<p>&#9744; <strong>Confirm services:</strong></p>
+<li>Rush processing (10 business days for FBI, 24-48 hours for degree)</li>
+<li>They accept FBI channeler PDFs</li>
+<li>They handle degree apostille for your state</li>
+<p>&#9744; <strong>Get quote:</strong></p>
+<li>Regular: $200 ($75 FBI + $125 degree)</li>
+<p><strong>Day 8: Submit Documents to Monument Visa</strong></p>
+<p><strong>FBI Check Submission:</strong></p>
+<p>&#9744; <strong>Email FBI PDF:</strong></p>
+<li>Send PDF received from channeler to Monument Visa</li>
+<li>Subject: &quot;FBI Check for Federal Apostille - Korea E-2 Visa - [Your Name]&quot;</li>
+<li>They will print and apostille it</li>
+<p><strong>Degree Submission:</strong> &#9744; <strong>Ship notarized degree:</strong></p>
+<li>Use FedEx or UPS overnight</li>
+<li>Send to Monument Visa address (they&#x27;ll provide)</li>
+<li>Include cover note: &quot;State apostille for [Your State], Korea E-2 visa, rush processing&quot;</li>
+<li>Get tracking number</li>
+<p><strong>Payment:</strong></p>
+<p>&#9744; <strong>Pay:</strong> Credit card (online or by phone)</p>
+<p>&#9744; <strong>Amount:</strong> $300-400 typically</p>
+<p>&#9744; <strong>Save:</strong> Receipt and confirmation number</p>
+<p><strong>Day 9-13: Monument Visa Processing</strong></p>
+<p>&#9744; <strong>Tracking:</strong> Monitor your degree shipment to Monument Visa</p>
+<p>&#9744; <strong>Confirmation:</strong> Monument Visa confirms receipt</p>
+<p>&#9744; <strong>Processing:</strong> They handle:</p>
+<li>FBI: Submission to U.S. Department of State for Federal apostille</li>
+<li>Degree: Submission to your state&#x27;s Secretary of State for State apostille</li>
+<li>Rush service at both offices</li>
+<p>&#9744; <strong>Timeline:</strong> 3-5 business days for both documents</p>
+<p>&#9744; <strong>Status updates:</strong> Monument Visa provides updates</p>
+<p><strong>Alternative Services</strong> (if Monument Visa unavailable):</p>
+<li>US Authentication Services (usauthentication.com)</li>
+<li>Atlanta Apostille (atlantaapostille.com)</li>
+<li>National Apostille (1-800-903-2470)</li>
+<p>All offer similar 3-5 day rush apostille services.</p>
+<p><strong>During Week 2 (While Waiting for Apostilles):</strong></p>
+<p><strong>Receive &amp; Organize Other Documents:</strong></p>
+<p>&#9744; <strong>Employment contract arrives:</strong></p>
+<li>Review all terms carefully</li>
+<li>Check: salary, hours, housing allowance, airfare reimbursement, contract dates</li>
+<li>Sign all required pages</li>
+<li>Scan signed contract to backup folder</li>
+<p>&#9744; <strong>Final document prep:</strong></p>
+<li>Confirm Self-Health Statement completed and signed</li>
+<li>Confirm resume signed and dated</li>
+<li>Confirm passport copy is high-res color</li>
+<p>&#9744; <strong>Create backup folder:</strong></p>
+<li>Scan all documents before shipping</li>
+<li>Save to cloud storage (Google Drive, Dropbox)</li>
+<li>Save local copy to computer/external drive</li>
+<li>Email backup link to yourself</li>
+<p><strong>Day 13-15: Receive Apostilled Documents</strong></p>
+<p>&#9744; <strong>Track shipment:</strong> Monument Visa ships via FedEx/UPS &#9744; <strong>Receive package</strong> containing:</p>
+<li>FBI check with Federal apostille <strong>stapled</strong></li>
+<li>Degree copy with State apostille <strong>stapled</strong></li>
+<p>&#9744; <strong>Verify immediately upon receipt:</strong></p>
+<li>FBI: U.S. Department of State apostille seal visible</li>
+<li>Degree: Secretary of State apostille seal visible (your state)</li>
+<li>Both: Apostilles <strong>stapled</strong> securely (DO NOT REMOVE staples)</li>
+<li>Both: Names match your passport exactly</li>
+<li>No damage, tears, or smudges</li>
+<li>Documents are clear and readable</li>
+<p>&#9744; <strong>Scan both apostilled documents:</strong></p>
+<li>Front and back</li>
+<li>High resolution</li>
+<li>Save to backup folder</li>
+<p>❌ <strong>CRITICAL:</strong> Do NOT remove apostille staples. Removing staples looks like tampering and can result in rejection.</p>
+</ul>
+<hr>
+<h3 id="week-3-pack-ship-to-korea">WEEK 3: Pack &amp; Ship to Korea</h3>
+<p><strong>Day 15-16: Final Document Assembly</strong></p>
+<p><strong>Organize documents in order:</strong></p>
+<ol class="list-level">
+<li>FBI Identity History Summary with Federal apostille (stapled)</li>
+<li>Bachelor&#x27;s degree copy with State apostille (stapled)</li>
+<li>Self-Health Statement (signed and dated)</li>
+<li>Passport bio page copy (color, high-res)</li>
+<li>Signed employment contract (original)</li>
+<li>Resume/CV (signed and dated)</li>
+<li>2-4 passport photos (loose, not glued)</li>
+<p><strong>Packing Instructions:</strong></p>
+<p>&#9744; <strong>Use rigid mailer:</strong></p>
+</ol>
+<ul class="list-level">
+<li>Cardboard document envelope or rigid mailer</li>
+<li>NOT regular envelope (will bend/damage documents)</li>
+<p>&#9744; <strong>Pack carefully:</strong></p>
+<li>Place all documents flat</li>
+<li>Put passport photos in small envelope/sleeve (prevent bending)</li>
+<li>Do NOT fold any documents</li>
+<p>&#9744; <strong>Include cover memo:</strong></p>
+<p><code>`</code> To: [Korean Employer Name] From: [Your Full Name] Re: E-2 Visa Document Pack</p>
+<p>Enclosed documents for CCVI application:</p>
+</ul>
+<ol class="list-level">
+<li>FBI check with Federal apostille</li>
+<li>Degree with State apostille</li>
+<li>Health statement</li>
+<li>Passport copy</li>
+<li>Signed contract</li>
+<li>Resume</li>
+<li>Photos (4)</li>
+<p>Please confirm receipt. Email: [your email] Phone: [your phone] <code>`</code></p>
+<p>&#9744; <strong>Seal envelope securely</strong></p>
+<p><strong>Day 16-17: Ship to Korea</strong></p>
+<p>&#9203; <strong>TIME-CRITICAL:</strong> Use only FedEx, DHL, or UPS</p>
+<p>&#9744; <strong>Choose courier:</strong></p>
+</ol>
+<ul class="list-level">
+<li>&#9989; FedEx International Priority</li>
+<li>&#9989; DHL Express Worldwide</li>
+<li>&#9989; UPS Worldwide Expedited</li>
+<li>❌ NEVER use USPS (unreliable tracking in Korea)</li>
+<p>&#9744; <strong>Service level:</strong> 2-5 business day delivery &#9744; <strong>Cost:</strong> $40-80 typically &#9744; <strong>Get tracking number</strong></p>
+<p>&#9744; <strong>Address verification:</strong></p>
+<li>Confirm employer&#x27;s Korea address</li>
+<li>Include employer contact phone number</li>
+<li>Include your contact info</li>
+<p>&#9744; <strong>Ship:</strong></p>
+<li>Drop off at courier location</li>
+<li>Get receipt with tracking number</li>
+<li>Take photo of receipt</li>
+<p>&#9744; <strong>Immediately notify:</strong></p>
+<li>Email tracking # to Korean employer</li>
+<li>Email tracking # to Kang &amp; Kriel</li>
+<li>Save tracking # in safe place</li>
+<p>&#9744; <strong>Monitor daily:</strong></p>
+<li>Check tracking status</li>
+<li>Confirm delivery to Korea</li>
+<li>Confirm employer receives package</li>
+<p><strong>Day 18-21: Delivery Confirmation</strong></p>
+<p>&#9744; <strong>Track:</strong> Monitor package to Korea (2-5 days) &#9744; <strong>Delivery:</strong> Confirm delivery online &#9744; <strong>Employer confirms:</strong> Employer emails that they received package &#9744; <strong>Verify contents:</strong> Employer checks all documents present and intact</p>
+</ul>
+<hr>
+<h3 id="week-4-5-vin-processing-in-korea-not-in-your-control">WEEK 4-5: VIN Processing in Korea (Not in Your Control)</h3>
+<p><strong>What Happens:</strong></p>
+<p>Your Korean employer takes your document pack to the local Immigration Office (출입국관리사무소) to apply for CCVI (Certificate for Confirmation of Visa Issuance).</p>
+<p><strong>Employer submits:</strong></p>
+<ul class="list-level">
+<li>Your document pack</li>
+<li>Employer&#x27;s business registration documents</li>
+<li>School/academy license</li>
+<li>Employment contract</li>
+<li>CCVI application form</li>
+<p><strong>Immigration reviews:</strong></p>
+<li>FBI background check authenticity</li>
+<li>Degree apostille authenticity</li>
+<li>Contract terms</li>
+<li>Employer legitimacy</li>
+<li>All supporting documents</li>
+<p><strong>Timeline:</strong></p>
+<li>Typical: <strong>7-10 business days</strong></li>
+<li>Peak season (Feb-Mar, Aug-Sep): <strong>up to 3 weeks</strong></li>
+<p><strong>If Approved:</strong> Immigration issues <strong>VIN</strong> (Visa Issuance Number)</p>
+<li>Format: 4 letters + 8 numbers</li>
+<li>Example: UJBO 08007392</li>
+<li>Valid for: 3 months (single use)</li>
+<p><strong>Employer receives VIN and emails it to you.</strong></p>
+<p><strong>While You Wait for VIN:</strong></p>
+<p>&#9744; <strong>Identify your consulate:</strong> Use Section 11 directory to find jurisdiction &#9744; <strong>Download visa form:</strong> Get form from your consulate&#x27;s website &#9744; <strong>Read consulate requirements:</strong> Check specific instructions &#9744; <strong>Prepare visa fee:</strong> Get $45 in cash or money order &#9744; <strong>Locate driver&#x27;s license:</strong> You&#x27;ll need proof of residency &#9744; <strong>Research consulate hours:</strong> Most are 9 AM - 12 PM, Mon-Fri &#9744; <strong>If mailing:</strong> Buy prepaid return envelope (USPS Priority Express with tracking)</p>
+</ul>
+<hr>
+<h3 id="week-6-7-consulate-visa-application">WEEK 6-7: Consulate Visa Application</h3>
+<p><strong>Upon Receiving VIN from Employer:</strong></p>
+<p>&#9744; <strong>Print VIN document/email</strong> &#9744; <strong>Verify VIN format:</strong> 4 letters + 8 numbers &#9744; <strong>Save PDF:</strong> Keep digital copy</p>
+<p><strong>Complete Visa Application Form:</strong></p>
+<p>&#9744; <strong>Download:</strong> From your consulate&#x27;s website or visa.go.kr &#9744; <strong>Fill out completely:</strong></p>
+<ul class="list-level">
+<li>Personal information (exactly as passport)</li>
+<li>Enter VIN carefully (double-check each character)</li>
+<li>Current address in U.S.</li>
+<li>Korean employer information</li>
+<li>Intended stay duration &#9744; <strong>Attach photo:</strong> One 3.5×4.5cm photo to application &#9744; <strong>SIGN the form:</strong> Unsigned applications are automatically rejected &#9744; <strong>Double-check:</strong> Review every field for errors</li>
+<p><strong>Prepare Document Package:</strong></p>
+</ul>
+<ol class="list-level">
+<li>Original passport (6+ months validity, 1+ blank page)</li>
+<li>Completed visa application (signed)</li>
+<li>VIN printout</li>
+<li>1 passport photo (attached to application)</li>
+<li>Visa fee (~$45)</li>
+<li>Driver&#x27;s license (proof of residency in consulate jurisdiction)</li>
+<li>Prepaid return envelope (if mailing)</li>
+<p><strong>Option A: In-Person Submission (RECOMMENDED)</strong></p>
+<p>&#9989; <strong>Why in-person is better:</strong></p>
+</ol>
+<ul class="list-level">
+<li>Immediate document verification</li>
+<li>Catch errors on the spot</li>
+<li>Faster processing</li>
+<li>Can ask questions</li>
+<p>&#9744; <strong>Visit consulate:</strong></p>
+<li>Hours: Typically 9 AM - 12 PM, Mon-Fri (visa applications)</li>
+<li>Arrive early (lines possible)</li>
+<li>Bring all documents</li>
+<p>&#9744; <strong>Submit at visa window:</strong></p>
+<li>Staff reviews documents</li>
+<li>They check VIN validity</li>
+<li>Point out any issues immediately</li>
+<p>&#9744; <strong>Pay fee:</strong> Cash or money order (~$45)</p>
+<p>&#9744; <strong>Get receipt:</strong> Take receipt and tracking number</p>
+<p>&#9744; <strong>Processing time:</strong> Typically 2-5 business days (most common: 5 days)</p>
+<p>&#9744; <strong>Pick up:</strong> Return on specified date to collect passport with visa</p>
+<p><strong>Option B: Mail-In Submission</strong></p>
+<p>&#9744; <strong>Prepare package:</strong></p>
+<li>All documents listed above</li>
+<li>Visa fee as money order ONLY (no cash by mail)</li>
+<li>Prepaid return envelope (USPS Priority Mail Express with tracking)</li>
+<li>Cover letter with contact info</li>
+<p>&#9744; <strong>Mail via certified mail:</strong></p>
+<li>Use USPS Certified Mail with tracking</li>
+<li>Address: Your Korean consulate (see Section 11)</li>
+<li>Keep receipt</li>
+<p>&#9744; <strong>Processing:</strong> 5-10 business days + mail time</p>
+<p>&#9744; <strong>Receive:</strong> Passport with visa returns by mail</p>
+<p><strong>Day 3-7: Receive E-2 Visa</strong></p>
+<p>&#9744; <strong>Get passport back</strong> with E-2 visa sticker/stamp</p>
+<p>&#9744; <strong>Verify immediately:</strong></p>
+<li>&#9989; Visa type: E-2 (회화지도)</li>
+<li>&#9989; Validity: 13 months (or as per contract length + 1 month grace)</li>
+<li>&#9989; Entries: Multiple entry (typical for U.S. citizens)</li>
+<li>&#9989; Personal info: Name, passport #, nationality match your passport</li>
+<li>&#9989; Visa number: VIN matches the one you submitted</li>
+<p>&#9744; <strong>Make copies:</strong></p>
+<li>Photocopy visa page</li>
+<li>Scan visa page to digital backup</li>
+<li>Keep PDF in cloud storage</li>
+<p>&#9744; <strong>Notify employer:</strong> &quot;I received my E-2 visa. Confirmed validity dates.&quot;</p>
+<p><strong>Book Your Flight:</strong></p>
+<p>&#9744; <strong>Coordinate with employer:</strong> Confirm start date and any quarantine/health requirements &#9744; <strong>Book flight:</strong> To Incheon International Airport (ICN) or Gimpo (GMP) in Seoul &#9744; <strong>Notify employer:</strong> Send flight details (arrival date, time, flight number) &#9744; <strong>Pack:</strong> Bring extra passport photos (for health check and ARC)</p>
+</ul>
+<hr>
+<h2 id="4-investment-breakdown-2-3-week-timeline">4) Investment Breakdown – 2-3 Week Timeline</h2>
+<h3 id="document-preparation-costs">Document Preparation Costs</h3>
+<table>
+<thead><tr><th>Item</th><th>Cost</th><th>Provider</th><th>Timeline</th></tr></thead>
+<tbody>
+<tr><td>FBI channeler</td><td>$40-100</td><td>Accurate Biometrics, Fieldprint</td><td>24-72 hrs</td></tr>
+<tr><td>Monument Visa - FBI apostille</td><td>$75</td><td>Monument Visa</td><td>10 business days</td></tr>
+<tr><td>Degree notarization</td><td>$10-30</td><td>Local notary</td><td>Same day</td></tr>
+<tr><td>Monument Visa - degree apostille</td><td>$125</td><td>Monument Visa</td><td>24-48 hours</td></tr>
+<tr><td>Official transcripts (2 sets)</td><td>$20-50</td><td>University registrar</td><td>5-10 days</td></tr>
+<tr><td>Passport photos (6-8)</td><td>$10-20</td><td>CVS, Walgreens, UPS</td><td>Same day</td></tr>
+<tr><td><strong>Documents Subtotal</strong></td><td><strong>$260-395</strong></td><td></td><td><strong>2-3 weeks</strong></td></tr>
+</tbody></table>
+<h3 id="shipping-application">Shipping &amp; Application</h3>
+<table>
+<thead><tr><th>Item</th><th>Cost</th><th>Notes</th></tr></thead>
+<tbody>
+<tr><td>FedEx/DHL/UPS to Korea</td><td>$40-80</td><td>Must use tracked courier</td></tr>
+<tr><td>Korean consulate visa fee</td><td>~$45</td><td>Varies slightly by consulate</td></tr>
+<tr><td>Return postage (mail-in)</td><td>$20-50</td><td>USPS Priority Express</td></tr>
+<tr><td><strong>Shipping Subtotal</strong></td><td><strong>$105-175</strong></td><td></td></tr>
+</tbody></table>
+<h3 id="after-arrival-in-korea-2">After Arrival in Korea</h3>
+<table>
+<thead><tr><th>Item</th><th>Cost</th><th>Who Pays</th><th>When</th></tr></thead>
+<tbody>
+<tr><td>Health screening</td><td>$60-115</td><td>Usually employer</td><td>Week 1-2 in Korea</td></tr>
+<tr><td>ARC application</td><td>~$23</td><td>Applicant</td><td>Within 90 days</td></tr>
+</tbody></table>
+<h3 id="total-investment">TOTAL INVESTMENT</h3>
+<p><strong>Grand Total: $320-525</strong></p>
+<p><strong>Timeline: 5-7 weeks start to visa in passport</strong></p>
+<h3 id="roi-analysis">ROI Analysis</h3>
+<p><strong>What You Get for $320-525:</strong></p>
+<ul class="list-level">
+<li>&#9989; All documents in 2-3 weeks (vs. 16-20 weeks DIY)</li>
+<li>&#9989; Professional handling = zero errors</li>
+<li>&#9989; Make your start date</li>
+<li>&#9989; Keep your job offer</li>
+<li>&#9989; Peace of mind with tracking</li>
+<li>&#9989; Expert guidance through process</li>
+<p><strong>What Happens If You Try to Save $300:</strong></p>
+<li>❌ Wait 16-20 weeks for documents</li>
+<li>❌ Miss start date by 8-12 weeks</li>
+<li>❌ Employer hires someone else</li>
+<li>❌ Lost job offer</li>
+<li>❌ Lost salary: $14,000-24,000 (6-12 months of work)</li>
+<li>❌ Wasted time: Entire job search process over</li>
+<p><strong>The Math:</strong></p>
+<li>Invest: $320-525</li>
+<li>Protect: $24,000-36,000/year job</li>
+<li>ROI: <strong>45-112 times your investment</strong></li>
+<p><strong>This is not an expense. This is mandatory job offer insurance.</strong></p>
+</ul>
+<h3 id="payment-tips">Payment Tips</h3>
+<ul class="list-level">
+<li>Monument Visa accepts credit cards</li>
+<li>FBI channelers accept credit cards</li>
+<li>Consider credit card rewards on $320-525 spend</li>
+<li>Budget this into your Korea moving costs from Day 1</li>
+</ul>
+<hr>
+<h2 id="5-packing-shipping-to-korea-final-checklist">5) Packing &amp; Shipping to Korea – Final Checklist</h2>
+<h3 id="document-order-top-to-bottom">Document Order (Top to Bottom)</h3>
+<ol class="list-level">
+<li>&#9989; FBI Identity History Summary with <strong>Federal apostille</strong> stapled</li>
+<li>&#9989; Bachelor&#x27;s degree copy with <strong>State apostille</strong> stapled</li>
+<li>&#9989; Self-Health Statement (signed and dated)</li>
+<li>&#9989; Passport bio page copy (color, high-res)</li>
+<li>&#9989; Signed employment contract (original)</li>
+<li>&#9989; Resume/CV (signed and dated)</li>
+<li>&#9989; 2-4 passport photos (in small envelope)</li>
+</ol>
+<h3 id="packing-rules">Packing Rules</h3>
+<p>&#9989; <strong>DO:</strong></p>
+<ul class="list-level">
+<li>Use rigid cardboard mailer (documents lay flat)</li>
+<li>Place photos in protective sleeve</li>
+<li>Include cover memo with your contact info</li>
+<li>Seal securely with packing tape</li>
+<p>❌ <strong>DON&#x27;T:</strong></p>
+<li>Don&#x27;t use regular envelope (documents will bend)</li>
+<li>Don&#x27;t fold any documents</li>
+<li>Don&#x27;t glue photos directly</li>
+<li>Don&#x27;t remove apostille staples</li>
+<li>Don&#x27;t send your original passport to Korea</li>
+</ul>
+<h3 id="shipping-requirements">Shipping Requirements</h3>
+<p><strong>Use ONLY These Couriers:</strong></p>
+<ul class="list-level">
+<li>&#9989; FedEx International Priority</li>
+<li>&#9989; DHL Express Worldwide</li>
+<li>&#9989; UPS Worldwide Expedited</li>
+<p><strong>Service Level:</strong></p>
+<li>2-5 business day delivery</li>
+<li>Tracking included</li>
+<li>Signature required on delivery</li>
+<p><strong>Cost:</strong> $40-80</p>
+<p>❌ <strong>NEVER Use:</strong></p>
+<li>USPS International (unreliable tracking in Korea)</li>
+<li>Purolator (poor Korea tracking)</li>
+<li>Any service without full tracking</li>
+</ul>
+<h3 id="tracking-protocol">Tracking Protocol</h3>
+<p>&#9744; Get tracking number at shipping &#9744; Email tracking # to Korean employer immediately &#9744; Email tracking # to Kang &amp; Kriel &#9744; Save tracking # in safe place &#9744; Monitor daily until Korea delivery confirmed &#9744; Employer confirms receipt and reviews contents</p>
+<p><strong>If Tracking Shows Issues:</strong></p>
+<ul class="list-level">
+<li>Package delayed: Contact courier immediately</li>
+<li>Customs hold: Employer may need to provide documents</li>
+<li>Wrong address: Contact courier and employer to redirect</li>
+</ul>
+<hr>
+<h2 id="6-vin-consulate-visa-process">6) VIN → Consulate → Visa Process</h2>
+<h3 id="after-your-employer-receives-documents">After Your Employer Receives Documents</h3>
+<p><strong>Employer&#x27;s Steps:</strong></p>
+<ol class="list-level">
+<li>Takes documents to local Immigration Office (출입국관리사무소)</li>
+<li>Submits CCVI application</li>
+<li>Immigration reviews (~7-10 business days)</li>
+<li>If approved: VIN issued</li>
+<li>Employer emails VIN to you</li>
+<p><strong>VIN Format:</strong> 4 letters + 8 numbers (Example: UJBO 08007392)</p>
+<p><strong>VIN Validity:</strong> 3 months from issue date, single use</p>
+</ol>
+<h3 id="what-you-do-with-vin">What You Do With VIN</h3>
+<p><strong>Step 1: Verify VIN</strong></p>
+<ul class="list-level">
+<li>Check format: 4 letters + 8 numbers</li>
+<li>Verify name spelling matches your passport</li>
+<li>Save PDF/email with VIN</li>
+<p><strong>Step 2: Complete Visa Application</strong></p>
+<li>Download form from your consulate or visa.go.kr</li>
+<li>Fill completely</li>
+<li>Enter VIN exactly (double-check every character)</li>
+<li>Attach 1 passport photo</li>
+<li><strong>SIGN the form</strong> (unsigned = automatic rejection)</li>
+<p><strong>Step 3: Submit to Consulate</strong></p>
+<p>Choose in-person (recommended) or mail-in:</p>
+<p><strong>In-Person:</strong></p>
+<li>Visit during visa hours (typically 9 AM - 12 PM, Mon-Fri)</li>
+<li>Bring: passport, completed application, VIN printout, photo, fee ($45), driver&#x27;s license</li>
+<li>Staff verifies documents immediately</li>
+<li>Processing: 2-5 business days</li>
+<li>Return to pick up passport with visa</li>
+<p><strong>Mail-In:</strong></p>
+<li>Mail: passport, application, VIN, photo, money order fee, return envelope</li>
+<li>Use certified mail with tracking</li>
+<li>Processing: 5-10 days + mail time</li>
+<li>Passport with visa returns by mail</li>
+<p><strong>Step 4: Receive E-2 Visa</strong></p>
+<li>Verify visa details: type (E-2), validity (13 months), entries (multiple)</li>
+<li>Make copies of visa page</li>
+<li>Scan to digital backup</li>
+<li>Notify employer: &quot;Visa received, booking flight&quot;</li>
+</ul>
+<hr>
+<h2 id="7-after-you-arrive-in-korea-first-90-days">7) After You Arrive in Korea – First 90 Days</h2>
+<h3 id="critical-drug-screening-warning">&#128308; CRITICAL: Drug Screening Warning</h3>
+<p>⚠️ <strong>MANDATORY HEALTH SCREENING INCLUDES DRUG TEST</strong></p>
+<p>All E-2 visa holders must complete health screening within 90 days of arrival. This includes:</p>
+<p><strong>Tests Performed:</strong></p>
+<ul class="list-level">
+<li>Blood test (HIV, syphilis, general health)</li>
+<li><strong>Urine test (drug screening: marijuana/THC, methamphetamine, cocaine, opiates)</strong></li>
+<li>Chest X-ray (tuberculosis)</li>
+<li>Physical exam (blood pressure, vision)</li>
+<p><strong>MARIJUANA WARNING:</strong></p>
+<li>Marijuana is <strong>STRICTLY ILLEGAL</strong> in Korea</li>
+<li>Even if legal in your U.S. state</li>
+<li>THC remains in system <strong>2 weeks to 3 months</strong></li>
+<li><strong>Positive test = immediate consequences:</strong></li>
+<ul class="list-level">
+<li>✖ Visa cancellation</li>
+<li>✖ Job termination</li>
+<li>✖ Health insurance loss</li>
+<li>✖ Deportation</li>
+<li>✖ Ban from future entry to Korea</li>
+<p><strong>Action Required:</strong></p>
+</ul>
+<li>Stop all marijuana/THC products at least 3 months before departure</li>
+<li>No exceptions for medical marijuana</li>
+<li>No appeals for positive results</li>
+<li>Consider this when planning your timeline</li>
+</ul>
+<h3 id="week-1-2-health-screening-highest-priority">Week 1-2: Health Screening (HIGHEST PRIORITY)</h3>
+<p>&#9989; <strong>MUST COMPLETE:</strong> Recommended within first 2 weeks (required within 90 days)</p>
+<p><strong>Why Urgent:</strong></p>
+<ul class="list-level">
+<li>Cannot legally work until health check passes</li>
+<li>Many schools won&#x27;t start contract until results clear</li>
+<li>Positive drug test = immediate deportation</li>
+<p><strong>Where:</strong></p>
+<li>Designated hospitals only (employer provides list)</li>
+<li>Seoul: Severance Hospital, Samsung Medical Center, Asan Medical Center</li>
+<li>Other cities: International clinics approved by immigration</li>
+<p><strong>What to Bring:</strong></p>
+<li>Passport with E-2 visa</li>
+<li>ARC (if already obtained) or visa copy</li>
+<li>2 passport photos</li>
+<li>Payment (~₩80,000-150,000 / $60-115) – often employer pays</li>
+<p><strong>Process:</strong></p>
+</ul>
+<ol class="list-level">
+<li>Book appointment at designated hospital</li>
+<li>Attend appointment (1-2 hours)</li>
+<li>Tests: blood, urine, X-ray, physical</li>
+<li>Results: 2-3 business days</li>
+<li>Hospital submits results to immigration</li>
+<p><strong>FAILURE = Visa cancellation. Take this seriously.</strong></p>
+</ol>
+<h3 id="within-14-days-address-registration-mandatory">Within 14 Days: Address Registration (MANDATORY)</h3>
+<p>&#9989; <strong>LEGAL REQUIREMENT:</strong> ₩100,000-1,000,000 fine if missed</p>
+<p><strong>Where:</strong></p>
+<ul class="list-level">
+<li>Local district office (구청 / Gu office), or</li>
+<li>Neighborhood center (읍/면/동 사무소 / Eup/Myeon/Dong office), or</li>
+<li>Immigration office (출입국관리사무소)</li>
+<p><strong>What to Bring:</strong></p>
+<li>Passport with E-2 visa</li>
+<li>Rental contract or housing letter from employer</li>
+<li>Registration form (provided at office)</li>
+<p><strong>Process:</strong></p>
+</ul>
+<ol class="list-level">
+<li>Visit office</li>
+<li>Submit documents</li>
+<li>Register current address</li>
+<li>Receive confirmation</li>
+<p><strong>Important:</strong></p>
+</ol>
+<ul class="list-level">
+<li>Must update within 14 days every time you move</li>
+<li>Keep address registration documents</li>
+<li>Needed for ARC application</li>
+</ul>
+<h3 id="within-90-days-arc-application-alien-registration-card">Within 90 Days: ARC Application (Alien Registration Card)</h3>
+<p><strong>When:</strong> After health check passes, ideally within first month</p>
+<p><strong>Why Essential:</strong></p>
+<ul class="list-level">
+<li>Bank account (can&#x27;t open without ARC)</li>
+<li>Phone contract</li>
+<li>Online purchases requiring Korean ID</li>
+<li>Gym memberships</li>
+<li>Domestic travel bookings</li>
+<li>T-money transit card registration</li>
+<p><strong>Where:</strong> Local Immigration Office (출입국관리사무소)</p>
+<p><strong>Required Documents:</strong></p>
+</ul>
+<ol class="list-level">
+<li>Passport with E-2 visa</li>
+<li>Health check results (passed)</li>
+<li>ARC application form (download from hikorea.go.kr or get at office)</li>
+<li>1 passport photo (3.5×4.5cm)</li>
+<li>Employer&#x27;s business registration certificate (school provides)</li>
+<li>Employment contract</li>
+<li>Fee: ₩30,000 (~$23)</li>
+<li>Address registration confirmation</li>
+<p><strong>Process:</strong></p>
+<li>Bring all documents to immigration office</li>
+<li>Submit application at ARC counter</li>
+<li>Get fingerprinted and photographed</li>
+<li>Pay fee</li>
+<li>Receive receipt with pickup date</li>
+<li>Return in 2-3 weeks to collect ARC</li>
+<p><strong>After Receiving ARC:</strong></p>
+</ol>
+<ul class="list-level">
+<li>Carry it with you always (police can request it)</li>
+<li>Treat it like your passport (don&#x27;t lose it)</li>
+<li>Use for bank, phone, gym, everything</li>
+</ul>
+<h3 id="employment-legal-restrictions">Employment &amp; Legal Restrictions</h3>
+<p><strong>Your E-2 Visa Means:</strong></p>
+<ul class="list-level">
+<li>&#9989; You can work for your sponsored employer</li>
+<li>&#9989; You can travel in/out of Korea (multiple entry)</li>
+<li>❌ You CANNOT do private tutoring (엄격히 불법)</li>
+<li>❌ You CANNOT work for other employers without approval</li>
+<li>❌ You CANNOT change jobs without immigration permission</li>
+<p><strong>Private Tutoring is ILLEGAL for E-2 Holders:</strong></p>
+<li>Penalties: Up to ₩30,000,000 fine (~$23,000)</li>
+<li>Deportation</li>
+<li>1-10 year entry ban to Korea</li>
+<li>Employers also fined</li>
+<p><strong>To Change Jobs:</strong></p>
+<li>Must get immigration approval FIRST</li>
+<li>New employer files new CCVI</li>
+<li>Cannot quit current job before approval</li>
+<li>Process takes 2-4 weeks</li>
+<p><strong>Contract Completion:</strong></p>
+<li>Get 1-month grace period after contract ends</li>
+<li>Find new job during grace period, or</li>
+<li>Must leave Korea</li>
+</ul>
+<h3 id="national-health-insurance-pension">National Health Insurance &amp; Pension</h3>
+<p><strong>Automatic Enrollment:</strong> Your employer automatically enrolls you in:</p>
+<ul class="list-level">
+<li>National Health Insurance (건강보험)</li>
+<li>National Pension (국민연금)</li>
+<p><strong>Costs:</strong></p>
+<li>Deducted from salary (split employer/employee)</li>
+<li>Health insurance: ~3.5% of salary</li>
+<li>Pension: ~4.5% of salary</li>
+<p><strong>Benefits:</strong></p>
+<li>Health insurance: Low-cost medical care at any hospital</li>
+<li>Pension: Can claim when leaving Korea (lump sum if less than 10 years)</li>
+<p><strong>No action required – employer handles everything.</strong></p>
+</ul>
+<hr>
+<h2 id="8-quality-gate-pre-shipment-verification">8) Quality Gate – Pre-Shipment Verification</h2>
+<p><strong>Before you ship documents to Korea, verify:</strong></p>
+<h3 id="document-quality-checks">Document Quality Checks</h3>
+<p>&#9744; <strong>FBI Check:</strong></p>
+<ul class="list-level">
+<li>Name matches passport exactly (including middle names)</li>
+<li>Issued within last 6 months</li>
+<li>FBI CJIS seal visible</li>
+<li><strong>Federal apostille</strong> (U.S. Department of State) stapled</li>
+<li>Apostille intact (staple not removed)</li>
+<p>&#9744; <strong>Degree:</strong></p>
+<li>Name matches passport exactly</li>
+<li>Bachelor&#x27;s degree (4-year minimum)</li>
+<li>Notarized as &quot;true copy&quot;</li>
+<li><strong>State apostille</strong> (Secretary of State of degree-issuing state) stapled</li>
+<li>Apostille intact</li>
+<p>&#9744; <strong>All Documents:</strong></p>
+<li>No tears, stains, or damage</li>
+<li>Text is clearly legible</li>
+<li>All signatures present where required</li>
+<li>All dates within valid periods</li>
+<li>All names spelled consistently across documents</li>
+</ul>
+<h3 id="scans-backups">Scans &amp; Backups</h3>
+<p>&#9744; High-resolution scans of all documents (front and back) &#9744; Saved to cloud storage (Google Drive, Dropbox) &#9744; Saved to local computer/external drive &#9744; Shared with employer (optional but helpful)</p>
+<h3 id="packing-verification">Packing Verification</h3>
+<p>&#9744; Correct document order (FBI, degree, health, passport, contract, resume, photos) &#9744; Nothing folded or bent &#9744; Photos protected in sleeve &#9744; Rigid mailer used &#9744; Securely sealed</p>
+<h3 id="shipping-verification">Shipping Verification</h3>
+<p>&#9744; Using FedEx, DHL, or UPS (NOT USPS) &#9744; 2-5 day international service selected &#9744; Tracking number obtained &#9744; Employer&#x27;s Korea address confirmed correct &#9744; Your contact info included in package</p>
+<p><strong>After Shipping:</strong> &#9744; Tracking number emailed to employer &#9744; Tracking number emailed to Kang &amp; Kriel &#9744; Daily monitoring until delivery confirmed</p>
+<hr>
+<h2 id="9-document-red-flags-what-gets-rejected">9) Document Red Flags – What Gets Rejected</h2>
+<p>Korean Immigration is strict. These errors cause immediate rejection:</p>
+<h3 id="fbi-background-check-red-flags">FBI Background Check Red Flags</h3>
+<p>❌ <strong>State or local police check</strong> → Must be FBI national check ❌ <strong>State apostille on FBI check</strong> → Must be Federal (U.S. Dept of State) ❌ <strong>Older than 6 months</strong> → Count from CCVI application date ❌ <strong>Name doesn&#x27;t match passport</strong> → Even slight differences rejected ❌ <strong>Missing FBI seal/signature</strong> → Must show FBI CJIS certification ❌ <strong>Photocopied apostille</strong> → Must be original apostille, not copy ❌ <strong>Removed staples</strong> → Looks like tampering ❌ <strong>Criminal record</strong> → DUI, drugs, violence = likely rejection</p>
+<h3 id="degree-red-flags">Degree Red Flags</h3>
+<p>❌ <strong>Federal apostille on degree</strong> → Must be State apostille ❌ <strong>Associate&#x27;s or 3-year degree</strong> → Must be 4-year Bachelor&#x27;s minimum ❌ <strong>Diploma in Latin</strong> → Must have English translation ❌ <strong>Unnotarized copy</strong> → Must be notarized &quot;true copy&quot; before apostille ❌ <strong>Name mismatch with passport</strong> → Middle names matter ❌ <strong>Unaccredited school</strong> → Verify school&#x27;s accreditation ❌ <strong>Degree from diploma mill</strong> → Korea scrutinizes online-only degrees</p>
+<h3 id="application-red-flags">Application Red Flags</h3>
+<p>❌ <strong>Unsigned visa application</strong> → Automatic rejection ❌ <strong>Expired passport</strong> → Must have 6+ months validity ❌ <strong>Incomplete document pack</strong> → Missing documents delay weeks ❌ <strong>Wrong consulate</strong> → Must apply in your residence jurisdiction ❌ <strong>Altered documents</strong> → Any tampering = rejection ❌ <strong>Incorrect VIN</strong> → One wrong digit = rejection (double-check)</p>
+<h3 id="health-check-red-flags-after-arrival">Health Check Red Flags (After Arrival)</h3>
+<p>❌ <strong>Positive drug test</strong> → Marijuana, CBD = deportation ❌ <strong>Active tuberculosis</strong> → Requires treatment ❌ <strong>Undisclosed conditions</strong> → False health statements = deportation</p>
+<h3 id="prevention-checklist">Prevention Checklist</h3>
+<ol class="list-level">
+<li>&#9989; Use Section 7 Quality Gate before shipping</li>
+<li>&#9989; Have another person verify names/dates</li>
+<li>&#9989; Don&#x27;t remove apostille staples</li>
+<li>&#9989; Keep scanned copies of everything</li>
+<li>&#9989; If unsure, ask Kang &amp; Kriel before shipping</li>
+</ol>
+<hr>
+<h2 id="10-faq-common-scenarios">10) FAQ &amp; Common Scenarios</h2>
+<p><strong>Q. I have a DUI/misdemeanor. Can I get an E-2 visa?</strong></p>
+<p>A. It depends on severity and type.</p>
+<p><strong>Generally acceptable:</strong></p>
+<ul class="list-level">
+<li>Minor traffic violations (speeding tickets, parking)</li>
+<li>Very old non-violent misdemeanors (10+ years ago)</li>
+<p><strong>Usually rejected:</strong></p>
+<li>DUI/DWI (especially recent)</li>
+<li>Drug offenses (any type, any time)</li>
+<li>Violent crimes</li>
+<li>Crimes involving moral turpitude</li>
+<li>Sex offenses</li>
+<p><strong>What to do:</strong></p>
+<li>Get FBI check to see what shows</li>
+<li>Be honest on Health Statement</li>
+<li>False declarations = deportation if discovered</li>
+<li>Consider consulting immigration lawyer if concerned</li>
+<p><strong>Q. Can I reuse an FBI check I got 8 months ago?</strong></p>
+<p>A. No. FBI check must be issued within <strong>6 months</strong> of when employer applies for CCVI.</p>
+<p>You need a new one. Good news: FBI channeler + Monument Visa = new apostilled FBI check in 1 week.</p>
+<p><strong>Q. What if I&#x27;m currently outside the U.S.?</strong></p>
+<p>A. You need a U.S. address for FBI check delivery. Options:</p>
+</ul>
+<ol class="list-level">
+<li>Use channeler + U.S. friend/family address</li>
+<li>Friend/family mails FBI result to Monument Visa</li>
+<li>Monument Visa ships apostilled docs internationally</li>
+<li>OR: Fly to U.S. for 2-3 weeks to complete process in person</li>
+<p>International logistics add 1-2 weeks. Often cheaper to just visit U.S.</p>
+<p><strong>Q. Can my spouse/kids come with me?</strong></p>
+<p>A. Yes, on F-3 dependent visas. But:</p>
+</ol>
+<ul class="list-level">
+<li>They need separate visa applications</li>
+<li>Additional documents required (marriage certificate, birth certificates – all apostilled)</li>
+<li>They cannot work in Korea</li>
+<li>Consider if single income is sufficient</li>
+<li>Spouse can apply for separate work visa if qualified</li>
+<p><strong>Q. I have tattoos. Will this affect my visa?</strong></p>
+<p>A. Visa: No impact on approval</p>
+<p>Employment: Depends on employer</p>
+<li>Public schools (EPIK): Generally okay if coverable</li>
+<li>Private academies: Varies by location (conservative areas may object)</li>
+<li>Kindergartens: May have restrictions</li>
+<p><strong>Best practice:</strong> Disclose visible tattoos to employer before contract.</p>
+<p><strong>Q. Can I work while waiting for ARC?</strong></p>
+<p>A. Technically yes if you entered on E-2 visa – BUT you must pass health check first.</p>
+<p>Many schools wait for ARC to start contract because:</p>
+<li>ARC needed for payroll</li>
+<li>ARC needed for health insurance enrollment</li>
+<li>Delays = delayed pay</li>
+<p>Ask your employer about their policy.</p>
+<p><strong>Q. What if my passport expires during my contract?</strong></p>
+<p>A. Renew at U.S. Embassy in Seoul:</p>
+<li>Location: Sejong-daero, Seoul</li>
+<li>Appointment required (kr.usembassy.gov)</li>
+<li>Processing: 2-3 weeks routine service</li>
+<li>Cost: $130 for renewal</li>
+<p>After new passport:</p>
+<li>Update immigration within 14 days</li>
+<li>Bring old + new passports + ARC</li>
+<li>They&#x27;ll transfer visa info to new passport</li>
+<p><strong>Q. Can I extend my E-2 visa without leaving Korea?</strong></p>
+<p>A. Yes, if renewing with same employer:</p>
+<li>Submit extension 30-60 days before expiration</li>
+<li>Need: new contract, health insurance proof, clean tax records</li>
+<li>Processing: ~2 weeks</li>
+<li>No need to return to U.S.</li>
+<p>If changing employers:</p>
+<li>New CCVI + approval process required</li>
+<li>Usually done within Korea</li>
+<p><strong>Q. What if I already started the FBI direct mail process?</strong></p>
+<p>A. <strong>Also</strong> apply through channeler immediately.</p>
+<p>Don&#x27;t wait 14 weeks. The $40-100 channeler fee is cheaper than losing your job offer.</p>
+<p>When FBI mail eventually arrives, keep it as backup.</p>
+<p><strong>Q. My degree is from a foreign university, not U.S. Can I apply?</strong></p>
+<p>A. Yes, but requires extra steps:</p>
+</ul>
+<ol class="list-level">
+<li>Get credential evaluation from NACES member (WES, ECE)</li>
+<li>Evaluation must show equivalency to U.S. Bachelor&#x27;s</li>
+<li>Evaluation report needs notarization + State apostille</li>
+<li>Adds ~$200-300 cost and 2-4 weeks</li>
+<li>Some Korean employers may not accept – verify first</li>
+</ol>
+<hr>
+<h2 id="11-glossary">11) Glossary</h2>
+<p><strong>ARC (Alien Registration Card / 외국인등록증)</strong> Korean residence card. Required within 90 days of arrival. Essential for banking, phone, daily life.</p>
+<p><strong>Apostille</strong> International authentication under 1961 Hague Convention. Two types matter for E-2:</p>
+<ul class="list-level">
+<li><strong>Federal apostille:</strong> From U.S. Department of State (for FBI check)</li>
+<li><strong>State apostille:</strong> From state Secretary of State (for degree)</li>
+<p><strong>CCVI (Certificate for Confirmation of Visa Issuance / 사증발급인정서)</strong> Korean immigration approval for your visa. Results in VIN.</p>
+<p><strong>Channeler</strong> FBI-approved company providing digital fingerprinting and fast FBI background checks (24-72 hours vs. 14-16 weeks direct).</p>
+<p><strong>E-2 Visa (회화지도 비자)</strong> Conversation instruction visa. For teaching foreign languages at authorized institutions in Korea. Initial validity: 13 months (12-month contract + 1-month grace). Renewable.</p>
+<p><strong>EPIK (English Program in Korea)</strong> Korean government program placing native English teachers in public schools. Has additional requirements (transcripts, stricter screening).</p>
+<p><strong>FBI Identity History Summary (FBI Background Check / 범죄경력조회)</strong> National criminal background check from FBI. Must be within 6 months when used. Requires Federal apostille.</p>
+<p><strong>VIN (Visa Issuance Number / 사증발급인정서 번호)</strong> Alphanumeric code proving CCVI approval. Format: 4 letters + 8 numbers. Valid 3 months, single use. Required to apply at consulate.</p>
+<p><strong>Notarized True Copy</strong> Photocopy of document certified by notary public as matching the original. Required for degree before apostille.</p>
+<p><strong>Monument Visa Service</strong> Professional apostille service near Washington DC. Specializes in rush Federal and State apostilles (3-5 days). Industry standard for E-2 visa applicants.</p>
+<p><strong>Sealed Transcripts</strong> Official university transcripts in registrar-sealed envelope. Must never be opened (broken seal = invalid).</p>
+</ul>
+<hr>
+<h2 id="12-templates">12) Templates</h2>
+<h3 id="12-1-email-to-monument-visa-initial-contact">12.1 Email to Monument Visa – Initial Contact</h3>
+<p><code>`</code> Subject: Rush Apostille Service for Korea E-2 Visa – [Your Full Name]</p>
+<p>Hello,</p>
+<p>I need rush apostille service for a Korea E-2 visa application.</p>
+<p>I need:</p>
+<ol class="list-level">
+<li>Federal apostille for FBI Identity History Summary (rush processing)</li>
+<li>State apostille for Bachelor&#x27;s degree from [State Name] (rush processing)</li>
+<p>Timeline: I need both documents apostilled within 3-5 business days.</p>
+<p>Documents:</p>
+</ol>
+<ul class="list-level">
+<li>FBI check: I will email PDF (received from Accurate Biometrics channeler)</li>
+<li>Degree: I will FedEx overnight the notarized copy</li>
+<p>Please confirm:</p>
+<li>Total cost for both documents (rush service)</li>
+<li>Your email for FBI PDF submission</li>
+<li>Your mailing address for degree</li>
+<li>Processing timeline</li>
+<li>Payment methods</li>
+<p>Thank you, [Your Full Name] Email: [your email] Phone: [your phone number] <code>`</code></p>
+</ul>
+<h3 id="12-2-cover-letter-for-korea-document-pack">12.2 Cover Letter for Korea Document Pack</h3>
+<p><code>`</code> [Date]</p>
+<p>To: [Korean Employer Name] [Employer Address in Korea]</p>
+<p>From: [Your Full Name] [Your U.S. Address] Email: [your email] Phone: [your U.S. phone]</p>
+<p>Re: E-2 Visa Document Pack for CCVI Application</p>
+<p>Dear [Employer Contact Name],</p>
+<p>Enclosed please find my complete document pack for the E-2 visa CCVI application:</p>
+<p>Documents Enclosed:</p>
+<ol class="list-level">
+<li>FBI Identity History Summary with U.S. Department of State Federal apostille (stapled)</li>
+<li>Bachelor&#x27;s degree copy with [State Name] Secretary of State apostille (stapled)</li>
+<li>Self-Health Statement (completed, signed, dated)</li>
+<li>Passport bio page copy (color)</li>
+<li>Employment contract (signed original)</li>
+<li>Resume/CV (signed and dated)</li>
+<li>Passport photos (4 copies)</li>
+<li>Sealed official transcripts (2 sets) [if applicable]</li>
+<p>All documents have been prepared according to Korean immigration requirements. Apostilles are attached with staples intact.</p>
+<p>Please confirm receipt of this package at your earliest convenience.</p>
+<p>I look forward to starting my position on [contract start date].</p>
+<p>Best regards,</p>
+<p>[Your Full Name] Passport Number: [your passport #] Date of Birth: [your DOB] Nationality: United States <code>`</code></p>
+</ol>
+<h3 id="12-3-email-to-employer-after-shipment">12.3 Email to Employer After Shipment</h3>
+<p><code>`</code> Subject: E-2 Document Pack Shipped – Tracking Information</p>
+<p>Hi [Employer Contact],</p>
+<p>I&#x27;ve shipped my complete E-2 visa document pack to you today via [FedEx/DHL/UPS].</p>
+<p>Tracking Information:</p>
+<ul class="list-level">
+<li>Carrier: [FedEx/DHL/UPS]</li>
+<li>Tracking Number: [tracking #]</li>
+<li>Estimated Delivery: [date]</li>
+<li>Tracking Link: [full URL]</li>
+<p>Documents included: ✓ FBI check with Federal apostille ✓ Degree with State apostille   ✓ Health statement ✓ Passport copy ✓ Signed contract ✓ Resume ✓ Photos (4) ✓ Sealed transcripts (2 sets) [if applicable]</p>
+<p>I&#x27;ve also attached PDF scans of all documents (except sealed transcripts) for your reference.</p>
+<p>Please confirm when you receive the package and verify all documents are present and intact.</p>
+<p>Thank you, [Your Name] [Your phone] <code>`</code></p>
+</ul>
+<hr>
+<h2 id="13-korean-consulate-directory-u-s">13) Korean Consulate Directory (U.S.)</h2>
+<p><strong>Select consulate based on your state of residence:</strong></p>
+<h3 id="korean-embassy-in-washington-dc">Korean Embassy in Washington, DC</h3>
+<ul class="list-level">
+<li><strong>Phone:</strong> 202-939-5600</li>
+<li><strong>Jurisdiction:</strong> DC, Maryland, Virginia, West Virginia</li>
+<li><strong>Address:</strong> 2450 Massachusetts Ave NW, Washington, DC 20008</li>
+<li><strong>Visa Hours:</strong> Mon-Fri 9:00 AM - 12:00 PM</li>
+</ul>
+<h3 id="consulate-general-in-new-york">Consulate General in New York</h3>
+<ul class="list-level">
+<li><strong>Phone:</strong> 646-674-6000</li>
+<li><strong>Jurisdiction:</strong> New York, New Jersey, Pennsylvania, Delaware, Connecticut</li>
+<li><strong>Address:</strong> 460 Park Ave, 5th Floor, New York, NY 10022</li>
+</ul>
+<h3 id="consulate-general-in-los-angeles">Consulate General in Los Angeles</h3>
+<ul class="list-level">
+<li><strong>Phone:</strong> 213-385-9300</li>
+<li><strong>Jurisdiction:</strong> Southern California, Arizona, Nevada, New Mexico</li>
+<li><strong>Address:</strong> 3243 Wilshire Blvd, Los Angeles, CA 90010</li>
+</ul>
+<h3 id="consulate-general-in-san-francisco">Consulate General in San Francisco</h3>
+<ul class="list-level">
+<li><strong>Phone:</strong> 415-921-2251</li>
+<li><strong>Jurisdiction:</strong> Northern California, Utah, Colorado</li>
+<li><strong>Address:</strong> 3500 Clay St, San Francisco, CA 94118</li>
+</ul>
+<h3 id="consulate-general-in-chicago">Consulate General in Chicago</h3>
+<ul class="list-level">
+<li><strong>Phone:</strong> 312-822-9485</li>
+<li><strong>Jurisdiction:</strong> Illinois, Indiana, Iowa, Kansas, Michigan, Minnesota, Missouri, Nebraska, North Dakota, Ohio, South Dakota, Wisconsin, Kentucky</li>
+<li><strong>Address:</strong> 455 N Cityfront Plaza Dr, NBC Tower Suite 2700, Chicago, IL 60611</li>
+</ul>
+<h3 id="consulate-general-in-seattle">Consulate General in Seattle</h3>
+<ul class="list-level">
+<li><strong>Phone:</strong> 206-441-1011</li>
+<li><strong>Jurisdiction:</strong> Washington, Oregon, Montana, Idaho, Alaska</li>
+<li><strong>Address:</strong> 2033 6th Ave, Seattle, WA 98121</li>
+</ul>
+<h3 id="consulate-general-in-atlanta">Consulate General in Atlanta</h3>
+<ul class="list-level">
+<li><strong>Phone:</strong> 404-522-1611</li>
+<li><strong>Jurisdiction:</strong> Georgia, Alabama, Florida, North Carolina, South Carolina, Tennessee</li>
+<li><strong>Address:</strong> 229 Peachtree St NE, Suite 500, Atlanta, GA 30303</li>
+</ul>
+<h3 id="consulate-general-in-boston">Consulate General in Boston</h3>
+<ul class="list-level">
+<li><strong>Phone:</strong> 617-348-3660</li>
+<li><strong>Jurisdiction:</strong> Massachusetts, Maine, New Hampshire, Rhode Island, Vermont</li>
+<li><strong>Address:</strong> One Gateway Center, Suite 2600, Newton, MA 02458</li>
+</ul>
+<h3 id="consulate-general-in-houston">Consulate General in Houston</h3>
+<ul class="list-level">
+<li><strong>Phone:</strong> 713-961-0186</li>
+<li><strong>Jurisdiction:</strong> Texas, Arkansas, Louisiana, Mississippi, Oklahoma</li>
+<li><strong>Address:</strong> 1990 Post Oak Blvd, Suite 1250, Houston, TX 77056</li>
+</ul>
+<h3 id="consulate-general-in-honolulu">Consulate General in Honolulu</h3>
+<ul class="list-level">
+<li><strong>Phone:</strong> 808-595-6109</li>
+<li><strong>Jurisdiction:</strong> Hawaii, Guam, American Samoa</li>
+<li><strong>Address:</strong> 2756 Pali Hwy, Honolulu, HI 96817</li>
+</ul>
+<h3 id="consulate-in-anchorage">Consulate in Anchorage</h3>
+<ul class="list-level">
+<li><strong>Phone:</strong> 907-339-3000</li>
+<li><strong>Jurisdiction:</strong> Alaska</li>
+<li><strong>Address:</strong> 3600 Minnesota Dr, Anchorage, AK 99503</li>
+<p><strong>IMPORTANT:</strong></p>
+<li>Always call ahead to confirm hours</li>
+<li>Requirements may vary slightly by consulate</li>
+<li>Most process E-2 visas in 2-5 business days</li>
+<li>No rush service available</li>
+</ul>
+<hr>
+<h2 id="14-korean-government-resources">14) Korean Government Resources</h2>
+<h3 id="korea-immigration-service">Korea Immigration Service (출입국·외국인정책본부)</h3>
+<ul class="list-level">
+<li><strong>Website:</strong> immigration.go.kr/immigration_eng/index.do</li>
+<li><strong>Phone from Korea:</strong> 1345 (no area code)</li>
+<li><strong>Phone from abroad:</strong> +82-2-1345 or +82-2-6908-1345</li>
+<li><strong>Hours:</strong> Mon-Fri 9 AM - 6 PM (Korea time)</li>
+<li><strong>Languages:</strong> 20 languages available</li>
+<li><strong>Email:</strong> hikorea@hikorea.go.kr</li>
+</ul>
+<h3 id="hi-korea-portal">Hi Korea Portal</h3>
+<ul class="list-level">
+<li><strong>Website:</strong> hikorea.go.kr/Main.pt?locale=en</li>
+<li><strong>Services:</strong> Online applications, visa status checks, ARC applications, appointments</li>
+<li><strong>Available:</strong> 24/7</li>
+</ul>
+<h3 id="korea-visa-portal">Korea Visa Portal</h3>
+<ul class="list-level">
+<li><strong>Website:</strong> visa.go.kr/openPage.do?LLANG=EN</li>
+<li><strong>Use for:</strong> Visa application forms, status tracking, VIN verification</li>
+</ul>
+<hr>
+<h2 id="15-essential-service-providers">15) Essential Service Providers</h2>
+<h3 id="monument-visa-service-required-for-2-3-week-timeline">Monument Visa Service (REQUIRED FOR 2-3 WEEK TIMELINE)</h3>
+<p><strong>Why Monument Visa:</strong></p>
+<ul class="list-level">
+<li>Located in Fairfax, VA (next to U.S. Dept of State offices)</li>
+<li>Direct courier to Federal apostille office daily</li>
+<li>Rush processing: 3-5 business days for FBI + degree</li>
+<li>Accepts FBI channeler PDFs (fastest method)</li>
+<li>Used by majority of successful E-2 applicants</li>
+<li>Proven track record with Korea E-2 visas</li>
+<p><strong>Contact:</strong></p>
+<li><strong>Website:</strong> monumentvisa.com</li>
+<li><strong>Email:</strong> support@monumentvisa.com</li>
+<li><strong>Phone:</strong> 1-800-995-6924</li>
+<li><strong>Location:</strong> 3925 Blenheim Blvd, Suite 53B, Fairfax, VA 22030</li>
+<p><strong>Pricing (as of 2024):</strong></p>
+<li><strong>FBI Apostille (Federal):</strong> $75 regular</li>
+<li><strong>Degree Apostille (State):</strong> $125 regular</li>
+<li><strong>Combined:</strong> $200 regular</li>
+<li><strong>Processing:</strong> 10 business days (rush) / 3-4 weeks (standard)</li>
+<p><strong>How to Use:</strong></p>
+</ul>
+<ol class="list-level">
+<li>Email FBI PDF from channeler to Monument Visa</li>
+<li>FedEx overnight notarized degree to Monument Visa</li>
+<li>Pay by credit card ($300-400)</li>
+<li>Receive both apostilled documents in 3-5 days</li>
+<li>Monument Visa ships via FedEx/UPS</li>
+</ol>
+<h3 id="fbi-channelers">FBI Channelers</h3>
+<p><strong>Accurate Biometrics</strong> (MOST RECOMMENDED)</p>
+<ul class="list-level">
+<li><strong>Website:</strong> accuratebiometrics.com</li>
+<li><strong>Locations:</strong> 825+ nationwide</li>
+<li><strong>Cost:</strong> $40-100</li>
+<li><strong>Timeline:</strong> 24-72 hours</li>
+<li><strong>PDF:</strong> Email delivery</li>
+<p><strong>Fieldprint</strong></p>
+<li><strong>Website:</strong> fieldprintusa.com</li>
+<li>National coverage, similar service</li>
+<p><strong>Idemia</strong></p>
+<li><strong>Website:</strong> idemia.com</li>
+<li>Many locations available</li>
+<p><strong>Full list:</strong> fbi.gov (search &quot;channeler list&quot;)</p>
+</ul>
+<h3 id="alternative-apostille-services">Alternative Apostille Services</h3>
+<p>If Monument Visa unavailable:</p>
+<p><strong>US Authentication Services</strong></p>
+<ul class="list-level">
+<li>Website: usauthentication.com</li>
+<li>Similar rush service</li>
+<p><strong>Atlanta Apostille</strong></p>
+<li>Website: atlantaapostille.com</li>
+<li>24/7 service</li>
+<li>Federal specialist</li>
+<p><strong>National Apostille</strong></p>
+<li>Phone: 1-800-903-2470</li>
+<li>Nationwide service</li>
+</ul>
+<hr>
+<h2 id="16-final-checklist-ready-to-start">16) Final Checklist – Ready to Start?</h2>
+<h3 id="before-you-begin">Before You Begin</h3>
+<p>&#9744; Read this entire guide &#9744; Confirm E-2 eligibility:</p>
+<ul class="list-level">
+<li>U.S. citizen ✓</li>
+<li>Bachelor&#x27;s degree (4-year) ✓</li>
+<li>Clean criminal record ✓</li>
+<li>No marijuana use in last 3 months ✓ &#9744; Budget $320-525 for document preparation &#9744; Allow 5-7 weeks total timeline &#9744; Passport valid 6+ months ✓</li>
+</ul>
+<h3 id="week-1-checklist">Week 1 Checklist</h3>
+<p>&#9744; Day 1: Book FBI channeler appointment &#9744; Day 1-2: Get fingerprints at channeler  &#9744; Day 1: Get degree notarized &#9744; Day 1: Take passport photos (6-8 copies) &#9744; Day 1-3: Order university transcripts (if needed) &#9744; Day 2-4: Receive FBI PDF &#9744; Day 1-7: Complete health form, update resume, get passport copy</p>
+<h3 id="week-2-3-checklist">Week 2-3 Checklist</h3>
+<p>&#9744; Day 7-8: Contact Monument Visa &#9744; Day 8: Email FBI PDF to Monument Visa &#9744; Day 8: FedEx notarized degree to Monument Visa &#9744; Day 8: Pay Monument Visa ($300-400) &#9744; Day 9-13: Monument Visa processes apostilles &#9744; Day 13-15: Receive apostilled FBI + degree &#9744; Day 13-15: Verify apostilles intact and correct &#9744; Day 15-16: Assemble all documents &#9744; Day 16-17: Ship to Korea via FedEx/DHL/UPS &#9744; Day 18-21: Confirm Korea delivery</p>
+<h3 id="week-4-5-checklist">Week 4-5 Checklist</h3>
+<p>&#9744; Employer applies for CCVI &#9744; Wait 7-10 business days (up to 3 weeks peak season) &#9744; Receive VIN from employer &#9744; Download visa application form &#9744; Prepare visa documents</p>
+<h3 id="week-6-7-checklist">Week 6-7 Checklist</h3>
+<p>&#9744; Complete visa application (sign it!) &#9744; Submit to consulate (in-person recommended) &#9744; Wait 2-5 business days &#9744; Receive passport with E-2 visa &#9744; Verify visa details &#9744; Book flight to Korea &#9744; Notify employer of arrival date</p>
+<h3 id="after-arrival-checklist">After Arrival Checklist</h3>
+<p>&#9744; Week 1-2: Complete health screening &#9744; Within 14 days: Register address &#9744; Within 90 days: Apply for ARC &#9744; Within 90 days: Receive ARC &#9744; Open bank account (after ARC) &#9744; Get Korean phone number (after ARC) &#9744; Start work and enjoy Korea!</p>
+<hr>
+<h2 id="conclusion">Conclusion</h2>
+<p>The E-2 visa process takes <strong>5-7 weeks</strong> with professional services (Monument Visa + FBI channeler). This is not optional – it&#x27;s the only timeline that works for real hiring schedules.</p>
+<p><strong>Success Formula:</strong></p>
+<ol class="list-level">
+<li>&#9989; Start immediately when you get job offer</li>
+<li>&#9989; Budget $400-525 from Day 1</li>
+<li>&#9989; Use FBI channeler (not direct FBI)</li>
+<li>&#9989; Use Monument Visa (not DIY mail)</li>
+<li>&#9989; Follow this guide step by step</li>
+<li>&#9989; Stay organized with checklists</li>
+<li>&#9989; Stop marijuana use 3+ months before departure</li>
+<p><strong>This guide ensures you:</strong></p>
+</ol>
+<ul class="list-level">
+<li>Make your start date</li>
+<li>Keep your job offer</li>
+<li>Avoid costly mistakes</li>
+<li>Experience minimal stress</li>
+<p><strong>Questions?</strong> Contact Kang &amp; Kriel Recruitment for guidance through each step.</p>
+</ul>
+<hr>
+<p><strong>Disclaimer:</strong> This information is current as of October 2025 based on official sources. Visa requirements and procedures can change. Always verify with:</p>
+<ul class="list-level">
+<li>Korea Immigration Service (immigration.go.kr)</li>
+<li>Korea Visa Portal (visa.go.kr)</li>
+<li>Your Korean consulate</li>
+<li>Call Korean Immigration: 1345 (from Korea) or +82-2-1345 (abroad)</li>
+<p>For case-specific questions, consult Kang &amp; Kriel or Korean immigration directly.</p>
+</ul>
+<hr>
+<p><strong>Document Version:</strong> Optimized v2.0 (Fast-Track Only) <strong>Last Updated:</strong> October 2025 <strong>Created by:</strong> Kang &amp; Kriel Recruitment <strong>Purpose:</strong> 2-3 week E-2 visa document preparation guide for U.S. citizens</p>
+</main>
+<footer style='text-align:center;padding:2rem 1rem;color:rgba(66,33,11,0.75);'>
+  <p>Updated from ViDocPrep.md • Optimized for offline sharing</p>
+</footer>
 </body>
 </html>

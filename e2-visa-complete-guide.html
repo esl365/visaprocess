@@ -5940,7 +5940,7 @@ degree.
         }
 
         // Toggle section with accessibility
-        function toggleSection(sectionId) {
+        function toggleSection(sectionId, shouldScroll = false) {
             const header = document.getElementById(sectionId + '-header');
             const content = document.getElementById(sectionId + '-content');
 
@@ -5962,6 +5962,18 @@ degree.
 
                 // Create temporary live region for announcement
                 announceToScreenReader(announcement);
+
+                // Scroll to section if requested and section is being expanded
+                if (shouldScroll && !isExpanded) {
+                    setTimeout(() => {
+                        const yOffset = -80; // Account for sticky nav
+                        const element = document.getElementById(sectionId);
+                        if (element) {
+                            const y = element.getBoundingClientRect().top + window.pageYOffset + yOffset;
+                            window.scrollTo({top: y, behavior: 'smooth'});
+                        }
+                    }, 100); // Small delay to let expansion animation start
+                }
             }
         }
 
@@ -6225,7 +6237,7 @@ degree.
                                 <button class="btn btn-primary" onclick="toggleCheckbox('${nextTask.id}'); renderSmartGuide(); renderProgressInsights();">
                                     ✓ Complete & Next Step
                                 </button>
-                                <button class="btn btn-secondary" onclick="toggleSection('interactive-timeline')">
+                                <button class="btn btn-secondary" onclick="toggleSection('interactive-timeline', true)">
                                     View Full Timeline
                                 </button>
                                 ${undoButtonHtml}

@@ -270,12 +270,14 @@
             -webkit-font-smoothing: antialiased;
             -moz-osx-font-smoothing: grayscale;
             text-rendering: optimizeLegibility;
+            overflow-x: hidden;  /* Prevent horizontal scroll on mobile */
         }
 
         .container {
             max-width: 1000px;  /* Optimized for better readability */
             margin: 0 auto;
             padding: 20px;  /* Increased from var(--spacing-md) for better spacing */
+            overflow-x: hidden;  /* Prevent horizontal scroll */
         }
 
         /* Header - Minimalistic */
@@ -1257,10 +1259,17 @@
         }
 
         /* Table */
+        /* Table wrapper for overflow control */
+        .table-wrapper {
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+            margin: 20px 0;
+        }
+
         table {
             width: 100%;
             border-collapse: collapse;
-            margin: 20px 0;
+            margin: 0;
             background: white;
         }
 
@@ -1268,6 +1277,8 @@
             padding: 14px 16px;  /* Increased padding for better spacing */
             text-align: left;
             border-bottom: 1px solid #e5e7eb;
+            word-wrap: break-word;
+            word-break: keep-all;  /* Keep words together in Korean/English */
         }
 
         th {
@@ -1765,11 +1776,21 @@
                 gap: 8px;
             }
 
-            /* 모바일에서 테이블 스크롤 */
-            table {
-                display: block;
-                overflow-x: auto;
-                -webkit-overflow-scrolling: touch;
+            /* 모바일에서 테이블 개선 */
+            th, td {
+                padding: 10px 8px;  /* Reduced padding for mobile */
+                font-size: 0.9rem;  /* Slightly smaller font */
+                min-width: 80px;  /* Minimum width to prevent vertical text */
+            }
+
+            th {
+                font-size: 0.85rem;
+            }
+
+            /* Ensure table wrapper handles overflow */
+            .table-wrapper {
+                margin: 15px -16px;  /* Extend to container edges for max width */
+                padding: 0 16px;
             }
 
             /* 텍스트 가독성 향상 */
@@ -1928,8 +1949,22 @@
                 hyphens: auto;
             }
 
-            p, li, td {
-                word-break: break-word;
+            p, li {
+                word-break: keep-all;
+                overflow-wrap: break-word;
+            }
+
+            /* Table improvements for small screens */
+            th, td {
+                padding: 8px 6px;
+                font-size: 0.85rem;
+                min-width: 70px;
+                word-break: keep-all;
+                overflow-wrap: break-word;
+            }
+
+            th {
+                font-size: 0.8rem;
             }
         }
 
@@ -1968,6 +2003,22 @@
             .toc-item {
                 padding: 12px 14px;
                 font-size: 0.95rem;
+            }
+
+            /* Further optimize tables for very small screens */
+            th, td {
+                padding: 6px 4px;
+                font-size: 0.8rem;
+                min-width: 60px;
+            }
+
+            th {
+                font-size: 0.75rem;
+            }
+
+            .table-wrapper {
+                margin: 10px -12px;
+                padding: 0 12px;
             }
         }
 

@@ -2711,21 +2711,17 @@
                 <span>Quick Navigation</span>
             </h2>
             <div class="toc-grid">
-                <a href="#next-step" class="toc-item" onclick="smoothScroll(event, 'next-step')">
+                <a href="#your-next-step" class="toc-item" onclick="smoothScroll(event, 'your-next-step')">
                     <span class="toc-icon">🎯</span>
                     <span>Your Next Step</span>
                 </a>
-                <a href="#timeline-header" class="toc-item" onclick="smoothScroll(event, 'timeline-header')">
-                    <span class="toc-icon">📅</span>
-                    <span>Interactive Timeline</span>
+                <a href="#quick-start" class="toc-item" onclick="smoothScroll(event, 'quick-start')">
+                    <span class="toc-icon">🚀</span>
+                    <span>Quick Start Overview</span>
                 </a>
-                <a href="#smart-guide-header" class="toc-item" onclick="smoothScroll(event, 'smart-guide-header')">
-                    <span class="toc-icon">🧭</span>
-                    <span>Smart Guide</span>
-                </a>
-                <a href="#process-reality" class="toc-item" onclick="smoothScroll(event, 'process-reality')">
-                    <span class="toc-icon">⏱️</span>
-                    <span>Process Reality Check</span>
+                <a href="#investment-breakdown" class="toc-item" onclick="smoothScroll(event, 'investment-breakdown')">
+                    <span class="toc-icon">💰</span>
+                    <span>Investment &amp; Cost</span>
                 </a>
                 <a href="#pre-start-checklist" class="toc-item" onclick="smoothScroll(event, 'pre-start-checklist')">
                     <span class="toc-icon">✅</span>
@@ -2735,13 +2731,21 @@
                     <span class="toc-icon">📋</span>
                     <span>Master Checklist</span>
                 </a>
+                <a href="#action-plan" class="toc-item" onclick="smoothScroll(event, 'action-plan')">
+                    <span class="toc-icon">🧭</span>
+                    <span>Action Plan</span>
+                </a>
+                <a href="#interactive-timeline" class="toc-item" onclick="smoothScroll(event, 'interactive-timeline')">
+                    <span class="toc-icon">📅</span>
+                    <span>Interactive Timeline</span>
+                </a>
+                <a href="#after-arrival" class="toc-item" onclick="smoothScroll(event, 'after-arrival')">
+                    <span class="toc-icon">🛬</span>
+                    <span>After Arrival</span>
+                </a>
                 <a href="#faq" class="toc-item" onclick="smoothScroll(event, 'faq')">
                     <span class="toc-icon">❓</span>
                     <span>FAQs</span>
-                </a>
-                <a href="#cost-guide" class="toc-item" onclick="smoothScroll(event, 'cost-guide')">
-                    <span class="toc-icon">💰</span>
-                    <span>Cost Guide</span>
                 </a>
             </div>
         </div>
@@ -2774,10 +2778,16 @@
         </section>
 
         <!-- Smart Guide Widget (rendered dynamically) -->
-        <div id="smart-guide-container"></div>
+        <section id="your-next-step" aria-labelledby="smart-guide-heading">
+            <h3 id="smart-guide-heading" class="sr-only">Your Next Step Smart Guide</h3>
+            <div id="smart-guide-container"></div>
+        </section>
 
         <!-- Progress Insights (rendered dynamically) -->
-        <div id="progress-insights-container"></div>
+        <section id="progress-insights" aria-labelledby="progress-insights-heading">
+            <h3 id="progress-insights-heading" class="sr-only">Progress Insights</h3>
+            <div id="progress-insights-container"></div>
+        </section>
 
         <!-- Critical Warning -->
         <div id="alert-critical-warning" class="alert alert-danger alert-collapsible" style="animation: pulse 2s infinite;">
@@ -5617,6 +5627,7 @@ degree.
             if (timelineContainer) {
                 timelineContainer.innerHTML = '';
                 renderTimeline();
+                bindChecklistEvents();
             }
         }
 
@@ -6287,6 +6298,8 @@ degree.
                 `;
                 timelineContainer.innerHTML += weekHTML;
             });
+
+            bindChecklistEvents();
         }
 
         // Calculate week progress
@@ -6297,6 +6310,21 @@ degree.
         }
 
         // Render all sections with accessibility
+        function bindChecklistEvents() {
+            const checkboxes = document.querySelectorAll('.checklist-item input[type="checkbox"]');
+            checkboxes.forEach(checkbox => {
+                if (!checkbox.id || checkbox.dataset.bound === 'true') {
+                    return;
+                }
+
+                if (!checkbox.hasAttribute('onchange')) {
+                    checkbox.addEventListener('change', () => toggleCheckbox(checkbox.id));
+                }
+
+                checkbox.dataset.bound = 'true';
+            });
+        }
+
         function renderAllSections() {
             const mainContent = document.getElementById('mainContent');
             if (!mainContent) return;
@@ -6304,6 +6332,7 @@ degree.
             sectionsData.forEach(section => {
                 const sectionDiv = document.createElement('div');
                 sectionDiv.className = 'section';
+                sectionDiv.id = section.id;
                 sectionDiv.innerHTML = `
                     <button class="section-header"
                             id="${section.id}-header"
@@ -6325,9 +6354,13 @@ degree.
                 mainContent.appendChild(sectionDiv);
             });
 
+            bindChecklistEvents();
+            updateProgress();
+
             // Render timeline after sections
             setTimeout(() => {
                 renderTimeline();
+                bindChecklistEvents();
                 updateProgress();
             }, 100);
         }
@@ -6637,6 +6670,7 @@ degree.
                 });
             }
 
+            updateActiveSection();
             console.log('[Navigation] Scroll direction detection enabled for mobile');
         }
 
@@ -6694,9 +6728,9 @@ degree.
 
         function updateActiveSection() {
             const sections = [
-                'next-step', 'timeline-header', 'smart-guide-header',
-                'process-reality', 'pre-start-checklist', 'master-checklist',
-                'faq', 'cost-guide'
+                'your-next-step', 'quick-start', 'investment-breakdown',
+                'pre-start-checklist', 'master-checklist', 'action-plan',
+                'interactive-timeline', 'after-arrival', 'faq'
             ];
 
             let currentSection = '';
@@ -6748,13 +6782,13 @@ degree.
 
     <!-- Quick Jump Menu -->
     <div class="quick-jump" aria-label="Quick navigation menu">
-        <a href="#next-step" class="quick-jump-item" onclick="scrollToSection('next-step'); return false;" title="Your Next Step">
+        <a href="#your-next-step" class="quick-jump-item" onclick="scrollToSection('your-next-step'); return false;" title="Your Next Step">
             🎯
         </a>
-        <a href="#timeline-header" class="quick-jump-item" onclick="scrollToSection('timeline-header'); return false;" title="Timeline">
+        <a href="#interactive-timeline" class="quick-jump-item" onclick="scrollToSection('interactive-timeline'); return false;" title="Interactive Timeline">
             📅
         </a>
-        <a href="#smart-guide-header" class="quick-jump-item" onclick="scrollToSection('smart-guide-header'); return false;" title="Smart Guide">
+        <a href="#action-plan" class="quick-jump-item" onclick="scrollToSection('action-plan'); return false;" title="Action Plan">
             🧭
         </a>
         <a href="#master-checklist" class="quick-jump-item" onclick="scrollToSection('master-checklist'); return false;" title="Master Checklist">

@@ -137,61 +137,128 @@
         /* ========================================
            PHASE 3.1: DARK MODE
            ======================================== */
-        @media (prefers-color-scheme: dark) {
-            :root {
-                /* Dark mode color overrides */
-                --gray-50: #1f2937;
-                --gray-100: #374151;
-                --gray-200: #4b5563;
-                --gray-300: #6b7280;
-                --gray-500: #9ca3af;
-                --gray-700: #d1d5db;
-                --gray-900: #f9fafb;
+        body.dark-mode {
+            --gray-50: #1f2937;
+            --gray-100: #374151;
+            --gray-200: #4b5563;
+            --gray-300: #6b7280;
+            --gray-500: #9ca3af;
+            --gray-700: #d1d5db;
+            --gray-900: #f9fafb;
 
-                /* Semantic Colors - Dark Mode */
-                --text-primary: #f9fafb;         /* Light text on dark bg */
-                --text-secondary: #d1d5db;       /* Slightly muted */
-                --text-tertiary: #9ca3af;        /* More muted */
-                --bg-primary: #111827;           /* Dark background */
-                --bg-secondary: #1f2937;         /* Slightly lighter dark */
-                --border-color: #374151;         /* Dark borders */
-            }
+            /* Semantic Colors - Dark Mode */
+            --text-primary: #f9fafb;         /* Light text on dark bg */
+            --text-secondary: #d1d5db;       /* Slightly muted */
+            --text-tertiary: #9ca3af;        /* More muted */
+            --bg-primary: #111827;           /* Dark background */
+            --bg-secondary: #1f2937;         /* Slightly lighter dark */
+            --border-color: #374151;         /* Dark borders */
 
-            body {
-                background: var(--bg-primary);
-            }
+            background: var(--bg-primary);
+        }
 
-            .section, .progress-section, .nav-bar {
-                background: var(--bg-secondary);
-                box-shadow: 0 2px 10px rgba(0,0,0,0.3);
-            }
+        body.dark-mode .section,
+        body.dark-mode .progress-section {
+            background: var(--bg-secondary);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+        }
 
-            .progress-bar-container {
-                background: var(--gray-200);
-            }
+        body.dark-mode .nav-bar {
+            background: rgba(31, 41, 55, 0.95);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+            border-bottom-color: var(--border-color);
+        }
 
-            .alert {
-                background: var(--bg-secondary);
-                border-left-width: 4px;
-            }
+        body.dark-mode .nav-bar-title {
+            color: var(--text-primary);
+        }
 
-            .checklist-item {
-                background: var(--bg-primary);
-            }
+        body.dark-mode .hamburger-menu span {
+            background: var(--text-primary);
+        }
 
-            .checklist-item:hover {
-                background: var(--gray-100);
-            }
+        body.dark-mode .nav-menu {
+            background: var(--bg-secondary);
+            box-shadow: -2px 0 10px rgba(0,0,0,0.5);
+        }
 
-            code {
-                background: var(--gray-200);
-                color: var(--text-primary);
-            }
+        body.dark-mode .nav-menu-item {
+            border-bottom-color: var(--border-color);
+        }
 
-            pre {
-                background: #0d1117;
-                color: #f9fafb;
-            }
+        body.dark-mode .nav-menu-button {
+            color: var(--text-primary);
+        }
+
+        body.dark-mode .nav-menu-button:hover {
+            background: var(--gray-100);
+        }
+
+        body.dark-mode .progress-dashboard {
+            background: linear-gradient(135deg, rgba(75, 85, 99, 0.05), rgba(75, 85, 99, 0.1));
+            border-bottom-color: var(--border-color);
+        }
+
+        body.dark-mode .progress-bar-container {
+            background: var(--gray-200);
+        }
+
+        body.dark-mode .alert {
+            background: var(--bg-secondary);
+            border-left-width: 4px;
+        }
+
+        body.dark-mode .checklist-item {
+            background: var(--bg-primary);
+        }
+
+        body.dark-mode .checklist-item:hover {
+            background: var(--gray-100);
+        }
+
+        body.dark-mode code {
+            background: var(--gray-200);
+            color: var(--text-primary);
+        }
+
+        body.dark-mode pre {
+            background: #0d1117;
+            color: #f9fafb;
+        }
+
+        /* Dark mode toggle button */
+        .dark-mode-toggle {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 1000;
+            background: var(--gray-900);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 48px;
+            height: 48px;
+            cursor: pointer;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            transition: all 0.3s ease;
+        }
+
+        body.dark-mode .dark-mode-toggle {
+            background: var(--gray-100);
+            color: var(--gray-900);
+        }
+
+        .dark-mode-toggle:hover {
+            transform: scale(1.1);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+        }
+
+        .dark-mode-toggle:active {
+            transform: scale(0.95);
         }
 
         body {
@@ -247,23 +314,146 @@
             color: var(--gray-700);
         }
 
-        /* Navigation - Minimalistic & Sticky */
+        /* Navigation - Hamburger Menu */
         .nav-bar {
             position: sticky;
             top: 0;
-            z-index: 999;  /* Above dashboard (998) but below back-to-top (998) */
+            z-index: 999;
             background: rgba(255, 255, 255, 0.95);
             backdrop-filter: blur(10px);
             -webkit-backdrop-filter: blur(10px);
             padding: var(--spacing-sm);
             margin-bottom: var(--spacing-md);
-            border-radius: 0;  /* Remove border radius for sticky */
+            border-radius: 0;
             box-shadow: 0 2px 8px rgba(0,0,0,0.1);
             border-bottom: 2px solid rgba(100, 116, 139, 0.15);
             transition: transform 0.3s ease, opacity 0.3s ease;
             transform: translateZ(0);
             -webkit-backface-visibility: hidden;
             backface-visibility: hidden;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-bar-title {
+            font-size: var(--font-size-lg);
+            font-weight: var(--font-weight-bold);
+            color: var(--gray-900);
+        }
+
+        /* Hamburger Menu Button */
+        .hamburger-menu {
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 8px;
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+            transition: all 0.3s ease;
+        }
+
+        .hamburger-menu span {
+            display: block;
+            width: 28px;
+            height: 3px;
+            background: var(--gray-900);
+            border-radius: 2px;
+            transition: all 0.3s ease;
+        }
+
+        .hamburger-menu.active span:nth-child(1) {
+            transform: rotate(45deg) translate(8px, 8px);
+        }
+
+        .hamburger-menu.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .hamburger-menu.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(7px, -7px);
+        }
+
+        /* Menu Dropdown */
+        .nav-menu {
+            position: fixed;
+            top: 60px;
+            right: -100%;
+            width: 280px;
+            max-height: calc(100vh - 80px);
+            background: white;
+            box-shadow: -2px 0 10px rgba(0,0,0,0.1);
+            transition: right 0.3s ease;
+            z-index: 998;
+            overflow-y: auto;
+            border-radius: 8px 0 0 8px;
+        }
+
+        .nav-menu.active {
+            right: 0;
+        }
+
+        .nav-menu-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .nav-menu-item {
+            border-bottom: 1px solid var(--gray-200);
+        }
+
+        .nav-menu-item:last-child {
+            border-bottom: none;
+        }
+
+        .nav-menu-button {
+            width: 100%;
+            padding: 16px 20px;
+            text-align: left;
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-size: var(--font-size-md);
+            color: var(--text-primary);
+            transition: background 0.2s ease;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .nav-menu-button:hover {
+            background: var(--gray-50);
+        }
+
+        .nav-menu-button:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+
+        .nav-menu-icon {
+            font-size: 1.2rem;
+            min-width: 24px;
+        }
+
+        /* Menu Overlay */
+        .menu-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.3);
+            z-index: 997;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s ease;
+        }
+
+        .menu-overlay.active {
+            opacity: 1;
+            pointer-events: all;
         }
 
         /* Mobile: Hide on scroll down */
@@ -273,13 +463,16 @@
                 opacity: 0;
                 pointer-events: none;
             }
+
+            .nav-menu {
+                width: 100%;
+                max-width: 320px;
+                border-radius: 0;
+            }
         }
 
         .nav-buttons {
-            display: flex;
-            gap: var(--spacing-xs);
-            flex-wrap: wrap;
-            justify-content: center;
+            display: none; /* Hide old nav buttons */
         }
 
         .btn {
@@ -706,8 +899,8 @@
 
         .progress-dashboard {
             position: sticky;
-            top: 0;
-            z-index: 998;  /* Below nav-bar (999) */
+            top: 130px;  /* Below nav-bar (~60px) and search-container (~70px) */
+            z-index: 997;  /* Below nav-bar (999) and search (998) */
             background: linear-gradient(135deg, rgba(100, 116, 139, 0.05), rgba(100, 116, 139, 0.1));
             backdrop-filter: blur(10px);
             -webkit-backdrop-filter: blur(10px);
@@ -722,8 +915,12 @@
             backface-visibility: hidden;
         }
 
-        /* Mobile: Hide on scroll down */
+        /* Mobile: Adjust positioning and hide on scroll down */
         @media (max-width: 768px) {
+            .progress-dashboard {
+                top: 80px;  /* Below nav-bar and search on mobile */
+            }
+
             .progress-dashboard.hide-on-scroll {
                 transform: translateY(-100%);
                 opacity: 0;
@@ -900,13 +1097,39 @@
 
         .search-container {
             position: sticky;
-            top: 220px;
-            z-index: 999;
+            top: 60px; /* Just below nav-bar */
+            z-index: 998; /* Below nav-bar (999) but above progress-dashboard (997) */
             background: white;
             padding: 15px 20px;
             box-shadow: 0 2px 10px rgba(0,0,0,0.1);
             margin-bottom: 20px;
             border-radius: 8px;
+            transform: translateZ(0);
+            -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+        }
+
+        body.dark-mode .search-container {
+            background: var(--bg-secondary);
+        }
+
+        body.dark-mode .search-container input {
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            border-color: var(--border-color);
+        }
+
+        body.dark-mode .search-results {
+            background: var(--bg-secondary);
+            border-color: var(--border-color);
+        }
+
+        body.dark-mode .search-result-item {
+            border-color: var(--border-color);
+        }
+
+        body.dark-mode .search-result-item:hover {
+            background: var(--gray-100);
         }
 
         .search-container input {
@@ -1272,6 +1495,9 @@
         @media print {
             /* Hide interactive elements */
             .nav-bar,
+            .nav-menu,
+            .menu-overlay,
+            .hamburger-menu,
             .btn,
             .footer,
             .skip-to-content,
@@ -1678,10 +1904,18 @@
             /* Search container mobile */
             .search-container {
                 padding: 10px 15px;
+                top: 10px; /* Move to very top on mobile */
+                margin-bottom: 15px;
             }
 
             .search-container input {
                 font-size: 16px; /* Prevent iOS zoom */
+                padding: 10px 15px 10px 40px;
+            }
+
+            /* When nav-bar is hidden, search-container moves up */
+            .nav-bar.hide-on-scroll ~ .container .search-container {
+                top: 10px;
             }
 
             /* Badge adjustments */
@@ -2630,6 +2864,11 @@
     </style>
 </head>
 <body>
+    <!-- Dark Mode Toggle -->
+    <button class="dark-mode-toggle" id="darkModeToggle" aria-label="Toggle dark mode">
+        <span id="darkModeIcon">🌙</span>
+    </button>
+
     <!-- Skip to content 링크 (접근성) -->
     <a href="#main-content" class="skip-to-content">Skip to main content</a>
     <div class="header">
@@ -2698,45 +2937,64 @@
 
         <!-- Navigation -->
         <nav class="nav-bar" role="navigation" aria-label="Main navigation">
-            <div class="nav-buttons">
-                <button class="btn btn-primary"
-                        onclick="expandAll()"
-                        aria-label="Expand all guide sections">
-                    Expand All Sections
-                </button>
-                <button class="btn btn-primary"
-                        onclick="collapseAll()"
-                        aria-label="Collapse all guide sections">
-                    Collapse All Sections
-                </button>
-                <button class="btn btn-secondary"
-                        onclick="resetProgress()"
-                        aria-label="Reset all progress tracking">
-                    Reset Progress
-                </button>
-                <button class="btn btn-secondary"
-                        onclick="exportProgress()"
-                        aria-label="Export your progress data">
-                    📥 Export Progress
-                </button>
-                <button class="btn btn-secondary"
-                        onclick="document.getElementById('importFile').click()"
-                        aria-label="Import previously saved progress">
-                    📤 Import Progress
-                </button>
-                <button id="undoBtn" class="btn btn-secondary"
-                        onclick="undoLastAction()"
-                        disabled
-                        aria-label="Undo last action">
-                    ↩️ Undo
-                </button>
-                <button class="btn btn-secondary"
-                        onclick="window.print()"
-                        aria-label="Print this guide">
-                    Print Guide
-                </button>
-            </div>
+            <div class="nav-bar-title">Menu</div>
+            <button class="hamburger-menu" id="hamburgerMenu" aria-label="Toggle navigation menu" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
         </nav>
+
+        <!-- Menu Overlay -->
+        <div class="menu-overlay" id="menuOverlay"></div>
+
+        <!-- Navigation Menu -->
+        <div class="nav-menu" id="navMenu" role="menu">
+            <ul class="nav-menu-list">
+                <li class="nav-menu-item">
+                    <button class="nav-menu-button" onclick="expandAll(); closeMenu();" aria-label="Expand all guide sections">
+                        <span class="nav-menu-icon">📂</span>
+                        <span>Expand All Sections</span>
+                    </button>
+                </li>
+                <li class="nav-menu-item">
+                    <button class="nav-menu-button" onclick="collapseAll(); closeMenu();" aria-label="Collapse all guide sections">
+                        <span class="nav-menu-icon">📁</span>
+                        <span>Collapse All Sections</span>
+                    </button>
+                </li>
+                <li class="nav-menu-item">
+                    <button class="nav-menu-button" onclick="resetProgress(); closeMenu();" aria-label="Reset all progress tracking">
+                        <span class="nav-menu-icon">🔄</span>
+                        <span>Reset Progress</span>
+                    </button>
+                </li>
+                <li class="nav-menu-item">
+                    <button class="nav-menu-button" onclick="exportProgress(); closeMenu();" aria-label="Export your progress data">
+                        <span class="nav-menu-icon">📥</span>
+                        <span>Export Progress</span>
+                    </button>
+                </li>
+                <li class="nav-menu-item">
+                    <button class="nav-menu-button" onclick="document.getElementById('importFile').click(); closeMenu();" aria-label="Import previously saved progress">
+                        <span class="nav-menu-icon">📤</span>
+                        <span>Import Progress</span>
+                    </button>
+                </li>
+                <li class="nav-menu-item">
+                    <button id="undoBtn" class="nav-menu-button" onclick="undoLastAction(); closeMenu();" disabled aria-label="Undo last action">
+                        <span class="nav-menu-icon">↩️</span>
+                        <span>Undo</span>
+                    </button>
+                </li>
+                <li class="nav-menu-item">
+                    <button class="nav-menu-button" onclick="window.print(); closeMenu();" aria-label="Print this guide">
+                        <span class="nav-menu-icon">🖨️</span>
+                        <span>Print Guide</span>
+                    </button>
+                </li>
+            </ul>
+        </div>
 
         <!-- Hidden file input for import -->
         <input type="file" id="importFile" accept="application/json" style="display:none"
@@ -6811,6 +7069,84 @@ degree.
                 window.scrollTo({top: y, behavior: 'smooth'});
             }
         }
+    </script>
+
+    <!-- Hamburger Menu Toggle Script -->
+    <script>
+        // Hamburger menu toggle functionality
+        (function() {
+            const hamburgerMenu = document.getElementById('hamburgerMenu');
+            const navMenu = document.getElementById('navMenu');
+            const menuOverlay = document.getElementById('menuOverlay');
+
+            function toggleMenu() {
+                const isActive = navMenu.classList.contains('active');
+
+                if (isActive) {
+                    closeMenu();
+                } else {
+                    openMenu();
+                }
+            }
+
+            function openMenu() {
+                hamburgerMenu.classList.add('active');
+                navMenu.classList.add('active');
+                menuOverlay.classList.add('active');
+                hamburgerMenu.setAttribute('aria-expanded', 'true');
+                document.body.style.overflow = 'hidden'; // Prevent scroll when menu is open
+            }
+
+            window.closeMenu = function() {
+                hamburgerMenu.classList.remove('active');
+                navMenu.classList.remove('active');
+                menuOverlay.classList.remove('active');
+                hamburgerMenu.setAttribute('aria-expanded', 'false');
+                document.body.style.overflow = ''; // Restore scroll
+            };
+
+            // Toggle menu on hamburger click
+            hamburgerMenu.addEventListener('click', toggleMenu);
+
+            // Close menu on overlay click
+            menuOverlay.addEventListener('click', closeMenu);
+
+            // Close menu on Escape key
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape' && navMenu.classList.contains('active')) {
+                    closeMenu();
+                }
+            });
+        })();
+    </script>
+
+    <!-- Dark Mode Toggle Script -->
+    <script>
+        // Dark mode toggle functionality
+        (function() {
+            const darkModeToggle = document.getElementById('darkModeToggle');
+            const darkModeIcon = document.getElementById('darkModeIcon');
+
+            // Check for saved dark mode preference or default to light mode
+            const currentMode = localStorage.getItem('darkMode');
+            if (currentMode === 'enabled') {
+                document.body.classList.add('dark-mode');
+                darkModeIcon.textContent = '☀️';
+            }
+
+            // Toggle dark mode
+            darkModeToggle.addEventListener('click', function() {
+                document.body.classList.toggle('dark-mode');
+
+                if (document.body.classList.contains('dark-mode')) {
+                    localStorage.setItem('darkMode', 'enabled');
+                    darkModeIcon.textContent = '☀️';
+                } else {
+                    localStorage.setItem('darkMode', 'disabled');
+                    darkModeIcon.textContent = '🌙';
+                }
+            });
+        })();
     </script>
 
     <!-- Back to Top Button -->

@@ -932,13 +932,39 @@
 
         .search-container {
             position: sticky;
-            top: 220px;
-            z-index: 999;
+            top: 70px; /* Just below nav-bar */
+            z-index: 998; /* Below nav-bar (999) but above other content */
             background: white;
             padding: 15px 20px;
             box-shadow: 0 2px 10px rgba(0,0,0,0.1);
             margin-bottom: 20px;
             border-radius: 8px;
+            transform: translateZ(0);
+            -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+        }
+
+        body.dark-mode .search-container {
+            background: var(--bg-secondary);
+        }
+
+        body.dark-mode .search-container input {
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            border-color: var(--border-color);
+        }
+
+        body.dark-mode .search-results {
+            background: var(--bg-secondary);
+            border-color: var(--border-color);
+        }
+
+        body.dark-mode .search-result-item {
+            border-color: var(--border-color);
+        }
+
+        body.dark-mode .search-result-item:hover {
+            background: var(--gray-100);
         }
 
         .search-container input {
@@ -1710,10 +1736,18 @@
             /* Search container mobile */
             .search-container {
                 padding: 10px 15px;
+                top: 10px; /* Move to very top on mobile */
+                margin-bottom: 15px;
             }
 
             .search-container input {
                 font-size: 16px; /* Prevent iOS zoom */
+                padding: 10px 15px 10px 40px;
+            }
+
+            /* When nav-bar is hidden, search-container moves up */
+            .nav-bar.hide-on-scroll ~ .container .search-container {
+                top: 10px;
             }
 
             /* Badge adjustments */

@@ -1,0 +1,986 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-2 비자 신청 가이드 | Kang & Kriel</title>
+    <meta name="description" content="E-2 비자 신청을 위한 단계별 가이드. 투자금, 필수 서류, 타임라인 등 모든 정보를 확인하세요.">
+
+    <style>
+        /* ========================================
+           SIMPLIFIED CSS VARIABLES (30 or less)
+           ======================================== */
+        :root {
+            /* Primary Colors (2) */
+            --primary: #334155;
+            --primary-light: #f1f5f9;
+
+            /* Semantic Colors (5) */
+            --success: #10b981;
+            --warning: #f59e0b;
+            --danger: #ef4444;
+            --text: #111827;
+            --text-muted: #6b7280;
+
+            /* Neutrals (4) */
+            --gray-50: #f9fafb;
+            --gray-200: #e5e7eb;
+            --gray-500: #6b7280;
+            --gray-900: #111827;
+
+            /* Spacing (4) */
+            --space-sm: 1rem;    /* 16px */
+            --space-md: 1.5rem;  /* 24px */
+            --space-lg: 2rem;    /* 32px */
+            --space-xl: 3rem;    /* 48px */
+
+            /* Typography (4) */
+            --font-h1: 2.5rem;
+            --font-h2: 2rem;
+            --font-h3: 1.5rem;
+            --font-body: 1rem;
+
+            /* Other (2) */
+            --border-radius: 8px;
+            --transition: 0.3s ease;
+        }
+
+        /* ========================================
+           RESET & BASE STYLES
+           ======================================== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            font-size: var(--font-body);
+            line-height: 1.6;
+            color: var(--text);
+            background: white;
+        }
+
+        /* ========================================
+           TYPOGRAPHY
+           ======================================== */
+        h1 {
+            font-size: var(--font-h1);
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: var(--space-md);
+        }
+
+        h2 {
+            font-size: var(--font-h2);
+            font-weight: 700;
+            line-height: 1.3;
+            margin-bottom: var(--space-md);
+            color: var(--primary);
+        }
+
+        h3 {
+            font-size: var(--font-h3);
+            font-weight: 600;
+            line-height: 1.4;
+            margin-bottom: var(--space-sm);
+            color: var(--primary);
+        }
+
+        p {
+            margin-bottom: var(--space-sm);
+        }
+
+        ul, ol {
+            margin-left: var(--space-md);
+            margin-bottom: var(--space-sm);
+        }
+
+        li {
+            margin-bottom: 0.5rem;
+        }
+
+        /* ========================================
+           HEADER (Sticky, Simple)
+           ======================================== */
+        .header-simple {
+            position: sticky;
+            top: 0;
+            background: white;
+            border-bottom: 1px solid var(--gray-200);
+            z-index: 1000;
+            transition: var(--transition);
+        }
+
+        .header-simple.scrolled {
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: var(--space-sm) var(--space-md);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--primary);
+        }
+
+        .nav-simple {
+            display: flex;
+            gap: var(--space-md);
+        }
+
+        .nav-simple a {
+            color: var(--text);
+            text-decoration: none;
+            font-weight: 500;
+            transition: var(--transition);
+        }
+
+        .nav-simple a:hover {
+            color: var(--primary);
+        }
+
+        /* ========================================
+           CONTAINER & SECTION
+           ======================================== */
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 var(--space-md);
+        }
+
+        section {
+            padding: var(--space-xl) 0;
+        }
+
+        section:nth-child(even) {
+            background: var(--gray-50);
+        }
+
+        /* ========================================
+           HERO SECTION
+           ======================================== */
+        .hero {
+            background: linear-gradient(135deg, #f1f5f9 0%, #e0e7ff 100%);
+            text-align: center;
+            padding: calc(var(--space-xl) * 2) var(--space-md);
+        }
+
+        .hero h1 {
+            margin-bottom: var(--space-sm);
+        }
+
+        .hero-subtitle {
+            font-size: 1.25rem;
+            color: var(--text-muted);
+            margin-bottom: var(--space-lg);
+        }
+
+        /* ========================================
+           BUTTONS
+           ======================================== */
+        .btn {
+            display: inline-block;
+            padding: 0.75rem 1.5rem;
+            border-radius: var(--border-radius);
+            text-decoration: none;
+            font-weight: 600;
+            transition: var(--transition);
+            border: none;
+            cursor: pointer;
+            font-size: var(--font-body);
+        }
+
+        .btn-primary {
+            background: var(--primary);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: var(--gray-900);
+            transform: translateY(-2px);
+        }
+
+        .btn-secondary {
+            background: white;
+            color: var(--primary);
+            border: 2px solid var(--primary);
+        }
+
+        .btn-secondary:hover {
+            background: var(--primary);
+            color: white;
+        }
+
+        /* ========================================
+           ALERT BOXES (3 types only)
+           ======================================== */
+        .alert {
+            padding: var(--space-md);
+            border-radius: var(--border-radius);
+            margin-bottom: var(--space-md);
+            border-left: 4px solid;
+        }
+
+        .alert-success {
+            background: rgba(16, 185, 129, 0.05);
+            border-color: var(--success);
+        }
+
+        .alert-warning {
+            background: rgba(245, 158, 11, 0.05);
+            border-color: var(--warning);
+        }
+
+        .alert-danger {
+            background: rgba(239, 68, 68, 0.05);
+            border-color: var(--danger);
+        }
+
+        .alert-icon {
+            font-size: 1.5rem;
+            margin-right: 0.5rem;
+        }
+
+        /* ========================================
+           CARD COMPONENT
+           ======================================== */
+        .card {
+            background: white;
+            border-radius: var(--border-radius);
+            padding: var(--space-md);
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            margin-bottom: var(--space-md);
+        }
+
+        .card h3 {
+            margin-top: 0;
+        }
+
+        /* ========================================
+           CHECKLIST
+           ======================================== */
+        .checklist {
+            list-style: none;
+            margin-left: 0;
+        }
+
+        .checklist-item {
+            display: flex;
+            align-items: flex-start;
+            padding: 0.75rem;
+            border-radius: var(--border-radius);
+            margin-bottom: 0.5rem;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .checklist-item:hover {
+            background: var(--gray-50);
+        }
+
+        .checklist-item input[type="checkbox"] {
+            width: 20px;
+            height: 20px;
+            margin-right: var(--space-sm);
+            margin-top: 2px;
+            cursor: pointer;
+        }
+
+        /* ========================================
+           TABLE
+           ======================================== */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: var(--space-md) 0;
+            background: white;
+        }
+
+        th, td {
+            padding: 0.75rem;
+            text-align: left;
+            border-bottom: 1px solid var(--gray-200);
+        }
+
+        th {
+            background: var(--primary-light);
+            color: var(--primary);
+            font-weight: 600;
+        }
+
+        tr:hover {
+            background: var(--gray-50);
+        }
+
+        .table-responsive {
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+        }
+
+        /* ========================================
+           GRID SYSTEM
+           ======================================== */
+        .grid-2 {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: var(--space-md);
+        }
+
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: var(--space-md);
+        }
+
+        /* ========================================
+           TIMELINE (Simplified)
+           ======================================== */
+        .timeline {
+            position: relative;
+            padding-left: var(--space-lg);
+        }
+
+        .timeline-item {
+            position: relative;
+            padding-bottom: var(--space-lg);
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -var(--space-lg);
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: var(--gray-200);
+        }
+
+        .timeline-item:last-child::before {
+            display: none;
+        }
+
+        .timeline-dot {
+            position: absolute;
+            left: calc(-var(--space-lg) - 8px);
+            top: 0;
+            width: 18px;
+            height: 18px;
+            border-radius: 50%;
+            background: var(--primary);
+            border: 3px solid white;
+            box-shadow: 0 0 0 2px var(--primary);
+        }
+
+        .timeline-title {
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: 0.25rem;
+        }
+
+        .timeline-subtitle {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+        }
+
+        /* ========================================
+           FOOTER
+           ======================================== */
+        footer {
+            background: var(--gray-900);
+            color: white;
+            padding: var(--space-lg) 0;
+            text-align: center;
+        }
+
+        footer p {
+            color: var(--gray-200);
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-logo {
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin-bottom: var(--space-sm);
+        }
+
+        /* ========================================
+           MOBILE RESPONSIVE (768px breakpoint)
+           ======================================== */
+        @media (max-width: 768px) {
+            :root {
+                --font-h1: 2rem;
+                --font-h2: 1.5rem;
+                --font-h3: 1.25rem;
+            }
+
+            .nav-simple {
+                gap: var(--space-sm);
+                font-size: 0.875rem;
+            }
+
+            .hero {
+                padding: var(--space-xl) var(--space-md);
+            }
+
+            .grid-2,
+            .grid-3 {
+                grid-template-columns: 1fr;
+            }
+
+            table {
+                font-size: 0.875rem;
+            }
+
+            th, td {
+                padding: 0.5rem;
+            }
+
+            section {
+                padding: var(--space-lg) 0;
+            }
+        }
+
+        /* ========================================
+           UTILITY CLASSES
+           ======================================== */
+        .text-center {
+            text-align: center;
+        }
+
+        .mb-sm { margin-bottom: var(--space-sm); }
+        .mb-md { margin-bottom: var(--space-md); }
+        .mb-lg { margin-bottom: var(--space-lg); }
+        .mb-xl { margin-bottom: var(--space-xl); }
+
+        .mt-sm { margin-top: var(--space-sm); }
+        .mt-md { margin-top: var(--space-md); }
+        .mt-lg { margin-top: var(--space-lg); }
+        .mt-xl { margin-top: var(--space-xl); }
+
+        .text-muted {
+            color: var(--text-muted);
+        }
+
+        .text-success {
+            color: var(--success);
+        }
+
+        .text-warning {
+            color: var(--warning);
+        }
+
+        .text-danger {
+            color: var(--danger);
+        }
+
+        .font-bold {
+            font-weight: 700;
+        }
+
+        /* Accessibility */
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0,0,0,0);
+            white-space: nowrap;
+            border-width: 0;
+        }
+    </style>
+</head>
+<body>
+    <!-- ========================================
+         STICKY HEADER
+         ======================================== -->
+    <header class="header-simple">
+        <div class="header-content">
+            <div class="logo">E-2 Visa Guide</div>
+            <nav class="nav-simple">
+                <a href="#quick-start">Start</a>
+                <a href="#costs">Costs</a>
+                <a href="#checklist">Checklist</a>
+                <a href="#faq">FAQ</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- ========================================
+         HERO SECTION
+         ======================================== -->
+    <section class="hero">
+        <h1>E-2 비자를 5-7주 안에 받으세요</h1>
+        <p class="hero-subtitle">서류 준비 → 한국 송부 → 비자 신청</p>
+        <a href="#quick-start" class="btn btn-primary">시작하기 →</a>
+    </section>
+
+    <!-- ========================================
+         QUICK START (3 Steps)
+         ======================================== -->
+    <section id="quick-start">
+        <div class="container">
+            <h2 class="text-center">Quick Start: 3단계 로드맵</h2>
+
+            <div class="grid-3">
+                <div class="card">
+                    <h3>1️⃣ 서류 준비</h3>
+                    <p>FBI 신원조회, 학위 아포스티유, 여권 사진 준비</p>
+                    <p class="text-muted">📅 2-3주 소요</p>
+                </div>
+
+                <div class="card">
+                    <h3>2️⃣ 한국 송부</h3>
+                    <p>준비된 서류를 한국 고용주에게 국제 특송</p>
+                    <p class="text-muted">📅 2-3주 소요 (VIN 처리 포함)</p>
+                </div>
+
+                <div class="card">
+                    <h3>3️⃣ 비자 신청</h3>
+                    <p>영사관 방문하여 비자 인터뷰 및 수령</p>
+                    <p class="text-muted">📅 3-5일 소요</p>
+                </div>
+            </div>
+
+            <div class="alert alert-success mt-lg">
+                <p><span class="alert-icon">✅</span><strong>총 소요 기간: 5-7주</strong></p>
+                <p>빠른 처리를 위해 FBI Channeler + Monument Visa 사용 필수</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================================
+         INVESTMENT BREAKDOWN
+         ======================================== -->
+    <section id="costs">
+        <div class="container">
+            <h2 class="text-center">💰 Investment Breakdown</h2>
+
+            <div class="card">
+                <h3 class="text-center">총 예상 비용: $320-525</h3>
+
+                <div class="table-responsive">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>항목</th>
+                                <th>비용</th>
+                                <th>소요 기간</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>FBI Channeler</td>
+                                <td>$40-100</td>
+                                <td>24-72시간</td>
+                            </tr>
+                            <tr>
+                                <td>Monument Visa - FBI 아포스티유</td>
+                                <td>$75</td>
+                                <td>10일</td>
+                            </tr>
+                            <tr>
+                                <td>Monument Visa - 학위 아포스티유</td>
+                                <td>$125</td>
+                                <td>2-3일</td>
+                            </tr>
+                            <tr>
+                                <td>공증 (학위)</td>
+                                <td>$10-30</td>
+                                <td>당일</td>
+                            </tr>
+                            <tr>
+                                <td>사진, 성적증명서 등</td>
+                                <td>$30-70</td>
+                                <td>3-5일</td>
+                            </tr>
+                            <tr>
+                                <td>한국 송부 (DHL/FedEx)</td>
+                                <td>$40-80</td>
+                                <td>2-3일</td>
+                            </tr>
+                            <tr>
+                                <td>영사관 비자 수수료</td>
+                                <td>~$45</td>
+                                <td>-</td>
+                            </tr>
+                            <tr style="background: var(--primary-light); font-weight: bold;">
+                                <td>총계</td>
+                                <td>$320-525</td>
+                                <td>5-7주</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="alert alert-warning mt-md">
+                <p><span class="alert-icon">⚠️</span><strong>중요:</strong> 이 비용은 연봉 $24,000+ 직장을 지키기 위한 필수 투자입니다.</p>
+                <p>DIY 방식(16-20주)으로 하면 채용 시기를 놓쳐 일자리를 잃을 수 있습니다.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================================
+         MASTER CHECKLIST
+         ======================================== -->
+    <section id="checklist">
+        <div class="container">
+            <h2 class="text-center">📋 Master Checklist</h2>
+            <p class="text-center text-muted mb-lg">필수 서류를 모두 준비하셨는지 확인하세요</p>
+
+            <div class="card">
+                <h3>Week 1-3: 서류 준비</h3>
+                <ul class="checklist">
+                    <li class="checklist-item">
+                        <input type="checkbox" id="check-1">
+                        <label for="check-1">FBI 신원조회 (Channeler 이용)</label>
+                    </li>
+                    <li class="checklist-item">
+                        <input type="checkbox" id="check-2">
+                        <label for="check-2">FBI 아포스티유 (Monument Visa)</label>
+                    </li>
+                    <li class="checklist-item">
+                        <input type="checkbox" id="check-3">
+                        <label for="check-3">학위 사본 공증</label>
+                    </li>
+                    <li class="checklist-item">
+                        <input type="checkbox" id="check-4">
+                        <label for="check-4">학위 아포스티유 (Monument Visa)</label>
+                    </li>
+                    <li class="checklist-item">
+                        <input type="checkbox" id="check-5">
+                        <label for="check-5">여권 사진 (3.5cm x 4.5cm, 흰 배경)</label>
+                    </li>
+                    <li class="checklist-item">
+                        <input type="checkbox" id="check-6">
+                        <label for="check-6">여권 사본</label>
+                    </li>
+                    <li class="checklist-item">
+                        <input type="checkbox" id="check-7">
+                        <label for="check-7">대학 성적증명서 (봉인)</label>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <h3>Week 4-5: 한국 송부 및 VIN 처리</h3>
+                <ul class="checklist">
+                    <li class="checklist-item">
+                        <input type="checkbox" id="check-8">
+                        <label for="check-8">모든 서류 최종 확인</label>
+                    </li>
+                    <li class="checklist-item">
+                        <input type="checkbox" id="check-9">
+                        <label for="check-9">DHL/FedEx로 한국 고용주에게 송부</label>
+                    </li>
+                    <li class="checklist-item">
+                        <input type="checkbox" id="check-10">
+                        <label for="check-10">추적번호 고용주에게 전달</label>
+                    </li>
+                    <li class="checklist-item">
+                        <input type="checkbox" id="check-11">
+                        <label for="check-11">고용주가 이민국에 VIN 신청</label>
+                    </li>
+                    <li class="checklist-item">
+                        <input type="checkbox" id="check-12">
+                        <label for="check-12">VIN 번호 수령 (7-10일)</label>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <h3>Week 6-7: 영사관 비자 신청</h3>
+                <ul class="checklist">
+                    <li class="checklist-item">
+                        <input type="checkbox" id="check-13">
+                        <label for="check-13">DS-160 온라인 작성</label>
+                    </li>
+                    <li class="checklist-item">
+                        <input type="checkbox" id="check-14">
+                        <label for="check-14">영사관 예약 (가까운 곳)</label>
+                    </li>
+                    <li class="checklist-item">
+                        <input type="checkbox" id="check-15">
+                        <label for="check-15">비자 수수료 납부 (~$45)</label>
+                    </li>
+                    <li class="checklist-item">
+                        <input type="checkbox" id="check-16">
+                        <label for="check-16">영사관 인터뷰 참석</label>
+                    </li>
+                    <li class="checklist-item">
+                        <input type="checkbox" id="check-17">
+                        <label for="check-17">비자 발급 및 여권 수령</label>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="alert alert-success mt-md">
+                <p><span class="alert-icon">🎉</span><strong>축하합니다!</strong> 비자를 받으면 한국행 항공권을 예약하세요.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================================
+         ACTION PLAN (Simplified Timeline)
+         ======================================== -->
+    <section id="action-plan">
+        <div class="container">
+            <h2 class="text-center">🧭 Action Plan: 주차별 계획</h2>
+
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-title">Week 1-3: 서류 준비</div>
+                    <div class="timeline-subtitle">소요 기간: 2-3주</div>
+                    <ul>
+                        <li>Day 1: FBI Channeler 방문 (지문 채취)</li>
+                        <li>Day 2-3: FBI 결과 수령, Monument Visa로 발송</li>
+                        <li>Day 1: 학위 사본 공증</li>
+                        <li>Day 2: Monument Visa로 학위 발송</li>
+                        <li>Day 1-5: 여권 사진, 성적증명서 준비</li>
+                        <li>Week 2-3: 아포스티유 완료 대기</li>
+                    </ul>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-title">Week 4-5: 한국 송부 및 VIN 처리</div>
+                    <div class="timeline-subtitle">소요 기간: 2-3주</div>
+                    <ul>
+                        <li>모든 서류 최종 확인 (Quality Gate)</li>
+                        <li>DHL/FedEx로 한국 고용주에게 국제 특송</li>
+                        <li>고용주가 지역 이민국에 VIN 신청</li>
+                        <li>VIN 처리 대기 (7-10 업무일)</li>
+                        <li>VIN 번호 수령 확인</li>
+                    </ul>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-title">Week 6-7: 영사관 비자 신청</div>
+                    <div class="timeline-subtitle">소요 기간: 3-5일</div>
+                    <ul>
+                        <li>DS-160 온라인 비자 신청서 작성</li>
+                        <li>가까운 한국 영사관 예약</li>
+                        <li>비자 수수료 납부</li>
+                        <li>영사관 인터뷰 참석</li>
+                        <li>2-5일 후 비자 발급 및 여권 수령</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="alert alert-warning mt-lg">
+                <p><span class="alert-icon">⚠️</span><strong>Critical Path:</strong> FBI Channeler + Monument Visa를 사용하지 않으면 16-20주가 걸립니다.</p>
+                <p>고용주의 채용 시기를 놓치면 일자리를 잃을 수 있으므로 빠른 방법을 선택하세요.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================================
+         FAQ (Top 10)
+         ======================================== -->
+    <section id="faq">
+        <div class="container">
+            <h2 class="text-center">❓ 자주 묻는 질문 (FAQ)</h2>
+
+            <div class="card">
+                <h3>Q1. E-2 비자 신청에 총 얼마나 걸리나요?</h3>
+                <p><strong>A.</strong> 빠른 방법(FBI Channeler + Monument Visa)을 사용하면 <strong>5-7주</strong>입니다.</p>
+                <p>일반 방법(FBI 직접 신청)을 사용하면 16-20주가 걸려 채용 시기를 놓칠 수 있습니다.</p>
+            </div>
+
+            <div class="card">
+                <h3>Q2. 총 비용은 얼마인가요?</h3>
+                <p><strong>A.</strong> <strong>$320-525</strong> 정도입니다.</p>
+                <p>이는 연봉 $24,000+ 일자리를 지키기 위한 필수 투자로 생각하세요.</p>
+            </div>
+
+            <div class="card">
+                <h3>Q3. FBI Channeler가 뭔가요? 꼭 사용해야 하나요?</h3>
+                <p><strong>A.</strong> FBI Channeler는 FBI 승인 업체로, 지문을 디지털로 제출하여 <strong>24-72시간</strong> 안에 결과를 받을 수 있습니다.</p>
+                <p>FBI에 직접 신청하면 14-16주가 걸리므로 <strong>반드시 Channeler를 이용</strong>해야 합니다.</p>
+            </div>
+
+            <div class="card">
+                <h3>Q4. Monument Visa는 무엇이고 왜 필요한가요?</h3>
+                <p><strong>A.</strong> Monument Visa는 아포스티유 신속 처리 전문 업체입니다.</p>
+                <ul>
+                    <li>FBI 아포스티유: 10일 (일반 4-6주)</li>
+                    <li>학위 아포스티유: 2-3일 (일반 2-4주)</li>
+                </ul>
+                <p>빠른 처리가 필수이므로 Monument Visa 사용을 권장합니다.</p>
+            </div>
+
+            <div class="card">
+                <h3>Q5. 아포스티유란 무엇인가요?</h3>
+                <p><strong>A.</strong> 아포스티유(Apostille)는 미국 서류를 해외에서 사용할 수 있도록 인증하는 절차입니다.</p>
+                <ul>
+                    <li><strong>FBI 신원조회:</strong> 미 국무부(Federal) 아포스티유 필요</li>
+                    <li><strong>학위 사본:</strong> 발급 주의 Secretary of State(State) 아포스티유 필요</li>
+                </ul>
+                <p>⚠️ 이 둘을 섞으면 자동 거절됩니다!</p>
+            </div>
+
+            <div class="card">
+                <h3>Q6. VIN이 무엇인가요?</h3>
+                <p><strong>A.</strong> VIN(Visa Issuance Number)은 한국 이민국에서 발급하는 비자 발급 확인 번호입니다.</p>
+                <p>고용주가 이민국에 서류를 제출하면 7-10 업무일 후 VIN을 받고, 이를 가지고 영사관에서 비자를 신청합니다.</p>
+            </div>
+
+            <div class="card">
+                <h3>Q7. 어떤 영사관에 가야 하나요?</h3>
+                <p><strong>A.</strong> <strong>거주지 관할 영사관</strong>에 가야 합니다.</p>
+                <ul>
+                    <li>워싱턴 DC: 동부</li>
+                    <li>LA, 샌프란시스코: 서부</li>
+                    <li>시카고: 중부</li>
+                    <li>뉴욕, 보스턴, 애틀랜타 등</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <h3>Q8. 범죄 기록이 있으면 비자를 받을 수 없나요?</h3>
+                <p><strong>A.</strong> 경범죄의 정도에 따라 다릅니다.</p>
+                <p><strong>일반적으로 거절:</strong></p>
+                <ul>
+                    <li>DUI/DWI (음주운전, 특히 최근)</li>
+                    <li>마약 관련 범죄</li>
+                    <li>폭력 범죄</li>
+                    <li>성범죄</li>
+                </ul>
+                <p><strong>일반적으로 수용:</strong></p>
+                <ul>
+                    <li>경미한 교통 위반 (주차, 과속 티켓)</li>
+                    <li>10년 이상 지난 경범죄</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <h3>Q9. 6개월 전에 받은 FBI 신원조회를 재사용할 수 있나요?</h3>
+                <p><strong>A.</strong> 아니요. FBI 신원조회는 <strong>VIN 신청일 기준 6개월 이내</strong>에 발급받은 것이어야 합니다.</p>
+                <p>8개월 전 것은 사용할 수 없으므로 새로 받아야 합니다.</p>
+            </div>
+
+            <div class="card">
+                <h3>Q10. 배우자와 자녀도 함께 갈 수 있나요?</h3>
+                <p><strong>A.</strong> 네, F-3 동반 비자로 가능합니다. 단:</p>
+                <ul>
+                    <li>별도 비자 신청 필요</li>
+                    <li>추가 서류 필요 (결혼증명서, 출생증명서 - 모두 아포스티유)</li>
+                    <li>한국에서 일할 수 없음</li>
+                    <li>단일 소득으로 충분한지 고려 필요</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================================
+         FOOTER
+         ======================================== -->
+    <footer>
+        <div class="container">
+            <div class="footer-logo">Kang & Kriel Recruitment</div>
+            <p>⚠️ 면책 조항: 본 정보는 2025년 10월 기준입니다. 비자 요구사항은 변경될 수 있습니다.</p>
+            <p>항상 한국 이민청(immigration.go.kr)에서 확인하세요 • 전화: 1345 (한국 내) / +82-2-1345 (해외)</p>
+            <p class="mt-md">Document Version: Simple Guide v1.0</p>
+            <p>© 2025 Kang & Kriel Recruitment. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- ========================================
+         JAVASCRIPT (100 lines or less)
+         ======================================== -->
+    <script>
+        // 1. Smooth Scroll for Navigation Links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+
+                if (targetElement) {
+                    targetElement.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // 2. Sticky Header Background Change on Scroll
+        let lastScrollY = 0;
+        const header = document.querySelector('.header-simple');
+
+        window.addEventListener('scroll', () => {
+            const currentScrollY = window.scrollY;
+
+            if (currentScrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+
+            lastScrollY = currentScrollY;
+        }, { passive: true });
+
+        // 3. Checklist Items - Save to localStorage
+        const STORAGE_KEY = 'e2-visa-simple-checklist';
+
+        // Load saved checklist state
+        function loadChecklist() {
+            const saved = localStorage.getItem(STORAGE_KEY);
+            if (saved) {
+                try {
+                    const checkedItems = JSON.parse(saved);
+                    Object.keys(checkedItems).forEach(id => {
+                        const checkbox = document.getElementById(id);
+                        if (checkbox) {
+                            checkbox.checked = checkedItems[id];
+                        }
+                    });
+                } catch (e) {
+                    console.error('Failed to load checklist', e);
+                }
+            }
+        }
+
+        // Save checklist state
+        function saveChecklist() {
+            const checkboxes = document.querySelectorAll('.checklist-item input[type="checkbox"]');
+            const checkedItems = {};
+
+            checkboxes.forEach(checkbox => {
+                if (checkbox.id) {
+                    checkedItems[checkbox.id] = checkbox.checked;
+                }
+            });
+
+            localStorage.setItem(STORAGE_KEY, JSON.stringify(checkedItems));
+        }
+
+        // Attach event listeners to all checkboxes
+        document.querySelectorAll('.checklist-item input[type="checkbox"]').forEach(checkbox => {
+            checkbox.addEventListener('change', saveChecklist);
+        });
+
+        // Load checklist on page load
+        document.addEventListener('DOMContentLoaded', loadChecklist);
+    </script>
+</body>
+</html>
